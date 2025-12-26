@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orquesta invisible</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <nav class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#conciertos">VIVO</a></li>
+            <li><a href="#musica">AUDIO</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-urbano">
+    <div class="hero-slide active" style="background-image: url('foto1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('foto2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('foto3.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('foto4.jpg');"></div>
+
+    <div class="hero-overlay">
+        <h1 class="title-main">ORQUESTA INVISIBLE<br></h1>
+        <p class="subtitle">Orquesta Típica</p>
+    </div>
+</section>
+
+    <section id="conciertos" class="shows">
+        <h2 class="section-title reveal">PRÓXIMAS MILONGAS Y SHOWS</h2>
+        
+        <div class="show-row reveal">
+            <div class="show-date">22.11 </div>
+            <div class="show-info">
+                <h3>La tierra invisible</h3>
+                <p>21:00 HS - Parque Chacabuco, CABA</p>
+            </div>
+            <div class="show-action">
+                <a href="#" class="btn-ticket">RESERVAR</a>
+            </div>
+        </div>
+
+
+        <div class="show-row reveal">
+            <div class="show-date">17.12 </div>
+            <div class="show-info">
+                <h3>Galpón B</h3>
+                <p>21:00 HS - San Cristobal</p>
+            </div>
+            <div class="show-action">
+                <a href="#" class="btn-ticket">RESERVAR</a>
+            </div>
+        </div>
+
+    </section>
+
+<script src="script.js"></script>
+
+
+<section id="musica" class="music-section reveal">
+    <div class="music-grid">
+        <a href="TU_LINK_SPOTIFY" target="_blank" class="icon-link">
+            <i class="fa-brands fa-spotify"></i>
+            <span>SPOTIFY</span>
+        </a>
+        <a href="https://www.youtube.com/@OrquestaInvisible" target="_blank" class="icon-link">
+            <i class="fa-brands fa-youtube"></i>
+            <span>YOUTUBE</span>
+        </a>
+    </div>
+</section>
+
+<footer id="contacto" class="footer-social reveal">
+    <div class="social-links">
+        <a href="https://www.instagram.com/orquestatipicainvisible/" target="_blank" class="social-icon-btn">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+    <p>CONTACTO: orquestainvisible@gmail.com</p>
+    <p class="footer-copy">© 2025 ORQUESTA INVISIBLE</p>
+</footer>
+
+<div class="spotify-float" id="player">
+    <button class="close-player" onclick="togglePlayer()">×</button>
+
+<iframe
+        src="https://open.spotify.com/embed/track/5fInBtriL0F54K1zZbLY5b?si=a696f66bbdb24d38"
+        width="100%" 
+        height="80" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+</div>
+
+<button class="open-player-btn" id="openBtn" onclick="togglePlayer()">
+    <i class="fa-brands fa-spotify"></i>
+</button>
+
+</body>
+
+</html>
