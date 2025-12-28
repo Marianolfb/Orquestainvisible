@@ -114,3 +114,15 @@ window.addEventListener('scroll', function() {
         nav.style.borderBottom = 'none';
     }
 });
+
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.logo');
+
+    // Si el scroll baja más de 200px (puedes ajustar este número)
+    if (window.scrollY > 200) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg-color: #0d0d0d;
     --accent-color: #e63946; /* Rojo Tango */
@@ -17,6 +21,23 @@ body {
     color: var(--text-main);
 }
 
+/* Estado inicial del logo: oculto y desplazado un poco hacia la izquierda */
+.logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
+    transform: translateX(-20px); 
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+/* Cuando la navbar tiene la clase 'scrolled', el logo aparece */
+.navbar.scrolled .logo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Vuelve a su posición original */
+}
+
 /* Navbar Minimalista */
 .navbar {
     display: flex;
@@ -32,7 +53,7 @@ body {
     left: 0;
     z-index: 1000;
     box-sizing: border-box;
-    transition: background 0.4s ease, border-bottom 0.4s ease;
+    transition: background 1s ease, border-bottom 0.4s ease;
 }
 
 .social-icon-btn:hover, .icon-link:hover i {
@@ -40,6 +61,10 @@ body {
     filter: drop-shadow(0px 0px 10px var(--accent-color));
 }
 
+/* Opcional: que el logo brille un poquito o cambie a rojo al pasar el mouse */
+.logo:hover {
+    color: var(--accent-color);
+}
 
 .logo {
     font-family: 'Oswald', sans-serif;
@@ -50,7 +75,25 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 20px; /* Reducimos un poco el espacio entre links para que quepan todos */
+}
+
+.nav-links a {
+    font-size: 0.85rem; /* Achicamos apenas la letra */
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+/* En celulares, quizás quieras que el menú sea scrolleable horizontalmente 
+   si no quieres usar un menú hamburguesa todavía */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+        overflow-x: auto; /* Permite deslizar el menú si es muy largo */
+        padding-bottom: 5px;
+        white-space: nowrap;
+    }
 }
 
 .nav-links a {
@@ -133,6 +176,7 @@ body {
 }
 
 /* Lista de Shows - Estilo Calle */
+
 .shows {
     padding: 60px 5%;
 }
@@ -149,8 +193,8 @@ body {
     display: flex;
     align-items: center;
     padding: 25px 0;
-    border-bottom: 1px solid #333;
-    transition: 0.3s;
+    border-bottom: 1px solid #222;
+    transition: background 0.3s ease;
 }
 
 .show-row:hover {
@@ -163,7 +207,12 @@ body {
     font-size: 2rem;
     color: var(--accent-color);
     min-width: 100px;
+
+    min-width: 140px; /* Dale espacio suficiente para el DD.MM.AAAA */
+    margin-right: 30px; /* Espacio extra de seguridad antes del texto */
+    display: inline-block; /* Asegura que respete el ancho */
 }
+
 
 .show-info {
     flex-grow: 1;
@@ -192,6 +241,7 @@ body {
     background: var(--text-main);
     color: black;
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -380,41 +430,190 @@ body {
         right: 10px;
     }
 }
-
-/* Ocultar el cursor original en toda la página */
-html, body {
-    cursor: none;
-}
-
-/* El punto sólido central */
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none; /* Para que no interfiera con los clics */
-    z-index: 9999;
-}
-
-/* El círculo exterior (contorno) */
-.cursor-outline {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.15s ease-out; /* Suaviza el movimiento */
+@media (max-width: 768px) {
+    .show-row {
+        flex-direction: column; /* Apila la fecha arriba y la info abajo */
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .show-date {
+        min-width: auto; /* En celular ya no necesita el ancho fijo */
+        margin-bottom: 5px;
+    }
 }
 
 /* Efecto cuando pasas sobre algo clickeable */
 .cursor-hover {
     transform: scale(1.5);
     background-color: rgba(230, 57, 70, 0.2); /* Tu color rojo con transparencia */
+}
+
+.bio-section {
+    padding: 100px 5%;
+    background-color: #0a0a0a; /* Un tono apenas distinto al negro puro para dar profundidad */
+}
+
+.bio-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bio-image {
+    flex: 1;
+}
+
+.bio-image img {
+    width: 100%;
+    border-left: 4px solid var(--accent-color); /* Detalle rojo lateral */
+    filter: grayscale(20%);
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.bio-text h2 {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.bio-text p {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.8;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 768px) {
+    .bio-container {
+        flex-direction: column; /* Apila la foto arriba y el texto abajo */
+        gap: 30px;
+    }
+    
+    .bio-text h2 {
+        text-align: center;
+    }
+}
+
+.press-section {
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+}
+
+.press-featured {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.press-featured blockquote {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.press-featured cite {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.press-card {
+    border: 1px solid #222;
+    padding: 30px;
+    transition: border-color 0.3s ease;
+}
+
+.press-card:hover {
+    border-color: var(--accent-color);
+}
+
+.press-date {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.press-card h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.press-card p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.read-more:hover {
+    color: var(--accent-color);
+}
+
+.press-kit-container {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-press-kit {
+    display: inline-block;
+    padding: 20px 40px;
+    border: 2px solid var(--accent-color);
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+.btn-press-kit i {
+    margin-right: 10px;
+}
+
+.btn-press-kit span {
+    display: block;
+    font-size: 0.7rem;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 5px;
+    color: var(--text-dim);
+}
+
+/* Efecto al pasar el mouse */
+.btn-press-kit:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-press-kit:hover span {
+    color: white; /* El texto pequeño también cambia para que se lea bien */
 }

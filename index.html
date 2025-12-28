@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orquesta invisible</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+	<div id="top"></div>
     <nav class="navbar">
-        <div class="logo"></div>
-        <ul class="nav-links">
-            <li><a href="#conciertos">VIVO</a></li>
-            <li><a href="#musica">AUDIO</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
-    </nav>
+    <a href="#top" class="logo">ORQUESTA INVISIBLE</a>
+    <ul class="nav-links">
+        <li><a href="#bio">BIO</a></li>
+	<li><a href="#prensa">PRENSA</a></li>
+        <li><a href="#galeria">FOTOS</a></li>
+        <li><a href="#conciertos">VIVO</a></li>
+        <li><a href="#novedades">NOVEDADES</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+</nav>
 
     <section class="hero-urbano">
     <div class="hero-slide active" style="background-image: url('foto1.jpg');"></div>
-    <div class="hero-slide" style="background-image: url('foto2.jpg');"></div>
     <div class="hero-slide" style="background-image: url('foto3.jpg');"></div>
     <div class="hero-slide" style="background-image: url('foto4.jpg');"></div>
 
@@ -32,11 +34,82 @@
     </div>
 </section>
 
+<section id="bio" class="bio-section reveal">
+    <div class="bio-container">
+        <div class="bio-image">
+            <img src="foto2.jpg" alt="Orquesta Invisible en acción">
+        </div>
+        <div class="bio-text">
+            <h2 class="section-title"></h2>
+            	<p>
+                	Fundada en las entrañas de Buenos Aires, la <strong>Orquesta Invisible</strong> nace como una respuesta urbana al tango tradicional. 
+		</p>
+		<p>
+			Somos una orquesta típica de tango contemporáneo dirigida por el bandoneonista y compositor Julio Coviello, integrada por músicos con destacada trayectoria en la escena actual del tango argentino. El proyecto propone revitalizar el formato de orquesta típica desde una mirada colectiva y experimental, donde cada integrante aporta su identidad musical a un lenguaje común que combina tradición, arreglos originales y nuevas composiciones. Una formación típica que busca recuperar el sonido crudo de la época dorada, fusionándolo con la energía del siglo XXI.
+		</p>
+        </div>
+    </div>
+
+<section id="prensa" class="press-section reveal">
+    <h2 class="section-title">PRENSA</h2>
+    
+    <div class="press-featured">
+        <blockquote>
+            "Y los mayores esfuerzos de la humanidad no fueron esfuerzos por cuestiones económicas, ¿no? Fueron esfuerzos por convicciones, por ideas, por querer cambiar las cosas, por querer dejar plasmada en la realidad una creencia o una idea."
+        </blockquote>
+        <cite>— Julio Coviello</cite>
+    </div>
+
+    <div class="press-grid">
+	
+	<div class="press-card">
+            <span class="press-date">DICIEMBRE 2025</span>
+            <h3>Tango 21</h3>
+            <p>"La propuesta es que la orquesta “sea invisible” y que cada uno de los integrantes vaya siendo cada vez más visible."</p>
+            <a href="https://tango21.info/fiestas-orquestas-tipicas-julio-coviello/?lang=es" class="read-more">LEER NOTA →</a>
+        </div>
+	<div class="press-card">
+            <span class="press-date">SEPTIEMBRE 2025</span>
+            <h3>2X4</h3>
+            <p>Entrevista de radio con Paula Sterczek</p>
+            <a href="https://www.instagram.com/reel/DO6uO5uj5HC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D" class="read-more">ESCUCHAR →</a>
+        </div>
+        <div class="press-card">
+            <span class="press-date">MAYO 2025</span>
+            <h3>Esto es nota</h3>
+            <p>"Hacía rato que tenía ganas de armar una orquesta. Tener un escenario propio para poder ensayar y para poder presentarse es algo que te da tranquilidad e independencia para elegir el repertorio, la música que uno quiere hacer y para bancar los ciclos."</p>
+            <a href="https://estoesnota.com/la-orquesta-invisible-tango-julio-coviello-debut-25-mayo-la-tierra-invisible-buenos-aires/" class="read-more">LEER NOTA →</a>
+        </div>
+
+        <div class="press-card">
+            <span class="press-date">MAYO 2025</span>
+            <h3>Radio cultura</h3>
+            <p>"Seguir las olas de qué es lo que te hace trabajar más o menos, qué es lo que te hace llegar a más gente en Instagram, no siempre te lleva muy lejos, las olas terminan al toque en la playa. Uno quisiera ser una corriente submarina."</p>
+            <a href="https://www.fmradiocultura.com.ar/julio-coviello-presenta-a-la-orquesta-invisible-a-puro-tango/" class="read-more">LEER NOTA →</a>
+        </div>
+
+        <div class="press-card">
+            <span class="press-date">MAYO 2025</span>
+            <h3>Página 12</h3>
+            <p>"En este proyecto jugamos por la camiseta."</p>
+            <a href="https://www.pagina12.com.ar/828485-julio-coviello-en-este-proyecto-jugamos-por-la-camiseta/" class="read-more">LEER NOTA →</a>
+        </div>
+	
+    </div>
+<div class="press-kit-container">
+    <a href="TU_ARCHIVO_O_CARPETA_DRIVE" target="_blank" class="btn-press-kit">
+        <i class="fa-solid fa-download"></i> DESCARGAR PRESS KIT <span>(PDF, FOTOS HD, RIDER)</span>
+    </a>
+</div>
+</section>
+
+</section>
+
     <section id="conciertos" class="shows">
-        <h2 class="section-title reveal">PRÓXIMAS MILONGAS Y SHOWS</h2>
+        <h2 class="section-title reveal">PRÓXIMOS SHOWS</h2>
         
         <div class="show-row reveal">
-            <div class="show-date">22.11 </div>
+            <div class="show-date">22.11.25 </div>
             <div class="show-info">
                 <h3>La tierra invisible</h3>
                 <p>21:00 HS - Parque Chacabuco, CABA</p>
@@ -48,7 +121,7 @@
 
 
         <div class="show-row reveal">
-            <div class="show-date">17.12 </div>
+            <div class="show-date">17.12.25 </div>
             <div class="show-info">
                 <h3>Galpón B</h3>
                 <p>21:00 HS - San Cristobal</p>
@@ -65,7 +138,7 @@
 
 <section id="musica" class="music-section reveal">
     <div class="music-grid">
-        <a href="TU_LINK_SPOTIFY" target="_blank" class="icon-link">
+        <a href="#" target="_blank" class="icon-link">
             <i class="fa-brands fa-spotify"></i>
             <span>SPOTIFY</span>
         </a>
