@@ -802,7 +802,7 @@ body {
     }
     /* Asegúrate de que los enlaces se vean bien sobre el blur */
     .nav-links li {
-        margin: 20px 0;
+        margin: 15px 0;
     }
     .nav-links a {
         font-size: 1.5rem;
@@ -814,15 +814,36 @@ body {
         font-size: 2rem; /* Más grande en el menú hamburguesa */
     }
     .nav-social-group {
-        /*margin-top: 30px;
-        margin-left: 0;
-        gap: 25px;*/
         margin-top: 20px;
         gap: 30px;
         justify-content: center;
     }
     .nav-icon {
         font-size: 2rem; /* Más grandes en el celular para que sean fáciles de tocar */
+    }
+
+    .nav-links li.lang-switcher {
+        margin-top: 0 !important; 
+        padding-top: 0 !important;
+        margin-bottom: 10px; /* Espacio opcional hacia abajo si hay más items */
+    }
+
+    /* Ajustamos el botón para que no ocupe tanto alto */
+    .lang-btn {
+        padding: 5px 10px !important;
+        display: block;
+        width: auto;
+        margin: 0 auto; /* Lo centra si el menú es centrado */
+    }
+
+    /* Si el contenedor del dropdown tiene margen, lo eliminamos */
+    .lang-dropdown {
+        margin-top: -5px !important; /* Margen negativo para subirlo si es necesario */
+    }
+
+    .lang-content a {
+        padding: 10px 0 !important;
+        font-size: 0.75rem !important;
     }
     
     .show-row {
