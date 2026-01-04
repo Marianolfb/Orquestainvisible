@@ -195,6 +195,7 @@ const i18n = {
         escuchar: "ESCUCHAR →",
         pk_title: "DESCARGAR PRESS KIT",
         pk_desc: "(PDF, FOTOS HD, RIDER)",
+        nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
         footer_contacto: "CONTACTO: orquestainvisible@gmail.com"
     },
@@ -227,6 +228,7 @@ const i18n = {
         escuchar: "LISTEN →",
         pk_title: "DOWNLOAD PRESS KIT",
         pk_desc: "(PDF, HD PHOTOS, RIDER)",
+        nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
         footer_contacto: "CONTACT: orquestainvisible@gmail.com"
     }

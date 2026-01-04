@@ -422,6 +422,16 @@ body {
     transform: scale(1.1);
 }
 
+/* Color verde oficial de Spotify al pasar el mouse */
+.icon-link:hover .fa-spotify {
+    color: #1DB954;
+}
+
+/* Color rojo de YouTube al pasar el mouse */
+.icon-link:hover .fa-youtube {
+    color: #FF0000;
+}
+
 /* Estilos para el Footer e Instagram */
 .footer-social {
     padding: 80px 5% 40px;
@@ -846,6 +856,33 @@ body {
         font-size: 0.75rem !important;
     }
     
+    .hero-slide {
+        background-size: auto 100%;
+        background-position: 0% center;
+        background-repeat: no-repeat;
+        /* La animación está siempre presente, pero pausada por defecto */
+        animation: panFoto 10s ease-in-out infinite alternate;
+        animation-play-state: paused;
+        
+        /* Aseguramos que la transición de opacidad sea suave */
+        transition: opacity 1.5s ease-in-out;
+    }
+
+    .hero-slide.active {
+        /* Solo se mueve cuando está activa */
+        animation-play-state: running;
+        opacity: 1;
+        z-index: 2;
+    }
+    
+    /* La que se va queda por debajo pero mantiene su lugar */
+    .hero-slide:not(.active) {
+        opacity: 0;
+        z-index: 1;
+        /* Mantenemos el play-state en running o paused dependiendo de si 
+           queremos que siga moviéndose mientras desaparece */
+    }
+    
     .show-row {
         flex-direction: column; /* Apila la fecha arriba y la info abajo */
         align-items: flex-start;
@@ -879,5 +916,15 @@ body {
         width: 250px;
         bottom: 10px;
         right: 10px;
+    }
+}
+
+/* Definición de la animación de movimiento lateral */
+@keyframes panFoto {
+    0% {
+        background-position: 0% center; /* Inicio de la foto */
+    }
+    100% {
+        background-position: 100% center; /* Final de la foto */
     }
 }
