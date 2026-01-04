@@ -861,7 +861,7 @@ body {
         background-position: 0% center;
         background-repeat: no-repeat;
         /* La animación está siempre presente, pero pausada por defecto */
-        animation: panFoto 10s ease-in-out infinite alternate;
+        animation: panFoto 15s ease-in-out infinite alternate;
         animation-play-state: paused;
         
         /* Aseguramos que la transición de opacidad sea suave */
@@ -927,4 +927,5 @@ body {
     100% {
         background-position: 100% center; /* Final de la foto */
     }
+
 }
