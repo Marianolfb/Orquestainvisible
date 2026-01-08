@@ -54,9 +54,9 @@ body {
     gap: 15px;
     align-items: center;
     /* Posicionamiento para centrar respecto a la pantalla */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    left: 0;
+    transform: none;
 }
 
 .nav-links a {
@@ -927,5 +927,4 @@ body {
     100% {
         background-position: 100% center; /* Final de la foto */
     }
-
 }
