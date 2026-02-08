@@ -198,7 +198,7 @@ const i18n = {
         pk_desc: "(PDF, FOTOS HD, RIDER)",
         nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
-        footer_contacto: "CONTACTO: orquestainvisible@gmail.com"
+        footer_contacto: "CONTACTO: orquestatipicainvisible@gmail.com"
     },
     en: {
         nav_fechas: "UPCOMING DATES",
@@ -232,7 +232,7 @@ const i18n = {
         pk_desc: "(PDF, HD PHOTOS, RIDER)",
         nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
-        footer_contacto: "CONTACT: orquestainvisible@gmail.com"
+        footer_contacto: "CONTACT: orquestatipicainvisible@gmail.com"
     }
 };
 
