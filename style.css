@@ -984,3 +984,102 @@ body {
         padding: 15px;
     }
 }
+
+/* Contenedor principal de la galería */
+.press-gallery-container {
+    width: 100%;
+    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    padding: 20px 0;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Para ocultar la barra de scroll pero mantener la funcionalidad */
+.press-gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* La grilla ahora se alinea en una sola fila */
+.press-grid-horizontal {
+    display: flex;
+    gap: 30px; /* Espacio entre notas */
+    padding: 0 10px;
+    width: max-content; /* Obliga a los elementos a estar en una fila */
+}
+
+/* Aseguramos que tus cards mantengan su tamaño original */
+.press-card {
+    flex: 0 0 350px; /* Ajusta este valor al ancho que prefieras para tus notas */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Opcional: Centrar la galería en pantallas muy grandes */
+@media (min-width: 1400px) {
+    .press-gallery-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.press-navigation-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.press-gallery-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Para que el botón mueva la galería suavemente */
+    padding: 20px 0;
+}
+
+.press-gallery-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll */
+}
+
+.press-grid-horizontal {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    padding: 0 10px;
+}
+
+/* Estilo de las flechas */
+.nav-arrow {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: none; /* Se ocultan en celular por defecto */
+}
+
+.nav-arrow:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.nav-arrow.left { left: 10px; }
+.nav-arrow.right { right: 10px; }
+
+/* Mostrar flechas solo en Computadora */
+@media (min-width: 1024px) {
+    .nav-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .press-gallery-container {
+        padding: 20px 60px; /* Espacio para que las flechas no tapen el contenido */
+    }
+}

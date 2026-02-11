@@ -165,6 +165,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const slider = document.querySelector('.press-gallery-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+    isDown = false;
+});
+slider.addEventListener('mouseup', () => {
+    isDown = false;
+});
+slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; 
+    slider.scrollLeft = scrollLeft - walk;
+});
+
 const i18n = {
     es: {
         nav_fechas: "PRÓXIMAS FECHAS",
@@ -298,6 +323,26 @@ document.addEventListener('DOMContentLoaded', function() {
             // Forzamos la traducción inmediata del botón tras el cambio de llave
             const currentLang = document.documentElement.lang || 'es';
             this.innerHTML = i18n[currentLang][this.getAttribute('data-key')];
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.press-gallery-container');
+    const nextBtn = document.getElementById('press-next-btn');
+    const prevBtn = document.getElementById('press-prev-btn');
+
+    if (nextBtn && prevBtn && container) {
+        // Al hacer clic en "Siguiente"
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.press-card').offsetWidth + 30; // Ancho nota + gap
+            container.scrollLeft += cardWidth;
+        });
+
+        // Al hacer clic en "Anterior"
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = document.querySelector('.press-card').offsetWidth + 30;
+            container.scrollLeft -= cardWidth;
         });
     }
 });
