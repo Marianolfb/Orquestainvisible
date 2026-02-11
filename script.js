@@ -198,7 +198,11 @@ const i18n = {
         pk_desc: "(PDF, FOTOS HD, RIDER)",
         nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
-        footer_contacto: "CONTACTO: orquestatipicainvisible@gmail.com"
+        footer_contacto: "CONTACTO: orquestatipicainvisible@gmail.com",
+        btn_ver_mas: "VER TODAS LAS FECHAS", 
+        btn_ver_menos: "VER MENOS",
+        btn_prensa_mas: "VER MÁS NOTAS",
+        btn_prensa_menos: "VER MENOS"
     },
     en: {
         nav_fechas: "UPCOMING DATES",
@@ -232,7 +236,11 @@ const i18n = {
         pk_desc: "(PDF, HD PHOTOS, RIDER)",
         nav_sp: "SPOTIFY",
         nav_yt: "YOUTUBE",
-        footer_contacto: "CONTACT: orquestatipicainvisible@gmail.com"
+        footer_contacto: "CONTACT: orquestatipicainvisible@gmail.com",
+        btn_ver_mas: "VIEW ALL DATES", 
+        btn_ver_menos: "SHOW LESS",
+        btn_prensa_mas: "MORE PRESS ARTICLES",
+        btn_prensa_menos: "SHOW LESS"
     }
 };
 
@@ -266,4 +274,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('selectedLang') || 'es';
         changeLanguage(savedLang);
     }, 50); 
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnToggle = document.getElementById('btn-toggle-shows');
+    const extraShows = document.getElementById('extra-shows');
+
+    if (btnToggle && extraShows) {
+        btnToggle.addEventListener('click', function() {
+            const isHidden = extraShows.style.display === "none" || extraShows.style.display === "";
+            
+            if (isHidden) {
+                extraShows.style.display = "block";
+                // En lugar de texto, le asignamos la LLAVE de traducción
+                this.setAttribute('data-key', 'btn_ver_menos');
+                reveal(); 
+            } else {
+                extraShows.style.display = "none";
+                this.setAttribute('data-key', 'btn_ver_mas');
+                document.getElementById('conciertos').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Forzamos la traducción inmediata del botón tras el cambio de llave
+            const currentLang = document.documentElement.lang || 'es';
+            this.innerHTML = i18n[currentLang][this.getAttribute('data-key')];
+        });
+    }
 });

@@ -928,3 +928,59 @@ body {
         background-position: 100% center; /* Final de la foto */
     }
 }
+
+/* Contenedor del botón para centrarlo */
+.show-action {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+/* Estilo del botón "Ver más" */
+#btn-toggle-shows {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-dim); /* Borde sutil inicial */
+    padding: 12px 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+#btn-toggle-shows:hover {
+    color: #fff;
+    border-color: var(--accent-color); /* Cambia al Rojo Tango */
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); /* Resplandor sutil */
+    transform: translateY(-2px);
+}
+
+/* Línea decorativa debajo del texto (opcional, muy elegante) */
+#btn-toggle-shows::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+#btn-toggle-shows:hover::after {
+    width: 80%;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    #btn-toggle-shows {
+        width: 80%;
+        padding: 15px;
+    }
+}
