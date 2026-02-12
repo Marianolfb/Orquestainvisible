@@ -1048,19 +1048,21 @@ body {
     padding: 0 10px;
 }
 
-/* Estilo de las flechas */
+/* Estilo de las flechas (Visible en todos los dispositivos) */
 .nav-arrow {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     color: var(--accent-color);
     border: 1px solid var(--accent-color);
-    width: 50px;
-    height: 50px;
+    width: 40px; /* Un poco más chicas para móvil */
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     position: absolute;
     z-index: 10;
+    display: flex; /* Ahora siempre se muestran */
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    display: none; /* Se ocultan en celular por defecto */
 }
 
 .nav-arrow:hover {
@@ -1068,18 +1070,20 @@ body {
     color: #fff;
 }
 
-.nav-arrow.left { left: 10px; }
-.nav-arrow.right { right: 10px; }
+/* Posición en móviles */
+.nav-arrow.left { left: 5px; }
+.nav-arrow.right { right: 5px; }
 
-/* Mostrar flechas solo en Computadora */
+/* Ajustes para Computadora (Pantallas grandes) */
 @media (min-width: 1024px) {
     .nav-arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 50px;
+        height: 50px;
     }
+    .nav-arrow.left { left: 15px; }
+    .nav-arrow.right { right: 15px; }
     
     .press-gallery-container {
-        padding: 20px 60px; /* Espacio para que las flechas no tapen el contenido */
+        padding: 20px 70px; /* Más espacio en PC */
     }
 }
