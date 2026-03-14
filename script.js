@@ -201,7 +201,7 @@ const i18n = {
         tit_fechas: "PRÓXIMAS FECHAS",
         show_place_1: "La tierra invisible",
         show_detail_1: "21:00 HS - Centenera 1099, CABA",
-        show_place_2: "Palacio Libetad - Plaza seca",
+        show_place_2: "Palacio Libertad - Plaza seca",
         show_detail_2: "18 HS - Sarmiento 151, CABA",
         btn_reservar: "RESERVAR",
         tit_nosotros: "Sobre nosotros",
