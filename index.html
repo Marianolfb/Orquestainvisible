@@ -24,6 +24,7 @@
         <ul class="nav-links">
             <li><a href="#conciertos" data-key="nav_fechas">PRÓXIMAS FECHAS</a></li>
             <li><a href="#bio" data-key="nav_bio">BIO</a></li>
+            <li><a href="#video" data-key="nav_video">EN VIVO</a></li>
             <li><a href="#prensa" data-key="nav_prensa">PRENSA</a></li>
             <li><a href="#galeria" data-key="nav_fotos">FOTOS</a></li>
             <li><a href="#contacto" data-key="nav_contacto">CONTACTO</a></li>
@@ -44,6 +45,21 @@
         </ul>
     </nav>
 
+        <div class="spotify-container" id="spotify-player">
+        <button class="close-spotify" onclick="toggleSpotify(false)">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <iframe 
+            style="border-radius:12px" 
+            src="https://open.spotify.com/embed/album/3jG1iPpJq3MWBCjYPn7dcm?utm_source=generator"
+            width="100%" 
+            height="152" 
+            frameBorder="0" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+        </iframe>
+    </div>
+    
     <section class="hero-urbano">
         <div class="hero-slide active" style="background-image: url('foto1.webp');"></div>
         <div class="hero-slide" style="background-image: url('foto3.webp');"></div>
@@ -86,7 +102,7 @@
                 <p data-key="show_detail_2">18:00 HS - Sarmiento 151, Buenos Aires</p>
             </div>
             <div class="show-action">
-                <a href=# class="btn-ticket" data-key="btn_reservar2">GRATIS</a>
+                <a href="https://palaciolibertad.gob.ar/agenda" class="btn-ticket" data-key="btn_reservar2">+INFO</a>
             </div>
         </div>
         
@@ -199,6 +215,22 @@
                         auténtico y vanguardista para festivales de world music y escenarios internacionales.       
                     </p>
             </div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section reveal">
+        <h2 class="section-title" data-key="nav_video">EN VIVO</h2>
+        <div class="video-container">
+            <iframe 
+                width="100%" 
+                height="315" 
+                src="https://www.youtube.com/embed/PDUJ_V68rZs" 
+                title="Orquesta Invisible - Galpón B" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
         </div>
     </section>
 
@@ -341,6 +373,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <button id="open-spotify-btn" class="reopen-btn" onclick="toggleSpotify(true)" style="display: none;">
+        <i class="fa-brands fa-spotify"></i>
+    </button>
 
 </body>
 

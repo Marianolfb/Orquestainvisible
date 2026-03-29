@@ -1087,3 +1087,115 @@ body {
         padding: 20px 70px; /* Más espacio en PC */
     }
 }
+
+/* Contenedor con animación de entrada */
+.spotify-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente */
+    backdrop-filter: blur(8px); /* Efecto de vidrio esmerilado */
+    padding: 8px;
+    border-radius: 20px;
+    /* Sombra extra para dar profundidad */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9), 0 0 15px rgba(29, 185, 84, 0.2); 
+    transform: translateY(200%);
+    /* Transición de 2 segundos como pediste */
+    transition: transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spotify-container.visible {
+    transform: translateY(0);
+}
+
+/* Botón de cierre */
+.close-spotify {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.close-spotify:hover { 
+    background: #1DB954; /* Verde oficial de Spotify */
+    color: #fff}
+
+/* Botón para volver a abrir */
+.reopen-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1DB954; /* Verde oficial de Spotify */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+    .spotify-container { width: 280px; right: 10px; }
+}
+
+.pulse-animation {
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(29, 185, 84, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0); }
+}
+
+.video-section {
+    padding: 60px 20px;
+    background-color: #000; /* Fondo negro para resaltar el video */
+    text-align: left;
+    padding-left: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

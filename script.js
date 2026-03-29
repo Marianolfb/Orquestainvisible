@@ -192,6 +192,7 @@ slider.addEventListener('mousemove', (e) => {
 
 const i18n = {
     es: {
+        nav_video: "EN VIVO",
         nav_fechas: "PRÓXIMAS FECHAS",
         nav_bio: "BIO",
         nav_prensa: "PRENSA",
@@ -204,7 +205,7 @@ const i18n = {
         show_place_2: "Palacio Libertad - Plaza seca",
         show_detail_2: "18:00 HS - Sarmiento 151, CABA",
         btn_reservar: "RESERVAR",
-        btn_reservar2: "GRATIS",
+        btn_reservar2: "+INFO",
         tit_nosotros: "Sobre nosotros",
         bio_p1: "La Orquesta Invisible es una orquesta de tango contemporáneo de Buenos Aires dirigida por el bandoneonista Julio Coviello, un artista con más de 25 años de trayectoria en la escena del tango argentino.",
         bio_p2: "La agrupación formada por músicos y músicas de diferentes generaciones y vertientes,  reinventa el formato tradicional de la orquesta típica a través de composiciones originales, la creación colectiva y un potente sonido acústico que tiene sus raíces en la Época de Oro del tango, pero impulsado por una energía moderna y urbana.",
@@ -233,6 +234,7 @@ const i18n = {
         btn_prensa_menos: "VER MENOS"
     },
     en: {
+        nav_video: "LIVE",
         nav_fechas: "UPCOMING DATES",
         nav_bio: "BIO",
         nav_prensa: "PRESS",
@@ -245,7 +247,7 @@ const i18n = {
         show_place_2: "Palacio Libertad - Plaza seca",
         show_detail_2: "6:00 PM - Sarmiento 151, Buenos Aires",
         btn_reservar: "BOOK NOW",
-        btn_reservar2: "FREE",
+        btn_reservar2: "+INFO",
         tit_nosotros: "About us",
         bio_p1: "La Orquesta Invisible is a contemporary tango orchestra from Buenos Aires led by bandoneonist Julio Coviello, an artist with a career spanning more than 25 years in the Argentine tango scene.",
         bio_p2: "The ensemble, formed by musicians from different generations and backgrounds, reinvents the traditional orquesta típica format through original compositions, collective creation, and a powerful acoustic sound that is rooted in Tango’s Golden Age but driven by a modern and urban energy.",
@@ -352,3 +354,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Aparecer suavemente tras 2 segundos de carga
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const player = document.getElementById('spotify-player');
+        player.classList.add('visible');
+    }, 1000);
+});
+
+// Función para mostrar/ocultar
+function toggleSpotify(show) {
+    const player = document.getElementById('spotify-player');
+    const btn = document.getElementById('open-spotify-btn');
+
+    if (show) {
+        player.style.display = 'block';
+        setTimeout(() => player.classList.add('visible'), 10);
+        btn.style.display = 'none';
+    } else {
+        player.classList.remove('visible');
+        // Esperamos a que termine la animación para ocultar y mostrar el botón verde
+        setTimeout(() => {
+            player.style.display = 'none';
+            btn.style.display = 'flex';
+        }, 800);
+    }
+}
+
+function toggleSpotify(show) {
+    const player = document.getElementById('spotify-player');
+    const btn = document.getElementById('open-spotify-btn');
+
+    if (show) {
+        player.style.display = 'block';
+        // Forzamos un pequeño reflow para que la animación de 2.5s se active
+        setTimeout(() => player.classList.add('visible'), 50);
+        btn.style.display = 'none';
+        btn.classList.remove('pulse-animation');
+    } else {
+        player.classList.remove('visible');
+        setTimeout(() => {
+            player.style.display = 'none';
+            btn.style.display = 'flex';
+            btn.classList.add('pulse-animation'); // Añade un brillo al aparecer
+        }, 1000); 
+    }
+}
