@@ -355,12 +355,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Aparecer suavemente tras 2 segundos de carga
+// Aparecer suavemente tras 1 segundo de carga
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const player = document.getElementById('spotify-player');
-        player.classList.add('visible');
-    }, 1000);
+    const player = document.getElementById('spotify-player');
+    const btn = document.getElementById('open-spotify-btn');
+    
+    // Verificamos si el ancho de pantalla es mayor a 480px (PC/Tablet horizontal)
+    if (window.innerWidth > 768) {
+        setTimeout(() => {
+            player.style.display = 'block';
+            setTimeout(() => player.classList.add('visible'), 50);
+            if (btn) btn.style.display = 'none';
+        }, 1000);
+    } else {
+        // En pantallas pequeñas, nos aseguramos de que el botón de apertura sea visible
+        if (btn) {
+            btn.style.display = 'flex';
+            btn.classList.add('pulse-animation');
+        }
+    }
 });
 
 // Función para mostrar/ocultar
