@@ -6,32 +6,84 @@
     <title>Orquesta Invisible | Links</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> <style>
-        /* Estilos específicos para la página de enlaces */
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
         body {
             background-color: #0d0d0d;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
 
+        /* --- EFECTO GLITCH PARA EL LOGO --- */
+        .glitch-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .glitch {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 4px;
+            display: block;
+        }
+
+        .glitch::before, .glitch::after {
+            content: "ORQUESTA INVISIBLE";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #0d0d0d;
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            20% { clip: rect(62px, 9999px, 42px, 0); }
+            40% { clip: rect(16px, 9999px, 78px, 0); }
+            60% { clip: rect(87px, 9999px, 12px, 0); }
+            80% { clip: rect(4px, 9999px, 91px, 0); }
+            100% { clip: rect(55px, 9999px, 33px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            20% { clip: rect(10px, 9999px, 55px, 0); }
+            40% { clip: rect(80px, 9999px, 20px, 0); }
+            60% { clip: rect(40px, 9999px, 85px, 0); }
+            80% { clip: rect(15px, 9999px, 60px, 0); }
+            100% { clip: rect(95px, 9999px, 5px, 0); }
+        }
+
+        /* --- CONTENEDOR DE ENLACES --- */
         .links-wrapper {
             width: 100%;
             max-width: 450px;
-            padding: 40px 20px;
+            padding: 0 20px;
             text-align: center;
-        }
-
-        .links-logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            display: block;
-            text-decoration: none;
-            color: var(--text-main);
+            z-index: 2;
         }
 
         .links-container {
@@ -68,22 +120,36 @@
             box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
         }
 
-        /* Botón destacado para Passline (Entradas) */
+        /* Botón destacado para Entradas */
         .link-featured {
             background: var(--accent-color);
             border-color: var(--accent-color);
+            animation: pulse-red 2s infinite;
         }
         
-        .link-featured:hover {
-            background: #b32d38; /* Un rojo más oscuro al pasar el mouse */
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
         }
+
+        /* --- REPRODUCTOR MINI --- */
+        .audio-player-mini {
+            margin-top: 40px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .audio-player-mini:hover { opacity: 1; }
+
     </style>
 </head>
 <body>
 
-    <div class="links-wrapper">
-        <a href="index.html" class="links-logo">ORQUESTA INVISIBLE</a>
+    <div class="glitch-wrapper">
+        <a href="index.html" class="glitch">ORQUESTA INVISIBLE</a>
+    </div>
 
+    <div class="links-wrapper">
         <div class="links-container">
             <a href="https://www.passline.com/eventos/orquesta-invisible-478055" target="_blank" class="link-item link-featured">
                 <i class="fa-solid fa-ticket"></i> ENTRADAS
@@ -97,7 +163,7 @@
                 <i class="fa-brands fa-instagram"></i> INSTAGRAM
             </a>
 
-            <a href="https://open.spotify.com/artist/TU_ID_AQUI" target="_blank" class="link-item">
+            <a href="https://open.spotify.com/embed/album/3jG1iPpJq3MWBCjYPn7dcm?utm_source=generator" target="_blank" class="link-item">
                 <i class="fa-brands fa-spotify"></i> SPOTIFY
             </a>
 
