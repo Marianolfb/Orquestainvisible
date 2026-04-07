@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orquesta Invisible | Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Estilos específicos para la página de enlaces */
+        body {
+            background-color: #0d0d0d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .links-wrapper {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .links-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            display: block;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: white;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .link-item i {
+            position: absolute;
+            left: 20px;
+            font-size: 1.3rem;
+        }
+
+        .link-item:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Botón destacado para Passline (Entradas) */
+        .link-featured {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .link-featured:hover {
+            background: #b32d38; /* Un rojo más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="links-wrapper">
+        <a href="index.html" class="links-logo">ORQUESTA INVISIBLE</a>
+
+        <div class="links-container">
+            <a href="https://www.passline.com/eventos/orquesta-invisible-478055" target="_blank" class="link-item link-featured">
+                <i class="fa-solid fa-ticket"></i> ENTRADAS
+            </a>
+
+            <a href="index.html" class="link-item">
+                <i class="fa-solid fa-house"></i> SITIO WEB OFICIAL
+            </a>
+
+            <a href="https://www.instagram.com/orquestatipicainvisible/" target="_blank" class="link-item">
+                <i class="fa-brands fa-instagram"></i> INSTAGRAM
+            </a>
+
+            <a href="https://open.spotify.com/artist/TU_ID_AQUI" target="_blank" class="link-item">
+                <i class="fa-brands fa-spotify"></i> SPOTIFY
+            </a>
+
+            <a href="https://www.youtube.com/@OrquestaInvisible" target="_blank" class="link-item">
+                <i class="fa-brands fa-youtube"></i> YOUTUBE
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
