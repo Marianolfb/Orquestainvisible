@@ -1,0 +1,158 @@
+/* Importamos variables de la web principal para mantener consistencia */
+@import url('style.css');
+
+body {
+    background-color: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    background: radial-gradient(circle, rgba(25,25,25,1) 0%, rgba(5,5,5,1) 100%);
+}
+
+/* Efecto de grano cinematográfico de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_pnt_noise.png');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- EFECTO GLITCH PARA EL LOGO --- */
+.glitch-wrapper {
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.glitch {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 4px;
+    display: block;
+}
+
+.glitch::before, .glitch::after {
+    content: "ORQUESTA INVISIBLE";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #0d0d0d;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(62px, 9999px, 42px, 0); }
+    40% { clip: rect(16px, 9999px, 78px, 0); }
+    60% { clip: rect(87px, 9999px, 12px, 0); }
+    80% { clip: rect(4px, 9999px, 91px, 0); }
+    100% { clip: rect(55px, 9999px, 33px, 0); }
+}
+
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(10px, 9999px, 55px, 0); }
+    40% { clip: rect(80px, 9999px, 20px, 0); }
+    60% { clip: rect(40px, 9999px, 85px, 0); }
+    80% { clip: rect(15px, 9999px, 60px, 0); }
+    100% { clip: rect(95px, 9999px, 5px, 0); }
+}
+
+/* --- CONTENEDOR DE ENLACES --- */
+.links-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: 0 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.link-item i {
+    position: absolute;
+    left: 20px;
+    font-size: 1.3rem;
+}
+
+/* Flecha que aparece en hover */
+.link-item::after {
+    content: "→";
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.link-item:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.link-item:hover::after {
+    opacity: 1;
+    right: 15px;
+}
+
+/* Botón destacado con pulso */
+.link-featured {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
