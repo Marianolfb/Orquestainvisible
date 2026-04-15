@@ -23,8 +23,8 @@
 
         <ul class="nav-links">
             <li><a href="#conciertos" data-key="nav_fechas">PRÓXIMAS FECHAS</a></li>
-            <li><a href="#bio" data-key="nav_bio">BIO</a></li>
             <li><a href="#video" data-key="nav_video">EN VIVO</a></li>
+            <li><a href="#bio" data-key="nav_bio">NOSOTROS</a></li>
             <li><a href="#prensa" data-key="nav_prensa">PRENSA</a></li>
             <li><a href="#galeria" data-key="nav_fotos">FOTOS</a></li>
             <li><a href="#contacto" data-key="nav_contacto">CONTACTO</a></li>
@@ -73,7 +73,6 @@
 
     <section id="conciertos" class="shows">
         <h2 class="section-title reveal" data-key="tit_fechas">PRÓXIMAS FECHAS</h2>
-        
         
         <div class="show-row reveal">
             <div class="show-date">09.05.26 </div>
@@ -178,6 +177,22 @@
 
     </section>
 
+    <section id="video" class="video-section reveal">
+        <h2 class="section-title" data-key="nav_video">EN VIVO</h2>
+        <div class="video-container">
+            <iframe 
+                width="100%" 
+                height="315" 
+                src="https://www.youtube.com/embed/PDUJ_V68rZs" 
+                title="Orquesta Invisible - Galpón B" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
     <section id="bio" class="bio-section reveal">
         <div class="bio-container">
             <div class="bio-image">
@@ -209,19 +224,49 @@
         </div>
     </section>
 
-    <section id="video" class="video-section reveal">
-        <h2 class="section-title" data-key="nav_video">EN VIVO</h2>
-        <div class="video-container">
-            <iframe 
-                width="100%" 
-                height="315" 
-                src="https://www.youtube.com/embed/PDUJ_V68rZs" 
-                title="Orquesta Invisible - Galpón B" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen>
-            </iframe>
+    <section id="relatos" class="reveal">
+        <h2 class="section-title">RELATOS INVISIBLES</h2>
+        
+        <div class="swiper relatosSwiper">
+            <div class="swiper-wrapper">
+                
+                <article class="swiper-slide">
+                    <div class="relato-card">
+                        <h3>Un arte de tapa de peso</h3>
+                        <p>Con la Orquesta Invisible veníamos pensando cómo podría llamarse el álbum. Nuestro bandoneonista Mariano Burnengo...</p>
+                        <a href="relatos/arte-de-tapa-de-peso.html" class="read-more">LEER RELATO COMPLETO</a>
+                    </div>
+                </article>
+
+                <article class="swiper-slide">
+                    <div class="relato-card">
+                        <h3>La composición colectiva y la coautoría</h3>
+                        <p>Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de generar nuevas composiciones en colaboración...</p>
+                        <a href="relatos/la-composicion-colectiva.html" class="read-more">LEER RELATO COMPLETO</a>
+                    </div>
+                </article>
+
+                <article class="swiper-slide">
+                    <div class="relato-card">
+                        <h3>Audiciones de música, charlas y empanadas</h3>
+                        <p>Todo comenzó el 18 de febrero de 2025, cuando una convocatoria llegó a mis redes sociales: Julio invitaba a formar parte de la Orquesta Invisible...</p>
+                        <a href="relatos/audiciones.html" class="read-more">LEER RELATO COMPLETO</a>
+                    </div>
+                </article>
+
+                <article class="swiper-slide">
+                    <div class="relato-card">
+                        <h3>Sobre La Tierra Invisible</h3>
+                        <p>La Tierra Invisible es un pequeño boliche ubicado en una ochava del barrio de Parque Chacabuco, en la ciudad de Buenos Aires. Lo conocí allá por el 2022...</p>
+                        <a href="relatos/lti.html" class="read-more">LEER RELATO COMPLETO</a>
+                    </div>
+                </article>
+
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
@@ -338,8 +383,6 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-
-    
 
     <section id="musica" class="music-section reveal">
         <div class="music-grid">

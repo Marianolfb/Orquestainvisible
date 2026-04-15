@@ -190,6 +190,22 @@ slider.addEventListener('mousemove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
 });
 
+const swiperRelatos = new Swiper('.relatosSwiper', {
+    slidesPerView: 'auto', // Esto permite que se vea un pedazo del siguiente
+    spaceBetween: 20,      // Espacio entre tarjetas
+    centeredSlides: false, // Empezar desde la izquierda
+    loop: true,
+    grabCursor: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    }
+});
+
 const i18n = {
     es: {
         nav_video: "EN VIVO",
