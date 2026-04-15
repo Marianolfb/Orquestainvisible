@@ -210,7 +210,7 @@ const i18n = {
     es: {
         nav_video: "EN VIVO",
         nav_fechas: "PRÓXIMAS FECHAS",
-        nav_bio: "BIO",
+        nav_bio: "NOSOTROS",
         nav_prensa: "PRENSA",
         nav_fotos: "FOTOS",
         nav_contacto: "CONTACTO",
@@ -252,7 +252,7 @@ const i18n = {
     en: {
         nav_video: "LIVE",
         nav_fechas: "UPCOMING DATES",
-        nav_bio: "BIO",
+        nav_bio: "ABOUT US",
         nav_prensa: "PRESS",
         nav_fotos: "PHOTOS",
         nav_contacto: "CONTACT",
