@@ -138,9 +138,14 @@ menu.addEventListener('click', function() {
 
 // Cerrar el menú al tocar cualquier link (importante para navegar en la misma página)
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        menu.classList.remove('is-active');
-        menuLinks.classList.remove('active');
+    link.addEventListener('click', (e) => {
+        // Verificamos si el link que tocamos NO pertenece al selector de idiomas
+        // Usamos .closest para ver si el link está dentro de 'lang-switcher'
+        if (!link.closest('.lang-switcher')) {
+            menu.classList.remove('is-active');
+            menuLinks.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Si estabas bloqueando el scroll
+        }
     });
 });
 
@@ -211,6 +216,7 @@ const i18n = {
         nav_video: "EN VIVO",
         nav_fechas: "PRÓXIMAS FECHAS",
         nav_bio: "NOSOTROS",
+        nav_relatos: "RELATOS",
         nav_prensa: "PRENSA",
         nav_fotos: "FOTOS",
         nav_contacto: "CONTACTO",
@@ -253,6 +259,7 @@ const i18n = {
         nav_video: "LIVE",
         nav_fechas: "UPCOMING DATES",
         nav_bio: "ABOUT US",
+        nav_relatos: "STORIES",
         nav_prensa: "PRESS",
         nav_fotos: "PHOTOS",
         nav_contacto: "CONTACT",

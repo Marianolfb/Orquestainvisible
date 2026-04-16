@@ -795,6 +795,10 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        padding-top: 40px;           /* Espacio para que el primer item no tape el logo */
+        overflow-y: auto;            /* Habilita el scroll interno si el contenido es largo */
+        -webkit-overflow-scrolling: touch; /* Suavidad en iPhones */
         
         /* ESTADO INICIAL: Escondido */
         opacity: 0;
@@ -812,7 +816,7 @@ body {
     }
     /* Asegúrate de que los enlaces se vean bien sobre el blur */
     .nav-links li {
-        margin: 15px 0;
+        margin: 8px 0;
     }
     .nav-links a {
         font-size: 1.5rem;
@@ -820,6 +824,18 @@ body {
         color: #fff;
         text-decoration: none;
     }
+
+    .nav-links ul li {
+        margin: 2vh 0; /* Espaciado vertical entre botones */
+    }
+
+    .nav-links ul li a {
+        font-size: 1.2rem; /* Achica un poco si son muchos ítems */
+        letter-spacing: 3px;
+        display: block;
+        padding: 10px;
+    }
+
     .nav-ig {
         font-size: 2rem; /* Más grande en el menú hamburguesa */
     }
@@ -851,9 +867,52 @@ body {
         margin-top: -5px !important; /* Margen negativo para subirlo si es necesario */
     }
 
+    /* Forzamos que el ítem de idioma no sea una lista vertical */
+    .lang-switcher {
+        display: flex !important;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px; /* Separación del menú de arriba */
+    }
+
+    /* El contenido del dropdown ahora es horizontal */
+    .lang-content {
+        position: static; /* Quitamos el posicionamiento absoluto para que no flote */
+        display: flex !important; /* Forzamos flex */
+        flex-direction: row !important; /* Horizontal */
+        gap: 20px; /* Espacio entre las letras ES y EN */
+        background: transparent; /* Quitamos el fondo de dropdown si tenía */
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    /* Estilo para los links ES y EN en horizontal */
     .lang-content a {
-        padding: 10px 0 !important;
-        font-size: 0.75rem !important;
+        opacity: 0.5; /* Se ve más apagado */
+        transition: 0.3s;
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        text-decoration: none;
+        padding: 5px 10px;
+        border: 1px solid rgba(230, 57, 70, 0.3); /* Un borde sutil */
+    }
+
+    /* Si el idioma del sitio es 'es', resaltamos el link que dice ES */
+    html[lang="es"] .lang-content a[onclick*="'es'"] {
+        opacity: 1;
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color);
+    }
+
+    /* Si el idioma del sitio es 'en', resaltamos el link que dice EN */
+    html[lang="en"] .lang-content a[onclick*="'en'"] {
+        opacity: 1;
+        color: var(--accent-color);
+        border-bottom: 1px solid var(--accent-color);
+    }
+
+    #current-lang {
+        display: none; 
     }
     
     .hero-slide {
@@ -1449,5 +1508,56 @@ blockquote {
 @media (max-width: 767px) {
     .relatosSwiper .swiper-slide {
         width: 100% !important;
+    }
+
+/* Ajuste para que el relato ocupe toda la pantalla en móviles */
+
+    .relato-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 40px 20px; /* Un margen mínimo para que el texto no toque el borde físico */
+        margin: 0;
+    }
+
+    .relato-title {
+        font-size: 2rem; /* Ajustamos el título para que no sea gigante en el celu */
+        line-height: 1.1;
+    }
+
+    .relato-content p {
+        font-size: 1.1rem; /* Aumentamos un pelín el cuerpo de letra para lectura cómoda */
+        line-height: 1.6;
+    }
+    
+    .relato-nav {
+        top: 15px;
+        left: 15px;
+    }
+
+    .relato-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho */
+        padding: 20px;
+        /* Fondo oscuro con degradado para que el texto "desaparezca" al subir */
+        background: linear-gradient(to bottom, 
+            rgba(13, 13, 13, 1) 0%, 
+            rgba(13, 13, 13, 0.9) 70%, 
+            transparent 100%);
+        z-index: 1000;
+    }
+
+    .relato-container {
+        margin-top: 60px; 
+        padding: 20px;
+    }
+
+    .back-btn {
+        background: rgba(255, 255, 255, 0.1); /* Le damos un poquito de cuerpo al botón */
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-size: 0.75rem; /* Un poco más chico para que no moleste */
+        display: inline-block;
     }
 }
