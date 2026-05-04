@@ -1559,3 +1559,29 @@ blockquote {
         display: inline-block;
     }
 }
+
+/* Contenedor principal de la navegación en páginas secundarias */
+.relato-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex; /* Cambiado de 'right' a 'flex' */
+    justify-content: space-between; /* Empuja el botón a la izq y el idioma a la der */
+    align-items: center;
+    padding: 20px 5%; /* Mismo padding que tu navbar del index */
+    background: rgba(13, 13, 13, 0.9); /* Fondo para que sea legible */
+    z-index: 1100;
+}
+
+.separator {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.language-selector {
+    display: flex !important;       /* Activa el modo caja flexible */
+    flex-direction: row !important;  /* Fuerza la alineación en fila (horizontal) */
+    align-items: center;            /* Centra verticalmente los botones y el separador */
+    gap: 10px;                      /* Define el espacio exacto entre ES, | y EN */
+}

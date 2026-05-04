@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orquesta Invisible | La composición colectiva</title>
+    <title data-key="encabezado_relato3">Orquesta Invisible | La composición colectiva</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body class="relato-page-body">
     <nav class="relato-nav">
-        <a href="../index.html" class="back-btn">
+        <a href="../index.html" class="back-btn" data-key="btn_inicio_relatos">
             <span class="arrow">←</span> VOLVER AL INICIO
         </a>
+        <div class="language-selector">
+            <button onclick="changeLanguage('es')" class="lang-btn">ES</button>
+            <span class="separator">|</span>
+            <button onclick="changeLanguage('en')" class="lang-btn">EN</button>
+        </div>
     </nav>
 
     <main class="relato-container">
         <header class="relato-header">
-            <h1 class="relato-title">La composición colectiva y la coautoría</h1>
-            <div class="relato-meta">Buenos Aires, 2026 — Por Rodrigo Almonacid</div>
+            <h1 class="relato-title" data-key="titulo_relato3">La composición colectiva y la coautoría</h1>
+            <div class="relato-meta" data-key="subt_relato3">Buenos Aires, 2026 — Por Rodrigo Almonacid</div>
         </header>
 
         <section class="relato-content">
-            <p> 
+            <p data-key="p1_relato3"> 
                 Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de 
                 generar nuevas composiciones en colaboración. Así que en uno de los ensayos
                  propuso armar un tango, donde fue tirando pautas y el que podía aportaba 
@@ -31,9 +36,9 @@
                  para cada instrumento, hasta que un día lo estrenamos en La Tierra Invisible y 
                  todo fue alegría.
             </p>
-            <blockquote>Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de 
+            <blockquote data-key="b1_relato3">Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de 
                 generar nuevas composiciones en colaboración.</blockquote>
-            <p> 
+            <p data-key="p2_relato3"> 
                  A la semana siguiente del estreno de “Centenera” Julio envió un mensaje al grupo 
                  diciendo que había que empezar con una nueva composición, y preguntó qué se 
                  nos ocurría para continuar, ahí fue que Mariano (bandoneonista) dijo que 
@@ -51,7 +56,7 @@
                   y efectos propios de sus instrumentos que fueron quedando marcados como 
                   parte del arreglo. 
             </p>
-            <p>    
+            <p data-key="p3_relato3">    
                 En la siguiente presentación en La Tierra Invisible estrenamos el 
                 candombe con el nombre de “Subterráneo” (es el nombre que le había 
                 puesto cuando lo escribí 10 años atrás). Tuvo muy buena aceptación del 
@@ -75,15 +80,15 @@
                 “Clave blanca”, que es una manera de decir que hacemos este género a 
                 nuestro entender. 
             </p>
-            <blockquote>A esta clave de candombe la llaman clave blanca, ¿saben por qué la 
+            <blockquote data-key="b2_relato3">A esta clave de candombe la llaman clave blanca, ¿saben por qué la 
                 llaman así?</blockquote>
-            <p>    
+            <p data-key="p4_relato3">    
                 En los siguientes ensayos se fue engrosando el repertorio con temas de 
                 Coviello hasta que pasada la mitad del año el dire propone grabar un disco 
                 con todo lo que teníamos a fin de año. Todos estuvimos de acuerdo y se empezó 
                 a buscar un lugar para grabarlo donde puedan entrar 10 personas tocando a la vez.
             </p>
-            <p>   
+            <p data-key="p5_relato3">   
                 En alguna charla se me ocurre decirle a Julio que tengo unos temas que escribí 
                 hace mucho tiempo pero que no le encuentro la manera de seguirlo, y que viendo 
                 cómo quedó el candombe trabajado por él me gustaba la idea de pasarle los tangos 
@@ -97,10 +102,10 @@
                 formando auditivamente y después empezó a buscar una secuencia armónica cercana 
                 al tango y tarareando una melodía que se le iba ocurriendo en el momento.           
             </p>
-            <blockquote>...fuimos al piano y me habló de que eran armonías más bien 
+            <blockquote data-key="b3_relato3">...fuimos al piano y me habló de que eran armonías más bien 
                 rockeras, lo cual no estaba mal porque es la música con la que nosotros nos fuimos 
                 formando auditivamente...</blockquote>     
-            <p>
+            <p data-key="p6_relato3">
                 Ahí se empezó a generar “Ceniza”, en 2 semanas el tango nuevo ya estaba armado 
                 casi en su totalidad. Todo esto ocurrió a finales de Octubre, para noviembre el 
                 estudio de grabación ya estaba elegido y la fecha de grabación confirmada, 
@@ -112,16 +117,18 @@
     </main>
     <footer class="relato-footer">
     <div class="divider"></div>
-    <p>Escuchá la música que inspiró este relato:</p>
+    <p data-key="footsp_relato">Escuchá la música que inspiró este relato:</p>
     
     <a href="https://open.spotify.com/album/3jG1iPpJq3MWBCjYPn7dcm?si=VKXNIeroTuajRIfaO-R42A" 
        target="_blank" 
        class="spotify-card">
         <i class="fa-brands fa-spotify"></i>
-        <span>ESCUCHAR "HUELLA" EN SPOTIFY</span>
+        <span data-key="sp_relato">ESCUCHAR "HUELLA" EN SPOTIFY</span>
     </a>
 </footer>
     
+<script src="../traducciones.js"></script> 
+
 </body>
            
 </html>
