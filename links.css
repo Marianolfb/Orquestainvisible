@@ -151,6 +151,38 @@ body::before {
     animation: pulse-red 2s infinite;
 }
 
+.footer-lang {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding-bottom: 60px;
+}
+
+.lang-active {
+    color: var(--accent-color); /* Tu rojo tango */
+    font-weight: bold;
+    cursor: default;
+}
+
+.lang-inactive {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lang-inactive:hover {
+    color: var(--text-main);
+}
+
+.lang-divider {
+    color: #333; /* Un gris muy oscuro para que no compita */
+}
+
 @keyframes pulse-red {
     0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
     70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
