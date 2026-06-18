@@ -1585,3 +1585,18 @@ blockquote {
     align-items: center;            /* Centra verticalmente los botones y el separador */
     gap: 10px;                      /* Define el espacio exacto entre ES, | y EN */
 }
+
+.contenedor-agenda {
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.calendario-wrapper {
+    margin-top: 40px;
+    border: 1px solid var(--accent-color); /* Podés usar el color dorado/bordeaux de tu web para enmarcarlo */
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff; /* O el fondo que elijas */
+}
