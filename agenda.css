@@ -1,0 +1,134 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA LA PÁGINA DE AGENDA (agenda.html)
+   ========================================================================== */
+
+.agenda-page-body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal de la sección */
+.contenedor-agenda {
+    padding: 140px 5% 80px 5%; /* Margen superior amplio por la barra fija */
+    max-width: 900px;
+    margin: 0 auto;
+    flex: 1; /* Empuja el footer al fondo si hay pocas fechas en el mes */
+}
+
+.contenedor-agenda .section-title {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Subtítulo con estética de terminal/código */
+.agenda-subtitle {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    text-align: left;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
+
+/* Envoltorio contenedor del Google Calendar */
+.calendario-wrapper {
+    margin-top: 20px;
+    border: 2px solid var(--accent-color); /* Enmarcado con tu Rojo Tango */
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #111111; /* Fondo oscuro base mientras carga el iframe */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    position: relative;
+    height: 580px;      /* Fijamos la altura visible exterior que QUEREMOS que se vea */
+    overflow: hidden;   /* Esconde absolutamente todo lo que pase el límite de los 580px */
+    position: relative;
+}
+
+/* Ajuste del iframe para integrarse al entorno oscuro de la web */
+.calendario-wrapper iframe {
+    display: block;
+    background: #ffffff;
+    border-radius: 2px;
+    
+    /* El iframe es más alto que su contenedor para empujar la marca de Google al vacío */
+    height: 640px !important; 
+    margin-bottom: -60px; /* Margen negativo para asegurar el calce */
+    
+    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(110%);
+    
+    /* 2. Modo de fusión: mezcla el iframe invertido con el fondo oscuro del contenedor */
+    mix-blend-mode: screen;
+
+    transition: filter 0.3s ease;
+}
+
+.calendario-wrapper iframe:hover {
+    filter: invert(90%) hue-rotate(180deg) brightness(105%) contrast(115%);
+}
+
+/* --- ESTILOS PARA EL SELECTOR DE IDIOMAS EN LA NAV --- */
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Los enlaces de los idiomas (ES / EN) */
+.language-selector a {
+    color: var(--text-dim); /* Un tono grisáceo de base para que no compita con el botón de volver */
+    text-decoration: none;
+    font-weight: 400;
+    padding: 4px 6px;
+    border-radius: 2px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Efecto al pasar el mouse por encima */
+.language-selector a:hover {
+    color: var(--text-main); /* Cambia al blanco puro */
+    background-color: rgba(255, 255, 255, 0.05); /* Un sutil recuadro casi imperceptible */
+}
+
+/* La barra separadora (|) */
+.language-selector .separator {
+    color: rgba(255, 255, 255, 0.2); /* Muy tenue, para que solo sea una guía visual */
+    font-size: 0.8rem;
+    user-select: none; /* Evita que el usuario la seleccione sin querer */
+}
+
+/* Opcional: Clase para resaltar el idioma que está activo actualmente */
+.language-selector a.active {
+    color: var(--accent-color); /* Tu Rojo Tango para el idioma seleccionado */
+    font-weight: 700;
+}
+
+/* --- RESPONSIVE DESIGN --- */ 
+    
+@media (max-width: 768px) {
+    .contenedor-agenda {
+        padding-top: 100px;
+    }
+    
+    /* Ajustamos el recorte para las pantallas de celulares */
+    .calendario-wrapper {
+        height: 480px; /* Altura visible en móvil */
+        padding: 5px;
+    }
+    
+    .agenda-subtitle {
+        margin-bottom: 25px;
+    }
+
+    .calendario-wrapper iframe {
+        height: 540px !important; /* Altura interna en móvil */
+    }
+}

@@ -432,6 +432,47 @@ body {
     color: #FF0000;
 }
 
+/* ==========================================================================
+   AJUSTE DE TAMAÑO PARA EL ÍCONO DE LA AGENDA (INDEX)
+   ========================================================================== */
+
+/* 1. Si pusiste el link en la sección de Música (junto a Spotify y YouTube gigantes) */
+.music-grid .agenda-icon-link i {
+    font-size: 4.8rem !important; /* Le subimos un poco el tamaño para compensar los márgenes del vector */
+    vertical-align: middle;
+}
+
+/* 2. Si pusiste el link en el Footer (junto a los de redes de 2.5rem) */
+.footer-social .agenda-icon-link i,
+.social-links .agenda-icon-link i {
+    font-size: 3.2rem !important; /* Lo agrandamos para que visualmente empareje a los de marcas */
+    vertical-align: middle;
+}
+
+/* Aseguramos la transición suave y el color de interacción */
+.agenda-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.agenda-icon-link i {
+    color: var(--text-main);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Comportamiento al pasar el mouse (se enciende en Rojo Tango) */
+.agenda-icon-link:hover i {
+    color: var(--accent-color) !important;
+    filter: drop-shadow(0px 0px 10px var(--accent-color));
+}
+
+.agenda-icon-link:hover {
+    transform: scale(1.1);
+}
+
 /* Estilos para el Footer e Instagram */
 .footer-social {
     padding: 80px 5% 40px;
@@ -1599,4 +1640,49 @@ blockquote {
     border-radius: 8px;
     overflow: hidden;
     background-color: #fff; /* O el fondo que elijas */
+}
+
+/* --- ESTILOS PARA EL CARRUSEL DE VIDEOS --- */
+.videoSwiper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 50px; /* Deja espacio para los puntitos de paginación */
+}
+
+/* Forzamos que cada slide de video ocupe el 100% de su contenedor */
+.videoSwiper .swiper-slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Cambiar el color de los controles de Swiper para que hagan juego con tu web */
+.videoSwiper .swiper-button-next,
+.videoSwiper .swiper-button-prev {
+    color: var(--accent-color);
+}
+
+.videoSwiper .swiper-pagination-bullet-active {
+    background: var(--accent-color);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    width: 100%; /* <--- AGREGA ESTA LÍNEA */
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Forzamos que cada slide de video ocupe el 100% de su contenedor */
+.videoSwiper .swiper-slide {
+    width: 100% !important;  /* <--- Agregamos !important para vencer la regla global */
+    padding: 0 !important;   /* <--- Quitamos el padding de 20px de las fotos */
+    display: flex;
+    justify-content: center;
 }

@@ -114,7 +114,8 @@ const i18n = {
         btn_ver_mas: "VER TODAS LAS FECHAS", 
         btn_ver_menos: "VER MENOS",
         btn_prensa_mas: "VER MÁS NOTAS",
-        btn_prensa_menos: "VER MENOS"
+        btn_prensa_menos: "VER MENOS",
+        agenda_sub: "Seguí en tiempo real nuestros conciertos, ensayos abiertos y milongas."
     },
     en: {
         nav_video: "LIVE",
@@ -230,7 +231,8 @@ const i18n = {
         btn_ver_mas: "VIEW ALL DATES", 
         btn_ver_menos: "SHOW LESS",
         btn_prensa_mas: "MORE PRESS ARTICLES",
-        btn_prensa_menos: "SHOW LESS"
+        btn_prensa_menos: "SHOW LESS",
+        agenda_sub: "Follow our concerts, open rehearsals, and milongas in real time."
     }
 };
 
