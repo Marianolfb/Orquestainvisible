@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Orquesta Invisible, dirigida por Julio Coviello. Tango contemporáneo de Buenos Aires para el mundo. Contrataciones para festivales internacionales y eventos.">
     <title>Orquesta Invisible | Orquesta de Tango Contemporáneo en Buenos Aires</title>
+    <link rel="canonical" href="https://www.orquestainvisible.musica.ar/">
+    <link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/">
+    <link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/">
+    <link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/">
+    <link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/">
+    <link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/">
+    <link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -31,13 +39,13 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#conciertos" data-key="nav_fechas">PRÓXIMAS FECHAS</a></li>
-            <li><a href="#video" data-key="nav_video">EN VIVO</a></li>
-            <li><a href="#bio" data-key="nav_bio">NOSOTROS</a></li>
-            <li><a href="#relatos" data-key="nav_relatos">RELATOS</a></li>
-            <li><a href="#prensa" data-key="nav_prensa">PRENSA</a></li>
-            <li><a href="#galeria" data-key="nav_fotos">FOTOS</a></li>
-            <li><a href="#contacto" data-key="nav_contacto">CONTACTO</a></li>
+            <li><a href="#conciertos">PRÓXIMAS FECHAS</a></li>
+            <li><a href="#video">EN VIVO</a></li>
+            <li><a href="#bio">NOSOTROS</a></li>
+            <li><a href="#relatos">RELATOS</a></li>
+            <li><a href="#prensa">PRENSA</a></li>
+            <li><a href="#galeria">FOTOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
             <li class="nav-social-group">
                 <a href="https://www.instagram.com/orquestatipicainvisible/" target="_blank" class="nav-icon ig"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.youtube.com/@OrquestaInvisible" target="_blank" class="nav-icon yt"><i class="fa-brands fa-youtube"></i></a>
@@ -47,8 +55,12 @@
                 <div class="lang-dropdown">
                     <button class="lang-btn" id="current-lang">ES</button>
                     <div class="lang-content">
-                        <a href="javascript:void(0)" onclick="changeLanguage('es')">ES</a>
-                        <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a>
+                        <a href="index.html" class="active-lang" hreflang="es">ES</a>
+                        <a href="en/index.html" hreflang="en">EN</a>
+                        <a href="it/index.html" hreflang="it">IT</a>
+                        <a href="fr/index.html" hreflang="fr">FR</a>
+                        <a href="de/index.html" hreflang="de">DE</a>
+                        <a href="ja/index.html" hreflang="ja" lang="ja">日本語</a>
                     </div>
                 </div>
             </li>
@@ -77,59 +89,70 @@
 
         <div class="hero-overlay">
             <h1 class="title-main">ORQUESTA INVISIBLE<br></h1>
-            <p class="subtitle" data-key="hero_subtitle">Orquesta Típica</p>
+            <p class="subtitle">Orquesta Típica</p>
         </div>
     </section>
 
     <section id="conciertos" class="shows">
-        <h2 class="section-title reveal" data-key="tit_fechas">PRÓXIMAS FECHAS</h2>
+        <h2 class="section-title reveal">PRÓXIMAS FECHAS</h2>
         
         <div class="show-row reveal">
             <div class="show-date">12.09.26 </div>
             <div class="show-info">
-                <h3 data-key="show_place_1">La tierra invisible</h3>
-                <p data-key="show_detail_1">21:00 HS - Centenera 1099, CABA</p>
+                <h3>La tierra invisible</h3>
+                <p>21:00 HS - Centenera 1099, CABA</p>
             </div>
             <div class="show-action">
-                <a href="https://www.passline.com/eventos/orquesta-invisible-478041" target="_blank" class="btn-ticket" data-key="btn_reservar">RESERVAR</a>
+                <a href="https://www.passline.com/eventos/orquesta-invisible-478041" target="_blank" class="btn-ticket">RESERVAR</a>
             </div>
         </div>
         
+        <div class="show-row reveal">
+            <div class="show-date">25.09.26 </div>
+            <div class="show-info">
+                <h3>Milonga Cañón</h3>
+                <p>23:00 HS - Con Sofía Verna · CABA</p>
+            </div>
+            <div class="show-action">
+                <a href="agenda.html" class="btn-ticket">+INFO</a>
+            </div>
+        </div>
+
         <div id="extra-shows" style="display: none;">           
             <div class="show-row reveal">
                 <div class="show-date">10.10.26 </div>
                 <div class="show-info">
-                    <h3 data-key="show_place_1">La tierra invisible</h3>
-                    <p data-key="show_detail_1">21:00 HS - Centenera 1099, CABA</p>
+                    <h3>La tierra invisible</h3>
+                    <p>21:00 HS - Centenera 1099, CABA</p>
                 </div>
                 <div class="show-action">
-                    <a href="https://www.passline.com/eventos/orquesta-invisible-478042" target="_blank" class="btn-ticket" data-key="btn_reservar">RESERVAR</a>
+                    <a href="https://www.passline.com/eventos/orquesta-invisible-478042" target="_blank" class="btn-ticket">RESERVAR</a>
                 </div>
             </div>
             <div class="show-row reveal">
                 <div class="show-date">14.11.26 </div>
                 <div class="show-info">
-                    <h3 data-key="show_place_1">La tierra invisible</h3>
-                    <p data-key="show_detail_1">21:00 HS - Centenera 1099, CABA</p>
+                    <h3>La tierra invisible</h3>
+                    <p>21:00 HS - Centenera 1099, CABA</p>
                 </div>
                 <div class="show-action">
-                    <a href="https://www.passline.com/eventos/orquesta-invisible-478043" target="_blank" class="btn-ticket" data-key="btn_reservar">RESERVAR</a>
+                    <a href="https://www.passline.com/eventos/orquesta-invisible-478043" target="_blank" class="btn-ticket">RESERVAR</a>
                 </div>
             </div>
             <div class="show-row reveal">
                 <div class="show-date">12.12.26 </div>
                 <div class="show-info">
-                    <h3 data-key="show_place_1">La tierra invisible</h3>
-                    <p data-key="show_detail_1">21:00 HS - Centenera 1099, CABA</p>
+                    <h3>La tierra invisible</h3>
+                    <p>21:00 HS - Centenera 1099, CABA</p>
                 </div>
                 <div class="show-action">
-                    <a href="https://www.passline.com/eventos/orquesta-invisible-478044" target="_blank" class="btn-ticket" data-key="btn_reservar">RESERVAR</a>
+                    <a href="https://www.passline.com/eventos/orquesta-invisible-478044" target="_blank" class="btn-ticket">RESERVAR</a>
                 </div>
             </div>
         </div>
 
         <div class="show-action reveal" style="text-align: center; margin-top: 30px;">
-            <button id="btn-toggle-shows" class="btn-ticket" style="cursor: pointer; background: transparent;" data-key="btn_ver_mas">
+            <button id="btn-toggle-shows" class="btn-ticket" style="cursor: pointer; background: transparent;" data-more="VER TODAS LAS FECHAS" data-less="VER MENOS">
                 VER TODAS LAS FECHAS
             </button>
         </div>
@@ -137,7 +160,7 @@
     </section>
 
     <section id="video" class="video-section reveal">
-    <h2 class="section-title" data-key="nav_video">EN VIVO</h2>
+    <h2 class="section-title">EN VIVO</h2>
     
     <div class="swiper videoSwiper">
         <div class="swiper-wrapper">
@@ -202,23 +225,23 @@
                 <img src="foto bio.webp" alt="Orquesta Invisible en acción">
             </div>
             <div class="bio-text">
-                <h2 class="section-title" data-key="tit_nosotros">Sobre nosotros</h2>
-                    <p data-key="bio_p1">
+                <h2 class="section-title">Sobre nosotros</h2>
+                    <p>
                         La Orquesta Invisible es una orquesta de tango contemporáneo de Buenos Aires 
                         dirigida por el bandoneonista Julio Coviello, un artista con más de 25 años de 
                         trayectoria en la escena del tango argentino.
                     </p>
-                    <p data-key="bio_p2">    
+                    <p>    
                         La agrupación formada por músicos y músicas de diferentes generaciones y vertientes,
                         reinventa el formato tradicional de la orquesta típica a través de composiciones originales, la creación colectiva y un potente sonido acústico que tiene sus raíces en la Época de Oro del tango, pero impulsado por una energía moderna y urbana.",
                     </p>
-                    <p data-key="bio_p3">
+                    <p>
                         En su año de debut, el proyecto fue seleccionado para la programación oficial 
                         del Festival de Tango de Buenos Aires gracias a la trayectoria de Coviello en 
                         agrupaciones fundamentales del género como el Cuarteto Cedrón y la 
                         Orquesta Típica Fernández Fierro.
                     </p>
-                    <p data-key="bio_p4">
+                    <p>
                         Con una fuerte presencia escénica, un repertorio propio y una visión del tango 
                         como patrimonio cultural vivo, la Orquesta Invisible ofrece un sonido argentino 
                         auténtico y vanguardista para festivales de world music y escenarios internacionales.       
@@ -232,40 +255,40 @@
     </section>
 
     <section id="relatos" class="relatos-section reveal">
-        <h2 class="section-title" data-key="tit_relatos">RELATOS INVISIBLES</h2>
+        <h2 class="section-title">RELATOS INVISIBLES</h2>
         
         <div class="swiper relatosSwiper">
             <div class="swiper-wrapper">
                 
                 <article class="swiper-slide">
                     <div class="relato-card">
-                        <h3 data-key="tit_relato1">Un arte de tapa de peso</h3>
-                        <p data-key="epi_relato1">Con la Orquesta Invisible veníamos pensando cómo podría llamarse el álbum. Nuestro bandoneonista Mariano Burnengo...</p>
-                        <a data-key="leer_relato" href="relatos/arte-de-tapa-de-peso.html" class="read-more">LEER RELATO COMPLETO</a>
+                        <h3>Un arte de tapa de peso</h3>
+                        <p>Con la Orquesta Invisible veníamos pensando cómo podría llamarse el álbum. Nuestro bandoneonista Mariano Burnengo...</p>
+                        <a href="relatos/arte-de-tapa-de-peso.html" class="read-more">LEER RELATO COMPLETO</a>
                     </div>
                 </article>
 
                 <article class="swiper-slide">
                     <div class="relato-card">
-                        <h3 data-key="tit_relato2">La composición colectiva y la coautoría</h3>
-                        <p data-key="epi_relato2">Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de generar nuevas composiciones en colaboración...</p>
-                        <a data-key="leer_relato" href="relatos/la-composicion-colectiva.html" class="read-more">LEER RELATO COMPLETO</a>
+                        <h3>La composición colectiva y la coautoría</h3>
+                        <p>Dentro de la propuesta de Julio para la Orquesta invisible estaba la idea de generar nuevas composiciones en colaboración...</p>
+                        <a href="relatos/la-composicion-colectiva.html" class="read-more">LEER RELATO COMPLETO</a>
                     </div>
                 </article>
 
                 <article class="swiper-slide">
                     <div class="relato-card">
-                        <h3 data-key="tit_relato3">Audiciones de música, charlas y empanadas</h3>
-                        <p data-key="epi_relato3">Todo comenzó el 18 de febrero de 2025, cuando una convocatoria llegó a mis redes sociales: Julio invitaba a formar parte de la Orquesta Invisible...</p>
-                        <a data-key="leer_relato" href="relatos/audiciones.html" class="read-more">LEER RELATO COMPLETO</a>
+                        <h3>Audiciones de música, charlas y empanadas</h3>
+                        <p>Todo comenzó el 18 de febrero de 2025, cuando una convocatoria llegó a mis redes sociales: Julio invitaba a formar parte de la Orquesta Invisible...</p>
+                        <a href="relatos/audiciones.html" class="read-more">LEER RELATO COMPLETO</a>
                     </div>
                 </article>
 
                 <article class="swiper-slide">
                     <div class="relato-card">
-                        <h3 data-key="tit_relato4">Sobre La Tierra Invisible</h3>
-                        <p data-key="epi_relato4">La Tierra Invisible es un pequeño boliche ubicado en una ochava del barrio de Parque Chacabuco, en la ciudad de Buenos Aires. Lo conocí allá por el 2022...</p>
-                        <a data-key="leer_relato" href="relatos/lti.html" class="read-more">LEER RELATO COMPLETO</a>
+                        <h3>Sobre La Tierra Invisible</h3>
+                        <p>La Tierra Invisible es un pequeño boliche ubicado en una ochava del barrio de Parque Chacabuco, en la ciudad de Buenos Aires. Lo conocí allá por el 2022...</p>
+                        <a href="relatos/lti.html" class="read-more">LEER RELATO COMPLETO</a>
                     </div>
                 </article>
 
@@ -278,10 +301,10 @@
     </section>
 
     <section id="prensa" class="press-section reveal">
-        <h2 class="section-title" data-key="tit_prensa">PRENSA</h2>
+        <h2 class="section-title">PRENSA</h2>
         
         <div class="press-featured">
-            <blockquote data-key="quote_coviello">
+            <blockquote>
                 "Y los mayores esfuerzos de la humanidad no fueron esfuerzos por cuestiones económicas..."
             </blockquote>
             <cite>— Julio Coviello</cite>
@@ -292,55 +315,136 @@
             
             <div class="press-gallery-container">
                 <div class="press-grid-horizontal">
+
+                    <!-- ================================================================
+                         NOTAS DE PRENSA — orden: las dos primeras son la nota más
+                         reciente de Página 12 y de Tango 21; el resto, por fecha.
+                         Para sumar una nota: copiá un bloque .press-card, completá
+                         fecha / medio / cita / imagen / enlace, poné la foto del portal
+                         en /Prensa/ y replicá la tarjeta (traducida) en los 6 idiomas
+                         (raíz = ES, y /en/ /it/ /fr/ /de/ /ja/).
+                    ================================================================ -->
+
                     <div class="press-card">
-                        <span class="press-date" data-key="date_mayo">MAYO 2025</span>
+                        <span class="press-date">MAYO 2026</span>
                         <h3>Página 12</h3>
-                        <p data-key="p_p12">"En este proyecto jugamos por la camiseta."</p>
+                        <p>"Al tango lo mantenemos vivo una minoría intensa, precisamente por estar convencidos de su valor y por amor."</p>
                         <div class="press-image">
-                            <img src="Prensa/Prensapagina.jpg" alt="Nota de prensa">
+                            <img src="Prensa/PrensaPagina_2026.jpg" alt="Nota de Página 12">
                         </div>
-                        <a href="https://www.pagina12.com.ar/828485-julio-coviello-en-este-proyecto-jugamos-por-la-camiseta/" target="_blank" class="read-more" data-key="leer_nota">LEER NOTA →</a>
+                        <a href="https://www.pagina12.com.ar/2026/05/30/la-orquesta-invisible-estrena-en-vivo-su-primer-disco/" target="_blank" class="read-more">LEER NOTA →</a>
                     </div>
 
                     <div class="press-card">
-                        <span class="press-date" data-key="date_sept">SEPTIEMBRE 2025</span>
-                        <h3>2X4</h3>
-                        <p data-key="p_2x4">Entrevista de radio con Paula Sterczek</p>
+                        <span class="press-date">MAYO 2026</span>
+                        <h3>Tango 21 (Alemania)</h3>
+                        <p>Reseña del debut discográfico «Huella» en el portal alemán de tango.</p>
                         <div class="press-image">
-                            <img src="Prensa/Prensa2x4.jpg" alt="Nota de prensa">
+                            <img src="Prensa/PrensaTango21_2026.jpg" alt="Nota de Tango 21">
                         </div>
-                        <a href="https://www.instagram.com/reel/DO6uO5uj5HC/" target="_blank" class="read-more" data-key="escuchar">ESCUCHAR →</a>
+                        <a href="https://tango21.info/orquesta-invisible-stellt-debutalbum-huella-vor/" target="_blank" class="read-more">LEER NOTA →</a>
                     </div>
 
                     <div class="press-card">
-                        <span class="press-date" data-key="date_dic">DICIEMBRE 2025</span>
+                        <span class="press-date">JUNIO 2026</span>
+                        <h3>Radio Trenque Lauquen</h3>
+                        <p>Entrevista radial sobre la presentación de «Huella».</p>
+                        <div class="press-image">
+                            <img src="Prensa/PrensaTrenqueLauquen.jpg" alt="Entrevista en Radio Trenque Lauquen">
+                        </div>
+                        <a href="https://youtu.be/TToUKuV50Qs" target="_blank" class="read-more">VER ENTREVISTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">ABRIL 2026</span>
+                        <h3>El Patagónico</h3>
+                        <p>"Una huella es muestra de movimiento y se construye entre mucha gente que transita por el mismo sendero."</p>
+                        <div class="press-image">
+                            <img src="Prensa/PrensaElPatagonico.jpg" alt="Nota de El Patagónico">
+                        </div>
+                        <a href="https://www.elpatagonico.com/el-comodorense-rodrigo-almonacid-participa-del-debut-discografico-orquesta-invisible-n6272746" target="_blank" class="read-more">LEER NOTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">ABRIL 2026</span>
+                        <h3>Fractura Expuesta</h3>
+                        <p>"Una huella es el testimonio de un camino recorrido, un movimiento compartido por quienes transitan un mismo sendero."</p>
+                        <div class="press-image">
+                            <img src="Prensa/PrensaFracturaExpuesta.jpg" alt="Nota de Fractura Expuesta">
+                        </div>
+                        <a href="https://www.fracturaexpuesta.com.ar/gotan/un-camino-compartido-la-orquesta-invisible-lanzo-huella/" target="_blank" class="read-more">LEER NOTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">ABRIL 2026</span>
+                        <h3>La 2x4</h3>
+                        <p>Entrevista con Luis Tarantino sobre la presentación de «Huella».</p>
+                        <div class="press-image">
+                            <img src="Prensa/Prensa2x4_2026.jpg" alt="Entrevista en La 2x4">
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=MdP-d27mFDY" target="_blank" class="read-more">VER ENTREVISTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">ABRIL 2026</span>
+                        <h3>Revista Mula</h3>
+                        <p>"Esto no es estratégico, esto lo hacemos porque queremos." — Patricia Szilagyi</p>
+                        <div class="press-image">
+                            <img src="Prensa/PrensaMula.jpg" alt="Nota de Revista Mula">
+                        </div>
+                        <a href="https://revistamula.com/2026/04/18/territorio-sonoro-orquesta-invisible-huella/" target="_blank" class="read-more">LEER NOTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">2026</span>
+                        <h3>Radio Patagonia</h3>
+                        <p>Entrevista sobre el debut discográfico y el presente de la orquesta.</p>
+                        <div class="press-image">
+                            <img src="Prensa/PrensaRadioPatagonia.jpg" alt="Entrevista en Radio Patagonia">
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=MuExcYvNTdY" target="_blank" class="read-more">VER ENTREVISTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">DICIEMBRE 2025</span>
                         <h3>Tango 21</h3>
-                        <p data-key="p_t21">"La propuesta es que la orquesta “sea invisible”..."</p>
+                        <p>"La propuesta es que la orquesta “sea invisible”..."</p>
                         <div class="press-image">
-                            <img src="Prensa/Prensatango21.jpg" alt="Nota de prensa">
+                            <img src="Prensa/Prensatango21.jpg" alt="Nota de Tango 21">
                         </div>
-                        <a href="https://tango21.info/fiestas-orquestas-tipicas-julio-coviello/?lang=es" target="_blank" class="read-more" data-key="leer_nota">LEER NOTA →</a>
+                        <a href="https://tango21.info/fiestas-orquestas-tipicas-julio-coviello/?lang=es" target="_blank" class="read-more">LEER NOTA →</a>
                     </div>
 
                     <div class="press-card">
-                        <span class="press-date" data-key="date_mayo">MAYO 2025</span>
+                        <span class="press-date">MAYO 2025</span>
+                        <h3>Página 12</h3>
+                        <p>"En este proyecto jugamos por la camiseta."</p>
+                        <div class="press-image">
+                            <img src="Prensa/Prensapagina.jpg" alt="Nota de Página 12">
+                        </div>
+                        <a href="https://www.pagina12.com.ar/828485-julio-coviello-en-este-proyecto-jugamos-por-la-camiseta/" target="_blank" class="read-more">LEER NOTA →</a>
+                    </div>
+
+                    <div class="press-card">
+                        <span class="press-date">MAYO 2025</span>
                         <h3>Esto es nota</h3>
-                        <p data-key="p_estoes">"Hacía rato que tenía ganas de armar una orquesta..."</p>
+                        <p>"Hacía rato que tenía ganas de armar una orquesta..."</p>
                         <div class="press-image">
-                            <img src="Prensa/Prensaestoesnota.jpg" alt="Nota de prensa">
+                            <img src="Prensa/Prensaestoesnota.jpg" alt="Nota de Esto es nota">
                         </div>
-                        <a href="https://estoesnota.com/la-orquesta-invisible-tango-julio-coviello-debut-25-mayo-la-tierra-invisible-buenos-aires/" target="_blank" class="read-more" data-key="leer_nota">LEER NOTA →</a>
+                        <a href="https://estoesnota.com/la-orquesta-invisible-tango-julio-coviello-debut-25-mayo-la-tierra-invisible-buenos-aires/" target="_blank" class="read-more">LEER NOTA →</a>
                     </div>
 
                     <div class="press-card">
-                        <span class="press-date" data-key="date_mayo">MAYO 2025</span>
-                        <h3>Radio cultura</h3>
-                        <p data-key="p_cultura">"Uno quisiera ser una corriente submarina."</p>
+                        <span class="press-date">MAYO 2025</span>
+                        <h3>Radio Cultura</h3>
+                        <p>"Uno quisiera ser una corriente submarina."</p>
                         <div class="press-image">
-                            <img src="Prensa/Prensacultura.jpg" alt="Nota de prensa">
+                            <img src="Prensa/Prensacultura.jpg" alt="Nota de Radio Cultura">
                         </div>
-                        <a href="https://www.fmradiocultura.com.ar/julio-coviello-presenta-a-la-orquesta-invisible-a-puro-tango/" target="_blank" class="read-more" data-key="leer_nota">LEER NOTA →</a>
+                        <a href="https://www.fmradiocultura.com.ar/julio-coviello-presenta-a-la-orquesta-invisible-a-puro-tango/" target="_blank" class="read-more">LEER NOTA →</a>
                     </div>
+
                 </div>
             </div>
 
@@ -349,7 +453,7 @@
 
         <div class="press-kit-container">
             <a href="https://drive.google.com/drive/folders/1eDjVFRswdNZ6ez87K1CxPouJIu_JEmYg" target="_blank" class="btn-press-kit">
-                <i class="fa-solid fa-download"></i> <span data-key="pk_title">DESCARGAR PRESS KIT</span>
+                <i class="fa-solid fa-download"></i> <span>DESCARGAR PRESS KIT</span>
             </a>
         </div>
     </section>
@@ -357,31 +461,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <section id="galeria" class="gallery-section reveal">
-        <h2 class="section-title" data-key="nav_fotos">FOTOS</h2>
+        <h2 class="section-title">FOTOS</h2>
         
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="Fotos/1.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/2.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/3.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/4.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/5.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/6.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/7.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/8.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/10.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/11.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/12.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/13.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/14.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/15.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/16.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/17.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/18.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/19.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/20.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/21.webp" ></div>
-                <div class="swiper-slide"><img src="Fotos/22.webp" ></div>
+                <div class="swiper-slide"><img src="Fotos/1.webp" alt="La Orquesta Invisible saluda al público al final de un concierto" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/2.webp" alt="Bandoneonista de la Orquesta Invisible sonríe mientras toca en vivo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/3.webp" alt="Bandoneonista de la Orquesta Invisible tocando en un concierto con luces magenta" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/4.webp" alt="Bandoneonista de la Orquesta Invisible concentrado durante un concierto" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/5.webp" alt="Violonchelista de la Orquesta Invisible tocando en vivo, con un violinista detrás" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/6.webp" alt="Pianista de la Orquesta Invisible tocando un piano de cola durante un concierto" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/7.webp" alt="La Orquesta Invisible completa en el escenario de La Tierra Invisible" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/8.webp" alt="Fila de bandoneonistas de la Orquesta Invisible tocando en vivo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/10.webp" alt="Violonchelista y violinista de la Orquesta Invisible tocando en vivo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/11.webp" alt="Violonchelista y bandoneonista de la Orquesta Invisible en un ensayo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/12.webp" alt="Pianista y contrabajista de la Orquesta Invisible durante un concierto" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/13.webp" alt="Violonchelista y bandoneonista de la Orquesta Invisible en un ensayo con luz de lámpara" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/14.webp" alt="Dos violinistas de la Orquesta Invisible riendo mientras tocan" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/15.webp" alt="Bandoneonistas de la Orquesta Invisible conversando y sonriendo en un ensayo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/16.webp" alt="Violinista de la Orquesta Invisible tocando en vivo con luces azules" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/17.webp" alt="La Orquesta Invisible en el escenario de un teatro con luz violeta" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/18.webp" alt="Bandoneonista de la Orquesta Invisible tocando junto a la pianista" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/19.webp" alt="Dos violinistas de la Orquesta Invisible tocando en vivo" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/20.webp" alt="Violinista de la Orquesta Invisible leyendo la partitura durante un concierto" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/21.webp" alt="Contrabajista de la Orquesta Invisible con sombrero tocando en vivo con luz verde" loading="lazy"></div>
+                <div class="swiper-slide"><img src="Fotos/22.webp" alt="La Orquesta Invisible abrazada de espaldas saludando a la sala al final del concierto" loading="lazy"></div>
             </div>
             
             <div class="swiper-button-next"></div>
@@ -395,15 +499,15 @@
         <div class="music-grid">
             <a href="https://open.spotify.com/album/3jG1iPpJq3MWBCjYPn7dcm?si=VKXNIeroTuajRIfaO-R42A" target="_blank" class="icon-link">
                 <i class="fa-brands fa-spotify"></i>
-                <span data-key="nav_sp">SPOTIFY</span>
+                <span>SPOTIFY</span>
             </a>
             <a href="https://www.youtube.com/@OrquestaInvisible" target="_blank" class="icon-link">
                 <i class="fa-brands fa-youtube"></i>
-                <span data-key="nav_yt">YOUTUBE</span>
+                <span>YOUTUBE</span>
             </a>
             <a href="https://www.instagram.com/orquestatipicainvisible/" target="_blank" class="icon-link">
                 <i class="fa-brands fa-instagram"></i>
-                <span data-key="nav_ig">INSTAGRAM</span>
+                <span>INSTAGRAM</span>
             </a>
         </div>
     </section>
@@ -414,12 +518,11 @@
                 <i class="fa-regular fa-calendar-days"></i>
             </a>
         </div>
-        <p data-key="footer_contacto">CONTACTO: orquestatipicainvisible@gmail.com</p>
+        <p>CONTACTO: orquestatipicainvisible@gmail.com</p>
         <p class="footer-copy">© 2025 ORQUESTA INVISIBLE</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="traducciones.js"></script>
     <script src="script.js"></script>
 
     <button id="open-spotify-btn" class="reopen-btn" onclick="toggleSpotify(true)" style="display: none;">

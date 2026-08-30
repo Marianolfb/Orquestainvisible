@@ -60,24 +60,25 @@ window.addEventListener('scroll', function() {
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.nav-links');
 
-// Abrir y cerrar al tocar la hamburguesa
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-});
-
-// Cerrar el menú al tocar cualquier link (importante para navegar en la misma página)
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        // Verificamos si el link que tocamos NO pertenece al selector de idiomas
-        // Usamos .closest para ver si el link está dentro de 'lang-switcher'
-        if (!link.closest('.lang-switcher')) {
-            menu.classList.remove('is-active');
-            menuLinks.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Si estabas bloqueando el scroll
-        }
+if (menu && menuLinks) {
+    // Abrir y cerrar al tocar la hamburguesa
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('is-active');
+        menuLinks.classList.toggle('active');
     });
-});
+
+    // Cerrar el menú al tocar cualquier link (importante para navegar en la misma página)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            // El selector de idiomas ahora son enlaces reales a otra URL: los dejamos pasar
+            if (!link.closest('.lang-switcher')) {
+                menu.classList.remove('is-active');
+                menuLinks.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Si estabas bloqueando el scroll
+            }
+        });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const swiper = new Swiper(".mySwiper", {
@@ -105,25 +106,27 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 2; 
-    slider.scrollLeft = scrollLeft - walk;
-});
+if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+}
 
 const swiperRelatos = new Swiper('.relatosSwiper', {
     slidesPerView: 'auto', // Esto permite que se vea un pedazo del siguiente
@@ -162,21 +165,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnToggle && extraShows) {
         btnToggle.addEventListener('click', function() {
             const isHidden = extraShows.style.display === "none" || extraShows.style.display === "";
-            
+
             if (isHidden) {
                 extraShows.style.display = "block";
-                // En lugar de texto, le asignamos la LLAVE de traducción
-                this.setAttribute('data-key', 'btn_ver_menos');
-                revealElements(); 
+                this.textContent = this.getAttribute('data-less') || 'VER MENOS';
+                revealElements();
             } else {
                 extraShows.style.display = "none";
-                this.setAttribute('data-key', 'btn_ver_mas');
+                this.textContent = this.getAttribute('data-more') || 'VER TODAS LAS FECHAS';
                 document.getElementById('conciertos').scrollIntoView({ behavior: 'smooth' });
             }
-            
-            // Forzamos la traducción inmediata del botón tras el cambio de llave
-            const currentLang = document.documentElement.lang || 'es';
-            this.innerHTML = i18n[currentLang][this.getAttribute('data-key')];
         });
     }
 });

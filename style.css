@@ -196,8 +196,24 @@ body {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.lang-content a.active-lang {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.lang-content a[lang="ja"] {
+    white-space: nowrap;
+}
+
 .lang-dropdown:hover .lang-content {
     display: block;
+}
+
+/* En el dropdown horizontal (mobile) el 日本語 no debe partirse */
+@media (max-width: 768px) {
+    .lang-content a[lang="ja"] {
+        letter-spacing: 0;
+    }
 }
 
 /* Hero con impacto */
@@ -921,7 +937,9 @@ body {
         position: static; /* Quitamos el posicionamiento absoluto para que no flote */
         display: flex !important; /* Forzamos flex */
         flex-direction: row !important; /* Horizontal */
-        gap: 20px; /* Espacio entre las letras ES y EN */
+        flex-wrap: wrap; /* Con 6 idiomas, permitimos varias filas */
+        justify-content: center;
+        gap: 10px 12px;
         background: transparent; /* Quitamos el fondo de dropdown si tenía */
         box-shadow: none;
         padding: 10px;
@@ -938,15 +956,8 @@ body {
         border: 1px solid rgba(230, 57, 70, 0.3); /* Un borde sutil */
     }
 
-    /* Si el idioma del sitio es 'es', resaltamos el link que dice ES */
-    html[lang="es"] .lang-content a[onclick*="'es'"] {
-        opacity: 1;
-        color: var(--accent-color);
-        border-bottom: 1px solid var(--accent-color);
-    }
-
-    /* Si el idioma del sitio es 'en', resaltamos el link que dice EN */
-    html[lang="en"] .lang-content a[onclick*="'en'"] {
+    /* Resaltamos el link del idioma que se está viendo */
+    .lang-content a.active-lang {
         opacity: 1;
         color: var(--accent-color);
         border-bottom: 1px solid var(--accent-color);
@@ -1385,6 +1396,41 @@ body {
     letter-spacing: 2px;
 }
 
+/* Firma con retrato del integrante que escribió el relato */
+.relato-byline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.relato-autor-foto {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+}
+
+.relato-byline-text {
+    text-align: left;
+}
+
+.relato-byline-text .relato-meta {
+    letter-spacing: 1px;
+}
+
+.relato-foto-credit {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.65rem;
+    opacity: 0.35;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
 /* Estilo del texto */
 .relato-content p {
     font-family: 'Roboto Mono', monospace; /* O una Serif si querés algo más clásico */
@@ -1623,8 +1669,39 @@ blockquote {
 .language-selector {
     display: flex !important;       /* Activa el modo caja flexible */
     flex-direction: row !important;  /* Fuerza la alineación en fila (horizontal) */
-    align-items: center;            /* Centra verticalmente los botones y el separador */
-    gap: 10px;                      /* Define el espacio exacto entre ES, | y EN */
+    flex-wrap: wrap;               /* Con 6 idiomas, deja que pase a dos líneas si no entra */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px 6px;
+}
+
+/* Enlaces de idioma en páginas secundarias (agenda, relatos) */
+.language-selector a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 5px 7px;
+    border-radius: 3px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.language-selector a:hover {
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.language-selector a.active {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* El japonés (日本語) es más ancho: que no fuerce el salto de línea a mitad */
+.language-selector a[lang="ja"] {
+    letter-spacing: 0;
+    white-space: nowrap;
 }
 
 .contenedor-agenda {
