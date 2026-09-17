@@ -49,7 +49,14 @@ En los **6 `index.html`**, sección `<section id="conciertos">` ("Próximas fech
 4. **Bio:** solo en `index.html` (ES), el último párrafo de `<section id="bio">`
    dice *"Próxima fecha: Sábado XX de … de 20XX"*. Actualizala o borrá esa frase.
 
-5. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
+5. **JSON-LD de eventos:** en el `<head>` de los 6 `index.html` hay un bloque
+   `<!-- SEO-BOOST: eventos -->` (schema.org `Event`, uno por fecha) que le muestra
+   las fechas a Google como resultado enriquecido. **No se genera solo** a partir de
+   los `show-row`: hay que agregar/borrar/editar ahí a mano el `startDate` (formato
+   ISO `AAAA-MM-DDTHH:MM:00-03:00`), el `location` y el `url` (link de entradas si
+   hay, si no `agenda.html` del idioma) de cada fecha, igual que en el punto 1-3.
+
+6. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
 ---
 
