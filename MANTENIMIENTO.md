@@ -1,6 +1,6 @@
 # Mantenimiento del sitio
 
-El sitio tiene **6 idiomas**. El español está en la raíz; los demás en subcarpetas:
+El sitio tiene **7 idiomas**. El español está en la raíz; los demás en subcarpetas:
 
 | Idioma | Carpeta | index |
 |--------|---------|-------|
@@ -10,15 +10,16 @@ El sitio tiene **6 idiomas**. El español está en la raíz; los demás en subca
 | Francés | `fr/` | `fr/index.html` |
 | Alemán | `de/` | `de/index.html` |
 | Japonés | `ja/` | `ja/index.html` |
+| Portugués | `pt/` | `pt/index.html` |
 
 **Regla general:** casi cualquier texto que cambies en una página hay que
-replicarlo en las 6 versiones, traducido.
+replicarlo en las 7 versiones, traducido.
 
 ---
 
 ## Después de cada fecha (concierto / milonga)
 
-En los **6 `index.html`**, sección `<section id="conciertos">` ("Próximas fechas"):
+En los **7 `index.html`**, sección `<section id="conciertos">` ("Próximas fechas"):
 
 1. **Borrar** el bloque `<div class="show-row reveal"> … </div>` de la fecha que
    ya pasó.
@@ -49,7 +50,7 @@ En los **6 `index.html`**, sección `<section id="conciertos">` ("Próximas fech
 4. **Bio:** solo en `index.html` (ES), el último párrafo de `<section id="bio">`
    dice *"Próxima fecha: Sábado XX de … de 20XX"*. Actualizala o borrá esa frase.
 
-5. **JSON-LD de eventos:** en el `<head>` de los 6 `index.html` hay un bloque
+5. **JSON-LD de eventos:** en el `<head>` de los 7 `index.html` hay un bloque
    `<!-- SEO-BOOST: eventos -->` (schema.org `Event`, uno por fecha) que le muestra
    las fechas a Google como resultado enriquecido. **No se genera solo** a partir de
    los `show-row`: hay que agregar/borrar/editar ahí a mano el `startDate` (formato
@@ -62,7 +63,7 @@ En los **6 `index.html`**, sección `<section id="conciertos">` ("Próximas fech
 
 ## Notas de prensa nuevas
 
-En los 6 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un
+En los 7 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un
 bloque `<div class="press-card"> … </div>` y completá fecha, medio, cita, imagen y
 enlace. Poné la foto del portal en `Prensa/`.
 
@@ -78,7 +79,7 @@ enlace. Poné la foto del portal en `Prensa/`.
 
 - **Galería** (`<section id="galeria">`): cada `<img>` tiene un `alt` descriptivo
   en el idioma de la página. Hoy dice el rol del músico ("bandoneonista", etc.).
-  Si querés poner nombres propios, editá el `alt` en los 6 `index.html`.
+  Si querés poner nombres propios, editá el `alt` en los 7 `index.html`.
 - **Relatos**: el retrato del autor está en `Fotos/integrantes/`. Para cambiarlo,
   reemplazá el archivo con el mismo nombre. Si falta, la foto se oculta sola.
 
@@ -86,9 +87,9 @@ enlace. Poné la foto del portal en `Prensa/`.
 
 ## Traducciones pendientes de revisión nativa
 
-Alemán, italiano, francés y **japonés** se hicieron con IA. Cuando tengas la
-revisión de alguien nativo, reemplazá el texto en la carpeta del idioma
-(`de/`, `it/`, `fr/`, `ja/`). Prioridad: japonés y alemán.
+Alemán, italiano, francés, **japonés** y **portugués** se hicieron con IA. Cuando
+tengas la revisión de alguien nativo, reemplazá el texto en la carpeta del idioma
+(`de/`, `it/`, `fr/`, `ja/`, `pt/`). Prioridad: japonés y alemán.
 
 ---
 
