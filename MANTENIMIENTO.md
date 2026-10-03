@@ -55,9 +55,15 @@ En los **7 `index.html`**, sección `<section id="conciertos">` ("Próximas fech
    las fechas a Google como resultado enriquecido. **No se genera solo** a partir de
    los `show-row`: hay que agregar/borrar/editar ahí a mano el `startDate` (formato
    ISO `AAAA-MM-DDTHH:MM:00-03:00`), el `location` y el `url` (link de entradas si
-   hay, si no `agenda.html` del idioma) de cada fecha, igual que en el punto 1-3.
+   hay, si no `agenda.html` del idioma) de cada fecha, igual que en el punto 1-3. El precio
+   va en `offers.price` (hoy `17000` ARS); si un show no tiene precio confirmado,
+   se omite el bloque `offers` de ese evento (y `endDate` si no se sabe la hora de cierre).
 
-6. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
+6. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
+   Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
+   (o a `agenda.html` si todavía no hay link).
+
+7. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
 ---
 
