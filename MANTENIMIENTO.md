@@ -30,7 +30,10 @@ reescribe, en los 7 idiomas:
 - la frase "Próxima fecha: …" de la bio en español.
 
 **Qué hacer:** agregar, editar o borrar filas en la planilla (la pestaña "Cómo usar"
-explica cada columna). Los shows pasados desaparecen solos. No hace falta tocar el sitio.
+explica cada columna). Se ven siempre las 2 próximas fechas y el resto aparece al tocar
+"ver todas las fechas" (cambiable con `$VISIBLES` en el script). Los shows pasados
+desaparecen solos y una fila con fecha pasada se ignora aunque tenga otros datos raros.
+No hace falta tocar el sitio.
 
 **No editar a mano** esas tres zonas en los `index.html`: la próxima corrida las pisa.
 

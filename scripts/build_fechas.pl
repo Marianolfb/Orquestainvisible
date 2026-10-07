@@ -18,6 +18,7 @@ my ($csv_path, $root) = @ARGV;
 die "uso: build_fechas.pl fechas.csv [raiz]\n" unless defined $csv_path;
 $root //= '.';
 my $BASE = 'https://www.orquestainvisible.musica.ar';
+my $VISIBLES = 2;    # cuántas fechas se ven siempre; el resto queda detrás de "ver todas las fechas"
 
 my @LANGS = qw(es en it fr de ja pt);
 my %FILE   = (es=>'index.html', en=>'en/index.html', it=>'it/index.html', fr=>'fr/index.html',
@@ -157,6 +158,7 @@ for my $ri ($hdr_idx + 1 .. $#all) {
     push @errors, "fila $line: falta el Nombre" unless length $e{nombre};
     my $d = parse_date($fecha);
     unless ($d) { push @errors, "fila $line: la Fecha \"$fecha\" no se entiende (usar DD/MM/AAAA)"; next; }
+    next if $d->{iso} lt $today;            # ya pasó: se ignora la fila entera (aunque tenga otros datos raros)
     $e{date} = $d;
     my $t = parse_time($cell->('hora'));
     unless ($t) { push @errors, "fila $line: la Hora \"" . $cell->('hora') . "\" no se entiende (usar HH:MM)"; next; }
@@ -177,7 +179,6 @@ for my $ri ($hdr_idx + 1 .. $#all) {
     $e{moneda} = length $cell->('moneda') ? uc $cell->('moneda') : 'ARS';
     push @errors, "fila $line: País \"$e{pais}\" debe ser un código de 2 letras (AR, DE, IT...)" unless $e{pais} =~ /^[A-Z]{2}$/;
     push @errors, "fila $line: Moneda \"$e{moneda}\" debe ser un código de 3 letras (ARS, EUR...)" unless $e{moneda} =~ /^[A-Z]{3}$/;
-    next if $e{date}{iso} lt $today;        # ya pasó: no se muestra
     push @events, \%e;
 }
 if (@errors) { fail("hay datos que no entiendo en la planilla; no se tocó el sitio:\n  - " . join("\n  - ", @errors)); }
@@ -310,8 +311,9 @@ for my $lang (@LANGS) {
     if (!@events) {
         $gen .= "        <p class=\"show-empty\" style=\"text-align:center; opacity:.7;\">" . he($EMPTY{$lang}) . "</p>\n";
     } else {
-        my @rest = @events[1 .. $#events];
-        $gen .= row_html($lang, $events[0], 8);
+        my $n_vis = @events < $VISIBLES ? scalar(@events) : $VISIBLES;
+        my @rest = @events[$n_vis .. $#events];
+        $gen .= row_html($lang, $events[$_], 8) for 0 .. $n_vis - 1;
         if (@rest) {
             $gen .= "\n        <div id=\"extra-shows\" style=\"display: none;\">\n";
             $gen .= row_html($lang, $_, 12) for @rest;
