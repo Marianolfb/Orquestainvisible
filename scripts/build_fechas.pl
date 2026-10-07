@@ -4,6 +4,7 @@
 #   - el JSON-LD de eventos (SEO-BOOST: eventos)
 #   - la frase "Próxima fecha: ..." de la bio en español
 # Uso: perl scripts/build_fechas.pl fechas.csv [raiz-del-sitio]
+# La planilla es la fuente de verdad: lo que se cargue a mano en esas zonas del HTML se pisa.
 # Si algo de la planilla está mal, no toca nada y sale con error (el sitio queda como estaba).
 use strict; use warnings; use utf8;
 use Encode qw(decode encode);
