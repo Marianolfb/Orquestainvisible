@@ -1,0 +1,2 @@
+# El calendario .ics exige saltos de linea CRLF: que Git no los convierta
+fechas.ics -text
