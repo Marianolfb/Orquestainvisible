@@ -57,9 +57,8 @@ desde la planilla" → *Run workflow*.
 1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
    Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
    (o a `agenda.html` si todavía no hay link).
-2. **Google Calendar** "Fechas invisibles": el sitio ya NO lo usa (la agenda se genera desde la planilla).
-   Si se quiere seguir usando para uso interno, conviene suscribirlo a `fechas.ics` en vez de
-   cargar las fechas a mano.
+2. **Google Calendar:** el sitio ya no usa ninguno (la agenda y el `fechas.ics` salen de la planilla).
+   El calendario "Fechas invisibles" se descartó; no hay que cargar fechas en ningún otro lado.
 3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
 **Cambiar cómo se ve una fila o los textos por idioma** (botón RESERVAR, formato de hora,

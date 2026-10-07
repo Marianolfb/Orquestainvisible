@@ -1710,13 +1710,6 @@ blockquote {
     text-align: center;
 }
 
-.calendario-wrapper {
-    margin-top: 40px;
-    border: 1px solid var(--accent-color); /* Podés usar el color dorado/bordeaux de tu web para enmarcarlo */
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff; /* O el fondo que elijas */
-}
 
 /* --- ESTILOS PARA EL CARRUSEL DE VIDEOS --- */
 .videoSwiper {

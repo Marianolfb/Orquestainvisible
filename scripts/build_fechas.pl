@@ -494,12 +494,8 @@ for my $lang (@LANGS) {
     my $orig = $html;
 
     my $blk = agenda_block($lang);
-    if ($html =~ m{<!-- AGENDA:INICIO.*?<!-- AGENDA:FIN -->}s) {
-        $html =~ s{<!-- AGENDA:INICIO.*?<!-- AGENDA:FIN -->}{$blk}s;
-    } else {
-        $html =~ s{<div class="calendario-wrapper">.*?</iframe>\s*</div>}{$blk}s
-            or fail("no encontré el calendario embebido ni la zona AGENDA en $f");
-    }
+    $html =~ s{<!-- AGENDA:INICIO.*?<!-- AGENDA:FIN -->}{$blk}s
+        or fail("no encontré la zona AGENDA (AGENDA:INICIO / AGENDA:FIN) en $f");
     # datos para Google (Event) también en la agenda
     my $ld = schema_block($lang);
     unless ($html =~ s{[ \t]*<!-- SEO-BOOST: eventos -->\n\s*<script type="application/ld\+json">\n.*?\n\s*</script>}{$ld}s) {
