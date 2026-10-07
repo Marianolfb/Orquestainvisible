@@ -94,7 +94,6 @@ for my $i (0 .. $#{$all[$hdr_idx]}) {
     my $h = norm($all[$hdr_idx][$i]);
     next unless length $h;
     if    ($h =~ /^fecha/)                     { $col{fecha}   //= $i }
-    elsif ($h =~ /^hora de cierre|^cierre/)    { $col{cierre}  //= $i }
     elsif ($h =~ /^hora/)                      { $col{hora}    //= $i }
     elsif ($h =~ /^nombre/)                    { $col{nombre}  //= $i }
     elsif ($h =~ /^lugar/)                     { $col{lugar}   //= $i }
@@ -163,9 +162,6 @@ for my $ri ($hdr_idx + 1 .. $#all) {
     my $t = parse_time($cell->('hora'));
     unless ($t) { push @errors, "fila $line: la Hora \"" . $cell->('hora') . "\" no se entiende (usar HH:MM)"; next; }
     $e{time} = $t->[0] // undef; $e{min} = $t->[1];
-    my $tc = parse_time($cell->('cierre'));
-    unless ($tc) { push @errors, "fila $line: la Hora de cierre \"" . $cell->('cierre') . "\" no se entiende"; next; }
-    $e{end_h} = $tc->[0]; $e{end_m} = $tc->[1];
     $e{lugar}  = length $cell->('lugar')  ? $cell->('lugar')  : $e{nombre};
     $e{calle}  = $cell->('calle');
     $e{ciudad} = length $cell->('ciudad') ? $cell->('ciudad') : 'CABA';
@@ -243,18 +239,7 @@ sub schema_events {
         my $url = length $e->{link} ? $e->{link} : $HOME{$lang};
         my $off = $e->{pais} eq 'AR' ? '-03:00' : '';
         my $start = $e->{date}{iso};
-        my $end;
-        if (defined $e->{time}) {
-            $start .= sprintf('T%02d:%02d:00%s', $e->{time}, $e->{min}, $off);
-            if (defined $e->{end_h}) {
-                my $eiso = $e->{date}{iso};
-                if ($e->{end_h} * 60 + $e->{end_m} <= $e->{time} * 60 + $e->{min}) {      # cierra después de medianoche
-                    my @n = gmtime(timegm(0, 0, 12, $e->{date}{d}, $e->{date}{m} - 1, $e->{date}{y}) + 86400);
-                    $eiso = sprintf('%04d-%02d-%02d', $n[5] + 1900, $n[4] + 1, $n[3]);
-                }
-                $end = sprintf('%sT%02d:%02d:00%s', $eiso, $e->{end_h}, $e->{end_m}, $off);
-            }
-        }
+        $start .= sprintf('T%02d:%02d:00%s', $e->{time}, $e->{min}, $off) if defined $e->{time};
         my $locality = norm($e->{ciudad}) eq 'caba' ? 'Buenos Aires' : $e->{ciudad};
         my %addr = ('@type' => 'PostalAddress', addressLocality => $locality, addressCountry => $e->{pais});
         $addr{streetAddress} = $e->{calle} if length $e->{calle};
@@ -273,7 +258,6 @@ sub schema_events {
             location => { '@type' => 'Place', name => $e->{lugar}, address => \%addr },
             performer => { '@type' => 'MusicGroup', name => 'Orquesta Invisible', url => "$BASE/" },
         );
-        $ev{endDate} = $end if defined $end;
         $ev{organizer} = { '@type' => 'Organization', name => 'Orquesta Invisible', url => "$BASE/" } if $e->{organiza};
         if (defined $e->{precio}) {
             $ev{offers} = { '@type' => 'Offer', url => ($e->{boton} eq 'reservar' ? $e->{link} : $url), price => "$e->{precio}", priceCurrency => $e->{moneda},
