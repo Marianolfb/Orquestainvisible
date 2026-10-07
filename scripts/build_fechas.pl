@@ -301,6 +301,142 @@ sub bio_sentence {
     return sprintf('Próxima fecha: %s %d de %s de %d.', $DIAS[$w[6]], $d->{d}, $MESES[$d->{m} - 1], $d->{y});
 }
 
+# ---------- agenda propia (reemplaza al calendario de Google embebido) + archivo .ics ----------
+my $AGENDA_CSS_V = 5;   # subir este número cuando cambie agenda.css (evita que el navegador use el viejo)
+my ($today_year) = $today =~ /^(\d{4})/;
+my %MON = (
+    es => [qw(ENE FEB MAR ABR MAY JUN JUL AGO SEP OCT NOV DIC)],
+    en => [qw(JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC)],
+    it => [qw(GEN FEB MAR APR MAG GIU LUG AGO SET OTT NOV DIC)],
+    fr => ['JANV','FÉVR','MARS','AVR','MAI','JUIN','JUIL','AOÛT','SEPT','OCT','NOV','DÉC'],
+    de => ['JAN','FEB','MÄR','APR','MAI','JUN','JUL','AUG','SEP','OKT','NOV','DEZ'],
+    ja => [map { "${_}月" } 1 .. 12],
+    pt => [qw(JAN FEV MAR ABR MAI JUN JUL AGO SET OUT NOV DEZ)],
+);
+my %DOW = (   # 0 = domingo
+    es => [qw(DOM LUN MAR MIÉ JUE VIE SÁB)], en => [qw(SUN MON TUE WED THU FRI SAT)],
+    it => [qw(DOM LUN MAR MER GIO VEN SAB)], fr => [qw(DIM LUN MAR MER JEU VEN SAM)],
+    de => [qw(SO MO DI MI DO FR SA)],        ja => [qw(日 月 火 水 木 金 土)],
+    pt => [qw(DOM SEG TER QUA QUI SEX SÁB)],
+);
+my %L_MAP = (es=>'Cómo llegar', en=>'Directions', it=>'Indicazioni', fr=>'Itinéraire', de=>'Anfahrt',
+             ja=>'地図で見る', pt=>'Como chegar');
+my %L_CAL = (es=>'+ CALENDARIO', en=>'+ CALENDAR', it=>'+ CALENDARIO', fr=>'+ AGENDA', de=>'+ KALENDER',
+             ja=>'+ カレンダー', pt=>'+ CALENDÁRIO');
+my %L_SUB = (es=>'Suscribite a nuestras fechas en tu calendario', en=>'Subscribe to our dates in your calendar',
+             it=>'Iscriviti alle nostre date nel tuo calendario', fr=>'Abonnez-vous à nos dates dans votre agenda',
+             de=>'Abonniere unsere Termine in deinem Kalender', ja=>'公演日をカレンダーで購読する',
+             pt=>'Assine as nossas datas no seu calendário');
+my $ICS_URL = 'webcal://www.orquestainvisible.musica.ar/fechas.ics';
+
+sub urlenc { my $s = encode('UTF-8', shift // ''); $s =~ s/([^A-Za-z0-9\-_.~])/sprintf('%%%02X', ord($1))/ge; return $s; }
+sub start_epoch { my $e = shift; my $d = $e->{date}; return timegm(0, $e->{min}, $e->{time}, $d->{d}, $d->{m} - 1, $d->{y}); }
+sub end_epoch {
+    my $e = shift; my $s = start_epoch($e);
+    if (defined $e->{end_h}) {
+        my $d = $e->{date};
+        my $en = timegm(0, $e->{end_m}, $e->{end_h}, $d->{d}, $d->{m} - 1, $d->{y});
+        $en += 86400 if $en <= $s;
+        return $en;
+    }
+    return $s + 7200;     # sin hora de cierre: se asumen 2 horas (solo para el calendario)
+}
+sub fmt_naive { my @t = gmtime(shift); return sprintf('%04d%02d%02dT%02d%02d%02d', $t[5] + 1900, $t[4] + 1, $t[3], $t[2], $t[1], $t[0]); }
+sub fmt_day   { my @t = gmtime(shift); return sprintf('%04d%02d%02d', $t[5] + 1900, $t[4] + 1, $t[3]); }
+sub day_epoch { my $e = shift; my $d = $e->{date}; return timegm(0, 0, 12, $d->{d}, $d->{m} - 1, $d->{y}); }
+sub es_location {
+    my $e = shift;
+    my @p = ($e->{lugar}); push @p, $e->{calle} if length $e->{calle};
+    push @p, (norm($e->{ciudad}) eq 'caba' ? 'Buenos Aires' : $e->{ciudad});
+    return join(', ', @p);
+}
+sub gcal_link {
+    my $e = shift;
+    my $dates; my $ctz = '';
+    if (defined $e->{time}) {
+        $dates = fmt_naive(start_epoch($e)) . '/' . fmt_naive(end_epoch($e));
+        $ctz = '&ctz=America/Argentina/Buenos_Aires' if $e->{pais} eq 'AR';
+    } else {
+        $dates = fmt_day(day_epoch($e)) . '/' . fmt_day(day_epoch($e) + 86400);
+    }
+    my $details = length $e->{link} ? $e->{link} : "$BASE/agenda.html";
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        . '&text=' . urlenc("Orquesta Invisible – $e->{nombre}") . '&dates=' . $dates . $ctz
+        . '&location=' . urlenc(es_location($e)) . '&details=' . urlenc($details);
+}
+sub agenda_item_html {
+    my ($lang, $e) = @_;
+    my $d = $e->{date};
+    my @w = gmtime(day_epoch($e));
+    my $mes = $MON{$lang}[$d->{m} - 1];
+    if ($d->{y} != $today_year) { $mes = $lang eq 'ja' ? "$d->{y}年$mes" : "$mes $d->{y}"; }
+    my $addr = join(', ', grep { length } ($e->{calle}, city_display($lang, $e)));
+    my $map = 'https://www.google.com/maps/search/?api=1&query=' . urlenc(es_location($e));
+    my @meta;
+    push @meta, '<span class="agenda-hora">' . he(tfmt($lang, $e->{time}, $e->{min})) . '</span>' if defined $e->{time};
+    push @meta, '<span class="agenda-lugar">' . he($e->{lugar}) . '</span>' if norm($e->{lugar}) ne norm($e->{nombre});
+    my $meta = join(' ', @meta);
+    my $btn = '';
+    if ($e->{boton} eq 'reservar') {
+        $btn = sprintf('<a href="%s" target="_blank" rel="noopener" class="btn-ticket">%s</a>', he($e->{link}), $BOOK{$lang});
+    } elsif (length $e->{link}) {
+        $btn = sprintf('<a href="%s" target="_blank" rel="noopener" class="btn-ticket">+INFO</a>', he($e->{link}));
+    }
+    my $cal = sprintf('<a href="%s" target="_blank" rel="noopener" class="agenda-cal">%s</a>', he(gcal_link($e)), $L_CAL{$lang});
+    return "            <article class=\"agenda-item\">\n"
+         . "                <div class=\"agenda-fecha\"><span class=\"agenda-dia\">" . $d->{d} . "</span><span class=\"agenda-mes\">" . he($mes) . "</span><span class=\"agenda-dow\">" . $DOW{$lang}[$w[6]] . "</span></div>\n"
+         . "                <div class=\"agenda-detalle\">\n"
+         . "                    <h3 class=\"agenda-titulo\">" . he($e->{nombre}) . "</h3>\n"
+         . (length $meta ? "                    <p class=\"agenda-meta\">$meta</p>\n" : '')
+         . "                    <p class=\"agenda-meta agenda-dir\">" . he($addr) . " &middot; <a href=\"" . he($map) . "\" target=\"_blank\" rel=\"noopener\">" . he($L_MAP{$lang}) . " &#8599;</a></p>\n"
+         . "                </div>\n"
+         . "                <div class=\"agenda-acciones\">" . join(' ', grep { length } ($btn, $cal)) . "</div>\n"
+         . "            </article>\n";
+}
+sub agenda_block {
+    my ($lang) = @_;
+    my $b = "<!-- AGENDA:INICIO (generado desde la planilla de fechas; no editar a mano) -->\n"
+          . "        <div class=\"agenda-lista\">\n";
+    if (!@events) { $b .= "            <p class=\"agenda-vacia\">" . he($EMPTY{$lang}) . "</p>\n"; }
+    else          { $b .= agenda_item_html($lang, $_) for @events; }
+    $b .= "        </div>\n"
+        . "        <p class=\"agenda-suscribir\"><a href=\"$ICS_URL\"><i class=\"fa-regular fa-calendar-plus\"></i> " . he($L_SUB{$lang}) . "</a></p>\n"
+        . "        <!-- AGENDA:FIN -->";
+    return $b;
+}
+sub ics_escape { my $s = shift // ''; $s =~ s/\\/\\\\/g; $s =~ s/;/\\;/g; $s =~ s/,/\\,/g; $s =~ s/\r?\n/\\n/g; return $s; }
+sub ics_fold {
+    my $line = shift; my $out = ''; my $cur = ''; my $limit = 74;
+    for my $ch (split //, $line) {
+        if (length(encode('UTF-8', $cur . $ch)) > $limit) { $out .= $cur . "\r\n "; $cur = $ch; $limit = 73; }
+        else { $cur .= $ch; }
+    }
+    return $out . $cur;
+}
+sub ics_file {
+    my @l = ('BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Orquesta Invisible//Fechas//ES', 'CALSCALE:GREGORIAN',
+             'METHOD:PUBLISH', 'X-WR-CALNAME:Orquesta Invisible – Fechas', 'X-WR-TIMEZONE:America/Argentina/Buenos_Aires',
+             'X-WR-CALDESC:Próximas fechas de la Orquesta Invisible');
+    for my $e (@events) {
+        my $uid = sprintf('%s-%s@orquestainvisible.musica.ar', fmt_day(day_epoch($e)), lc(do { my $n = norm($e->{nombre}); $n =~ s/[^a-z0-9]+/-/g; $n =~ s/^-|-$//g; $n }));
+        push @l, 'BEGIN:VEVENT', "UID:$uid", 'DTSTAMP:20260101T000000Z';
+        if (defined $e->{time}) {
+            my ($s, $en) = (start_epoch($e), end_epoch($e));
+            if ($e->{pais} eq 'AR') { push @l, 'DTSTART:' . fmt_naive($s + 10800) . 'Z', 'DTEND:' . fmt_naive($en + 10800) . 'Z'; }
+            else                    { push @l, 'DTSTART:' . fmt_naive($s), 'DTEND:' . fmt_naive($en); }
+        } else {
+            push @l, 'DTSTART;VALUE=DATE:' . fmt_day(day_epoch($e)), 'DTEND;VALUE=DATE:' . fmt_day(day_epoch($e) + 86400);
+        }
+        push @l, 'SUMMARY:' . ics_escape("Orquesta Invisible – $e->{nombre}"),
+                 'LOCATION:' . ics_escape(es_location($e)),
+                 'URL:' . (length $e->{link} ? $e->{link} : "$BASE/agenda.html"),
+                 'DESCRIPTION:' . ics_escape((length $e->{link} ? ($e->{boton} eq 'reservar' ? 'Entradas: ' : 'Más info: ') . $e->{link} : "Más info: $BASE/agenda.html")),
+                 'END:VEVENT';
+    }
+    push @l, 'END:VCALENDAR';
+    return join("\r\n", map { ics_fold($_) } @l) . "\r\n";
+}
+
 # ---------- reescribir los 7 index.html ----------
 my %new;
 for my $lang (@LANGS) {
@@ -346,15 +482,48 @@ for my $lang (@LANGS) {
         my $s = bio_sentence();
         $html =~ s/Próxima fecha: [^.\n<]*\./$s/ or fail("no encontré la frase 'Próxima fecha' en la bio de $f");
     }
-    $new{$lang} = [$f, $html, $orig];
+    $new{$lang} = [$f, $html, $orig, $FILE{$lang}];
+}
+
+# ---------- páginas de agenda (agenda.html de cada idioma) ----------
+for my $lang (@LANGS) {
+    my $f = "$root/$AGENDA{$lang}";
+    open my $fh, '<:raw', $f or fail("no pude abrir $f: $!");
+    my $html = decode('UTF-8', do { local $/; <$fh> }); close $fh;
+    $html =~ s/\r\n/\n/g;
+    my $orig = $html;
+
+    my $blk = agenda_block($lang);
+    if ($html =~ m{<!-- AGENDA:INICIO.*?<!-- AGENDA:FIN -->}s) {
+        $html =~ s{<!-- AGENDA:INICIO.*?<!-- AGENDA:FIN -->}{$blk}s;
+    } else {
+        $html =~ s{<div class="calendario-wrapper">.*?</iframe>\s*</div>}{$blk}s
+            or fail("no encontré el calendario embebido ni la zona AGENDA en $f");
+    }
+    # datos para Google (Event) también en la agenda
+    my $ld = schema_block($lang);
+    unless ($html =~ s{[ \t]*<!-- SEO-BOOST: eventos -->\n\s*<script type="application/ld\+json">\n.*?\n\s*</script>}{$ld}s) {
+        $html =~ s{\n</head>}{\n\n$ld\n</head>} or fail("no encontré </head> en $f");
+    }
+    $html =~ s{agenda\.css\?v=\d+}{agenda.css?v=$AGENDA_CSS_V}g;
+    $new{"agenda-$lang"} = [$f, $html, $orig, $AGENDA{$lang}];
+}
+
+# ---------- fechas.ics ----------
+{
+    my $f = "$root/fechas.ics";
+    my $ics = ics_file();
+    my $orig = '';
+    if (-e $f) { open my $fh, '<:raw', $f or fail("no pude abrir $f: $!"); $orig = decode('UTF-8', do { local $/; <$fh> }); close $fh; }
+    $new{'ics'} = [$f, $ics, $orig, 'fechas.ics'];
 }
 
 my $changed = 0;
-for my $lang (@LANGS) {
-    my ($f, $html, $orig) = @{$new{$lang}};
-    if ($html eq $orig) { print "sin cambios: $FILE{$lang}\n"; next; }
+for my $k ((map { $_ } @LANGS), (map { "agenda-$_" } @LANGS), 'ics') {
+    my ($f, $html, $orig, $label) = @{$new{$k}};
+    if ($html eq $orig) { print "sin cambios: $label\n"; next; }
     open my $out, '>:raw', $f or fail("no pude escribir $f: $!");
     print $out encode('UTF-8', $html); close $out;
-    print "actualizado: $FILE{$lang}\n"; $changed++;
+    print "actualizado: $label\n"; $changed++;
 }
 print scalar(@events) . " fecha(s) próxima(s); $changed archivo(s) actualizado(s).\n";

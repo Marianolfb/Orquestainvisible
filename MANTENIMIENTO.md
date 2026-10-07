@@ -27,7 +27,11 @@ reescribe, en los 7 idiomas:
 
 - las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
 - el JSON-LD de eventos (`SEO-BOOST: eventos`),
-- la frase "Próxima fecha: …" de la bio en español.
+- la frase "Próxima fecha: …" de la bio en español,
+- la **página de agenda** (`agenda.html` de cada idioma, zona `AGENDA:INICIO` / `AGENDA:FIN`):
+  tarjetas con fecha, lugar, "Cómo llegar", botón de entradas / más info y "+ Calendario",
+- el archivo **`fechas.ics`** (calendario al que cualquiera puede suscribirse desde la
+  agenda; también se puede agregar a Google Calendar con "Otros calendarios → Desde URL").
 
 **Qué hacer:** agregar, editar o borrar filas en la planilla (la pestaña "Cómo usar"
 explica cada columna). Se ven siempre las 2 próximas fechas y el resto aparece al tocar
@@ -40,7 +44,7 @@ No hace falta tocar el sitio.
 *Más info* muestra +INFO y abre la página del evento (por ejemplo la de la Milonga Federal).
 Si se deja vacío, es automático: con link → RESERVAR; sin link → +INFO que va a la agenda.
 
-**No editar a mano** esas tres zonas en los `index.html`: la próxima corrida las pisa.
+**No editar a mano** esas zonas en los `index.html`: la próxima corrida las pisa.
 
 **Si hay un error en la planilla** (una fecha que no se entiende, un link sin http, etc.)
 la tarea falla y **no cambia nada del sitio**; GitHub manda un mail al dueño del
@@ -53,8 +57,9 @@ desde la planilla" → *Run workflow*.
 1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
    Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
    (o a `agenda.html` si todavía no hay link).
-2. **Google Calendar** "Fechas invisibles" (el que se ve en `agenda.html`): se edita aparte,
-   en calendar.google.com con la cuenta orquestatipicainvisible@gmail.com.
+2. **Google Calendar** "Fechas invisibles": el sitio ya NO lo usa (la agenda se genera desde la planilla).
+   Si se quiere seguir usando para uso interno, conviene suscribirlo a `fechas.ics` en vez de
+   cargar las fechas a mano.
 3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
 **Cambiar cómo se ve una fila o los textos por idioma** (botón RESERVAR, formato de hora,

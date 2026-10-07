@@ -34,42 +34,6 @@
     line-height: 1.6;
 }
 
-/* Envoltorio contenedor del Google Calendar */
-.calendario-wrapper {
-    margin-top: 20px;
-    border: 2px solid var(--accent-color); /* Enmarcado con tu Rojo Tango */
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #111111; /* Fondo oscuro base mientras carga el iframe */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    position: relative;
-    height: 580px;      /* Fijamos la altura visible exterior que QUEREMOS que se vea */
-    overflow: hidden;   /* Esconde absolutamente todo lo que pase el límite de los 580px */
-    position: relative;
-}
-
-/* Ajuste del iframe para integrarse al entorno oscuro de la web */
-.calendario-wrapper iframe {
-    display: block;
-    background: #ffffff;
-    border-radius: 2px;
-    
-    /* El iframe es más alto que su contenedor para empujar la marca de Google al vacío */
-    height: 640px !important; 
-    margin-bottom: -60px; /* Margen negativo para asegurar el calce */
-    
-    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(110%);
-    
-    /* 2. Modo de fusión: mezcla el iframe invertido con el fondo oscuro del contenedor */
-    mix-blend-mode: screen;
-
-    transition: filter 0.3s ease;
-}
-
-.calendario-wrapper iframe:hover {
-    filter: invert(90%) hue-rotate(180deg) brightness(105%) contrast(115%);
-}
 
 /* --- ESTILOS PARA EL SELECTOR DE IDIOMAS EN LA NAV --- */
 
@@ -118,17 +82,184 @@
         padding-top: 100px;
     }
     
-    /* Ajustamos el recorte para las pantallas de celulares */
-    .calendario-wrapper {
-        height: 480px; /* Altura visible en móvil */
-        padding: 5px;
-    }
     
     .agenda-subtitle {
         margin-bottom: 25px;
     }
 
-    .calendario-wrapper iframe {
-        height: 540px !important; /* Altura interna en móvil */
+}
+
+/* ==========================================================================
+   AGENDA PROPIA (generada desde la planilla de fechas)
+   ========================================================================== */
+
+.agenda-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.agenda-item {
+    display: grid;
+    grid-template-columns: 92px 1fr auto;
+    gap: 22px;
+    align-items: center;
+    padding: 20px 24px;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.agenda-item:hover {
+    background: #191919;
+    border-color: var(--accent-color);
+    transform: translateX(3px);
+}
+
+.agenda-fecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1;
+    text-align: center;
+}
+
+.agenda-dia {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.agenda-mes {
+    margin-top: 6px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+}
+
+.agenda-dow {
+    margin-top: 6px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+}
+
+.agenda-detalle {
+    text-align: left;
+    min-width: 0;
+}
+
+.agenda-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin: 0 0 8px 0;
+}
+
+.agenda-meta {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.agenda-hora {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.agenda-lugar {
+    color: var(--text-main);
+}
+
+.agenda-dir a {
+    color: var(--text-main);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.45);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.agenda-dir a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.agenda-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.agenda-acciones .btn-ticket {
+    display: block;
+    text-align: center;
+}
+
+.agenda-cal {
+    display: block;
+    padding: 8px 12px;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.agenda-cal:hover {
+    color: var(--text-main);
+    border-color: var(--text-main);
+}
+
+.agenda-vacia {
+    text-align: center;
+    opacity: 0.7;
+    padding: 40px 0;
+}
+
+.agenda-suscribir {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.agenda-suscribir a {
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.agenda-suscribir a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 700px) {
+    .agenda-item {
+        grid-template-columns: 70px 1fr;
+        gap: 14px 16px;
+        padding: 16px;
     }
+    .agenda-dia { font-size: 2.2rem; }
+    .agenda-titulo { font-size: 1.15rem; }
+    .agenda-acciones {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        min-width: 0;
+    }
+    .agenda-acciones > * { flex: 1; }
 }
