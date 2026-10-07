@@ -35,6 +35,11 @@ explica cada columna). Se ven siempre las 2 próximas fechas y el resto aparece 
 desaparecen solos y una fila con fecha pasada se ignora aunque tenga otros datos raros.
 No hace falta tocar el sitio.
 
+**Botón de cada fecha:** en la planilla, la columna "Botón" es un menú con dos opciones.
+*Reservar* muestra el botón RESERVAR (traducido) con el link de entradas (Passline).
+*Más info* muestra +INFO y abre la página del evento (por ejemplo la de la Milonga Federal).
+Si se deja vacío, es automático: con link → RESERVAR; sin link → +INFO que va a la agenda.
+
 **No editar a mano** esas tres zonas en los `index.html`: la próxima corrida las pisa.
 
 **Si hay un error en la planilla** (una fecha que no se entiende, un link sin http, etc.)

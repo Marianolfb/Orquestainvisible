@@ -101,6 +101,7 @@ for my $i (0 .. $#{$all[$hdr_idx]}) {
     elsif ($h =~ /^lugar/)                     { $col{lugar}   //= $i }
     elsif ($h =~ /^calle/)                     { $col{calle}   //= $i }
     elsif ($h =~ /^ciudad/)                    { $col{ciudad}  //= $i }
+    elsif ($h =~ /^bot/)                       { $col{boton}   //= $i }
     elsif ($h =~ /^link/)                      { $col{link}    //= $i }
     elsif ($h =~ /^precio/)                    { $col{precio}  //= $i }
     elsif ($h =~ /^organiza/)                  { $col{organiza}//= $i }
@@ -170,7 +171,14 @@ for my $ri ($hdr_idx + 1 .. $#all) {
     $e{calle}  = $cell->('calle');
     $e{ciudad} = length $cell->('ciudad') ? $cell->('ciudad') : 'CABA';
     $e{link}   = $cell->('link');
-    push @errors, "fila $line: el link de entradas debe empezar con http" if length $e{link} && $e{link} !~ m{^https?://}i;
+    push @errors, "fila $line: el Link debe empezar con http" if length $e{link} && $e{link} !~ m{^https?://}i;
+    # Botón: "Reservar" (link de entradas), "Más info" (página del evento) o vacío = automático
+    my $b = norm($cell->('boton'));
+    if    ($b eq '')                                            { $e{boton} = length $e{link} ? 'reservar' : 'info'; }
+    elsif ($b =~ /^(reservar|reserva|entradas|tickets?)$/)      { $e{boton} = 'reservar'; }
+    elsif ($b =~ /^(mas info|mas informacion|info|informacion)$/) { $e{boton} = 'info'; }
+    else { push @errors, "fila $line: el Botón \"" . $cell->('boton') . "\" debe ser Reservar o Más info"; next; }
+    push @errors, "fila $line: el Botón es Reservar pero falta el Link de entradas" if $e{boton} eq 'reservar' && !length $e{link};
     my $p = parse_price($cell->('precio'));
     if (defined $p && $p eq 'ERR') { push @errors, "fila $line: el Precio \"" . $cell->('precio') . "\" no se entiende"; next; }
     $e{precio} = $p;
@@ -213,9 +221,11 @@ sub row_html {
     my ($lang, $e, $ind) = @_;
     my $addr = show_address($lang, $e);
     my $p = defined $e->{time} ? tfmt($lang, $e->{time}, $e->{min}) . $SEP{$lang} . $addr : $addr;
-    my $btn = length $e->{link}
+    my $btn = $e->{boton} eq 'reservar'
         ? sprintf('<a href="%s" target="_blank" class="btn-ticket">%s</a>', he($e->{link}), $BOOK{$lang})
-        : '<a href="agenda.html" class="btn-ticket">+INFO</a>';
+        : length $e->{link}
+            ? sprintf('<a href="%s" target="_blank" class="btn-ticket">+INFO</a>', he($e->{link}))
+            : '<a href="agenda.html" class="btn-ticket">+INFO</a>';
     my $i0 = ' ' x $ind; my $i1 = ' ' x ($ind + 4); my $i2 = ' ' x ($ind + 8);
     return "$i0<div class=\"show-row reveal\">\n"
          . "$i1<div class=\"show-date\">" . dfmt($lang, $e->{date}) . "</div>\n"
@@ -268,7 +278,7 @@ sub schema_events {
         $ev{endDate} = $end if defined $end;
         $ev{organizer} = { '@type' => 'Organization', name => 'Orquesta Invisible', url => "$BASE/" } if $e->{organiza};
         if (defined $e->{precio}) {
-            $ev{offers} = { '@type' => 'Offer', url => $url, price => "$e->{precio}", priceCurrency => $e->{moneda},
+            $ev{offers} = { '@type' => 'Offer', url => ($e->{boton} eq 'reservar' ? $e->{link} : $url), price => "$e->{precio}", priceCurrency => $e->{moneda},
                             availability => 'https://schema.org/InStock' };
         }
         push @out, \%ev;
