@@ -4,6 +4,7 @@ name: Actualizar fechas desde la planilla
 # (filas + datos para Google + frase de la bio) y publica si hubo cambios.
 # Si algo de la planilla está mal cargado, el script falla y NO toca el sitio:
 # GitHub manda un mail con el detalle (columna y fila del problema).
+# Para correrla ya mismo: pestaña Actions de GitHub -> esta tarea -> Run workflow.
 on:
   schedule:
     - cron: '*/30 * * * *'
