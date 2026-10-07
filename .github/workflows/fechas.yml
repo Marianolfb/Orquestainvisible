@@ -1,0 +1,48 @@
+name: Actualizar fechas desde la planilla
+
+# Lee la planilla de Google (pestaña "Fechas"), regenera "Próximas fechas" en los 7 idiomas
+# (filas + datos para Google + frase de la bio) y publica si hubo cambios.
+# Si algo de la planilla está mal cargado, el script falla y NO toca el sitio:
+# GitHub manda un mail con el detalle (columna y fila del problema).
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/build_fechas.pl'
+      - '.github/workflows/fechas.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fechas
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    env:
+      FECHAS_CSV_URL: 'https://docs.google.com/spreadsheets/d/1UMtT92XTP9xrj_abXEV3wLVwNgxh3C5c-c_U3IOHH10/export?format=csv&gid=0'
+    steps:
+      - name: Bajar el código del sitio
+        uses: actions/checkout@v4
+
+      - name: Descargar la planilla
+        run: curl -fsSL --retry 3 "$FECHAS_CSV_URL" -o /tmp/fechas.csv
+
+      - name: Generar las fechas
+        run: perl scripts/build_fechas.pl /tmp/fechas.csv .
+
+      - name: Publicar si hubo cambios
+        run: |
+          git config user.name "fechas-bot"
+          git config user.email "fechas-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios en las fechas."
+          else
+            git commit -m "Fechas: actualización automática desde la planilla"
+            git push
+          fi

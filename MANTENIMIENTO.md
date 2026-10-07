@@ -17,53 +17,46 @@ replicarlo en las 7 versiones, traducido.
 
 ---
 
-## Después de cada fecha (concierto / milonga)
+## Próximas fechas (se actualizan solas desde una planilla)
 
-En los **7 `index.html`**, sección `<section id="conciertos">` ("Próximas fechas"):
+**Las fechas ya no se editan en el HTML.** Se cargan en una planilla de Google
+("Fechas de la Orquesta Invisible (alimenta la web)", cuenta
+orquestatipicainvisible@gmail.com, pestaña **Fechas**). Cada ~30 minutos una tarea de
+GitHub (`.github/workflows/fechas.yml` + `scripts/build_fechas.pl`) lee la planilla y
+reescribe, en los 7 idiomas:
 
-1. **Borrar** el bloque `<div class="show-row reveal"> … </div>` de la fecha que
-   ya pasó.
-2. Si esa fecha era la **primera** (la que se ve sin desplegar), subí la
-   siguiente: sacá una `<div class="show-row reveal">` de adentro de
-   `<div id="extra-shows" style="display: none;">` y ponela como primera.
-3. **Agregar** las fechas nuevas al final, en orden cronológico. Cada fila:
+- las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
+- el JSON-LD de eventos (`SEO-BOOST: eventos`),
+- la frase "Próxima fecha: …" de la bio en español.
 
-   ```html
-   <div class="show-row reveal">
-       <div class="show-date">DD.MM.AA </div>          <!-- japonés: AAAA.MM.DD -->
-       <div class="show-info">
-           <h3>NOMBRE DEL LUGAR</h3>
-           <p>HH:MM HS - Dirección, CABA</p>            <!-- traducir hora y "HS" -->
-       </div>
-       <div class="show-action">
-           <a href="URL-DE-ENTRADAS" target="_blank" class="btn-ticket">RESERVAR</a>
-       </div>
-   </div>
-   ```
+**Qué hacer:** agregar, editar o borrar filas en la planilla (la pestaña "Cómo usar"
+explica cada columna). Los shows pasados desaparecen solos. No hace falta tocar el sitio.
 
-   - El link de entradas es de Passline (uno por fecha).
-   - Si no hay link de entradas todavía, poné
-     `<a href="agenda.html" class="btn-ticket">+INFO</a>`.
-   - Traducciones del botón: RESERVAR / BOOK NOW / PRENOTA / RÉSERVER / RESERVIEREN / 予約する
-   - Traducciones de "HS": HS / PM / — / — / Uhr / (nada; en japonés va `21:00 ／ …`)
+**No editar a mano** esas tres zonas en los `index.html`: la próxima corrida las pisa.
 
-4. **Bio:** solo en `index.html` (ES), el último párrafo de `<section id="bio">`
-   dice *"Próxima fecha: Sábado XX de … de 20XX"*. Actualizala o borrá esa frase.
+**Si hay un error en la planilla** (una fecha que no se entiende, un link sin http, etc.)
+la tarea falla y **no cambia nada del sitio**; GitHub manda un mail al dueño del
+repositorio con la fila y el problema. Se corrige la planilla y en la próxima corrida
+queda andando. Para forzar una corrida: GitHub → pestaña *Actions* → "Actualizar fechas
+desde la planilla" → *Run workflow*.
 
-5. **JSON-LD de eventos:** en el `<head>` de los 7 `index.html` hay un bloque
-   `<!-- SEO-BOOST: eventos -->` (schema.org `Event`, uno por fecha) que le muestra
-   las fechas a Google como resultado enriquecido. **No se genera solo** a partir de
-   los `show-row`: hay que agregar/borrar/editar ahí a mano el `startDate` (formato
-   ISO `AAAA-MM-DDTHH:MM:00-03:00`), el `location` y el `url` (link de entradas si
-   hay, si no `agenda.html` del idioma) de cada fecha, igual que en el punto 1-3. El precio
-   va en `offers.price` (hoy `17000` ARS); si un show no tiene precio confirmado,
-   se omite el bloque `offers` de ese evento (y `endDate` si no se sabe la hora de cierre).
+**Otros puntos que siguen siendo manuales:**
 
-6. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
+1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
    Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
    (o a `agenda.html` si todavía no hay link).
+2. **Google Calendar** "Fechas invisibles" (el que se ve en `agenda.html`): se edita aparte,
+   en calendar.google.com con la cuenta orquestatipicainvisible@gmail.com.
+3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
-7. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
+**Cambiar cómo se ve una fila o los textos por idioma** (botón RESERVAR, formato de hora,
+descripciones): está en `scripts/build_fechas.pl` (tablas al principio del archivo).
+Para probarlo sin tocar el sitio real: `perl scripts/build_fechas.pl fechas.csv .` con un
+CSV de prueba (variable `TODAY=AAAA-MM-DD` simula otro día).
+
+**Ojo al subir cambios a mano:** la tarea hace commits en `main`. Antes de subir algo desde
+la compu, traer los cambios (`git pull --rebase`) para no pisarlos.
+
 
 ---
 
