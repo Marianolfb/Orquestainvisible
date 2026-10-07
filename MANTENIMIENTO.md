@@ -27,11 +27,7 @@ reescribe, en los 7 idiomas:
 
 - las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
 - el JSON-LD de eventos (`SEO-BOOST: eventos`),
-- la frase "Próxima fecha: …" de la bio en español,
-- la **página de agenda** (`agenda.html` de cada idioma, zona `AGENDA:INICIO` / `AGENDA:FIN`):
-  tarjetas con fecha, lugar, "Cómo llegar", botón de entradas / más info y "+ Calendario",
-- el archivo **`fechas.ics`** (calendario al que cualquiera puede suscribirse desde la
-  agenda; también se puede agregar a Google Calendar con "Otros calendarios → Desde URL").
+- la frase "Próxima fecha: …" de la bio en español.
 
 **Qué hacer:** agregar, editar o borrar filas en la planilla (la pestaña "Cómo usar"
 explica cada columna). Se ven siempre las 2 próximas fechas y el resto aparece al tocar
@@ -42,7 +38,8 @@ No hace falta tocar el sitio.
 **Botón de cada fecha:** en la planilla, la columna "Botón" es un menú con dos opciones.
 *Reservar* muestra el botón RESERVAR (traducido) con el link de entradas (Passline).
 *Más info* muestra +INFO y abre la página del evento (por ejemplo la de la Milonga Federal).
-Si se deja vacío, es automático: con link → RESERVAR; sin link → +INFO que va a la agenda.
+Si se deja vacío, es automático: con un link de boletería conocida (Passline, Ticketek, Eventbrite…)
+muestra RESERVAR; con cualquier otro link, +INFO; sin link, no se muestra botón.
 
 **No editar a mano** esas zonas en los `index.html`: la próxima corrida las pisa.
 
@@ -56,9 +53,9 @@ desde la planilla" → *Run workflow*.
 
 1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
    Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
-   (o a `agenda.html` si todavía no hay link).
-2. **Google Calendar:** el sitio ya no usa ninguno (la agenda y el `fechas.ics` salen de la planilla).
-   El calendario "Fechas invisibles" se descartó; no hay que cargar fechas en ningún otro lado.
+   (si todavía no hay link, ponerlo en la planilla cuando exista y dejar este botón apuntando a la home).
+2. **Google Calendar / agenda aparte:** ya no existen. Se descartaron la página `agenda.html` y el
+   calendario "Fechas invisibles"; las fechas solo se cargan en la planilla.
 3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
 
 **Cambiar cómo se ve una fila o los textos por idioma** (botón RESERVAR, formato de hora,

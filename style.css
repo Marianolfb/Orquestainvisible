@@ -448,46 +448,6 @@ body {
     color: #FF0000;
 }
 
-/* ==========================================================================
-   AJUSTE DE TAMAÑO PARA EL ÍCONO DE LA AGENDA (INDEX)
-   ========================================================================== */
-
-/* 1. Si pusiste el link en la sección de Música (junto a Spotify y YouTube gigantes) */
-.music-grid .agenda-icon-link i {
-    font-size: 4.8rem !important; /* Le subimos un poco el tamaño para compensar los márgenes del vector */
-    vertical-align: middle;
-}
-
-/* 2. Si pusiste el link en el Footer (junto a los de redes de 2.5rem) */
-.footer-social .agenda-icon-link i,
-.social-links .agenda-icon-link i {
-    font-size: 3.2rem !important; /* Lo agrandamos para que visualmente empareje a los de marcas */
-    vertical-align: middle;
-}
-
-/* Aseguramos la transición suave y el color de interacción */
-.agenda-icon-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.agenda-icon-link i {
-    color: var(--text-main);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Comportamiento al pasar el mouse (se enciende en Rojo Tango) */
-.agenda-icon-link:hover i {
-    color: var(--accent-color) !important;
-    filter: drop-shadow(0px 0px 10px var(--accent-color));
-}
-
-.agenda-icon-link:hover {
-    transform: scale(1.1);
-}
 
 /* Estilos para el Footer e Instagram */
 .footer-social {
@@ -1754,4 +1714,4 @@ blockquote {
     padding: 0 !important;   /* <--- Quitamos el padding de 20px de las fotos */
     display: flex;
     justify-content: center;
-}
+}
