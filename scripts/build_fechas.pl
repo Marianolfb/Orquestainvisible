@@ -171,14 +171,14 @@ for my $ri ($hdr_idx + 1 .. $#all) {
     $e{ciudad} = length $cell->('ciudad') ? $cell->('ciudad') : 'CABA';
     $e{link}   = $cell->('link');
     push @errors, "fila $line: el Link debe empezar con http" if length $e{link} && $e{link} !~ m{^https?://}i;
-    # Botón: "Reservar" (link de entradas), "Más info" (página del evento) o vacío = automático
+    # Botón: lo elige la persona en el menú. "Reservar" = RESERVAR (link de entradas), "Más info" = +INFO
+    # (página del evento). Vacío = esa fecha NO muestra botón (no hay nada automático).
     my $b = norm($cell->('boton'));
-    # vacío = automático: RESERVAR solo si el link es de una boletería conocida; si no, +INFO
-    if    ($b eq '')                                            { $e{boton} = $e{link} =~ m{^https?://(?:[^/]*\.)?(?:passline\.com|ticketek\.com(?:\.ar)?|eventbrite\.[a-z.]+|entradauno\.com|allaccess\.com\.ar|tuentrada\.com|plateanet\.com|ticketportal\.com\.ar|joinnus\.com|tickantel\.com\.uy)(?:/|$)}i ? 'reservar' : 'info'; }
+    if    ($b eq '')                                            { $e{boton} = ''; }
     elsif ($b =~ /^(reservar|reserva|entradas|tickets?)$/)      { $e{boton} = 'reservar'; }
     elsif ($b =~ /^(mas info|mas informacion|info|informacion)$/) { $e{boton} = 'info'; }
     else { push @errors, "fila $line: el Botón \"" . $cell->('boton') . "\" debe ser Reservar o Más info"; next; }
-    push @errors, "fila $line: el Botón es Reservar pero falta el Link de entradas" if $e{boton} eq 'reservar' && !length $e{link};
+    push @errors, "fila $line: elegiste el botón \"" . $cell->('boton') . "\" pero falta el Link" if length $e{boton} && !length $e{link};
     my $p = parse_price($cell->('precio'));
     if (defined $p && $p eq 'ERR') { push @errors, "fila $line: el Precio \"" . $cell->('precio') . "\" no se entiende"; next; }
     $e{precio} = $p;
@@ -221,11 +221,9 @@ sub row_html {
     my ($lang, $e, $ind) = @_;
     my $addr = show_address($lang, $e);
     my $p = defined $e->{time} ? tfmt($lang, $e->{time}, $e->{min}) . $SEP{$lang} . $addr : $addr;
-    my $btn = $e->{boton} eq 'reservar'
-        ? sprintf('<a href="%s" target="_blank" class="btn-ticket">%s</a>', he($e->{link}), $BOOK{$lang})
-        : length $e->{link}
-            ? sprintf('<a href="%s" target="_blank" class="btn-ticket">+INFO</a>', he($e->{link}))
-            : '';   # sin link: no hay botón
+    my $btn = $e->{boton} eq 'reservar' ? sprintf('<a href="%s" target="_blank" class="btn-ticket">%s</a>', he($e->{link}), $BOOK{$lang})
+            : $e->{boton} eq 'info'     ? sprintf('<a href="%s" target="_blank" class="btn-ticket">+INFO</a>', he($e->{link}))
+            :                             '';   # sin botón elegido: no se muestra ninguno
     my $i0 = ' ' x $ind; my $i1 = ' ' x ($ind + 4); my $i2 = ' ' x ($ind + 8);
     return "$i0<div class=\"show-row reveal\">\n"
          . "$i1<div class=\"show-date\">" . dfmt($lang, $e->{date}) . "</div>\n"

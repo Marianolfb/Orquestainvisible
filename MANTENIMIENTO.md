@@ -38,8 +38,8 @@ No hace falta tocar el sitio.
 **Botón de cada fecha:** en la planilla, la columna "Botón" es un menú con dos opciones.
 *Reservar* muestra el botón RESERVAR (traducido) con el link de entradas (Passline).
 *Más info* muestra +INFO y abre la página del evento (por ejemplo la de la Milonga Federal).
-Si se deja vacío, es automático: con un link de boletería conocida (Passline, Ticketek, Eventbrite…)
-muestra RESERVAR; con cualquier otro link, +INFO; sin link, no se muestra botón.
+Si se deja vacío, esa fecha **no muestra botón** (no hay nada automático). Si se elige un botón
+hay que cargar también el Link; si falta, la tarea avisa con un error y no cambia nada.
 
 **No editar a mano** esas zonas en los `index.html`: la próxima corrida las pisa.
 
