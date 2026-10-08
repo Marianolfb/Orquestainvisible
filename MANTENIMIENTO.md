@@ -21,9 +21,11 @@ replicarlo en las 7 versiones, traducido.
 
 **Las fechas ya no se editan en el HTML.** Se cargan en una planilla de Google
 ("Fechas de la Orquesta Invisible (alimenta la web)", cuenta
-orquestatipicainvisible@gmail.com, pestaña **Fechas**). Cada ~30 minutos una tarea de
-GitHub (`.github/workflows/fechas.yml` + `scripts/build_fechas.pl`) lee la planilla y
-reescribe, en los 7 idiomas:
+orquestatipicainvisible@gmail.com, pestaña **Fechas**). Un minuto después de cada edición,
+un Apps Script ("Publicar fechas en la web", cuenta de la orquesta) avisa a GitHub y una tarea
+(`.github/workflows/fechas.yml` + `scripts/build_fechas.pl`) lee la planilla; la web queda
+actualizada en ~3 minutos. (El cron de GitHub cada 30 min queda de respaldo, pero es irregular.)
+La tarea reescribe, en los 7 idiomas:
 
 - las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
 - el JSON-LD de eventos (`SEO-BOOST: eventos`),
@@ -42,6 +44,12 @@ Si se deja vacío, esa fecha **no muestra botón** (no hay nada automático). Si
 hay que cargar también el Link; si falta, la tarea avisa con un error y no cambia nada.
 
 **No editar a mano** esas zonas en los `index.html`: la próxima corrida las pisa.
+
+**Apps Script del aviso:** proyecto independiente "Publicar fechas en la web" (script.google.com,
+cuenta de la orquesta). Usa un token de GitHub (fine-grained, solo el repo, permiso Actions: Read and write)
+guardado en Configuración del proyecto → Propiedades de script → `GITHUB_TOKEN`. Si el token vence,
+crear otro, reemplazar esa propiedad y correr `configurar` de nuevo. Para publicar sin editar la
+planilla: correr `publicarAhora` desde el editor.
 
 **Si hay un error en la planilla** (una fecha que no se entiende, un link sin http, etc.)
 la tarea falla y **no cambia nada del sitio**; GitHub manda un mail al dueño del
