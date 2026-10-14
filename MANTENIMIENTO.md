@@ -59,9 +59,8 @@ desde la planilla" → *Run workflow*.
 
 **Otros puntos que siguen siendo manuales:**
 
-1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta al
-   Passline de la próxima fecha. Cuando esa fecha pasa, cambiarlo al de la siguiente
-   (si todavía no hay link, ponerlo en la planilla cuando exista y dejar este botón apuntando a la home).
+1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta a la cartelera
+   propia (`https://entradas.orquestainvisible.musica.ar`), así que ya no hay que cambiarlo fecha a fecha.
 2. **Google Calendar / agenda aparte:** ya no existen. Se descartaron la página `agenda.html` y el
    calendario "Fechas invisibles"; las fechas solo se cargan en la planilla.
 3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
