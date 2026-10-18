@@ -112,6 +112,31 @@ El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
 un renglón en los 7 idiomas (el japonés es el más largo).
 
+## Press kit (descargas)
+
+En la sección Prensa (`<div class="press-kit-container" id="press-kit">`) se descargan directo desde
+la web los archivos de la carpeta `press-kit/`:
+
+| Archivo | Qué es |
+|---------|--------|
+| `orquesta-invisible-dossier-es.pdf` / `-en.pdf` | Dossier (el botón grande baja el ES en la página en español y el EN en las demás) |
+| `orquesta-invisible-rider-es.pdf` / `-en.pdf` | Rider técnico |
+| `orquesta-invisible-bio-es.docx` / `-en.docx` | Bio corta y larga (Word, para copiar) |
+| `orquesta-invisible-logo.zip` | Logo negro y blanco (para imprimir y para web) |
+
+Para actualizar uno, **reemplazar el archivo con el mismo nombre** y subir: no hay que tocar los
+HTML. "Fotos en alta" lleva a la carpeta del Drive. El botón "EPK" del pie y el de `links.html`
+llevan a este bloque.
+
+## Medición de clics
+
+`medicion.js` (cargado en las 42 páginas) avisa a Google Analytics cuando alguien toca:
+`clic_reservar`, `clic_mas_info_fecha` (con la fecha), `clic_contrataciones`, `clic_mail`,
+`clic_press_kit` (con el archivo), `clic_nota_prensa` (con el medio), `clic_portada_fechas`,
+`clic_portada_disco`, `clic_spotify`, `abrir_reproductor_spotify`, `ver_video`,
+`clic_instagram` y `clic_youtube`. Se ven en Google Analytics → Informes → Interacción →
+Eventos (tardan hasta 48 h en aparecer; en "Tiempo real" se ven al momento).
+
 ## Notas de prensa nuevas
 
 En los 7 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un
