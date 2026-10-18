@@ -29,7 +29,9 @@ La tarea reescribe, en los 7 idiomas:
 
 - las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
 - el JSON-LD de eventos (`SEO-BOOST: eventos`),
-- la frase "Próxima fecha: …" de la bio en español.
+- la frase "Próxima fecha: …" de la bio en español: es la próxima fecha del **ciclo en La Tierra
+  Invisible** (filas cuyo Lugar dice "La Tierra Invisible" o cuya calle es Centenera 1099), no
+  la próxima fecha a secas. Si no hay ninguna cargada, dice "a confirmar".
 
 **Qué hacer:** agregar, editar o borrar filas en la planilla (la pestaña "Cómo usar"
 explica cada columna). Se ven siempre las 2 próximas fechas y el resto aparece al tocar
@@ -75,6 +77,36 @@ la compu, traer los cambios (`git pull --rebase`) para no pisarlos.
 
 
 ---
+
+## Disco e integrantes
+
+- **«Huella»** (`<section id="huella">`, después de las fechas): tapa en `Fotos/huella-tapa.webp`,
+  año y los 11 temas en orden de Spotify, con botón al álbum. Si sale otro disco, se agrega una
+  sección igual en los 7 `index.html` (y en el JSON-LD `album` del grupo).
+- **Integrantes** (debajo de la bio, `<div class="integrantes">`): foto, nombre e instrumento
+  en los 7 idiomas. Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp`
+  (480×600). Si cambia la formación, actualizar la grilla en los 7 `index.html` y la lista
+  `member` del JSON-LD del grupo.
+
+## Google (título y descripción)
+
+En el `<head>` de cada `index.html`, el título (`<title>`, `og:title`, `twitter:title`) y la
+descripción (`description`, `og:description`, `twitter:description`) van **iguales** entre sí y
+traducidos en los 7 idiomas. Apuntan a búsquedas como "tango contemporáneo", "tango actual",
+"nuevo tango" y "orquesta típica". Los géneros están en el JSON-LD del grupo (`genre`).
+
+## Reproductor de Spotify
+
+El reproductor flotante arranca **cerrado** en compu y celular: se ve el botón redondo y al
+tocarlo se abre (y recién ahí se baja de Spotify). Está en `script.js` ("Reproductor de Spotify").
+
+## Estilos
+
+Todo el sitio comparte una sola línea: fondo negro, rojo tango (`--accent-color`), títulos y
+botones en Oswald, textos en Roboto Mono. Las reglas que la unifican (botones, tarjetas,
+fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, en el bloque
+«MEJORAS (octubre 2026)». Si se cambia `style.css`, subir el número de `?v=` en los
+`<link>` de los 7 `index.html` y de los relatos, para que nadie vea la versión vieja.
 
 ## Notas de prensa nuevas
 

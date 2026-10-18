@@ -277,8 +277,10 @@ sub schema_block {
     return "    <!-- SEO-BOOST: eventos -->\n    <script type=\"application/ld+json\">\n$txt\n    </script>";
 }
 sub bio_sentence {
-    return 'Próxima fecha: a confirmar.' unless @events;
-    my $d = $events[0]{date};
+    # La bio habla del ciclo mensual en La Tierra Invisible: muestra la próxima fecha de ese ciclo
+    my ($e) = grep { norm($_->{lugar}) =~ /tierra invisible/ || norm($_->{calle}) =~ /centenera 1099/ } @events;
+    return 'Próxima fecha: a confirmar.' unless $e;
+    my $d = $e->{date};
     my @w = gmtime(timegm(0, 0, 12, $d->{d}, $d->{m} - 1, $d->{y}));
     return sprintf('Próxima fecha: %s %d de %s de %d.', $DIAS[$w[6]], $d->{d}, $MESES[$d->{m} - 1], $d->{y});
 }

@@ -1714,4 +1714,617 @@ blockquote {
     padding: 0 !important;   /* <--- Quitamos el padding de 20px de las fotos */
     display: flex;
     justify-content: center;
-}
+}
+
+
+/* =====================================================================
+   MEJORAS (octubre 2026): funcionamiento, distribución y estilos unificados.
+   Mantiene la identidad de siempre (negro, rojo tango, Oswald y Roboto Mono)
+   y pisa las reglas de arriba que hacían que cada sección se viera distinta.
+   ===================================================================== */
+
+/* ---------- Íconos en SVG (los mismos dibujos de Font Awesome) ---------- */
+.fa-ico {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    overflow: visible;
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+.icon-link svg {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+/* Íconos: blancos y rojos al pasar el mouse, igual que los links del menú */
+.nav-links .nav-icon.ig,
+.nav-links .nav-icon.yt,
+.nav-links .nav-icon.sp {
+    color: var(--text-main);
+}
+
+.nav-links .nav-icon.ig:hover,
+.nav-links .nav-icon.yt:hover,
+.nav-links .nav-icon.sp:hover,
+.icon-link:hover,
+.icon-link:hover svg,
+.icon-link:hover .fa-spotify,
+.icon-link:hover .fa-youtube {
+    color: var(--accent-color);
+}
+
+.icon-link:hover svg {
+    filter: drop-shadow(0px 0px 10px var(--accent-color));
+}
+
+/* ---------- Secciones: mismo fondo, mismo aire y mismo ancho de contenido ---------- */
+.shows,
+.album-section,
+.video-section,
+.bio-section,
+.relatos-section,
+.press-section,
+.music-section {
+    background: var(--bg-color);
+    padding: 80px max(5%, calc((100% - 1200px) / 2));
+}
+
+.gallery-section {
+    background: var(--bg-color);
+    padding: 80px 0;
+}
+
+/* Menú y portada alineados con el contenido */
+.navbar,
+.hero-urbano {
+    padding-left: max(5%, calc((100% - 1200px) / 2));
+    padding-right: max(5%, calc((100% - 1200px) / 2));
+}
+
+.gallery-section .section-title {
+    margin-left: max(5%, calc((100% - 1200px) / 2));
+    margin-right: max(5%, calc((100% - 1200px) / 2));
+}
+
+.music-section {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+/* ---------- Portada: botones directos a las fechas y al disco ---------- */
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn-ticket.btn-principal {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+.hero-botones .btn-ticket:not(.btn-principal) {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Todos los títulos de sección en mayúsculas, como el resto */
+.section-title {
+    text-transform: uppercase;
+}
+
+/* ---------- Próximas fechas: filas compactas ---------- */
+.show-row .show-action {
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.shows > .show-action {
+    margin-bottom: 0;
+}
+
+/* ---------- Botones: uno solo para toda la página ---------- */
+.btn-ticket,
+#btn-toggle-shows,
+.btn-press-kit,
+.spotify-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    margin: 0;
+    padding: 12px 24px;
+    border: 2px solid var(--text-main);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: none;
+    transform: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-ticket:hover,
+#btn-toggle-shows:hover,
+.btn-press-kit:hover,
+.spotify-card:hover {
+    background: var(--text-main) !important;
+    border-color: var(--text-main);
+    color: #000 !important;
+    box-shadow: none;
+    transform: none;
+}
+
+#btn-toggle-shows::after {
+    display: none;
+}
+
+.btn-press-kit span,
+.btn-press-kit:hover span {
+    display: inline;
+    margin: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+
+.spotify-card {
+    margin-top: 20px;
+}
+
+.spotify-card svg {
+    font-size: 1.1rem;
+}
+
+/* ---------- Botones redondos y flechas: todos como las de prensa ---------- */
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.swiper .swiper-button-next:hover,
+.swiper .swiper-button-prev:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.close-spotify {
+    background: #000;
+    color: var(--text-main);
+    border: 1px solid var(--accent-color);
+    box-shadow: none;
+}
+
+.close-spotify:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.reopen-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    justify-content: center;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--accent-color);
+    font-size: 1.4rem;
+}
+
+.reopen-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.pulse-animation {
+    animation: pulse-acento 2s infinite;
+}
+
+@keyframes pulse-acento {
+    0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(230, 57, 70, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
+.spotify-container {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* Flechas y puntos de los carruseles en el rojo de la web */
+.relatosSwiper,
+.mySwiper {
+    --swiper-theme-color: var(--accent-color);
+}
+
+/* ---------- Tarjetas: relatos y prensa iguales ---------- */
+.relatosSwiper .relato-card,
+.press-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 30px;
+    transform: none;
+    transition: border-color 0.3s ease;
+}
+
+.relatosSwiper .relato-card:hover,
+.press-card:hover {
+    background: #111;
+    border-color: var(--accent-color);
+    transform: none;
+}
+
+.relatosSwiper .relato-card h3,
+.press-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.relatosSwiper .relato-card p,
+.press-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+}
+
+/* ---------- Fotos: un solo tratamiento (apenas desaturadas, a color con el mouse) ---------- */
+.mySwiper .swiper-slide {
+    padding: 0;
+}
+
+/* lugar para los puntos debajo de las fotos (antes los daba el marco polaroid) */
+.gallery-section .mySwiper {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+}
+
+.mySwiper .swiper-slide img {
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    filter: grayscale(20%);
+    transform: none;
+    cursor: default;
+}
+
+.mySwiper .swiper-slide img:hover {
+    filter: grayscale(0%);
+    transform: none;
+}
+
+.press-image {
+    height: auto;
+    aspect-ratio: 3 / 2;
+    border-radius: 0;
+}
+
+.press-image img {
+    filter: grayscale(20%);
+}
+
+.press-card:hover .press-image img {
+    filter: grayscale(0%);
+    transform: none;
+}
+
+.video-container {
+    border-radius: 0;
+}
+
+/* ---------- Videos: carga al tocar (miniatura con botón de YouTube) ---------- */
+.videoSwiper {
+    height: auto;
+}
+
+.yt-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: #000;
+    cursor: pointer;
+}
+
+/* (anula el estilo de la galería, que se aplicaba a toda foto dentro de un carrusel) */
+.videoSwiper .yt-facade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+.yt-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 68px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+}
+
+.yt-play-bg {
+    fill: #f00;
+}
+
+.yt-facade:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+}
+
+/* ---------- Relatos: margen para las flechas (lo pisaba el CSS de Swiper), sin alto fijo ---------- */
+.relatos-section .relatosSwiper {
+    margin: 0 auto;
+    padding: 0 50px 60px;
+    height: auto;
+}
+
+.relatosSwiper .swiper-slide {
+    align-items: stretch;
+}
+
+.relatosSwiper .swiper-button-prev {
+    left: 0;
+}
+
+.relatosSwiper .swiper-button-next {
+    right: 0;
+}
+
+/* ---------- Disco "Huella" ---------- */
+.album-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.album-cover {
+    flex: 0 1 380px;
+}
+
+.album-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-left: 4px solid var(--accent-color);
+}
+
+.album-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.album-year {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.album-tracks {
+    list-style: none;
+    columns: 2;
+    column-gap: 40px;
+    margin-bottom: 30px;
+    counter-reset: tema;
+}
+
+.album-tracks li {
+    counter-increment: tema;
+    break-inside: avoid;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+    font-size: 0.9rem;
+}
+
+.album-tracks li::before {
+    content: counter(tema, decimal-leading-zero);
+    color: var(--accent-color);
+    margin-right: 15px;
+}
+
+/* ---------- Nosotros: título arriba como en las demás secciones + integrantes ---------- */
+.bio-container {
+    align-items: flex-start;
+}
+
+.integrantes {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px 24px;
+}
+
+.integrante img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(20%);
+}
+
+.integrante figcaption {
+    padding-top: 14px;
+}
+
+.integrante-nombre {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.integrante-rol {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+/* ---------- Prensa: cita alineada con su barra, press kit arriba, carrusel accesible ---------- */
+.press-featured {
+    max-width: 900px;
+    margin: 0 0 40px;
+    text-align: left;
+}
+
+.press-featured blockquote {
+    margin: 0 0 15px;
+}
+
+.press-featured cite {
+    display: block;
+    padding-left: 23px;
+}
+
+.press-kit-container {
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* En pantallas de más de 1400 px el carrusel se centraba con desborde y las primeras
+   notas quedaban fuera de alcance (no se podía volver hasta ellas) */
+@media (min-width: 1400px) {
+    .press-gallery-container {
+        display: block;
+    }
+}
+
+.press-grid-horizontal {
+    margin: 0 auto;
+}
+
+/* ---------- Contacto ---------- */
+.footer-social a[href^="mailto:"] {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.footer-social a[href^="mailto:"]:hover {
+    color: var(--accent-color);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+@media (max-width: 1024px) {
+    .integrantes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .shows,
+    .album-section,
+    .video-section,
+    .bio-section,
+    .relatos-section,
+    .press-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .gallery-section {
+        padding: 60px 0;
+    }
+
+    .hero-botones {
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .hero-botones .btn-ticket {
+        padding: 11px 18px;
+        font-size: 0.8rem;
+    }
+
+    .show-row .show-action {
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    .album-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .album-cover {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .album-info {
+        width: 100%;
+    }
+
+    .album-tracks {
+        columns: 1;
+    }
+
+    .integrantes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 16px;
+        margin-top: 60px;
+    }
+
+    .relatos-section .relatosSwiper {
+        padding: 0 0 60px;
+    }
+
+    .relatosSwiper .swiper-button-prev,
+    .relatosSwiper .swiper-button-next {
+        display: none;
+    }
+}

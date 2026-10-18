@@ -37,7 +37,8 @@ function nextSlide() {
     // Pasamos a la siguiente (y volvemos a la primera si llegamos al final)
     currentSlide = (currentSlide + 1) % slides.length;
     
-    // Añadimos la clase active a la nueva foto
+    // Añadimos la clase active a la nueva foto (si todavía no se bajó, se baja ahora)
+    cargarFondo(slides[currentSlide]);
     slides[currentSlide].classList.add('active');
 }
 
@@ -199,24 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Aparecer suavemente tras 1 segundo de carga
+// Reproductor de Spotify: arranca cerrado; se abre con el botón redondo (en compu y en celular)
 window.addEventListener('load', () => {
-    const player = document.getElementById('spotify-player');
     const btn = document.getElementById('open-spotify-btn');
-    
-    // Verificamos si el ancho de pantalla es mayor a 480px (PC/Tablet horizontal)
-    if (window.innerWidth > 768) {
-        setTimeout(() => {
-            player.style.display = 'block';
-            setTimeout(() => player.classList.add('visible'), 50);
-            if (btn) btn.style.display = 'none';
-        }, 1000);
-    } else {
-        // En pantallas pequeñas, nos aseguramos de que el botón de apertura sea visible
-        if (btn) {
-            btn.style.display = 'flex';
-            btn.classList.add('pulse-animation');
-        }
+    if (btn) {
+        btn.style.display = 'flex';
+        btn.classList.add('pulse-animation');
     }
 });
 
@@ -226,6 +215,7 @@ function toggleSpotify(show) {
     const btn = document.getElementById('open-spotify-btn');
 
     if (show) {
+        cargarSpotify();
         player.style.display = 'block';
         setTimeout(() => player.classList.add('visible'), 10);
         btn.style.display = 'none';
@@ -239,3 +229,37 @@ function toggleSpotify(show) {
     }
 }
 
+// Fotos 2 y 3 de la portada: se bajan cuando la página ya cargó, así la primera aparece antes
+function cargarFondo(slide) {
+    if (slide && slide.dataset.bg) {
+        slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+        delete slide.dataset.bg;
+    }
+}
+
+window.addEventListener('load', function () {
+    slides.forEach(cargarFondo);
+});
+
+// Reproductor de Spotify: se baja recién cuando se muestra (en el celular, al tocar el botón verde)
+function cargarSpotify() {
+    const frame = document.querySelector('#spotify-player iframe[data-src]');
+    if (frame) {
+        frame.src = frame.dataset.src;
+        frame.removeAttribute('data-src');
+    }
+}
+
+// Videos: el reproductor de YouTube se carga recién cuando tocan la miniatura
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.yt-facade');
+    if (!btn) return;
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube.com/embed/' + btn.dataset.id + '?autoplay=1';
+    frame.title = btn.getAttribute('aria-label') || '';
+    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+    frame.allowFullscreen = true;
+    frame.setAttribute('frameborder', '0');
+    btn.replaceWith(frame);
+});
