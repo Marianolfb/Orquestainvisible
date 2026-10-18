@@ -2172,6 +2172,12 @@ blockquote {
     align-items: flex-start;
 }
 
+/* La foto tiene sus medidas en el HTML (para que la página no salte al cargar):
+   el alto tiene que acompañar al ancho para que no se estire */
+.bio-image img {
+    height: auto;
+}
+
 .integrantes {
     margin-top: 80px;
     display: grid;
