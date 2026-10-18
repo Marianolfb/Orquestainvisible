@@ -66,6 +66,10 @@ desde la planilla" → *Run workflow*.
 2. **Google Calendar / agenda aparte:** ya no existen. Se descartaron la página `agenda.html` y el
    calendario "Fechas invisibles"; las fechas solo se cargan en la planilla.
 3. `sitemap.xml` **no** hace falta tocarlo (solo si agregás o quitás páginas).
+4. **Bandsintown:** cada fecha nueva hay que cargarla también en Bandsintown for Artists
+   (página de la orquesta: https://www.bandsintown.com/a/15651746-orquesta-invisible).
+   **Spotify toma los conciertos de ahí** (y los muestra en el perfil de la orquesta en ~24 h);
+   la planilla no los manda sola.
 
 **Cambiar cómo se ve una fila o los textos por idioma** (botón RESERVAR, formato de hora,
 descripciones): está en `scripts/build_fechas.pl` (tablas al principio del archivo).
