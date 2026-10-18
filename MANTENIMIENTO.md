@@ -108,6 +108,10 @@ fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, e
 «MEJORAS (octubre 2026)». Si se cambia `style.css`, subir el número de `?v=` en los
 `<link>` de los 7 `index.html` y de los relatos, para que nadie vea la versión vieja.
 
+El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
+el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
+un renglón en los 7 idiomas (el japonés es el más largo).
+
 ## Notas de prensa nuevas
 
 En los 7 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un

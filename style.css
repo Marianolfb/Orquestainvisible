@@ -210,7 +210,7 @@ body {
 }
 
 /* En el dropdown horizontal (mobile) el 日本語 no debe partirse */
-@media (max-width: 768px) {
+@media (max-width: 1279px) {
     .lang-content a[lang="ja"] {
         letter-spacing: 0;
     }
@@ -786,10 +786,12 @@ body {
     padding: 80px 0;
 }
 
-/* Ajustes para Celular (Menú hamburguesa) */
 @media (max-width: 768px) {
-
     .title-main { font-size: 3rem; }
+}
+
+/* Menú hamburguesa: en celulares y también en tablets (hasta 1279 px el menú horizontal no entra) */
+@media (max-width: 1279px) {
 
         .menu-toggle {
         display: flex; /* Muestra la hamburguesa */
@@ -926,7 +928,10 @@ body {
     #current-lang {
         display: none; 
     }
-    
+}
+
+/* Ajustes para Celular */
+@media (max-width: 768px) {
     .hero-slide {
         background-size: auto 100%;
         background-position: 0% center;
