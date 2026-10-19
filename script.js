@@ -145,10 +145,19 @@ const swiperRelatos = new Swiper('.relatosSwiper', {
     }
 });
 
+// Para quien pide menos movimiento en su sistema, los carruseles nuevos no avanzan solos
+const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const videoSwiper = new Swiper('.videoSwiper', {
     slidesPerView: 1, // Muestra un video a la vez
     spaceBetween: 30, // Espacio entre slides
     loop: true,       // Para que vuelva al principio al terminar
+    // Avanza solo, como las fotos; se frena al pasar el mouse y al poner un video
+    autoplay: movimientoReducido ? false : {
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
     navigation: {
         nextEl: '.videoSwiper .swiper-button-next',
         prevEl: '.videoSwiper .swiper-button-prev',
@@ -197,6 +206,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const cardWidth = document.querySelector('.press-card').offsetWidth + 30;
             container.scrollLeft -= cardWidth;
         });
+    }
+
+    // Prensa: las notas avanzan solas, como las fotos. Se frena mientras el mouse
+    // o el dedo están encima, o cuando se usan las flechas, y al final vuelve al principio.
+    if (container && !movimientoReducido) {
+        let quieto = false;
+        let pausaHasta = 0;
+        const pausar = () => { pausaHasta = Date.now() + 8000; };
+        container.addEventListener('mouseenter', () => { quieto = true; });
+        container.addEventListener('mouseleave', () => { quieto = false; });
+        container.addEventListener('touchstart', pausar, { passive: true });
+        container.addEventListener('focusin', pausar);
+        [nextBtn, prevBtn].forEach((b) => b && b.addEventListener('click', pausar));
+        setInterval(() => {
+            if (quieto || Date.now() < pausaHasta || document.hidden) return;
+            const r = container.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > window.innerHeight) return; // solo si se ve
+            const card = container.querySelector('.press-card');
+            if (!card) return;
+            const paso = card.offsetWidth + 30;
+            const alFinal = container.scrollLeft + container.clientWidth >= container.scrollWidth - 5;
+            container.scrollTo({ left: alFinal ? 0 : container.scrollLeft + paso, behavior: 'smooth' });
+        }, 4000);
     }
 });
 
@@ -262,4 +294,42 @@ document.addEventListener('click', function (e) {
     frame.allowFullscreen = true;
     frame.setAttribute('frameborder', '0');
     btn.replaceWith(frame);
+    // con un video sonando, el carrusel deja de avanzar solo
+    if (typeof videoSwiper !== 'undefined' && videoSwiper.autoplay) videoSwiper.autoplay.stop();
 });
+
+// Integrantes: al tocar la foto se abre la biografía
+(function () {
+    const dialog = document.getElementById('bio-dialog');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    const foto = dialog.querySelector('.bio-dialog-foto');
+    const nombre = dialog.querySelector('#bio-dialog-nombre');
+    const rol = dialog.querySelector('.bio-dialog-rol');
+    const bio = dialog.querySelector('.bio-dialog-bio');
+    let origen = null;
+
+    document.querySelectorAll('.integrante-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const plantilla = document.getElementById('bio-' + btn.dataset.bio);
+            if (!plantilla) return;
+            const img = btn.querySelector('img');
+            foto.src = img.currentSrc || img.src;
+            foto.alt = img.alt;
+            nombre.textContent = btn.querySelector('.integrante-nombre').textContent;
+            rol.textContent = btn.querySelector('.integrante-rol').textContent;
+            bio.replaceChildren(plantilla.content.cloneNode(true));
+            origen = btn;
+            dialog.showModal();
+            dialog.scrollTop = 0;
+            document.body.classList.add('bio-abierta');
+        });
+    });
+
+    dialog.querySelector('.bio-cerrar').addEventListener('click', function () { dialog.close(); });
+    // tocar fuera de la ventana también la cierra
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', function () {
+        document.body.classList.remove('bio-abierta');
+        if (origen) origen.focus();
+    });
+})();

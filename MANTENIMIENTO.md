@@ -95,15 +95,27 @@ la compu, traer los cambios (`git pull --rebase`) para no pisarlos.
 
 ---
 
+## Orden de la página (pedido de la orquesta, 19/10/2026)
+
+Portada (con los botones a Próximas fechas y al disco) → **Fotos** (sin título visible; el
+título queda oculto para buscadores) → **Sobre nosotros** → **En vivo** (videos, avanzan solos)
+→ **Prensa** (las notas avanzan solas; se frenan con el mouse encima o al usar las flechas)
+→ **Integrantes** → **Relatos** → **Huella** → **Próximas fechas** → **Material de descarga**
+(press kit) → redes y contacto. El menú sigue el mismo orden. Si se cambia el orden, hacerlo
+igual en los 7 `index.html`.
+
 ## Disco e integrantes
 
-- **«Huella»** (`<section id="huella">`, después de las fechas): tapa en `Fotos/huella-tapa.webp`,
+- **«Huella»** (`<section id="huella">`): tapa en `Fotos/huella-tapa.webp`,
   año y los 11 temas en orden de Spotify, con botón al álbum. Si sale otro disco, se agrega una
   sección igual en los 7 `index.html` (y en el JSON-LD `album` del grupo).
-- **Integrantes** (debajo de la bio, `<div class="integrantes">`): foto, nombre e instrumento
-  en los 7 idiomas. Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp`
-  (480×600). Si cambia la formación, actualizar la grilla en los 7 `index.html` y la lista
-  `member` del JSON-LD del grupo.
+- **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 7 idiomas.
+  Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp` (480×600), con el crédito
+  debajo de la grilla. **Al tocar la foto se abre la biografía**: el texto de cada uno está en un
+  `<template id="bio-<nombre-apellido>">` al final de la sección (en los 7 idiomas, uno por
+  página). Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
+  formación, actualizar la grilla y las biografías en los 7 `index.html` y la lista `member` del
+  JSON-LD del grupo.
 
 ## Google (título y descripción)
 
@@ -131,7 +143,8 @@ un renglón en los 7 idiomas (el japonés es el más largo).
 
 ## Press kit (descargas)
 
-En la sección Prensa (`<div class="press-kit-container" id="press-kit">`) hay una tarjeta por archivo
+En la sección Material de descarga, al final de la página (`<section id="descargas">`, dentro
+`<div class="press-kit-container" id="press-kit">`), hay una tarjeta por archivo
 (con botones ES / EN) y se descargan directo desde la web los archivos de la carpeta `press-kit/`:
 
 | Archivo | Qué es |

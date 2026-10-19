@@ -2451,3 +2451,243 @@ blockquote {
         margin: 0 0 30px;
     }
 }
+
+/* ---------- Orden nuevo (devolución de la orquesta, 19/10/2026) ---------- */
+/* Título solo para lectores de pantalla y buscadores (Fotos va sin título visible) */
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.integrantes-section,
+.descargas-section {
+    background: var(--bg-color);
+    padding: 80px max(5%, calc((100% - 1200px) / 2));
+}
+
+.integrantes-section .integrantes {
+    margin-top: 0;
+}
+
+.descargas-section .press-kit-container {
+    margin-bottom: 0;
+}
+
+/* ---------- Integrantes: la foto es un botón que abre la biografía ---------- */
+.integrante-btn {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.integrante-btn img {
+    transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+.integrante-btn:hover img,
+.integrante-btn:focus-visible img {
+    filter: grayscale(0%);
+}
+
+.integrante-btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+.integrante-pie {
+    display: block;
+    padding-top: 14px;
+}
+
+.integrante-mas {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(13, 13, 13, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.integrante-btn:hover .integrante-mas,
+.integrante-btn:focus-visible .integrante-mas {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.integrantes-credito {
+    margin: 30px 0 0;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+}
+
+/* Ventana con la biografía */
+.bio-dialog {
+    width: min(920px, calc(100% - 32px));
+    max-height: calc(100% - 48px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #2a2a2a;
+    border-top: 4px solid var(--accent-color);
+    background: #111;
+    color: var(--text-main);
+    overflow: auto;
+}
+
+.bio-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.bio-dialog[open] {
+    animation: bio-entra 0.3s ease;
+}
+
+@keyframes bio-entra {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+}
+
+.bio-dialog-cuerpo {
+    display: grid;
+    grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+    gap: 36px;
+    padding: 40px;
+}
+
+.bio-dialog-foto {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    position: sticky;
+    top: 0;
+}
+
+.bio-dialog-texto h3 {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.bio-dialog-rol {
+    margin: 6px 0 24px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+.bio-dialog-bio p,
+.bio-dialog-bio li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #d6d6d6;
+}
+
+.bio-dialog-bio p {
+    margin: 0 0 16px;
+}
+
+.bio-dialog-bio ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+}
+
+.bio-dialog-bio li {
+    margin-bottom: 8px;
+}
+
+.bio-cerrar {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 1;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background: #111;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.bio-cerrar:hover,
+.bio-cerrar:focus-visible {
+    color: var(--accent-color);
+}
+
+body.bio-abierta {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .integrantes-section,
+    .descargas-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .bio-dialog {
+        width: 100%;
+        max-height: 100%;
+        height: 100%;
+        border: 0;
+        border-top: 4px solid var(--accent-color);
+    }
+
+    .bio-dialog-cuerpo {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 0 20px 40px;
+    }
+
+    .bio-dialog-foto {
+        position: static;
+        width: 60%;
+        max-width: 240px;
+    }
+
+    .bio-dialog-texto h3 {
+        font-size: 1.6rem;
+    }
+
+    .integrante-mas {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bio-dialog[open] {
+        animation: none;
+    }
+}
