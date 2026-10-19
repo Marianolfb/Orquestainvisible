@@ -100,7 +100,7 @@ la compu, traer los cambios (`git pull --rebase`) para no pisarlos.
 Portada (con los botones a Próximas fechas y al disco) → **Fotos** (sin título visible; el
 título queda oculto para buscadores) → **Sobre nosotros** → **En vivo** (videos, avanzan solos)
 → **Prensa** (las notas avanzan solas; se frenan con el mouse encima o al usar las flechas)
-→ **Integrantes** → **Relatos** → **Huella** → **Próximas fechas** → **Material de descarga**
+→ **Integrantes** → **Relatos** (también avanzan solos) → **Huella** → **Próximas fechas** → **Material de descarga**
 (press kit) → redes y contacto. El menú sigue el mismo orden. Si se cambia el orden, hacerlo
 igual en los 7 `index.html`.
 

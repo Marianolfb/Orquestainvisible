@@ -135,6 +135,13 @@ const swiperRelatos = new Swiper('.relatosSwiper', {
     centeredSlides: false, // Empezar desde la izquierda
     loop: true,
     grabCursor: true,
+    // Avanzan solos, como las fotos; se frenan con el mouse encima (y no se mueven
+    // para quien pide menos movimiento en su sistema)
+    autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
