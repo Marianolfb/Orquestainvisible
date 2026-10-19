@@ -118,12 +118,12 @@ un renglón en los 7 idiomas (el japonés es el más largo).
 
 ## Press kit (descargas)
 
-En la sección Prensa (`<div class="press-kit-container" id="press-kit">`) se descargan directo desde
-la web los archivos de la carpeta `press-kit/`:
+En la sección Prensa (`<div class="press-kit-container" id="press-kit">`) hay una tarjeta por archivo
+(con botones ES / EN) y se descargan directo desde la web los archivos de la carpeta `press-kit/`:
 
 | Archivo | Qué es |
 |---------|--------|
-| `orquesta-invisible-dossier-es.pdf` / `-en.pdf` | Dossier (el botón grande baja el ES en la página en español y el EN en las demás) |
+| `orquesta-invisible-dossier-es.pdf` / `-en.pdf` | Dossier |
 | `orquesta-invisible-rider-es.pdf` / `-en.pdf` | Rider técnico |
 | `orquesta-invisible-bio-es.docx` / `-en.docx` | Bio corta y larga (Word, para copiar) |
 | `orquesta-invisible-logo.zip` | Logo negro y blanco (para imprimir y para web) |
