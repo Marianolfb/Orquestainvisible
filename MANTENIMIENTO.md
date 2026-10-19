@@ -53,6 +53,19 @@ guardado en Configuración del proyecto → Propiedades de script → `GITHUB_TO
 crear otro, reemplazar esa propiedad y correr `configurar` de nuevo. Para publicar sin editar la
 planilla: correr `publicarAhora` desde el editor.
 
+**Formulario para cargar fechas sin entrar a la planilla:** `https://www.orquestainvisible.musica.ar/fechas/`
+(carpeta `fechas/` del repo; `fechas.orquestainvisible.musica.ar` redirige ahí). Pide nombre y la clave de la
+orquesta; permite agregar, editar y borrar fechas. Por detrás escribe en la misma pestaña "Fechas" y anota cada
+cambio (quién, cuándo y todo lo que se borró) en la pestaña **Cambios** de la planilla, y avisa a GitHub.
+- El código está en `scripts/apps-script-formulario.gs`: va como archivo "Formulario" en el proyecto de Apps Script
+  "Publicar fechas en la web" (el mismo del aviso a GitHub).
+- La **clave** está en Propiedades de script → `FORM_CODIGO`. Para cambiarla, se cambia ahí (y se avisa a la orquesta).
+- La dirección de la implementación (Aplicación web, termina en `/exec`) está en `fechas/index.html`, variable `URL_SCRIPT`.
+  Si se crea una implementación nueva, cambiar esa línea. Si solo se edita el código, usar "Administrar implementaciones →
+  editar → Versión nueva" para que no cambie la dirección.
+- Si alguien borra una fecha por error, está completa en la pestaña Cambios.
+- La planilla sigue funcionando igual si alguien la edita directo.
+
 **Si hay un error en la planilla** (una fecha que no se entiende, un link sin http, etc.)
 la tarea falla y **no cambia nada del sitio**; GitHub manda un mail al dueño del
 repositorio con la fila y el problema. Se corrige la planilla y en la próxima corrida

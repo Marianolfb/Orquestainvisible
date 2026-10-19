@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Fechas | Orquesta Invisible</title>
+    <link rel="icon" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0d0d0d; --card: #111; --linea: #222; --rojo: #e63946; --texto: #fff; --suave: #a0a0a0; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--bg); color: var(--texto); font-family: 'Roboto Mono', monospace; font-weight: 300; line-height: 1.6; }
+        main { max-width: 860px; margin: 0 auto; padding: 32px 16px 80px; }
+        h1, h2, h3, button, .etiqueta { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        h1 { font-size: 1.8rem; margin: 0 0 6px; padding-left: 14px; border-left: 4px solid var(--rojo); }
+        .sub { color: var(--suave); margin: 0 0 28px; font-size: .9rem; }
+        a { color: var(--texto); }
+        .barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+        .quien { color: var(--suave); font-size: .85rem; }
+        .quien button { margin-left: 8px; }
+        button, .boton { cursor: pointer; background: transparent; color: var(--texto); border: 2px solid var(--texto); padding: 10px 20px; font-size: .85rem; border-radius: 0; text-decoration: none; display: inline-block; transition: background .2s, color .2s; }
+        button:hover, .boton:hover { background: var(--texto); color: #000; }
+        .principal { border-color: var(--rojo); background: var(--rojo); }
+        .principal:hover { background: var(--texto); border-color: var(--texto); }
+        .chico { padding: 6px 14px; font-size: .75rem; }
+        .peligro:hover { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+        button[disabled] { opacity: .5; cursor: wait; }
+        .card { background: var(--card); border: 1px solid var(--linea); padding: 18px 20px; margin-bottom: 12px; }
+        .card.pasada { opacity: .55; }
+        .card.oculta { border-style: dashed; }
+        .cuando { color: var(--rojo); font-size: .85rem; letter-spacing: 1px; }
+        .card h3 { margin: 2px 0 6px; font-size: 1.15rem; }
+        .donde { color: var(--suave); font-size: .85rem; }
+        .datos { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+        .dato { border: 1px solid var(--linea); padding: 2px 10px; font-size: .75rem; color: var(--suave); }
+        .acciones { display: flex; gap: 10px; }
+        .vacio { color: var(--suave); padding: 30px 0; }
+        .aviso { position: sticky; top: 8px; z-index: 5; padding: 12px 16px; margin-bottom: 16px; border: 1px solid var(--linea); background: #1a1a1a; font-size: .9rem; }
+        .aviso.error { border-color: var(--rojo); background: #2a1114; }
+        .aviso.ok { border-color: #2e7d4f; background: #0f2418; }
+        .oculto { display: none !important; }
+        label { display: block; margin: 14px 0 4px; font-size: .8rem; color: var(--suave); }
+        input, select { width: 100%; background: #000; color: var(--texto); border: 1px solid #444; padding: 10px 12px; font: inherit; font-size: .95rem; border-radius: 0; }
+        input:focus, select:focus { outline: 2px solid var(--rojo); outline-offset: 0; }
+        .fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .nota { font-size: .75rem; color: var(--suave); margin-top: 4px; }
+        .recordar { display: flex; gap: 8px; align-items: center; margin-top: 16px; font-size: .85rem; color: var(--suave); }
+        .recordar input { width: auto; }
+        dialog { background: var(--bg); color: var(--texto); border: 1px solid #444; padding: 24px; width: min(560px, 94vw); max-height: 92vh; overflow: auto; }
+        dialog::backdrop { background: rgba(0, 0, 0, .75); }
+        dialog h2 { margin: 0 0 4px; font-size: 1.3rem; }
+        .pie-form { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        details summary { cursor: pointer; color: var(--suave); margin: 18px 0 10px; }
+        @media (max-width: 520px) { .fila2 { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+<main>
+    <h1>Fechas de la Orquesta</h1>
+    <p class="sub">Lo que cargues acá aparece en la web en unos 3 minutos.</p>
+
+    <div id="aviso" class="aviso oculto" role="status"></div>
+
+    <!-- Entrada -->
+    <section id="entrada" class="oculto">
+        <form id="form-entrada" autocomplete="on">
+            <label for="e-quien">Tu nombre</label>
+            <input id="e-quien" name="nombre" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
+            <label for="e-clave">Clave de la orquesta</label>
+            <input id="e-clave" name="clave" type="password" required autocomplete="current-password">
+            <label class="recordar"><input id="e-recordar" type="checkbox" checked> Recordarme en este aparato</label>
+            <p class="nota">Tu nombre queda anotado con cada cambio, para saber quién hizo qué.</p>
+            <div class="pie-form"><button class="principal" type="submit">Entrar</button></div>
+        </form>
+    </section>
+
+    <!-- Lista -->
+    <section id="lista" class="oculto">
+        <div class="barra">
+            <button id="nueva" class="principal" type="button">+ Nueva fecha</button>
+            <span class="quien"><span id="quien-nombre"></span><button id="salir" class="chico" type="button">Salir</button></span>
+        </div>
+        <div id="proximas"></div>
+        <details id="pasadas-caja" class="oculto">
+            <summary>Fechas pasadas</summary>
+            <div id="pasadas"></div>
+        </details>
+        <p class="nota">Ver cómo quedó: <a href="../#conciertos">las fechas en la web</a>.</p>
+    </section>
+</main>
+
+<!-- Formulario de una fecha -->
+<dialog id="dlg-fecha">
+    <form id="form-fecha" novalidate>
+        <h2 id="dlg-titulo">Nueva fecha</h2>
+        <div class="fila2">
+            <div><label for="f-fecha">Fecha *</label><input id="f-fecha" type="date" required></div>
+            <div><label for="f-hora">Hora</label><input id="f-hora" type="time"></div>
+        </div>
+        <label for="f-nombre">Nombre del evento *</label>
+        <input id="f-nombre" type="text" maxlength="120" placeholder="Orquesta Invisible + Sofía Verna">
+        <label for="f-lugar">Lugar</label>
+        <input id="f-lugar" type="text" maxlength="120" placeholder="La Tierra Invisible">
+        <div class="fila2">
+            <div><label for="f-calle">Calle y número</label><input id="f-calle" type="text" maxlength="120" placeholder="Centenera 1099"></div>
+            <div><label for="f-ciudad">Ciudad</label><input id="f-ciudad" type="text" maxlength="80" placeholder="CABA"></div>
+        </div>
+        <div class="fila2">
+            <div>
+                <label for="f-boton">Botón en la web</label>
+                <select id="f-boton">
+                    <option value="">Sin botón</option>
+                    <option value="Reservar">Reservar (entradas)</option>
+                    <option value="Más info">Más info</option>
+                </select>
+            </div>
+            <div><label for="f-precio">Precio</label><input id="f-precio" type="text" inputmode="numeric" placeholder="17000"><p class="nota">Vacío si no se sabe, 0 si es gratis.</p></div>
+        </div>
+        <label for="f-link">Link (de las entradas o de más info)</label>
+        <input id="f-link" type="url" placeholder="https://…">
+        <p class="nota">Hace falta si elegís un botón.</p>
+        <div class="fila2">
+            <div>
+                <label for="f-organiza">¿Lo organiza la orquesta?</label>
+                <select id="f-organiza"><option value="NO">No</option><option value="SÍ">Sí</option></select>
+            </div>
+            <div>
+                <label for="f-mostrar">¿Se ve en la web?</label>
+                <select id="f-mostrar"><option value="SÍ">Sí</option><option value="NO">No, ocultar</option></select>
+            </div>
+        </div>
+        <p id="f-error" class="aviso error oculto" style="position:static;margin:16px 0 0"></p>
+        <div class="pie-form">
+            <button class="principal" id="f-guardar" type="submit">Guardar</button>
+            <button id="f-cancelar" type="button">Cancelar</button>
+        </div>
+    </form>
+</dialog>
+
+<!-- Confirmar borrado -->
+<dialog id="dlg-borrar">
+    <h2>¿Borrar esta fecha?</h2>
+    <p id="borrar-texto"></p>
+    <p class="nota">Queda anotada en la pestaña "Cambios" de la planilla, por si hay que recuperarla.</p>
+    <div class="pie-form">
+        <button class="principal peligro" id="b-si" type="button">Sí, borrar</button>
+        <button id="b-no" type="button">No</button>
+    </div>
+</dialog>
+
+<script>
+    // Dirección del formulario conectado a la planilla (Apps Script "Implementar > Aplicación web")
+    var URL_SCRIPT = '';
+
+    var $ = function (id) { return document.getElementById(id); };
+    var estado = { quien: '', codigo: '', filas: [], editando: null, borrando: null };
+    var DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+    var MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+
+    function guardado(k, v) {
+        try { if (v === undefined) return localStorage.getItem(k) || sessionStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
+    }
+    function olvidar() { try { localStorage.removeItem('oi_quien'); localStorage.removeItem('oi_clave'); sessionStorage.clear(); } catch (e) {} }
+
+    function aviso(texto, tipo) {
+        var a = $('aviso');
+        a.textContent = texto;
+        a.className = 'aviso ' + (tipo || '');
+        if (tipo === 'ok') setTimeout(function () { a.className = 'aviso oculto'; }, 9000);
+    }
+    function sinAviso() { $('aviso').className = 'aviso oculto'; }
+
+    function llamar(accion, extra) {
+        if (!URL_SCRIPT) return Promise.reject(new Error('Falta conectar el formulario con la planilla.'));
+        var cuerpo = Object.assign({ accion: accion, quien: estado.quien, codigo: estado.codigo }, extra || {});
+        return fetch(URL_SCRIPT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(cuerpo) })
+            .then(function (r) { return r.json(); })
+            .catch(function () { throw new Error('No pude conectar. Revisá tu internet y probá de nuevo.'); })
+            .then(function (j) { if (!j.ok) throw new Error(j.error || 'Algo salió mal.'); return j; });
+    }
+
+    // ---------- fechas ----------
+    function aFecha(s) {
+        var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s || '');
+        return m ? new Date(+m[3], +m[2] - 1, +m[1]) : null;
+    }
+    function aIso(s) { var d = aFecha(s); return d ? d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) : ''; }
+    function deIso(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+    function tarjeta(f, pasada) {
+        var d = aFecha(f.fecha);
+        var cuando = d ? DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + MESES[d.getMonth()] + ' ' + d.getFullYear() : esc(f.fecha);
+        if (f.hora) cuando += ' · ' + esc(f.hora) + ' hs';
+        var donde = [f.lugar, f.calle, f.ciudad].filter(Boolean).map(esc).join(' · ');
+        var datos = [];
+        if (f.precio !== '') datos.push(Number(f.precio) === 0 ? 'Gratis' : '$' + Number(String(f.precio).replace(/\./g, '').replace(',', '.')).toLocaleString('es-AR'));
+        if (f.boton) datos.push('Botón: ' + esc(f.boton));
+        if (f.organiza === 'SÍ') datos.push('Lo organiza la orquesta');
+        if (f.mostrar === 'NO') datos.push('Oculta en la web');
+        var link = f.link ? '<a class="dato" href="' + esc(f.link) + '" target="_blank" rel="noopener">link ↗</a>' : '';
+        return '<div class="card' + (pasada ? ' pasada' : '') + (f.mostrar === 'NO' ? ' oculta' : '') + '">' +
+            '<div class="cuando etiqueta">' + cuando + '</div><h3>' + esc(f.nombre) + '</h3>' +
+            (donde ? '<div class="donde">' + donde + '</div>' : '') +
+            '<div class="datos">' + datos.map(function (t) { return '<span class="dato">' + t + '</span>'; }).join('') + link + '</div>' +
+            '<div class="acciones"><button class="chico" data-editar="' + f.fila + '">Editar</button>' +
+            '<button class="chico peligro" data-borrar="' + f.fila + '">Borrar</button></div></div>';
+    }
+
+    function dibujar() {
+        var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+        var filas = estado.filas.slice().sort(function (a, b) {
+            var da = aFecha(a.fecha), db = aFecha(b.fecha);
+            return (da ? da.getTime() : 9e15) - (db ? db.getTime() : 9e15);
+        });
+        var prox = [], pas = [];
+        filas.forEach(function (f) { var d = aFecha(f.fecha); (d && d < hoy ? pas : prox).push(f); });
+        pas.reverse();
+        $('proximas').innerHTML = prox.length ? prox.map(function (f) { return tarjeta(f, false); }).join('') : '<p class="vacio">No hay fechas próximas cargadas.</p>';
+        $('pasadas').innerHTML = pas.map(function (f) { return tarjeta(f, true); }).join('');
+        $('pasadas-caja').className = pas.length ? '' : 'oculto';
+    }
+
+    function mostrar(que) {
+        $('entrada').className = que === 'entrada' ? '' : 'oculto';
+        $('lista').className = que === 'lista' ? '' : 'oculto';
+    }
+
+    function cargar() {
+        aviso('Cargando las fechas…');
+        return llamar('listar').then(function (j) {
+            estado.filas = j.filas; sinAviso(); mostrar('lista'); $('quien-nombre').textContent = estado.quien; dibujar();
+        }).catch(function (e) {
+            aviso(e.message, 'error');
+            if (/clave|nombre/i.test(e.message)) { olvidar(); mostrar('entrada'); }
+        });
+    }
+
+    // ---------- entrada ----------
+    $('form-entrada').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        estado.quien = $('e-quien').value.trim();
+        estado.codigo = $('e-clave').value;
+        if ($('e-recordar').checked) { guardado('oi_quien', estado.quien); guardado('oi_clave', estado.codigo); }
+        else { try { sessionStorage.setItem('oi_quien', estado.quien); sessionStorage.setItem('oi_clave', estado.codigo); } catch (e) {} }
+        cargar();
+    });
+    $('salir').addEventListener('click', function () { olvidar(); estado.codigo = ''; mostrar('entrada'); sinAviso(); });
+
+    // ---------- alta y edición ----------
+    function abrirForm(f) {
+        estado.editando = f || null;
+        $('dlg-titulo').textContent = f ? 'Editar fecha' : 'Nueva fecha';
+        $('f-fecha').value = f ? aIso(f.fecha) : '';
+        $('f-hora').value = f ? f.hora : '';
+        $('f-nombre').value = f ? f.nombre : '';
+        $('f-lugar').value = f ? f.lugar : '';
+        $('f-calle').value = f ? f.calle : '';
+        $('f-ciudad').value = f ? f.ciudad : 'CABA';
+        $('f-boton').value = f ? f.boton : '';
+        $('f-precio').value = f ? f.precio : '';
+        $('f-link').value = f ? f.link : '';
+        $('f-organiza').value = f ? (f.organiza === 'SÍ' ? 'SÍ' : 'NO') : 'NO';
+        $('f-mostrar').value = f ? (f.mostrar === 'NO' ? 'NO' : 'SÍ') : 'SÍ';
+        $('f-error').className = 'aviso error oculto';
+        $('dlg-fecha').showModal();
+    }
+    $('nueva').addEventListener('click', function () { abrirForm(null); });
+    $('f-cancelar').addEventListener('click', function () { $('dlg-fecha').close(); });
+
+    function errorForm(t) { var e = $('f-error'); e.textContent = t; e.className = 'aviso error'; }
+
+    $('form-fecha').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var datos = {
+            fecha: deIso($('f-fecha').value), hora: $('f-hora').value, nombre: $('f-nombre').value.trim(),
+            lugar: $('f-lugar').value.trim(), calle: $('f-calle').value.trim(), ciudad: $('f-ciudad').value.trim(),
+            boton: $('f-boton').value, link: $('f-link').value.trim(), precio: $('f-precio').value.trim(),
+            organiza: $('f-organiza').value, mostrar: $('f-mostrar').value
+        };
+        if (!datos.fecha) return errorForm('Falta la fecha.');
+        if (!datos.nombre) return errorForm('Falta el nombre del evento.');
+        if (datos.link && !/^https?:\/\//i.test(datos.link)) return errorForm('El link tiene que empezar con http:// o https://');
+        if (datos.boton && !datos.link) return errorForm('Elegiste un botón, así que falta el link.');
+        var b = $('f-guardar'); b.disabled = true; b.textContent = 'Guardando…';
+        llamar('guardar', { datos: datos, fila: estado.editando ? estado.editando.fila : null, huella: estado.editando ? estado.editando.huella : null })
+            .then(function (j) {
+                estado.filas = j.filas; dibujar(); $('dlg-fecha').close();
+                aviso(j.mensaje + ' La web se actualiza sola en unos 3 minutos.', 'ok');
+            })
+            .catch(function (e) { errorForm(e.message); })
+            .then(function () { b.disabled = false; b.textContent = 'Guardar'; });
+    });
+
+    // ---------- borrar ----------
+    document.addEventListener('click', function (ev) {
+        var e = ev.target.closest('[data-editar]'), b = ev.target.closest('[data-borrar]');
+        if (e) abrirForm(estado.filas.filter(function (f) { return f.fila === +e.dataset.editar; })[0]);
+        if (b) {
+            var f = estado.filas.filter(function (x) { return x.fila === +b.dataset.borrar; })[0];
+            estado.borrando = f;
+            $('borrar-texto').textContent = f.fecha + ' · ' + f.nombre + (f.lugar ? ' · ' + f.lugar : '');
+            $('dlg-borrar').showModal();
+        }
+    });
+    $('b-no').addEventListener('click', function () { $('dlg-borrar').close(); });
+    $('b-si').addEventListener('click', function () {
+        var f = estado.borrando, b = $('b-si'); b.disabled = true;
+        llamar('borrar', { fila: f.fila, huella: f.huella })
+            .then(function (j) { estado.filas = j.filas; dibujar(); aviso(j.mensaje + ' La web se actualiza sola en unos 3 minutos.', 'ok'); })
+            .catch(function (e) { aviso(e.message, 'error'); })
+            .then(function () { b.disabled = false; $('dlg-borrar').close(); });
+    });
+
+    // ---------- arranque ----------
+    (function () {
+        var q = guardado('oi_quien'), c = guardado('oi_clave');
+        if (q && c) { estado.quien = q; estado.codigo = c; cargar(); }
+        else { mostrar('entrada'); }
+    })();
+</script>
+</body>
+</html>
