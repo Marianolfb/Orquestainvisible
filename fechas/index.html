@@ -47,6 +47,9 @@
         input:focus, select:focus { outline: 2px solid var(--rojo); outline-offset: 0; }
         .fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
         .nota { font-size: .75rem; color: var(--suave); margin-top: 4px; }
+        .con-ojo { position: relative; }
+        .con-ojo input { padding-right: 84px; }
+        .con-ojo button { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
         .recordar { display: flex; gap: 8px; align-items: center; margin-top: 16px; font-size: .85rem; color: var(--suave); }
         .recordar input { width: auto; }
         dialog { background: var(--bg); color: var(--texto); border: 1px solid #444; padding: 24px; width: min(560px, 94vw); max-height: 92vh; overflow: auto; }
@@ -70,7 +73,10 @@
             <label for="e-quien">Tu nombre</label>
             <input id="e-quien" name="nombre" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
             <label for="e-clave">Clave de la orquesta</label>
-            <input id="e-clave" name="clave" type="password" required autocomplete="current-password">
+            <div class="con-ojo">
+                <input id="e-clave" name="clave" type="password" required autocomplete="current-password">
+                <button id="ver-clave" class="chico" type="button" aria-pressed="false">Ver</button>
+            </div>
             <label class="recordar"><input id="e-recordar" type="checkbox" checked> Recordarme en este aparato</label>
             <p class="nota">Tu nombre queda anotado con cada cambio, para saber quién hizo qué.</p>
             <div class="pie-form"><button class="principal" type="submit">Entrar</button></div>
@@ -247,6 +253,12 @@
         if ($('e-recordar').checked) { guardado('oi_quien', estado.quien); guardado('oi_clave', estado.codigo); }
         else { try { sessionStorage.setItem('oi_quien', estado.quien); sessionStorage.setItem('oi_clave', estado.codigo); } catch (e) {} }
         cargar();
+    });
+    $('ver-clave').addEventListener('click', function () {
+        var c = $('e-clave'), visible = c.type === 'password';
+        c.type = visible ? 'text' : 'password';
+        this.textContent = visible ? 'Ocultar' : 'Ver';
+        this.setAttribute('aria-pressed', visible ? 'true' : 'false');
     });
     $('salir').addEventListener('click', function () { olvidar(); estado.codigo = ''; mostrar('entrada'); sinAviso(); });
 
