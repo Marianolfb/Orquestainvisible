@@ -4,104 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0d0d0d">
     <title>Fechas | Orquesta Invisible</title>
     <link rel="icon" href="../favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #0d0d0d; --card: #111; --linea: #222; --rojo: #e63946; --texto: #fff; --suave: #a0a0a0; }
+        :root { --bg: #0d0d0d; --card: #121212; --card2: #181818; --linea: #262626; --rojo: #e63946; --rojo2: #ff4d5a; --texto: #fff; --suave: #a0a0a0; --ok: #3ecf8e; }
         * { box-sizing: border-box; }
-        body { margin: 0; background: var(--bg); color: var(--texto); font-family: 'Roboto Mono', monospace; font-weight: 300; line-height: 1.6; }
-        main { max-width: 860px; margin: 0 auto; padding: 32px 16px 80px; }
-        h1, h2, h3, button, .etiqueta { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-        h1 { font-size: 1.8rem; margin: 0 0 6px; padding-left: 14px; border-left: 4px solid var(--rojo); }
-        .sub { color: var(--suave); margin: 0 0 28px; font-size: .9rem; }
-        a { color: var(--texto); }
-        .barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 22px; }
-        .quien { color: var(--suave); font-size: .85rem; }
-        .quien button { margin-left: 8px; }
-        button, .boton { cursor: pointer; background: transparent; color: var(--texto); border: 2px solid var(--texto); padding: 10px 20px; font-size: .85rem; border-radius: 0; text-decoration: none; display: inline-block; transition: background .2s, color .2s; }
-        button:hover, .boton:hover { background: var(--texto); color: #000; }
-        .principal { border-color: var(--rojo); background: var(--rojo); }
-        .principal:hover { background: var(--texto); border-color: var(--texto); }
-        .chico { padding: 6px 14px; font-size: .75rem; }
-        .peligro:hover { background: var(--rojo); border-color: var(--rojo); color: #fff; }
-        button[disabled] { opacity: .5; cursor: wait; }
-        .card { background: var(--card); border: 1px solid var(--linea); padding: 18px 20px; margin-bottom: 12px; }
+        html { -webkit-text-size-adjust: 100%; }
+        body { margin: 0; min-height: 100vh; background: radial-gradient(1200px 500px at 50% -120px, #2a0d11 0%, var(--bg) 60%); background-color: var(--bg); color: var(--texto); font-family: 'Roboto Mono', monospace; font-weight: 300; line-height: 1.6; }
+        main { max-width: 880px; margin: 0 auto; padding: 36px 16px 110px; }
+        h1, h2, h3, button, .oswald { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+        a { color: inherit; }
+        svg.i { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+        /* ---------- encabezado ---------- */
+        .marca { display: flex; align-items: center; gap: 10px; color: var(--rojo); font-size: .8rem; letter-spacing: 4px; margin-bottom: 8px; }
+        .marca::before { content: ""; width: 28px; height: 2px; background: var(--rojo); }
+        h1 { font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.05; margin: 0 0 8px; }
+        .sub { color: var(--suave); margin: 0 0 30px; font-size: .9rem; max-width: 520px; }
+
+        /* ---------- botones ---------- */
+        button { cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: transparent; color: var(--texto); border: 1.5px solid #5a5a5a; padding: 12px 22px; font-size: .85rem; border-radius: 999px; text-decoration: none; transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease; -webkit-tap-highlight-color: transparent; }
+        button:hover { border-color: var(--texto); background: rgba(255, 255, 255, .08); }
+        button:active { transform: scale(.97); }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--rojo2); outline-offset: 3px; }
+        .principal { background: linear-gradient(180deg, var(--rojo2), var(--rojo)); border-color: transparent; color: #fff; box-shadow: 0 8px 22px -8px rgba(230, 57, 70, .7); }
+        .principal:hover { background: linear-gradient(180deg, #ff6470, var(--rojo2)); border-color: transparent; transform: translateY(-1px); box-shadow: 0 12px 26px -8px rgba(230, 57, 70, .85); }
+        .principal:active { transform: translateY(0) scale(.98); }
+        .chico { padding: 8px 16px; font-size: .75rem; }
+        .peligro:hover { background: rgba(230, 57, 70, .15); border-color: var(--rojo); color: #ff8e97; }
+        .fantasma { border-color: transparent; color: var(--suave); }
+        .fantasma:hover { background: rgba(255, 255, 255, .06); border-color: transparent; color: var(--texto); }
+        button[disabled] { opacity: .6; cursor: progress; transform: none; }
+        button.cargando::after { content: ""; width: 14px; height: 14px; border: 2px solid rgba(255, 255, 255, .35); border-top-color: #fff; border-radius: 50%; animation: giro .7s linear infinite; }
+        @keyframes giro { to { transform: rotate(360deg); } }
+
+        /* ---------- barra ---------- */
+        .barra { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+        .persona { display: flex; align-items: center; gap: 10px; color: var(--suave); font-size: .85rem; }
+        .inicial { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #231012; border: 1px solid #4a1a1f; color: var(--rojo2); font-family: 'Oswald', sans-serif; font-size: .95rem; }
+
+        /* ---------- tarjetas de fechas ---------- */
+        .titulo-grupo { display: flex; align-items: center; gap: 12px; margin: 30px 0 14px; font-size: .8rem; color: var(--suave); letter-spacing: 3px; }
+        .titulo-grupo::after { content: ""; flex: 1; height: 1px; background: var(--linea); }
+        .card { position: relative; display: grid; grid-template-columns: 78px 1fr auto; gap: 8px 20px; align-items: center; background: linear-gradient(180deg, var(--card2), var(--card)); border: 1px solid var(--linea); border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; animation: entra .35s ease both; }
+        .card:hover { border-color: #3a3a3a; transform: translateY(-2px); box-shadow: 0 14px 30px -18px #000; }
+        @keyframes entra { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
         .card.pasada { opacity: .55; }
         .card.oculta { border-style: dashed; }
-        .cuando { color: var(--rojo); font-size: .85rem; letter-spacing: 1px; }
-        .card h3 { margin: 2px 0 6px; font-size: 1.15rem; }
-        .donde { color: var(--suave); font-size: .85rem; }
-        .datos { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
-        .dato { border: 1px solid var(--linea); padding: 2px 10px; font-size: .75rem; color: var(--suave); }
-        .acciones { display: flex; gap: 10px; }
-        .vacio { color: var(--suave); padding: 30px 0; }
-        .aviso { position: sticky; top: 8px; z-index: 5; padding: 12px 16px; margin-bottom: 16px; border: 1px solid var(--linea); background: #1a1a1a; font-size: .9rem; }
-        .aviso.error { border-color: var(--rojo); background: #2a1114; }
-        .aviso.ok { border-color: #2e7d4f; background: #0f2418; }
+        .dia { text-align: center; border-right: 1px solid var(--linea); padding-right: 18px; }
+        .dia b { display: block; font-family: 'Oswald', sans-serif; font-size: 2.3rem; line-height: 1; }
+        .dia span { display: block; font-family: 'Oswald', sans-serif; letter-spacing: 2px; font-size: .8rem; color: var(--rojo2); text-transform: uppercase; margin-top: 4px; }
+        .dia small { display: block; color: var(--suave); font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; }
+        .info h3 { margin: 0 0 4px; font-size: 1.15rem; line-height: 1.25; }
+        .donde { color: var(--suave); font-size: .82rem; }
+        .datos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .pastilla { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--linea); border-radius: 999px; padding: 3px 12px; font-size: .72rem; color: var(--suave); background: #0f0f0f; text-decoration: none; }
+        .pastilla.reservar { color: #fff; background: rgba(230, 57, 70, .16); border-color: rgba(230, 57, 70, .55); }
+        .pastilla.masinfo { color: #fff; border-color: #666; }
+        .pastilla.oculta { color: #f0b429; border-color: rgba(240, 180, 41, .45); background: rgba(240, 180, 41, .08); }
+        a.pastilla { transition: background .2s ease, border-color .2s ease, color .2s ease; }
+        a.pastilla:hover { background: #fff; color: #000; border-color: #fff; }
+        .acciones { display: flex; gap: 8px; }
+        .vacio { text-align: center; color: var(--suave); padding: 44px 20px; border: 1px dashed var(--linea); border-radius: 14px; }
+        .vacio p { margin: 0 0 18px; }
+        .esqueleto { height: 108px; border-radius: 14px; margin-bottom: 12px; background: linear-gradient(100deg, #151515 30%, #1d1d1d 50%, #151515 70%); background-size: 300% 100%; animation: brillo 1.3s linear infinite; }
+        @keyframes brillo { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+        details.pasadas summary { cursor: pointer; list-style: none; }
+        details.pasadas summary::-webkit-details-marker { display: none; }
+        details.pasadas summary .titulo-grupo { margin-top: 36px; }
+        details.pasadas summary .titulo-grupo::before { content: "▸"; color: var(--rojo2); transition: transform .2s ease; }
+        details.pasadas[open] summary .titulo-grupo::before { transform: rotate(90deg); }
+
+        /* ---------- avisos ---------- */
+        .avisos { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 2000; width: min(520px, calc(100vw - 24px)); display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+        .aviso { display: flex; gap: 10px; align-items: flex-start; padding: 13px 16px; border-radius: 12px; background: #1b1b1b; border: 1px solid #333; font-size: .85rem; box-shadow: 0 18px 40px -12px #000; animation: sube .3s ease both; pointer-events: auto; }
+        .aviso.ok { border-color: rgba(62, 207, 142, .5); } .aviso.ok svg { color: var(--ok); }
+        .aviso.error { border-color: rgba(230, 57, 70, .6); background: #241214; } .aviso.error svg { color: var(--rojo2); }
+        @keyframes sube { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+        /* ---------- entrada ---------- */
+        .entrada { max-width: 420px; margin: 8px auto 0; background: linear-gradient(180deg, var(--card2), var(--card)); border: 1px solid var(--linea); border-radius: 18px; padding: 26px 24px 24px; }
+        .entrada h2 { margin: 0 0 4px; font-size: 1.2rem; }
         .oculto { display: none !important; }
-        label { display: block; margin: 14px 0 4px; font-size: .8rem; color: var(--suave); }
-        input, select { width: 100%; background: #000; color: var(--texto); border: 1px solid #444; padding: 10px 12px; font: inherit; font-size: .95rem; border-radius: 0; }
-        input:focus, select:focus { outline: 2px solid var(--rojo); outline-offset: 0; }
-        .fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .nota { font-size: .75rem; color: var(--suave); margin-top: 4px; }
+
+        /* ---------- formularios ---------- */
+        label { display: block; margin: 16px 0 6px; font-size: .78rem; color: var(--suave); }
+        input, select { width: 100%; background: #080808; color: var(--texto); border: 1px solid #333; padding: 12px 14px; font: inherit; font-size: .95rem; border-radius: 10px; transition: border-color .2s ease, box-shadow .2s ease; }
+        input:hover, select:hover { border-color: #555; }
+        input:focus, select:focus { outline: none; border-color: var(--rojo2); box-shadow: 0 0 0 3px rgba(230, 57, 70, .25); }
+        select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+        input[type="date"], input[type="time"] { color-scheme: dark; }
+        .fila2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .nota { font-size: .74rem; color: var(--suave); margin: 6px 0 0; }
         .con-ojo { position: relative; }
-        .con-ojo input { padding-right: 84px; }
-        .con-ojo button { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); }
-        .recordar { display: flex; gap: 8px; align-items: center; margin-top: 16px; font-size: .85rem; color: var(--suave); }
-        .recordar input { width: auto; }
-        dialog { background: var(--bg); color: var(--texto); border: 1px solid #444; padding: 24px; width: min(560px, 94vw); max-height: 92vh; overflow: auto; }
-        dialog::backdrop { background: rgba(0, 0, 0, .75); }
-        dialog h2 { margin: 0 0 4px; font-size: 1.3rem; }
-        .pie-form { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
-        details summary { cursor: pointer; color: var(--suave); margin: 18px 0 10px; }
-        @media (max-width: 520px) { .fila2 { grid-template-columns: 1fr; } }
+        .con-ojo input { padding-right: 96px; }
+        .con-ojo button { position: absolute; top: 50%; right: 7px; transform: translateY(-50%); padding: 6px 14px; }
+        .con-ojo button:active { transform: translateY(-50%) scale(.97); }
+        .recordar { display: flex; gap: 10px; align-items: center; margin-top: 18px; font-size: .85rem; color: var(--suave); cursor: pointer; }
+        .recordar input { width: 18px; height: 18px; accent-color: var(--rojo); }
+        .pie-form { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+        .entrada .pie-form button { width: 100%; }
+        dialog { background: #121212; color: var(--texto); border: 1px solid #333; border-radius: 18px; padding: 26px 24px; width: min(580px, 94vw); max-height: 92vh; overflow: auto; animation: abre .25s ease both; }
+        dialog::backdrop { background: rgba(0, 0, 0, .78); backdrop-filter: blur(3px); }
+        @keyframes abre { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+        dialog h2 { margin: 0 0 2px; font-size: 1.4rem; }
+        .error-form { margin: 18px 0 0; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(230, 57, 70, .6); background: #241214; font-size: .85rem; }
+
+        /* ---------- vista previa: así se ve en la web ---------- */
+        .vista { margin: 22px 0 0; padding: 14px 16px; border: 1px solid var(--linea); border-radius: 12px; background: #0a0a0a; }
+        .vista > small { display: block; color: var(--suave); font-size: .7rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+        .vista-fila { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; }
+        .vista-fecha { font-family: 'Oswald', sans-serif; font-size: 1.05rem; color: var(--rojo2); white-space: nowrap; }
+        .vista-info b { display: block; font-family: 'Oswald', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: .5px; }
+        .vista-info span { color: var(--suave); font-size: .75rem; }
+        .vista-btn { font-family: 'Oswald', sans-serif; font-size: .75rem; letter-spacing: 1px; border: 2px solid #fff; padding: 6px 14px; white-space: nowrap; }
+
+        @media (max-width: 640px) {
+            main { padding-top: 26px; }
+            .card { grid-template-columns: 62px 1fr; padding: 16px; }
+            .dia { padding-right: 14px; }
+            .acciones { grid-column: 1 / -1; }
+            .acciones button { flex: 1; }
+            .fila2 { grid-template-columns: 1fr; }
+            .vista-fila { grid-template-columns: 1fr; gap: 8px; }
+            .vista-btn { justify-self: start; }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
     </style>
 </head>
 <body>
-<main>
-    <h1>Fechas de la Orquesta</h1>
-    <p class="sub">Lo que cargues acá aparece en la web en unos 3 minutos.</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mas" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-lapiz" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-tacho" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></symbol>
+    <symbol id="i-ojo-no" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 5.1A10.4 10.4 0 0112 5c6 0 10 7 10 7a17 17 0 01-3.2 3.9M6.6 6.6A17 17 0 002 12s4 7 10 7a9.7 9.7 0 004.4-1"/><path d="M9.9 9.9a3 3 0 004.2 4.2"/></symbol>
+    <symbol id="i-ok" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+    <symbol id="i-alerta" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.2v.1"/></symbol>
+    <symbol id="i-pesos" viewBox="0 0 24 24"><path d="M12 3v18M16.5 7.5C15.5 6.4 14 6 12 6c-2.5 0-4 1.1-4 2.8 0 4 8.5 1.8 8.5 6 0 1.7-1.7 3.2-4.5 3.2-2 0-3.7-.6-4.7-1.8"/></symbol>
+    <symbol id="i-estrella" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+</svg>
 
-    <div id="aviso" class="aviso oculto" role="status"></div>
+<main>
+    <div class="marca oswald">Orquesta Invisible</div>
+    <h1>Fechas</h1>
+    <p class="sub">Cargá, cambiá o sacá una fecha y aparece sola en la web en unos 3 minutos.</p>
 
     <!-- Entrada -->
     <section id="entrada" class="oculto">
-        <form id="form-entrada" autocomplete="on">
+        <form id="form-entrada" class="entrada" autocomplete="on">
+            <h2>Entrá</h2>
+            <p class="nota" style="margin-top:0">Tu nombre queda anotado con cada cambio, para saber quién hizo qué.</p>
             <label for="e-quien">Tu nombre</label>
             <input id="e-quien" name="nombre" type="text" required minlength="2" maxlength="40" autocomplete="given-name">
             <label for="e-clave">Clave de la orquesta</label>
             <div class="con-ojo">
                 <input id="e-clave" name="clave" type="password" required autocomplete="current-password">
-                <button id="ver-clave" class="chico" type="button" aria-pressed="false">Ver</button>
+                <button id="ver-clave" class="chico fantasma" type="button" aria-pressed="false">Ver</button>
             </div>
             <label class="recordar"><input id="e-recordar" type="checkbox" checked> Recordarme en este aparato</label>
-            <p class="nota">Tu nombre queda anotado con cada cambio, para saber quién hizo qué.</p>
-            <div class="pie-form"><button class="principal" type="submit">Entrar</button></div>
+            <div class="pie-form"><button id="e-entrar" class="principal" type="submit">Entrar</button></div>
         </form>
     </section>
 
     <!-- Lista -->
     <section id="lista" class="oculto">
         <div class="barra">
-            <button id="nueva" class="principal" type="button">+ Nueva fecha</button>
-            <span class="quien"><span id="quien-nombre"></span><button id="salir" class="chico" type="button">Salir</button></span>
+            <button id="nueva" class="principal" type="button"><svg class="i"><use href="#i-mas"/></svg> Nueva fecha</button>
+            <div class="persona"><span class="inicial" id="inicial"></span><span id="quien-nombre"></span><button id="salir" class="chico fantasma" type="button">Salir</button></div>
         </div>
         <div id="proximas"></div>
-        <details id="pasadas-caja" class="oculto">
-            <summary>Fechas pasadas</summary>
+        <details id="pasadas-caja" class="pasadas oculto">
+            <summary><div class="titulo-grupo oswald">Fechas pasadas</div></summary>
             <div id="pasadas"></div>
         </details>
-        <p class="nota">Ver cómo quedó: <a href="../#conciertos">las fechas en la web</a>.</p>
+        <p class="nota" style="margin-top:28px">Para ver cómo quedó, mirá <a href="../#conciertos" target="_blank" rel="noopener" style="color:var(--texto)">las fechas en la web ↗</a></p>
     </section>
 </main>
+
+<div id="avisos" class="avisos" aria-live="polite"></div>
 
 <!-- Formulario de una fecha -->
 <dialog id="dlg-fecha">
     <form id="form-fecha" novalidate>
         <h2 id="dlg-titulo">Nueva fecha</h2>
+        <p class="nota" style="margin-top:0">Lo que tiene * es obligatorio.</p>
         <div class="fila2">
             <div><label for="f-fecha">Fecha *</label><input id="f-fecha" type="date" required></div>
             <div><label for="f-hora">Hora</label><input id="f-hora" type="time"></div>
@@ -138,7 +229,18 @@
                 <select id="f-mostrar"><option value="SÍ">Sí</option><option value="NO">No, ocultar</option></select>
             </div>
         </div>
-        <p id="f-error" class="aviso error oculto" style="position:static;margin:16px 0 0"></p>
+
+        <div class="vista" aria-live="polite">
+            <small>Así se va a ver en la web</small>
+            <div class="vista-fila">
+                <span class="vista-fecha" id="v-fecha">—</span>
+                <div class="vista-info"><b id="v-nombre">Nombre del evento</b><span id="v-donde">Hora - lugar</span></div>
+                <span class="vista-btn oculto" id="v-btn"></span>
+            </div>
+            <p class="nota oculto" id="v-oculta" style="color:#f0b429">Esta fecha queda oculta: no se muestra en la web.</p>
+        </div>
+
+        <p id="f-error" class="error-form oculto"></p>
         <div class="pie-form">
             <button class="principal" id="f-guardar" type="submit">Guardar</button>
             <button id="f-cancelar" type="button">Cancelar</button>
@@ -149,11 +251,11 @@
 <!-- Confirmar borrado -->
 <dialog id="dlg-borrar">
     <h2>¿Borrar esta fecha?</h2>
-    <p id="borrar-texto"></p>
+    <p id="borrar-texto" style="margin:10px 0 4px"></p>
     <p class="nota">Queda anotada en la pestaña "Cambios" de la planilla, por si hay que recuperarla.</p>
     <div class="pie-form">
-        <button class="principal peligro" id="b-si" type="button">Sí, borrar</button>
-        <button id="b-no" type="button">No</button>
+        <button class="principal" id="b-si" type="button"><svg class="i"><use href="#i-tacho"/></svg> Sí, borrar</button>
+        <button id="b-no" type="button">No, dejarla</button>
     </div>
 </dialog>
 
@@ -165,19 +267,25 @@
     var estado = { quien: '', codigo: '', filas: [], editando: null, borrando: null };
     var DIAS = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
     var MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+    var icono = function (n) { return '<svg class="i" aria-hidden="true"><use href="#i-' + n + '"/></svg>'; };
 
     function guardado(k, v) {
         try { if (v === undefined) return localStorage.getItem(k) || sessionStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
     }
     function olvidar() { try { localStorage.removeItem('oi_quien'); localStorage.removeItem('oi_clave'); sessionStorage.clear(); } catch (e) {} }
 
+    // ---------- avisos ----------
     function aviso(texto, tipo) {
-        var a = $('aviso');
-        a.textContent = texto;
+        var cont = $('avisos');
+        var a = document.createElement('div');
         a.className = 'aviso ' + (tipo || '');
-        if (tipo === 'ok') setTimeout(function () { a.className = 'aviso oculto'; }, 9000);
+        a.setAttribute('role', tipo === 'error' ? 'alert' : 'status');
+        a.innerHTML = icono(tipo === 'error' ? 'alerta' : 'ok') + '<span></span>';
+        a.lastChild.textContent = texto;
+        cont.appendChild(a);
+        setTimeout(function () { a.remove(); }, tipo === 'error' ? 9000 : 6000);
+        while (cont.children.length > 3) cont.firstChild.remove();
     }
-    function sinAviso() { $('aviso').className = 'aviso oculto'; }
 
     function llamar(accion, extra) {
         if (!URL_SCRIPT) return Promise.reject(new Error('Falta conectar el formulario con la planilla.'));
@@ -188,6 +296,11 @@
             .then(function (j) { if (!j.ok) throw new Error(j.error || 'Algo salió mal.'); return j; });
     }
 
+    function ocupado(boton, si, texto) {
+        if (si) { boton.dataset.antes = boton.innerHTML; boton.disabled = true; boton.classList.add('cargando'); if (texto) boton.textContent = texto; }
+        else { boton.disabled = false; boton.classList.remove('cargando'); if (boton.dataset.antes) boton.innerHTML = boton.dataset.antes; }
+    }
+
     // ---------- fechas ----------
     function aFecha(s) {
         var m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s || '');
@@ -196,24 +309,31 @@
     function aIso(s) { var d = aFecha(s); return d ? d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2) : ''; }
     function deIso(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? m[3] + '/' + m[2] + '/' + m[1] : ''; }
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function precioTexto(p) {
+        if (p === '' || p == null) return '';
+        var n = Number(String(p).replace(/\./g, '').replace(',', '.'));
+        return isNaN(n) ? esc(p) : (n === 0 ? 'Gratis' : '$' + n.toLocaleString('es-AR'));
+    }
 
-    function tarjeta(f, pasada) {
+    function tarjeta(f, pasada, i) {
         var d = aFecha(f.fecha);
-        var cuando = d ? DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + MESES[d.getMonth()] + ' ' + d.getFullYear() : esc(f.fecha);
-        if (f.hora) cuando += ' · ' + esc(f.hora) + ' hs';
-        var donde = [f.lugar, f.calle, f.ciudad].filter(Boolean).map(esc).join(' · ');
-        var datos = [];
-        if (f.precio !== '') datos.push(Number(f.precio) === 0 ? 'Gratis' : '$' + Number(String(f.precio).replace(/\./g, '').replace(',', '.')).toLocaleString('es-AR'));
-        if (f.boton) datos.push('Botón: ' + esc(f.boton));
-        if (f.organiza === 'SÍ') datos.push('Lo organiza la orquesta');
-        if (f.mostrar === 'NO') datos.push('Oculta en la web');
-        var link = f.link ? '<a class="dato" href="' + esc(f.link) + '" target="_blank" rel="noopener">link ↗</a>' : '';
-        return '<div class="card' + (pasada ? ' pasada' : '') + (f.mostrar === 'NO' ? ' oculta' : '') + '">' +
-            '<div class="cuando etiqueta">' + cuando + '</div><h3>' + esc(f.nombre) + '</h3>' +
-            (donde ? '<div class="donde">' + donde + '</div>' : '') +
-            '<div class="datos">' + datos.map(function (t) { return '<span class="dato">' + t + '</span>'; }).join('') + link + '</div>' +
-            '<div class="acciones"><button class="chico" data-editar="' + f.fila + '">Editar</button>' +
-            '<button class="chico peligro" data-borrar="' + f.fila + '">Borrar</button></div></div>';
+        var dia = d ? d.getDate() : '?', mes = d ? MESES[d.getMonth()] : '', sem = d ? DIAS[d.getDay()] + ' ' + d.getFullYear() : esc(f.fecha);
+        var donde = [f.hora ? f.hora + ' hs' : '', f.lugar, f.calle, f.ciudad].filter(Boolean).map(esc).join(' · ');
+        var chips = [];
+        var pr = precioTexto(f.precio);
+        if (pr) chips.push('<span class="pastilla">' + icono('pesos') + pr + '</span>');
+        if (f.boton === 'Reservar') chips.push('<span class="pastilla reservar">Botón RESERVAR</span>');
+        else if (f.boton) chips.push('<span class="pastilla masinfo">Botón +INFO</span>');
+        if (f.organiza === 'SÍ') chips.push('<span class="pastilla">' + icono('estrella') + 'La organiza la orquesta</span>');
+        if (f.mostrar === 'NO') chips.push('<span class="pastilla oculta">' + icono('ojo-no') + 'Oculta en la web</span>');
+        if (f.link) chips.push('<a class="pastilla" href="' + esc(f.link) + '" target="_blank" rel="noopener" title="Abrir el link en otra pestaña">' + icono('link') + 'Abrir link</a>');
+        var nom = esc(f.nombre);
+        return '<div class="card' + (pasada ? ' pasada' : '') + (f.mostrar === 'NO' ? ' oculta' : '') + '" style="animation-delay:' + Math.min(i, 8) * 40 + 'ms">' +
+            '<div class="dia"><b>' + dia + '</b><span>' + mes + '</span><small>' + sem + '</small></div>' +
+            '<div class="info"><h3>' + nom + '</h3>' + (donde ? '<div class="donde">' + donde + '</div>' : '') +
+            (chips.length ? '<div class="datos">' + chips.join('') + '</div>' : '') + '</div>' +
+            '<div class="acciones"><button class="chico" data-editar="' + f.fila + '" aria-label="Editar ' + nom + '">' + icono('lapiz') + 'Editar</button>' +
+            '<button class="chico peligro" data-borrar="' + f.fila + '" aria-label="Borrar ' + nom + '">' + icono('tacho') + 'Borrar</button></div></div>';
     }
 
     function dibujar() {
@@ -225,9 +345,11 @@
         var prox = [], pas = [];
         filas.forEach(function (f) { var d = aFecha(f.fecha); (d && d < hoy ? pas : prox).push(f); });
         pas.reverse();
-        $('proximas').innerHTML = prox.length ? prox.map(function (f) { return tarjeta(f, false); }).join('') : '<p class="vacio">No hay fechas próximas cargadas.</p>';
-        $('pasadas').innerHTML = pas.map(function (f) { return tarjeta(f, true); }).join('');
-        $('pasadas-caja').className = pas.length ? '' : 'oculto';
+        $('proximas').innerHTML = prox.length
+            ? '<div class="titulo-grupo oswald" style="margin-top:6px">Próximas · ' + prox.length + '</div>' + prox.map(function (f, i) { return tarjeta(f, false, i); }).join('')
+            : '<div class="vacio"><p>Todavía no hay fechas próximas cargadas.</p><button class="principal" type="button" data-nueva>' + icono('mas') + ' Cargar la primera</button></div>';
+        $('pasadas').innerHTML = pas.map(function (f, i) { return tarjeta(f, true, i); }).join('');
+        $('pasadas-caja').className = 'pasadas' + (pas.length ? '' : ' oculto');
     }
 
     function mostrar(que) {
@@ -235,15 +357,24 @@
         $('lista').className = que === 'lista' ? '' : 'oculto';
     }
 
+    function persona() {
+        $('quien-nombre').textContent = estado.quien;
+        $('inicial').textContent = (estado.quien || '?').charAt(0).toUpperCase();
+    }
+
     function cargar() {
-        aviso('Cargando las fechas…');
+        persona(); mostrar('lista');
+        $('pasadas-caja').className = 'pasadas oculto';
+        $('proximas').innerHTML = '<div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div>';
         return llamar('listar').then(function (j) {
-            estado.filas = j.filas; sinAviso(); mostrar('lista'); $('quien-nombre').textContent = estado.quien; dibujar();
+            estado.filas = j.filas; dibujar();
         }).catch(function (e) {
             aviso(e.message, 'error');
             if (/clave|nombre/i.test(e.message)) { olvidar(); mostrar('entrada'); }
+            else $('proximas').innerHTML = '<div class="vacio"><p>No pude traer las fechas.</p><button type="button" id="reintentar">Reintentar</button></div>';
         });
     }
+    document.addEventListener('click', function (ev) { if (ev.target.closest('#reintentar')) cargar(); });
 
     // ---------- entrada ----------
     $('form-entrada').addEventListener('submit', function (ev) {
@@ -252,7 +383,8 @@
         estado.codigo = $('e-clave').value;
         if ($('e-recordar').checked) { guardado('oi_quien', estado.quien); guardado('oi_clave', estado.codigo); }
         else { try { sessionStorage.setItem('oi_quien', estado.quien); sessionStorage.setItem('oi_clave', estado.codigo); } catch (e) {} }
-        cargar();
+        var b = $('e-entrar'); ocupado(b, true, 'Entrando');
+        cargar().then(function () { ocupado(b, false); });
     });
     $('ver-clave').addEventListener('click', function () {
         var c = $('e-clave'), visible = c.type === 'password';
@@ -260,9 +392,25 @@
         this.textContent = visible ? 'Ocultar' : 'Ver';
         this.setAttribute('aria-pressed', visible ? 'true' : 'false');
     });
-    $('salir').addEventListener('click', function () { olvidar(); estado.codigo = ''; mostrar('entrada'); sinAviso(); });
+    $('salir').addEventListener('click', function () { olvidar(); estado.codigo = ''; $('e-clave').value = ''; mostrar('entrada'); });
 
     // ---------- alta y edición ----------
+    function vistaPrevia() {
+        var iso = $('f-fecha').value, d = iso ? new Date(iso + 'T12:00:00') : null;
+        $('v-fecha').textContent = d ? ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + String(d.getFullYear()).slice(-2) : '—';
+        $('v-nombre').textContent = $('f-nombre').value.trim() || 'Nombre del evento';
+        var h = $('f-hora').value;
+        var donde = [($('f-lugar').value.trim()), $('f-calle').value.trim(), $('f-ciudad').value.trim()].filter(Boolean).join(', ');
+        $('v-donde').textContent = ((h ? h + ' HS' : '') + (h && donde ? ' - ' : '') + donde) || 'Hora - lugar';
+        var b = $('f-boton').value, btn = $('v-btn');
+        btn.className = 'vista-btn' + (b ? '' : ' oculto');
+        btn.textContent = b === 'Reservar' ? 'RESERVAR' : '+INFO';
+        $('v-oculta').className = 'nota' + ($('f-mostrar').value === 'NO' ? '' : ' oculto');
+    }
+    ['f-fecha', 'f-hora', 'f-nombre', 'f-lugar', 'f-calle', 'f-ciudad', 'f-boton', 'f-mostrar'].forEach(function (id) {
+        $(id).addEventListener('input', vistaPrevia); $(id).addEventListener('change', vistaPrevia);
+    });
+
     function abrirForm(f) {
         estado.editando = f || null;
         $('dlg-titulo').textContent = f ? 'Editar fecha' : 'Nueva fecha';
@@ -277,13 +425,20 @@
         $('f-link').value = f ? f.link : '';
         $('f-organiza').value = f ? (f.organiza === 'SÍ' ? 'SÍ' : 'NO') : 'NO';
         $('f-mostrar').value = f ? (f.mostrar === 'NO' ? 'NO' : 'SÍ') : 'SÍ';
-        $('f-error').className = 'aviso error oculto';
+        $('f-error').className = 'error-form oculto';
+        vistaPrevia();
         $('dlg-fecha').showModal();
     }
     $('nueva').addEventListener('click', function () { abrirForm(null); });
     $('f-cancelar').addEventListener('click', function () { $('dlg-fecha').close(); });
+    ['dlg-fecha', 'dlg-borrar'].forEach(function (id) {
+        $(id).addEventListener('click', function (ev) { if (ev.target === ev.currentTarget) ev.currentTarget.close(); });
+    });
 
-    function errorForm(t) { var e = $('f-error'); e.textContent = t; e.className = 'aviso error'; }
+    function errorForm(t, campo) {
+        var e = $('f-error'); e.textContent = t; e.className = 'error-form';
+        if (campo) $(campo).focus();
+    }
 
     $('form-fecha').addEventListener('submit', function (ev) {
         ev.preventDefault();
@@ -293,23 +448,24 @@
             boton: $('f-boton').value, link: $('f-link').value.trim(), precio: $('f-precio').value.trim(),
             organiza: $('f-organiza').value, mostrar: $('f-mostrar').value
         };
-        if (!datos.fecha) return errorForm('Falta la fecha.');
-        if (!datos.nombre) return errorForm('Falta el nombre del evento.');
-        if (datos.link && !/^https?:\/\//i.test(datos.link)) return errorForm('El link tiene que empezar con http:// o https://');
-        if (datos.boton && !datos.link) return errorForm('Elegiste un botón, así que falta el link.');
-        var b = $('f-guardar'); b.disabled = true; b.textContent = 'Guardando…';
+        if (!datos.fecha) return errorForm('Falta la fecha.', 'f-fecha');
+        if (!datos.nombre) return errorForm('Falta el nombre del evento.', 'f-nombre');
+        if (datos.link && !/^https?:\/\//i.test(datos.link)) return errorForm('El link tiene que empezar con http:// o https://', 'f-link');
+        if (datos.boton && !datos.link) return errorForm('Elegiste un botón, así que falta el link.', 'f-link');
+        var b = $('f-guardar'); ocupado(b, true, 'Guardando');
         llamar('guardar', { datos: datos, fila: estado.editando ? estado.editando.fila : null, huella: estado.editando ? estado.editando.huella : null })
             .then(function (j) {
                 estado.filas = j.filas; dibujar(); $('dlg-fecha').close();
                 aviso(j.mensaje + ' La web se actualiza sola en unos 3 minutos.', 'ok');
             })
             .catch(function (e) { errorForm(e.message); })
-            .then(function () { b.disabled = false; b.textContent = 'Guardar'; });
+            .then(function () { ocupado(b, false); });
     });
 
     // ---------- borrar ----------
     document.addEventListener('click', function (ev) {
         var e = ev.target.closest('[data-editar]'), b = ev.target.closest('[data-borrar]');
+        if (ev.target.closest('[data-nueva]')) abrirForm(null);
         if (e) abrirForm(estado.filas.filter(function (f) { return f.fila === +e.dataset.editar; })[0]);
         if (b) {
             var f = estado.filas.filter(function (x) { return x.fila === +b.dataset.borrar; })[0];
@@ -320,11 +476,11 @@
     });
     $('b-no').addEventListener('click', function () { $('dlg-borrar').close(); });
     $('b-si').addEventListener('click', function () {
-        var f = estado.borrando, b = $('b-si'); b.disabled = true;
+        var f = estado.borrando, b = $('b-si'); ocupado(b, true, 'Borrando');
         llamar('borrar', { fila: f.fila, huella: f.huella })
             .then(function (j) { estado.filas = j.filas; dibujar(); aviso(j.mensaje + ' La web se actualiza sola en unos 3 minutos.', 'ok'); })
             .catch(function (e) { aviso(e.message, 'error'); })
-            .then(function () { b.disabled = false; $('dlg-borrar').close(); });
+            .then(function () { ocupado(b, false); $('dlg-borrar').close(); });
     });
 
     // ---------- arranque ----------
