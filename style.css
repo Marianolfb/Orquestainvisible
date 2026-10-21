@@ -2691,3 +2691,29 @@ body.bio-abierta {
         animation: none;
     }
 }
+
+/* ---------- Barra fija: el logo (marca + nombre) aparece al bajar ---------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    display: block;
+    width: 36px;
+    height: 36px;
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.1rem;
+        gap: 9px;
+        letter-spacing: 1px;
+    }
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+}

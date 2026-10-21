@@ -45,8 +45,11 @@ function nextSlide() {
 // Cambia la foto cada 5000 milisegundos (5 segundos)
 setInterval(nextSlide, 5000);
 
-window.addEventListener('scroll', function() {
+function actualizarBarra() {
     const nav = document.querySelector('.navbar');
+    if (!nav) return;
+    // al bajar, la barra se pone negra y aparece el logo (la clase "scrolled" lo muestra)
+    nav.classList.toggle('scrolled', window.scrollY > 50);
     if (window.scrollY > 50) {
         // Cuando bajas más de 50px, se pone negra y aparece el borde
         nav.style.background = 'black';
@@ -56,7 +59,9 @@ window.addEventListener('scroll', function() {
         nav.style.background = 'transparent';
         nav.style.borderBottom = 'none';
     }
-});
+}
+window.addEventListener('scroll', actualizarBarra);
+actualizarBarra();
 
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.nav-links');

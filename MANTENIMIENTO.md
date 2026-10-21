@@ -1,9 +1,27 @@
 # Mantenimiento del sitio
 
-El sitio tiene **7 idiomas**. El español está en la raíz; los demás en subcarpetas:
+El sitio tiene **3 idiomas**. El español está en la raíz; los demás en subcarpetas:
 
 | Idioma | Carpeta | index |
 |--------|---------|-------|
+| Español | raíz | `index.html` |
+| Inglés | `en/` | `en/index.html` |
+| Alemán | `de/` | `de/index.html` |
+
+**Regla general:** casi cualquier texto que cambies en una página hay que
+replicarlo en las 3 versiones, traducido.
+
+**Idiomas que se sacaron (21/10/2026):** italiano, portugués, francés y japonés. Sus carpetas
+(`it/`, `pt/`, `fr/`, `ja/`) ya no tienen contenido: cada página es un aviso mínimo que
+redirige (meta refresh + JavaScript + `canonical`) a la equivalente: italiano y portugués van al
+español; francés y japonés, al inglés. No hace falta mantenerlas ni agregarles nada. Se sacaron
+del menú de idiomas, de los `hreflang`, del `sitemap.xml` y del script de fechas. Quien quiera
+leer la web en otro idioma puede usar el traductor del navegador. Para volver a sumar un idioma
+habría que recrear la carpeta completa. Recomendado (lo hace la persona dueña de Cloudflare):
+agregar ahí reglas de redirección permanente (301) de `/it/*`, `/pt/*` → español y `/fr/*`,
+`/ja/*` → inglés, que es más fuerte para Google que el aviso.
+
+--------|---------|-------|
 | Español | raíz | `index.html` |
 | Inglés | `en/` | `en/index.html` |
 | Italiano | `it/` | `it/index.html` |
@@ -13,7 +31,7 @@ El sitio tiene **7 idiomas**. El español está en la raíz; los demás en subca
 | Portugués | `pt/` | `pt/index.html` |
 
 **Regla general:** casi cualquier texto que cambies en una página hay que
-replicarlo en las 7 versiones, traducido.
+replicarlo en las 3 versiones, traducido.
 
 ---
 
@@ -25,7 +43,7 @@ orquestatipicainvisible@gmail.com, pestaña **Fechas**). Un minuto después de c
 un Apps Script ("Publicar fechas en la web", cuenta de la orquesta) avisa a GitHub y una tarea
 (`.github/workflows/fechas.yml` + `scripts/build_fechas.pl`) lee la planilla; la web queda
 actualizada en ~3 minutos. (El cron de GitHub cada 30 min queda de respaldo, pero es irregular.)
-La tarea reescribe, en los 7 idiomas:
+La tarea reescribe, en los 3 idiomas:
 
 - las filas de "Próximas fechas" (zona marcada con `FECHAS:INICIO` / `FECHAS:FIN`),
 - el JSON-LD de eventos (`SEO-BOOST: eventos`),
@@ -102,26 +120,26 @@ título queda oculto para buscadores) → **Sobre nosotros** → **En vivo** (vi
 → **Prensa** (las notas avanzan solas; se frenan con el mouse encima o al usar las flechas)
 → **Integrantes** → **Relatos** (también avanzan solos) → **Huella** → **Próximas fechas** → **Material de descarga**
 (press kit) → redes y contacto. El menú sigue el mismo orden. Si se cambia el orden, hacerlo
-igual en los 7 `index.html`.
+igual en los 3 `index.html`.
 
 ## Disco e integrantes
 
 - **«Huella»** (`<section id="huella">`): tapa en `Fotos/huella-tapa.webp`,
   año y los 11 temas en orden de Spotify, con botón al álbum. Si sale otro disco, se agrega una
-  sección igual en los 7 `index.html` (y en el JSON-LD `album` del grupo).
-- **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 7 idiomas.
+  sección igual en los 3 `index.html` (y en el JSON-LD `album` del grupo).
+- **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 3 idiomas.
   Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp` (480×600), con el crédito
   debajo de la grilla. **Al tocar la foto se abre la biografía**: el texto de cada uno está en un
-  `<template id="bio-<nombre-apellido>">` al final de la sección (en los 7 idiomas, uno por
+  `<template id="bio-<nombre-apellido>">` al final de la sección (en los 3 idiomas, uno por
   página). Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
-  formación, actualizar la grilla y las biografías en los 7 `index.html` y la lista `member` del
+  formación, actualizar la grilla y las biografías en los 3 `index.html` y la lista `member` del
   JSON-LD del grupo.
 
 ## Google (título y descripción)
 
 En el `<head>` de cada `index.html`, el título (`<title>`, `og:title`, `twitter:title`) y la
 descripción (`description`, `og:description`, `twitter:description`) van **iguales** entre sí y
-traducidos en los 7 idiomas. Apuntan a búsquedas como "tango contemporáneo", "tango actual",
+traducidos en los 3 idiomas. Apuntan a búsquedas como "tango contemporáneo", "tango actual",
 "nuevo tango" y "orquesta típica". Los géneros están en el JSON-LD del grupo (`genre`).
 
 ## Reproductor de Spotify
@@ -135,11 +153,11 @@ Todo el sitio comparte una sola línea: fondo negro, rojo tango (`--accent-color
 botones en Oswald, textos en Roboto Mono. Las reglas que la unifican (botones, tarjetas,
 fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, en el bloque
 «MEJORAS (octubre 2026)». Si se cambia `style.css`, subir el número de `?v=` en los
-`<link>` de los 7 `index.html` y de los relatos, para que nadie vea la versión vieja.
+`<link>` de los 3 `index.html` y de los relatos, para que nadie vea la versión vieja.
 
 El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
-un renglón en los 7 idiomas (el japonés es el más largo).
+un renglón en los 3 idiomas (el japonés es el más largo).
 
 ## Press kit (descargas)
 
@@ -169,7 +187,7 @@ Eventos (tardan hasta 48 h en aparecer; en "Tiempo real" se ven al momento).
 
 ## Notas de prensa nuevas
 
-En los 7 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un
+En los 3 `index.html`, dentro de `<div class="press-grid-horizontal">`, copiá un
 bloque `<div class="press-card"> … </div>` y completá fecha, medio, cita, imagen y
 enlace. Poné la foto del portal en `Prensa/`.
 
@@ -185,7 +203,7 @@ enlace. Poné la foto del portal en `Prensa/`.
 
 - **Galería** (`<section id="galeria">`): cada `<img>` tiene un `alt` descriptivo
   en el idioma de la página. Hoy dice el rol del músico ("bandoneonista", etc.).
-  Si querés poner nombres propios, editá el `alt` en los 7 `index.html`.
+  Si querés poner nombres propios, editá el `alt` en los 3 `index.html`.
 - **Relatos**: el retrato del autor está en `Fotos/integrantes/`. Para cambiarlo,
   reemplazá el archivo con el mismo nombre. Si falta, la foto se oculta sola.
 
@@ -208,3 +226,13 @@ tengas la revisión de alguien nativo, reemplazá el texto en la carpeta del idi
 
 > Si después de publicar ves algo "sin estilo" o una foto deformada, casi seguro
 > es tu navegador con el CSS viejo en caché: recargá con **Ctrl + Shift + R**.
+
+## Favicon y logo en la barra (21/10/2026)
+
+- **Favicon:** terracota (`#c65d3e`), el anillo con la "I" y tres ondas, sin texto. Archivos en la raíz:
+  `favicon.svg`, `favicon.ico` (16/32/48), `favicon.png` (64) y `apple-touch-icon.png` (180, fondo negro).
+  Están enlazados en el `<head>` de todas las páginas con `?v=2` (si se cambia el dibujo, subir ese número).
+  Las fuentes de diseño y el logo grande con texto están en la carpeta `Logo bandoneón (propuesta)` del escritorio.
+- **Barra fija de arriba:** en `index.html`, `en/` y `de/`, al bajar más de 50 px la barra se pone negra y
+  aparece el logo (la marca `favicon.svg` + "ORQUESTA INVISIBLE"). Lo hace `script.js` (agrega la clase
+  `scrolled`) y el estilo está al final de `style.css`.

@@ -20,7 +20,7 @@ $root //= '.';
 my $BASE = 'https://www.orquestainvisible.musica.ar';
 my $VISIBLES = 2;    # cuántas fechas se ven siempre; el resto queda detrás de "ver todas las fechas"
 
-my @LANGS = qw(es en it fr de ja pt);
+my @LANGS = qw(es en de);
 my %FILE   = (es=>'index.html', en=>'en/index.html', it=>'it/index.html', fr=>'fr/index.html',
               de=>'de/index.html', ja=>'ja/index.html', pt=>'pt/index.html');
 my %HOME   = (es=>"$BASE/", en=>"$BASE/en/", it=>"$BASE/it/", fr=>"$BASE/fr/", de=>"$BASE/de/", ja=>"$BASE/ja/", pt=>"$BASE/pt/");

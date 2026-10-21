@@ -8,11 +8,7 @@
     <loc>https://www.orquestainvisible.musica.ar/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
     <image:image>
       <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
@@ -152,11 +148,7 @@
     <loc>https://www.orquestainvisible.musica.ar/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
     <image:image>
       <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
@@ -292,303 +284,13 @@
       <image:caption>Sofía Verna</image:caption>
     </image:image>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
-      <image:caption>La Orquesta Invisible saluta il pubblico alla fine di un concerto</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/2.webp</image:loc>
-      <image:caption>Bandoneonista de La Orquesta Invisible sorride mentre suona dal vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/3.webp</image:loc>
-      <image:caption>Bandoneonista de La Orquesta Invisible suona sotto luci magenta</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/4.webp</image:loc>
-      <image:caption>Bandoneonista de La Orquesta Invisible concentrato durante un concerto</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/5.webp</image:loc>
-      <image:caption>Violoncellista de La Orquesta Invisible suona dal vivo, con un violinista dietro</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/6.webp</image:loc>
-      <image:caption>Pianista de La Orquesta Invisible al pianoforte a coda durante un concerto</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/7.webp</image:loc>
-      <image:caption>La Orquesta Invisible al completo sul palco di La Tierra Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/8.webp</image:loc>
-      <image:caption>Fila di bandoneonisti de La Orquesta Invisible che suonano dal vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/10.webp</image:loc>
-      <image:caption>Violoncellista e violinista de La Orquesta Invisible suonano dal vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/11.webp</image:loc>
-      <image:caption>Violoncellista e bandoneonista de La Orquesta Invisible durante una prova</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/12.webp</image:loc>
-      <image:caption>Pianista e contrabbassista de La Orquesta Invisible durante un concerto</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/13.webp</image:loc>
-      <image:caption>Violoncellista e bandoneonista de La Orquesta Invisible a una prova illuminata da una lampada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/14.webp</image:loc>
-      <image:caption>Due violinisti de La Orquesta Invisible ridono mentre suonano</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/15.webp</image:loc>
-      <image:caption>Bandoneonisti de La Orquesta Invisible parlano e sorridono durante una prova</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/16.webp</image:loc>
-      <image:caption>Violinista de La Orquesta Invisible suona dal vivo sotto luci blu</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/17.webp</image:loc>
-      <image:caption>La Orquesta Invisible sul palco di un teatro con luce viola</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/18.webp</image:loc>
-      <image:caption>Bandoneonista de La Orquesta Invisible suona accanto alla pianista</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/19.webp</image:loc>
-      <image:caption>Due violinisti de La Orquesta Invisible suonano dal vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/20.webp</image:loc>
-      <image:caption>Violinista de La Orquesta Invisible legge lo spartito durante un concerto</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/21.webp</image:loc>
-      <image:caption>Contrabbassista de La Orquesta Invisible con cappello suona sotto luce verde</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/22.webp</image:loc>
-      <image:caption>La Orquesta Invisible abbracciata di spalle saluta la sala alla fine del concerto</image:caption>
-    </image:image>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/huella-tapa.webp</image:loc>
-      <image:caption>Huella - Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/julio-coviello.webp</image:loc>
-      <image:caption>Julio Coviello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/rodrigo-almonacid.webp</image:loc>
-      <image:caption>Rodrigo Almonacid</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mariano-burnengo.webp</image:loc>
-      <image:caption>Mariano Burnengo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/paula-corrarello.webp</image:loc>
-      <image:caption>Paula Corrarello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/santiago-moore.webp</image:loc>
-      <image:caption>Santiago Moore</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mabel-etchevarria.webp</image:loc>
-      <image:caption>Mabel Etchevarría</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/fernando-estrup.webp</image:loc>
-      <image:caption>Fernando Estrup</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/dolores-velasco.webp</image:loc>
-      <image:caption>Dolores Velasco</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/patricia-szilagyi.webp</image:loc>
-      <image:caption>Patricia Szilagyi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/alex-valdes.webp</image:loc>
-      <image:caption>Alex Valdés</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/sofia-verna.webp</image:loc>
-      <image:caption>Sofía Verna</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
-      <image:caption>La Orquesta Invisible salue le public à la fin d'un concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/2.webp</image:loc>
-      <image:caption>Bandonéoniste de La Orquesta Invisible souriant en jouant en concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/3.webp</image:loc>
-      <image:caption>Bandonéoniste de La Orquesta Invisible jouant sous des lumières magenta</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/4.webp</image:loc>
-      <image:caption>Bandonéoniste de La Orquesta Invisible concentré pendant un concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/5.webp</image:loc>
-      <image:caption>Violoncelliste de La Orquesta Invisible jouant en concert, un violoniste derrière</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/6.webp</image:loc>
-      <image:caption>Pianiste de La Orquesta Invisible au piano à queue pendant un concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/7.webp</image:loc>
-      <image:caption>La Orquesta Invisible au complet sur la scène de La Tierra Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/8.webp</image:loc>
-      <image:caption>Rangée de bandonéonistes de La Orquesta Invisible jouant en concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/10.webp</image:loc>
-      <image:caption>Violoncelliste et violoniste de La Orquesta Invisible jouant en concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/11.webp</image:loc>
-      <image:caption>Violoncelliste et bandonéoniste de La Orquesta Invisible en répétition</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/12.webp</image:loc>
-      <image:caption>Pianiste et contrebassiste de La Orquesta Invisible pendant un concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/13.webp</image:loc>
-      <image:caption>Violoncelliste et bandonéoniste de La Orquesta Invisible en répétition, éclairés par une lampe</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/14.webp</image:loc>
-      <image:caption>Deux violonistes de La Orquesta Invisible riant en jouant</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/15.webp</image:loc>
-      <image:caption>Bandonéonistes de La Orquesta Invisible discutant et souriant en répétition</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/16.webp</image:loc>
-      <image:caption>Violoniste de La Orquesta Invisible jouant en concert sous des lumières bleues</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/17.webp</image:loc>
-      <image:caption>La Orquesta Invisible sur la scène d'un théâtre sous une lumière violette</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/18.webp</image:loc>
-      <image:caption>Bandonéoniste de La Orquesta Invisible jouant à côté de la pianiste</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/19.webp</image:loc>
-      <image:caption>Deux violonistes de La Orquesta Invisible jouant en concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/20.webp</image:loc>
-      <image:caption>Violoniste de La Orquesta Invisible lisant la partition pendant un concert</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/21.webp</image:loc>
-      <image:caption>Contrebassiste de La Orquesta Invisible en chapeau, jouant sous une lumière verte</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/22.webp</image:loc>
-      <image:caption>La Orquesta Invisible enlacée de dos saluant une salle comble à la fin du concert</image:caption>
-    </image:image>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/huella-tapa.webp</image:loc>
-      <image:caption>Huella - Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/julio-coviello.webp</image:loc>
-      <image:caption>Julio Coviello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/rodrigo-almonacid.webp</image:loc>
-      <image:caption>Rodrigo Almonacid</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mariano-burnengo.webp</image:loc>
-      <image:caption>Mariano Burnengo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/paula-corrarello.webp</image:loc>
-      <image:caption>Paula Corrarello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/santiago-moore.webp</image:loc>
-      <image:caption>Santiago Moore</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mabel-etchevarria.webp</image:loc>
-      <image:caption>Mabel Etchevarría</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/fernando-estrup.webp</image:loc>
-      <image:caption>Fernando Estrup</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/dolores-velasco.webp</image:loc>
-      <image:caption>Dolores Velasco</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/patricia-szilagyi.webp</image:loc>
-      <image:caption>Patricia Szilagyi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/alex-valdes.webp</image:loc>
-      <image:caption>Alex Valdés</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/sofia-verna.webp</image:loc>
-      <image:caption>Sofía Verna</image:caption>
-    </image:image>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
     <image:image>
       <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
@@ -724,294 +426,8 @@
       <image:caption>Sofía Verna</image:caption>
     </image:image>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
-      <image:caption>公演の最後に客席へお辞儀をする Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/2.webp</image:loc>
-      <image:caption>ライブでほほえみながらバンドネオンを弾く Orquesta Invisible の奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/3.webp</image:loc>
-      <image:caption>マゼンタの照明のなかで演奏する Orquesta Invisible のバンドネオン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/4.webp</image:loc>
-      <image:caption>公演中、集中する Orquesta Invisible のバンドネオン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/5.webp</image:loc>
-      <image:caption>後ろにヴァイオリン奏者、ライブで演奏する Orquesta Invisible のチェロ奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/6.webp</image:loc>
-      <image:caption>公演でグランドピアノを弾く Orquesta Invisible のピアノ奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/7.webp</image:loc>
-      <image:caption>La Tierra Invisible の舞台に立つ Orquesta Invisible の全員</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/8.webp</image:loc>
-      <image:caption>ライブで演奏する Orquesta Invisible のバンドネオン奏者たち</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/10.webp</image:loc>
-      <image:caption>ライブで演奏する Orquesta Invisible のチェロ奏者とヴァイオリン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/11.webp</image:loc>
-      <image:caption>リハーサル中の Orquesta Invisible のチェロ奏者とバンドネオン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/12.webp</image:loc>
-      <image:caption>公演中の Orquesta Invisible のピアノ奏者とコントラバス奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/13.webp</image:loc>
-      <image:caption>ランプの灯りのリハーサルでの Orquesta Invisible のチェロ奏者とバンドネオン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/14.webp</image:loc>
-      <image:caption>演奏しながら笑い合う Orquesta Invisible のふたりのヴァイオリン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/15.webp</image:loc>
-      <image:caption>リハーサルで語らい、ほほえむ Orquesta Invisible のバンドネオン奏者たち</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/16.webp</image:loc>
-      <image:caption>青い照明のもと、ライブで演奏する Orquesta Invisible のヴァイオリン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/17.webp</image:loc>
-      <image:caption>紫の照明の劇場のステージに立つ Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/18.webp</image:loc>
-      <image:caption>ピアノ奏者のとなりで演奏する Orquesta Invisible のバンドネオン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/19.webp</image:loc>
-      <image:caption>ライブで演奏する Orquesta Invisible のふたりのヴァイオリン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/20.webp</image:loc>
-      <image:caption>公演中、譜面を読みながら弾く Orquesta Invisible のヴァイオリン奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/21.webp</image:loc>
-      <image:caption>帽子をかぶり、緑の照明のなかで演奏する Orquesta Invisible のコントラバス奏者</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/22.webp</image:loc>
-      <image:caption>肩を組んで後ろ姿で、満席の客席へお辞儀をする Orquesta Invisible</image:caption>
-    </image:image>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/huella-tapa.webp</image:loc>
-      <image:caption>Huella - Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/julio-coviello.webp</image:loc>
-      <image:caption>Julio Coviello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/rodrigo-almonacid.webp</image:loc>
-      <image:caption>Rodrigo Almonacid</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mariano-burnengo.webp</image:loc>
-      <image:caption>Mariano Burnengo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/paula-corrarello.webp</image:loc>
-      <image:caption>Paula Corrarello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/santiago-moore.webp</image:loc>
-      <image:caption>Santiago Moore</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mabel-etchevarria.webp</image:loc>
-      <image:caption>Mabel Etchevarría</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/fernando-estrup.webp</image:loc>
-      <image:caption>Fernando Estrup</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/dolores-velasco.webp</image:loc>
-      <image:caption>Dolores Velasco</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/patricia-szilagyi.webp</image:loc>
-      <image:caption>Patricia Szilagyi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/alex-valdes.webp</image:loc>
-      <image:caption>Alex Valdés</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/sofia-verna.webp</image:loc>
-      <image:caption>Sofía Verna</image:caption>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/"/>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/1.webp</image:loc>
-      <image:caption>A Orquesta Invisible fazendo a reverência final de um show</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/2.webp</image:loc>
-      <image:caption>Bandoneonista da Orquesta Invisible sorrindo enquanto toca ao vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/3.webp</image:loc>
-      <image:caption>Bandoneonista da Orquesta Invisible tocando sob luzes de palco magenta</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/4.webp</image:loc>
-      <image:caption>Bandoneonista da Orquesta Invisible concentrado durante um show</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/5.webp</image:loc>
-      <image:caption>Violoncelista da Orquesta Invisible tocando ao vivo, com um violinista atrás</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/6.webp</image:loc>
-      <image:caption>Pianista da Orquesta Invisible tocando um piano de cauda durante um show</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/7.webp</image:loc>
-      <image:caption>A Orquesta Invisible completa no palco de La Tierra Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/8.webp</image:loc>
-      <image:caption>Fileira de bandoneonistas da Orquesta Invisible tocando ao vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/10.webp</image:loc>
-      <image:caption>Violoncelista e violinista da Orquesta Invisible tocando ao vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/11.webp</image:loc>
-      <image:caption>Violoncelista e bandoneonista da Orquesta Invisible num ensaio</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/12.webp</image:loc>
-      <image:caption>Pianista e contrabaixista da Orquesta Invisible durante um show</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/13.webp</image:loc>
-      <image:caption>Violoncelista e bandoneonista da Orquesta Invisible num ensaio iluminado por uma lâmpada</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/14.webp</image:loc>
-      <image:caption>Dois violinistas da Orquesta Invisible rindo enquanto tocam</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/15.webp</image:loc>
-      <image:caption>Bandoneonistas da Orquesta Invisible conversando e sorrindo num ensaio</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/16.webp</image:loc>
-      <image:caption>Violinista da Orquesta Invisible tocando ao vivo sob luzes azuis</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/17.webp</image:loc>
-      <image:caption>A Orquesta Invisible num palco de teatro sob luz roxa</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/18.webp</image:loc>
-      <image:caption>Bandoneonista da Orquesta Invisible tocando ao lado da pianista</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/19.webp</image:loc>
-      <image:caption>Dois violinistas da Orquesta Invisible tocando ao vivo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/20.webp</image:loc>
-      <image:caption>Violinista da Orquesta Invisible lendo a partitura durante um show</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/21.webp</image:loc>
-      <image:caption>Contrabaixista da Orquesta Invisible de chapéu, tocando sob luz verde</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/22.webp</image:loc>
-      <image:caption>A Orquesta Invisible abraçada, fazendo a reverência para a casa cheia</image:caption>
-    </image:image>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/huella-tapa.webp</image:loc>
-      <image:caption>Huella - Orquesta Invisible</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/julio-coviello.webp</image:loc>
-      <image:caption>Julio Coviello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/rodrigo-almonacid.webp</image:loc>
-      <image:caption>Rodrigo Almonacid</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mariano-burnengo.webp</image:loc>
-      <image:caption>Mariano Burnengo</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/paula-corrarello.webp</image:loc>
-      <image:caption>Paula Corrarello</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/santiago-moore.webp</image:loc>
-      <image:caption>Santiago Moore</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/mabel-etchevarria.webp</image:loc>
-      <image:caption>Mabel Etchevarría</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/fernando-estrup.webp</image:loc>
-      <image:caption>Fernando Estrup</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/dolores-velasco.webp</image:loc>
-      <image:caption>Dolores Velasco</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/patricia-szilagyi.webp</image:loc>
-      <image:caption>Patricia Szilagyi</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/alex-valdes.webp</image:loc>
-      <image:caption>Alex Valdés</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.orquestainvisible.musica.ar/Fotos/integrantes/retratos/sofia-verna.webp</image:loc>
-      <image:caption>Sofía Verna</image:caption>
-    </image:image>
-  </url>
+
+
 
 
   <!-- links.html -->
@@ -1019,11 +435,7 @@
     <loc>https://www.orquestainvisible.musica.ar/links.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <priority>0.4</priority>
   </url>
@@ -1031,85 +443,29 @@
     <loc>https://www.orquestainvisible.musica.ar/en/links.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/links.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/links.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <priority>0.3</priority>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/links.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
     <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/links.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/links.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/links.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/links.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/links.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/links.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/links.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/links.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/links.html"/>
-    <priority>0.3</priority>
-  </url>
+
+
 
   <!-- relatos/arte-de-tapa-de-peso.html -->
   <url>
     <loc>https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <priority>0.6</priority>
   </url>
@@ -1117,85 +473,29 @@
     <loc>https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/arte-de-tapa-de-peso.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/arte-de-tapa-de-peso.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
 
   <!-- relatos/audiciones.html -->
   <url>
     <loc>https://www.orquestainvisible.musica.ar/relatos/audiciones.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <priority>0.6</priority>
   </url>
@@ -1203,85 +503,29 @@
     <loc>https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/audiciones.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/audiciones.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
 
   <!-- relatos/la-composicion-colectiva.html -->
   <url>
     <loc>https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <priority>0.6</priority>
   </url>
@@ -1289,85 +533,29 @@
     <loc>https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/la-composicion-colectiva.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/la-composicion-colectiva.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
 
   <!-- relatos/lti.html -->
   <url>
     <loc>https://www.orquestainvisible.musica.ar/relatos/lti.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <priority>0.6</priority>
   </url>
@@ -1375,73 +563,21 @@
     <loc>https://www.orquestainvisible.musica.ar/en/relatos/lti.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/it/relatos/lti.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/fr/relatos/lti.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
   <url>
     <loc>https://www.orquestainvisible.musica.ar/de/relatos/lti.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
     <priority>0.5</priority>
   </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/ja/relatos/lti.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.orquestainvisible.musica.ar/pt/relatos/lti.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://www.orquestainvisible.musica.ar/it/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.orquestainvisible.musica.ar/fr/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.orquestainvisible.musica.ar/ja/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.orquestainvisible.musica.ar/pt/relatos/lti.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/relatos/lti.html"/>
-    <priority>0.5</priority>
-  </url>
+
+
 
 </urlset>
