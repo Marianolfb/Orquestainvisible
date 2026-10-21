@@ -2717,3 +2717,14 @@ body.bio-abierta {
         height: 30px;
     }
 }
+
+/* ---------- Portada: la primera foto (celular = versión chica) ---------- */
+.hero-primera {
+    background-image: url('foto1.webp');
+}
+
+@media (max-width: 800px) {
+    .hero-primera {
+        background-image: url('foto1-m.webp');
+    }
+}

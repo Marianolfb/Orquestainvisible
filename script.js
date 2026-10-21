@@ -105,6 +105,22 @@ document.addEventListener('DOMContentLoaded', function() {
             prevEl: ".swiper-button-prev",
         }
     });
+
+    // Galería: las fotos se bajan cuando se acercan a la pantalla (incluidas las copias que arma el carrusel al hacer loop)
+    const fotos = document.querySelectorAll(".mySwiper img[data-src]");
+    const cargarFoto = function (img) {
+        if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute("data-src"); }
+    };
+    if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (e) {
+                if (e.isIntersecting) { cargarFoto(e.target); io.unobserve(e.target); }
+            });
+        }, { rootMargin: "700px 900px 700px 900px" });
+        fotos.forEach(function (img) { io.observe(img); });
+    } else {
+        fotos.forEach(cargarFoto);
+    }
 });
 
 const slider = document.querySelector('.press-gallery-container');
@@ -274,10 +290,13 @@ function toggleSpotify(show) {
 }
 
 // Fotos 2 y 3 de la portada: se bajan cuando la página ya cargó, así la primera aparece antes
+// En el celular se baja la versión chica de la foto (data-bg-m); en la compu, la grande
 function cargarFondo(slide) {
     if (slide && slide.dataset.bg) {
-        slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+        const chica = window.matchMedia("(max-width: 800px)").matches && slide.dataset.bgM;
+        slide.style.backgroundImage = "url('" + (chica || slide.dataset.bg) + "')";
         delete slide.dataset.bg;
+        delete slide.dataset.bgM;
     }
 }
 

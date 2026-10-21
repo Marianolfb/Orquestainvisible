@@ -236,3 +236,20 @@ tengas la revisión de alguien nativo, reemplazá el texto en la carpeta del idi
 - **Barra fija de arriba:** en `index.html`, `en/` y `de/`, al bajar más de 50 px la barra se pone negra y
   aparece el logo (la marca `favicon.svg` + "ORQUESTA INVISIBLE"). Lo hace `script.js` (agrega la clase
   `scrolled`) y el estilo está al final de `style.css`.
+
+## Velocidad (21/10/2026)
+
+Medido en celular con conexión lenta (1,6 Mbps) y caché vacía: antes la página bajaba ~2,2 MB y 44 archivos
+antes de poder mostrarse (la portada tardaba ~11 s); ahora baja ~0,5 MB de imágenes y la portada aparece en ~3 s.
+Qué se hizo y qué hay que respetar:
+
+- **Fotos de la galería:** llevan `data-src="Fotos/N.webp"` (no `src`) y `script.js` las baja cuando se acercan
+  a la pantalla. Para sumar una foto, copiá una línea de `<div class="swiper-slide">` y respetá `data-src`,
+  `width` y `height`; no uses `loading="lazy"` en esa galería.
+- **Portada:** cada foto tiene dos tamaños, `fotoN.webp` (compu, 1920 px) y `fotoN-m.webp` (celular, 960 px).
+  Si cambiás una foto de la portada, generá las dos. La primera está en el CSS (`.hero-primera`) y precargada
+  en el `<head>`; las otras salen de `data-bg` / `data-bg-m`.
+- **Swiper** está en `vendor/swiper/` (versión 11.2.10), ya no se baja de un CDN.
+- **Google Analytics** se carga 1,5 s después de que la página terminó de cargar, para no competir con las fotos.
+- Las fotos originales pesadas (`Fotos/*.jpg`, 106 MB) están en el repositorio pero la web **no las usa**;
+  sólo se usan los `.webp`. No las linkees desde la web.
