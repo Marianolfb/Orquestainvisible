@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Galería: las fotos se bajan cuando se acercan a la pantalla (incluidas las copias que arma el carrusel al hacer loop)
     const fotos = document.querySelectorAll(".mySwiper img[data-src]");
     const cargarFoto = function (img) {
+        if (img.dataset.srcset) { img.srcset = img.dataset.srcset; img.removeAttribute("data-srcset"); }
         if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute("data-src"); }
     };
     if ("IntersectionObserver" in window) {
