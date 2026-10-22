@@ -253,3 +253,16 @@ Qué se hizo y qué hay que respetar:
 - **Google Analytics** se carga 1,5 s después de que la página terminó de cargar, para no competir con las fotos.
 - Las fotos originales pesadas (`Fotos/*.jpg`, 106 MB) están en el repositorio pero la web **no las usa**;
   sólo se usan los `.webp`. No las linkees desde la web.
+
+### Segunda tanda de velocidad (21/10/2026)
+
+- **Biografías:** ya no están dentro de `index.html`. Cada una es `bios/<idioma>/<nombre-apellido>.html` (sólo el texto,
+  con `<p>` y `<ul>`). Para cambiar una, editá ese archivo; si cambia la formación, sumá o sacá el archivo del idioma que corresponda
+  (es, en, de) y el integrante en la grilla. Se bajan al tocar la foto (y se adelantan al pasar el mouse).
+- **Tipografías propias:** Oswald (700) y Roboto Mono están en `fonts/` y declaradas en un `<style>` del `<head>`;
+  ya no se piden a Google Fonts.
+- **Swiper se baja sólo cuando hace falta** (al acercarse a un carrusel o 2,5 s después de cargar). Lo pide `script.js`; ya no hay
+  `<script>` de Swiper en el HTML.
+- **Google Analytics** se carga con el primer toque, scroll o movimiento del mouse (o a los 6 s). Está en un script chico de cada `<head>`.
+- **Miniaturas de los videos** de "En vivo": `Fotos/videos/<id-de-YouTube>.webp` (antes se bajaban de YouTube). Si se agrega un video,
+  guardar su miniatura ahí (`https://i.ytimg.com/vi_webp/<id>/sddefault.webp`).

@@ -86,7 +86,8 @@ if (menu && menuLinks) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+// Los tres carruseles (galería, relatos y videos) se arman cuando Swiper ya se bajó (ver más abajo)
+function iniciarGaleria() {
     const swiper = new Swiper(".mySwiper", {
         slidesPerView: 'auto', // Ajusta el ancho según la foto
         centeredSlides: true,  // La foto activa queda en el centro
@@ -122,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         fotos.forEach(cargarFoto);
     }
-});
+}
 
 const slider = document.querySelector('.press-gallery-container');
 let isDown = false;
@@ -151,7 +152,9 @@ if (slider) {
     });
 }
 
-const swiperRelatos = new Swiper('.relatosSwiper', {
+let swiperRelatos;
+function iniciarRelatos() {
+swiperRelatos = new Swiper('.relatosSwiper', {
     slidesPerView: 'auto', // Esto permite que se vea un pedazo del siguiente
     spaceBetween: 20,      // Espacio entre tarjetas
     centeredSlides: false, // Empezar desde la izquierda
@@ -173,11 +176,14 @@ const swiperRelatos = new Swiper('.relatosSwiper', {
         clickable: true,
     }
 });
+}
 
 // Para quien pide menos movimiento en su sistema, los carruseles nuevos no avanzan solos
 const movimientoReducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const videoSwiper = new Swiper('.videoSwiper', {
+let videoSwiper;
+function iniciarVideos() {
+videoSwiper = new Swiper('.videoSwiper', {
     slidesPerView: 1, // Muestra un video a la vez
     spaceBetween: 30, // Espacio entre slides
     loop: true,       // Para que vuelva al principio al terminar
@@ -196,6 +202,29 @@ const videoSwiper = new Swiper('.videoSwiper', {
         clickable: true,
     }
 });
+}
+
+// Swiper (el programa de los carruseles) se baja cuando hace falta: al acercarse a un carrusel, o 2,5 s después de cargar la página
+(function () {
+    const carruseles = document.querySelectorAll('.mySwiper, .relatosSwiper, .videoSwiper');
+    if (!carruseles.length) return;
+    let pedido = false;
+    function cargarSwiper() {
+        if (pedido) return;
+        pedido = true;
+        const s = document.createElement('script');
+        s.src = '/vendor/swiper/swiper-bundle.min.js';
+        s.onload = function () { iniciarGaleria(); iniciarRelatos(); iniciarVideos(); };
+        document.head.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entradas) {
+            if (entradas.some(function (e) { return e.isIntersecting; })) { io.disconnect(); cargarSwiper(); }
+        }, { rootMargin: '200px' });
+        carruseles.forEach(function (c) { io.observe(c); });
+    }
+    window.addEventListener('load', function () { setTimeout(cargarSwiper, 2500); });
+})();
 
 document.addEventListener('DOMContentLoaded', function() {
     const btnToggle = document.getElementById('btn-toggle-shows');
@@ -340,20 +369,39 @@ document.addEventListener('click', function (e) {
     const bio = dialog.querySelector('.bio-dialog-bio');
     let origen = null;
 
+    // Cada biografía es un archivo aparte (bios/<idioma>/<nombre>.html): se baja al tocar la foto,
+    // y se adelanta un poco cuando el mouse o el dedo se acercan, para que aparezca al toque.
+    const idioma = document.documentElement.lang || 'es';
+    const guardadas = {};
+    function traerBio(slug) {
+        if (!guardadas[slug]) {
+            guardadas[slug] = fetch('/bios/' + idioma + '/' + slug + '.html')
+                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
+        }
+        return guardadas[slug];
+    }
+
     document.querySelectorAll('.integrante-btn').forEach(function (btn) {
+        const adelantar = function () { traerBio(btn.dataset.bio).catch(function () { delete guardadas[btn.dataset.bio]; }); };
+        btn.addEventListener('pointerenter', adelantar, { once: true });
+        btn.addEventListener('touchstart', adelantar, { once: true, passive: true });
         btn.addEventListener('click', function () {
-            const plantilla = document.getElementById('bio-' + btn.dataset.bio);
-            if (!plantilla) return;
             const img = btn.querySelector('img');
             foto.src = img.currentSrc || img.src;
             foto.alt = img.alt;
             nombre.textContent = btn.querySelector('.integrante-nombre').textContent;
             rol.textContent = btn.querySelector('.integrante-rol').textContent;
-            bio.replaceChildren(plantilla.content.cloneNode(true));
+            bio.textContent = '…';
             origen = btn;
             dialog.showModal();
             dialog.scrollTop = 0;
             document.body.classList.add('bio-abierta');
+            traerBio(btn.dataset.bio).then(function (html) {
+                if (origen === btn) bio.innerHTML = html;
+            }).catch(function () {
+                delete guardadas[btn.dataset.bio];
+                bio.textContent = '';
+            });
         });
     });
 
