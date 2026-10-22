@@ -130,8 +130,8 @@ igual en los 3 `index.html`.
 - **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 3 idiomas.
   Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp` (480×600), con el crédito
   debajo de la grilla. **Al tocar la foto se abre la biografía**: el texto de cada uno está en un
-  archivo aparte, `bios/<idioma>/<nombre-apellido>.html` (es, en, de), que se baja al tocar la foto. Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
-  formación, actualizar la grilla en los 3 `index.html` y los archivos de `bios/` y la lista `member` del
+  `<template id="bio-<nombre-apellido>">` dentro de la misma página (así Google lee las biografías). Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
+  formación, actualizar la grilla y las biografías en los 3 `index.html` y la lista `member` del
   JSON-LD del grupo.
 
 ## Google (título y descripción)
@@ -255,9 +255,7 @@ Qué se hizo y qué hay que respetar:
 
 ### Segunda tanda de velocidad (21/10/2026)
 
-- **Biografías:** ya no están dentro de `index.html`. Cada una es `bios/<idioma>/<nombre-apellido>.html` (sólo el texto,
-  con `<p>` y `<ul>`). Para cambiar una, editá ese archivo; si cambia la formación, sumá o sacá el archivo del idioma que corresponda
-  (es, en, de) y el integrante en la grilla. Se bajan al tocar la foto (y se adelantan al pasar el mouse).
+- **Biografías:** se probó sacarlas a archivos aparte, pero se volvió atrás (21/10/2026): quedan dentro de cada `index.html`, en `<template>`, porque así Google lee ese texto como parte de la página.
 - **Tipografías propias:** Oswald (700) y Roboto Mono están en `fonts/` y declaradas en un `<style>` del `<head>`;
   ya no se piden a Google Fonts.
 - **Swiper se baja sólo cuando hace falta** (al acercarse a un carrusel o 2,5 s después de cargar). Lo pide `script.js`; ya no hay

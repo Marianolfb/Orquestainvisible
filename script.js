@@ -369,39 +369,20 @@ document.addEventListener('click', function (e) {
     const bio = dialog.querySelector('.bio-dialog-bio');
     let origen = null;
 
-    // Cada biografía es un archivo aparte (bios/<idioma>/<nombre>.html): se baja al tocar la foto,
-    // y se adelanta un poco cuando el mouse o el dedo se acercan, para que aparezca al toque.
-    const idioma = document.documentElement.lang || 'es';
-    const guardadas = {};
-    function traerBio(slug) {
-        if (!guardadas[slug]) {
-            guardadas[slug] = fetch('/bios/' + idioma + '/' + slug + '.html')
-                .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
-        }
-        return guardadas[slug];
-    }
-
     document.querySelectorAll('.integrante-btn').forEach(function (btn) {
-        const adelantar = function () { traerBio(btn.dataset.bio).catch(function () { delete guardadas[btn.dataset.bio]; }); };
-        btn.addEventListener('pointerenter', adelantar, { once: true });
-        btn.addEventListener('touchstart', adelantar, { once: true, passive: true });
         btn.addEventListener('click', function () {
+            const plantilla = document.getElementById('bio-' + btn.dataset.bio);
+            if (!plantilla) return;
             const img = btn.querySelector('img');
             foto.src = img.currentSrc || img.src;
             foto.alt = img.alt;
             nombre.textContent = btn.querySelector('.integrante-nombre').textContent;
             rol.textContent = btn.querySelector('.integrante-rol').textContent;
-            bio.textContent = '…';
+            bio.replaceChildren(plantilla.content.cloneNode(true));
             origen = btn;
             dialog.showModal();
             dialog.scrollTop = 0;
             document.body.classList.add('bio-abierta');
-            traerBio(btn.dataset.bio).then(function (html) {
-                if (origen === btn) bio.innerHTML = html;
-            }).catch(function () {
-                delete guardadas[btn.dataset.bio];
-                bio.textContent = '';
-            });
         });
     });
 
