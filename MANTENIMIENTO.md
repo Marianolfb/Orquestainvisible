@@ -130,9 +130,8 @@ igual en los 3 `index.html`.
 - **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 3 idiomas.
   Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp` (480×600), con el crédito
   debajo de la grilla. **Al tocar la foto se abre la biografía**: el texto de cada uno está en un
-  `<template id="bio-<nombre-apellido>">` al final de la sección (en los 3 idiomas, uno por
-  página). Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
-  formación, actualizar la grilla y las biografías en los 3 `index.html` y la lista `member` del
+  archivo aparte, `bios/<idioma>/<nombre-apellido>.html` (es, en, de), que se baja al tocar la foto. Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
+  formación, actualizar la grilla en los 3 `index.html` y los archivos de `bios/` y la lista `member` del
   JSON-LD del grupo.
 
 ## Google (título y descripción)
