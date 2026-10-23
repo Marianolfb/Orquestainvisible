@@ -260,6 +260,6 @@ Qué se hizo y qué hay que respetar:
   ya no se piden a Google Fonts.
 - **Swiper se baja sólo cuando hace falta** (al acercarse a un carrusel o 2,5 s después de cargar). Lo pide `script.js`; ya no hay
   `<script>` de Swiper en el HTML.
-- **Google Analytics** se carga con el primer toque, scroll o movimiento del mouse (o a los 6 s). Está en un script chico de cada `<head>`.
+- **Google Analytics** sigue cargándose 1,5 s después de que termina la página (se probó cargarlo recién con el primer toque o a los 6 s, pero se decidió dejarlo así el 22/10/2026 para no perder visitas que se van rápido).
 - **Miniaturas de los videos** de "En vivo": `Fotos/videos/<id-de-YouTube>.webp` (antes se bajaban de YouTube). Si se agrega un video,
   guardar su miniatura ahí (`https://i.ytimg.com/vi_webp/<id>/sddefault.webp`).
