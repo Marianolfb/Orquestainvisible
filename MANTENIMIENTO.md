@@ -219,7 +219,7 @@ el texto en la carpeta `de/`.
 - **Favicon:** terracota (`#c65d3e`), el anillo con la "I" y tres ondas, sin texto. Archivos en la raíz:
   `favicon.svg`, `favicon.ico` (16/32/48), `favicon.png` (64) y `apple-touch-icon.png` (180, fondo negro).
   Están enlazados en el `<head>` de todas las páginas con `?v=2` (si se cambia el dibujo, subir ese número).
-  Las fuentes de diseño y el logo grande con texto están en la carpeta `Logo bandoneón (propuesta)` del escritorio.
+  El logo grande con texto (PNG y SVG, también sin texto) está en `Desktop\Orquesta Invisible\Logo`.
 - **Barra fija de arriba:** en `index.html`, `en/` y `de/`, al bajar más de 50 px la barra se pone negra y
   aparece el logo (la marca `favicon.svg` + "ORQUESTA INVISIBLE"). Lo hace `script.js` (agrega la clase
   `scrolled`) y el estilo está al final de `style.css`.
@@ -239,8 +239,8 @@ Qué se hizo y qué hay que respetar:
 - **Swiper** está en `vendor/swiper/` (versión 11.2.10), ya no se baja de un CDN.
 - **Google Analytics** se carga 1,5 s después de que la página terminó de cargar, para no competir con las fotos.
 - Las fotos originales pesadas (`Fotos/*.jpg`, `Prensa/*.jpg`) se sacaron del repositorio el 21/10/2026: la web
-  sólo usa los `.webp`. Quedaron guardadas en la compu, en la carpeta `orquestainvisible-originales` del
-  escritorio, para volver a generar versiones si hace falta.
+  sólo usa los `.webp`. Quedaron guardadas en la compu, en `Desktop\Orquesta Invisible\Web\orquestainvisible-originales`
+  (al lado de la carpeta del repositorio), para volver a generar versiones si hace falta.
 
 ### Segunda tanda de velocidad (21/10/2026)
 
