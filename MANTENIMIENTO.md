@@ -17,21 +17,9 @@ redirige (meta refresh + JavaScript + `canonical`) a la equivalente: italiano y 
 español; francés y japonés, al inglés. No hace falta mantenerlas ni agregarles nada. Se sacaron
 del menú de idiomas, de los `hreflang`, del `sitemap.xml` y del script de fechas. Quien quiera
 leer la web en otro idioma puede usar el traductor del navegador. Para volver a sumar un idioma
-habría que recrear la carpeta completa. Recomendado (lo hace la persona dueña de Cloudflare):
-agregar ahí reglas de redirección permanente (301) de `/it/*`, `/pt/*` → español y `/fr/*`,
-`/ja/*` → inglés, que es más fuerte para Google que el aviso.
-
---------|---------|-------|
-| Español | raíz | `index.html` |
-| Inglés | `en/` | `en/index.html` |
-| Italiano | `it/` | `it/index.html` |
-| Francés | `fr/` | `fr/index.html` |
-| Alemán | `de/` | `de/index.html` |
-| Japonés | `ja/` | `ja/index.html` |
-| Portugués | `pt/` | `pt/index.html` |
-
-**Regla general:** casi cualquier texto que cambies en una página hay que
-replicarlo en las 3 versiones, traducido.
+habría que recrear la carpeta completa. Además, desde el 24/10/2026 Cloudflare tiene 4 reglas
+de redirección permanente (301), que son más fuertes para Google que el aviso: `/it/*` y `/pt/*`
+van al español, y `/fr/*` y `/ja/*` al inglés (conservan el resto de la dirección).
 
 ---
 
@@ -72,7 +60,8 @@ crear otro, reemplazar esa propiedad y correr `configurar` de nuevo. Para public
 planilla: correr `publicarAhora` desde el editor.
 
 **Formulario para cargar fechas sin entrar a la planilla:** `https://www.orquestainvisible.musica.ar/fechas/`
-(carpeta `fechas/` del repo; `fechas.orquestainvisible.musica.ar` redirige ahí). Pide nombre y la clave de la
+(carpeta `fechas/` del repo). La dirección corta `fechas.orquestainvisible.musica.ar` todavía no existe:
+si se quiere, se crea en Cloudflare como redirección a esa página. Pide nombre y la clave de la
 orquesta; permite agregar, editar y borrar fechas. Por detrás escribe en la misma pestaña "Fechas" y anota cada
 cambio (quién, cuándo y todo lo que se borró) en la pestaña **Cambios** de la planilla, y avisa a GitHub.
 - El código está en `scripts/apps-script-formulario.gs`: va como archivo "Formulario" en el proyecto de Apps Script
@@ -92,7 +81,7 @@ desde la planilla" → *Run workflow*.
 
 **Otros puntos que siguen siendo manuales:**
 
-1. **links.html** (los 7): el botón destacado de entradas (`link-featured`) apunta a la cartelera
+1. **links.html** (los 3): el botón destacado de entradas (`link-featured`) apunta a la cartelera
    propia (`https://entradas.orquestainvisible.musica.ar`), así que ya no hay que cambiarlo fecha a fecha.
 2. **Google Calendar / agenda aparte:** ya no existen. Se descartaron la página `agenda.html` y el
    calendario "Fechas invisibles"; las fechas solo se cargan en la planilla.
@@ -156,7 +145,7 @@ fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, e
 
 El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
-un renglón en los 3 idiomas (el japonés es el más largo).
+un renglón en los 3 idiomas (el alemán es el más largo).
 
 ## Press kit (descargas)
 
@@ -177,7 +166,7 @@ llevan a este bloque.
 
 ## Medición de clics
 
-`medicion.js` (cargado en las 42 páginas) avisa a Google Analytics cuando alguien toca:
+`medicion.js` (cargado en las 18 páginas: los 3 `index.html`, los 3 `links.html` y los 12 relatos) avisa a Google Analytics cuando alguien toca:
 `clic_reservar`, `clic_mas_info_fecha` (con la fecha), `clic_contrataciones`, `clic_mail`,
 `clic_press_kit` (con el archivo), `clic_nota_prensa` (con el medio), `clic_portada_fechas`,
 `clic_portada_disco`, `clic_spotify`, `abrir_reproductor_spotify`, `ver_video`,
@@ -210,9 +199,8 @@ enlace. Poné la foto del portal en `Prensa/`.
 
 ## Traducciones pendientes de revisión nativa
 
-Alemán, italiano, francés, **japonés** y **portugués** se hicieron con IA. Cuando
-tengas la revisión de alguien nativo, reemplazá el texto en la carpeta del idioma
-(`de/`, `it/`, `fr/`, `ja/`, `pt/`). Prioridad: japonés y alemán.
+El **alemán** se hizo con IA. Cuando tengas la revisión de alguien nativo, reemplazá
+el texto en la carpeta `de/`.
 
 ---
 
@@ -250,12 +238,13 @@ Qué se hizo y qué hay que respetar:
   en el `<head>`; las otras salen de `data-bg` / `data-bg-m`.
 - **Swiper** está en `vendor/swiper/` (versión 11.2.10), ya no se baja de un CDN.
 - **Google Analytics** se carga 1,5 s después de que la página terminó de cargar, para no competir con las fotos.
-- Las fotos originales pesadas (`Fotos/*.jpg`, 106 MB) están en el repositorio pero la web **no las usa**;
-  sólo se usan los `.webp`. No las linkees desde la web.
+- Las fotos originales pesadas (`Fotos/*.jpg`, `Prensa/*.jpg`) se sacaron del repositorio el 21/10/2026: la web
+  sólo usa los `.webp`. Quedaron guardadas en la compu, en la carpeta `orquestainvisible-originales` del
+  escritorio, para volver a generar versiones si hace falta.
 
 ### Segunda tanda de velocidad (21/10/2026)
 
-- **Biografías:** se probó sacarlas a archivos aparte, pero se volvió atrás (21/10/2026): quedan dentro de cada `index.html`, en `<template>`, porque así Google lee ese texto como parte de la página.
+- **Biografías:** se probó sacarlas a archivos aparte, pero se volvió atrás (22/10/2026): quedan dentro de cada `index.html`, en `<template>`, porque así Google lee ese texto como parte de la página.
 - **Tipografías propias:** Oswald (700) y Roboto Mono están en `fonts/` y declaradas en un `<style>` del `<head>`;
   ya no se piden a Google Fonts.
 - **Swiper se baja sólo cuando hace falta** (al acercarse a un carrusel o 2,5 s después de cargar). Lo pide `script.js`; ya no hay
