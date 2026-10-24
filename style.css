@@ -2737,3 +2737,41 @@ body.bio-abierta {
     letter-spacing: 1px;
     color: var(--text-dim);
 }
+
+/* ---------- Material de descarga: el botón del press kit con su diseño original ----------
+   (recuadro rojo, ícono arriba y texto chico debajo). Pedido de Mariano, 24/10/2026. */
+.descargas-section .press-kit-container {
+    text-align: center;
+}
+
+.descargas-section .btn-press-kit {
+    display: inline-block;
+    padding: 20px 40px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: none;
+    transition: all 0.4s ease;
+}
+
+.descargas-section .btn-press-kit span {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+.descargas-section .btn-press-kit:hover {
+    background: var(--accent-color) !important;
+    border-color: var(--accent-color);
+    color: #fff !important;
+}
+
+.descargas-section .btn-press-kit:hover span {
+    color: #fff;
+}

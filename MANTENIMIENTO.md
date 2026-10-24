@@ -154,8 +154,10 @@ cuenta mariano.lfb@gmail.com, compartida como "cualquiera con el enlace: lector"
 `https://drive.google.com/drive/folders/1eDjVFRswdNZ6ez87K1CxPouJIu_JEmYg`
 
 En la web hay **un solo botón** que lleva ahí: en la sección Material de descarga
-(`<section id="descargas">`, dentro de `<div class="press-kit-container" id="press-kit">`), con el mismo
-texto que el botón del pie ("EPK / DOSSIER DE PRENSA", "EPK / PRESS KIT", "EPK / PRESSEMAPPE").
+(`<section id="descargas">`, dentro de `<div class="press-kit-container" id="press-kit">`): es el botón
+original de la web, centrado, con recuadro rojo, ícono de descarga arriba y "DESCARGAR PRESS KIT" /
+"DOWNLOAD PRESS KIT" / "PRESSEKIT HERUNTERLADEN" (pedido de Mariano, 24/10/2026). Su estilo está al final
+de `style.css` ("Material de descarga: el botón del press kit con su diseño original").
 El botón "EPK" del pie y el de `links.html` también van directo al Drive.
 
 Qué hay en el Drive: `Español` y `English` (dossier, rider y bio), `Fotos HD`, `Fotos web`,
