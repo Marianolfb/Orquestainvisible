@@ -149,20 +149,27 @@ un renglón en los 3 idiomas (el alemán es el más largo).
 
 ## Press kit (descargas)
 
-En la sección Material de descarga, al final de la página (`<section id="descargas">`, dentro
-`<div class="press-kit-container" id="press-kit">`), hay una tarjeta por archivo
-(con botones ES / EN) y se descargan directo desde la web los archivos de la carpeta `press-kit/`:
+Desde el 24/10/2026 todo el material está en **una carpeta del Drive** ("EPK - Orquesta invisible",
+cuenta mariano.lfb@gmail.com, compartida como "cualquiera con el enlace: lector"):
+`https://drive.google.com/drive/folders/1eDjVFRswdNZ6ez87K1CxPouJIu_JEmYg`
 
-| Archivo | Qué es |
-|---------|--------|
-| `orquesta-invisible-dossier-es.pdf` / `-en.pdf` | Dossier |
-| `orquesta-invisible-rider-es.pdf` / `-en.pdf` | Rider técnico |
-| `orquesta-invisible-bio-es.docx` / `-en.docx` | Bio corta y larga (Word, para copiar) |
-| `orquesta-invisible-logo.zip` | Logo negro y blanco (para imprimir y para web) |
+En la web hay **un solo botón** que lleva ahí: en la sección Material de descarga
+(`<section id="descargas">`, dentro de `<div class="press-kit-container" id="press-kit">`), con el mismo
+texto que el botón del pie ("EPK / DOSSIER DE PRENSA", "EPK / PRESS KIT", "EPK / PRESSEMAPPE").
+El botón "EPK" del pie y el de `links.html` también van directo al Drive.
 
-Para actualizar uno, **reemplazar el archivo con el mismo nombre** y subir: no hay que tocar los
-HTML. "Fotos en alta" lleva a la carpeta del Drive. El botón "EPK" del pie y el de `links.html`
-llevan a este bloque.
+Qué hay en el Drive: `Español` y `English` (dossier, rider y bio), `Fotos HD`, `Fotos web`,
+`Huella - mp3 y wav` (MP3, Wav, ficha técnica en 3 idiomas, tapa), `Logo` (terracota y el anterior en
+negro y blanco) y `Notas de prensa OI.docx`. La subcarpeta `Anterior (mayo 2026)` guarda lo viejo y es
+**privada** (sólo la ve el dueño). Es el mismo orden que la carpeta
+`Desktop\Orquesta Invisible\EPK actualizado (octubre 2026)` de la compu (sin `_editable`).
+
+**Para actualizar algo:** subir el archivo nuevo a la carpeta del Drive que corresponda y mover el viejo a
+`Anterior`. No hay que tocar la web. Si se cambia de carpeta del Drive, cambiar el enlace en los 3
+`index.html` (botón de la sección y del pie) y en los 3 `links.html`.
+
+La carpeta `press-kit/` del repositorio (dossier, rider, bio y logo.zip) ya no se enlaza desde la web,
+pero se deja por si alguien tiene guardado un enlace directo a esos archivos.
 
 ## Medición de clics
 
