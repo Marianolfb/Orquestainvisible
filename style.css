@@ -2804,3 +2804,20 @@ body.bio-abierta {
     fill: url(#ig-degradado);
     filter: drop-shadow(0 0 10px #d6249f);
 }
+
+/* Los íconos chicos del menú, igual: el color de cada marca al pasar el cursor (24/10/2026). */
+.nav-links .nav-icon.sp:hover {
+    color: #1db954;
+}
+
+.nav-links .nav-icon.yt:hover {
+    color: #ff0000;
+}
+
+.nav-links .nav-icon.ig:hover {
+    color: #e1306c;
+}
+
+.nav-links .nav-icon.ig:hover svg {
+    fill: url(#ig-degradado);
+}
