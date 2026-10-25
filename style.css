@@ -2775,3 +2775,32 @@ body.bio-abierta {
 .descargas-section .btn-press-kit:hover span {
     color: #fff;
 }
+
+/* ---------- Spotify, YouTube e Instagram: al pasar el cursor toman el color de cada marca ----------
+   (Instagram, su degradado: está definido en el <svg id="ig-degradado"> de cada index). Pedido de Mariano, 24/10/2026. */
+.icon-link:hover .fa-spotify,
+.icon-link[href*="spotify.com"]:hover {
+    color: #1db954;
+}
+
+.icon-link:hover .fa-spotify {
+    filter: drop-shadow(0 0 10px #1db954);
+}
+
+.icon-link:hover .fa-youtube,
+.icon-link[href*="youtube.com"]:hover {
+    color: #ff0000;
+}
+
+.icon-link:hover .fa-youtube {
+    filter: drop-shadow(0 0 10px #ff0000);
+}
+
+.icon-link[href*="instagram.com"]:hover {
+    color: #e1306c;
+}
+
+.icon-link:hover .fa-instagram {
+    fill: url(#ig-degradado);
+    filter: drop-shadow(0 0 10px #d6249f);
+}
