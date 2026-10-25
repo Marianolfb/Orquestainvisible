@@ -143,6 +143,12 @@ fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, e
 «MEJORAS (octubre 2026)». Si se cambia `style.css`, subir el número de `?v=` en los
 `<link>` de los 3 `index.html` y de los relatos, para que nadie vea la versión vieja.
 
+**Íconos grandes de Spotify, YouTube e Instagram** (abajo, antes del contacto): al pasar el cursor toman
+el color de cada marca (verde Spotify `#1db954`, rojo YouTube `#ff0000`, Instagram con su degradado y el
+nombre en `#e1306c`). El degradado de Instagram está en un `<svg id="ig-degradado">` chiquito, justo antes
+de `<div class="music-grid">` en cada `index.html`; si se borra, el ícono queda sin color al pasar el cursor.
+Los íconos chicos del menú siguen poniéndose rojos, como los demás links del menú.
+
 El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
 un renglón en los 3 idiomas (el alemán es el más largo).
