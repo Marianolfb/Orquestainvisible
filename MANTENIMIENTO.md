@@ -147,7 +147,7 @@ fotos, flechas, ancho de contenido de 1200 px) están al final de `style.css`, e
 el color de cada marca (verde Spotify `#1db954`, rojo YouTube `#ff0000`, Instagram con su degradado y el
 nombre en `#e1306c`). El degradado de Instagram está en un `<svg id="ig-degradado">` chiquito, justo antes
 de `<div class="music-grid">` en cada `index.html`; si se borra, el ícono queda sin color al pasar el cursor.
-Los íconos chicos del menú siguen poniéndose rojos, como los demás links del menú.
+Los íconos chicos del menú hacen lo mismo (desde el 24/10/2026) y usan ese mismo degradado.
 
 El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
