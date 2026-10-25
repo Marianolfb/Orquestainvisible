@@ -158,7 +158,9 @@ En la web hay **un solo botón** que lleva ahí: en la sección Material de desc
 original de la web, centrado, con recuadro rojo, ícono de descarga arriba y "DESCARGAR PRESS KIT" /
 "DOWNLOAD PRESS KIT" / "PRESSEKIT HERUNTERLADEN" (pedido de Mariano, 24/10/2026). Su estilo está al final
 de `style.css` ("Material de descarga: el botón del press kit con su diseño original").
-El botón "EPK" del pie y el de `links.html` también van directo al Drive.
+Es el único acceso al EPK en la página principal: el botón "EPK" que había en el pie, al lado de
+Contrataciones, se sacó el 24/10/2026 porque quedaba repetido. En `links.html` sí sigue el botón
+"EPK" y va directo al Drive.
 
 Qué hay en el Drive: `Español` y `English` (dossier, rider y bio), `Fotos HD`, `Fotos web`,
 `Huella - mp3 y wav` (MP3, Wav, ficha técnica en 3 idiomas, tapa), `Logo` (terracota y el anterior en
@@ -168,7 +170,7 @@ negro y blanco) y `Notas de prensa OI.docx`. La subcarpeta `Anterior (mayo 2026)
 
 **Para actualizar algo:** subir el archivo nuevo a la carpeta del Drive que corresponda y mover el viejo a
 `Anterior`. No hay que tocar la web. Si se cambia de carpeta del Drive, cambiar el enlace en los 3
-`index.html` (botón de la sección y del pie) y en los 3 `links.html`.
+`index.html` (botón de la sección) y en los 3 `links.html`.
 
 La carpeta `press-kit/` del repositorio (dossier, rider, bio y logo.zip) ya no se enlaza desde la web,
 pero se deja por si alguien tiene guardado un enlace directo a esos archivos.
