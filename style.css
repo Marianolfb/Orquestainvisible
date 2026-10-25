@@ -2821,3 +2821,11 @@ body.bio-abierta {
 .nav-links .nav-icon.ig:hover svg {
     fill: url(#ig-degradado);
 }
+
+/* El botón redondo para reabrir el mini reproductor de Spotify: al pasar el cursor, el verde de la marca (25/10/2026). */
+.reopen-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    color: #1db954;
+    border-color: #1db954;
+    box-shadow: 0 0 14px rgba(29, 185, 84, 0.6);
+}
