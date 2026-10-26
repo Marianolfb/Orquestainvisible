@@ -180,7 +180,10 @@ negro y blanco) y `Notas de prensa OI.docx`. La subcarpeta `Anterior (mayo 2026)
 `index.html` (botón de la sección) y en los 3 `links.html`.
 
 La carpeta `press-kit/` del repositorio (dossier, rider, bio y logo.zip) ya no se enlaza desde la web,
-pero se deja por si alguien tiene guardado un enlace directo a esos archivos.
+pero se deja por si alguien tiene guardado un enlace directo a esos archivos. Ojo: el rider en castellano
+(`press-kit/orquesta-invisible-rider-es.pdf`) se manda por mail a organizadores (por ejemplo, al Festival de
+Tango y Criollismo, 26/10/2026), así que no hay que borrarlo ni cambiarle el nombre. No afecta a la carga de la web:
+ninguna página lo abre sola, sólo se descarga si alguien toca el enlace.
 
 ## Medición de clics
 
