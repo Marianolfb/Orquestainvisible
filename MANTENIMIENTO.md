@@ -148,7 +148,7 @@ el color de cada marca (verde Spotify `#1db954`, rojo YouTube `#ff0000`, Instagr
 nombre en `#e1306c`). El degradado de Instagram está en un `<svg id="ig-degradado">` chiquito, justo antes
 de `<div class="music-grid">` en cada `index.html`; si se borra, el ícono queda sin color al pasar el cursor.
 Los íconos chicos del menú hacen lo mismo (desde el 24/10/2026) y usan ese mismo degradado.
-El botón redondo para reabrir el mini reproductor de Spotify (`.reopen-btn`, abajo a la derecha) también se pone verde al pasar el cursor (desde el 25/10/2026).
+El botón redondo para reabrir el mini reproductor de Spotify (`.reopen-btn`, abajo a la derecha) está siempre en verde Spotify con el ícono blanco, como era originalmente (25/10/2026).
 
 El menú de tres rayitas se usa hasta 1279 px de ancho (celulares y tablets); de ahí para arriba,
 el menú horizontal. Si se agrega una sección al menú, revisar que en 1280 px siga entrando en
