@@ -430,6 +430,84 @@
 
 
 
+  <!-- descargas.html -->
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/descargas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/en/descargas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/de/descargas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/descargas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/descargas.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- dossier.html -->
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/dossier.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/en/dossier.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/de/dossier.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/dossier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/dossier.html"/>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- rider.html -->
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/rider.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/en/rider.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.orquestainvisible.musica.ar/de/rider.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orquestainvisible.musica.ar/en/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/rider.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/rider.html"/>
+    <priority>0.4</priority>
+  </url>
+
   <!-- links.html -->
   <url>
     <loc>https://www.orquestainvisible.musica.ar/links.html</loc>
