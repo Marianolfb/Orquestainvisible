@@ -263,40 +263,44 @@ html:not(.js) .solo-js { display: none !important; }
 .titulo-pieza .tp-sub { font-size: 1rem; color: var(--text-dim); }
 .p-rider #escenario { padding-top: 40px; }
 
-.escenario { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.escenario { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.p-rider .seccion { max-width: 1240px; }
 
-/* Dibujo del escenario: fondo claro, como el PDF */
-.plano { background: #e9e7e3; border-radius: 10px; padding: 6px; }
-.plano svg { width: 100%; height: auto; display: block; --inst: #6a5246; --inst-detalle: #3b2b24; --silla: #2d2d2d; --monitor: #2b2b2b; --monitor-borde: #111; --rotulo: #8b6a3e; }
+/* Recuadros con las cantidades */
+.resumen { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 26px; }
+.resumen li { border: 1px solid var(--linea); background: var(--bg-2); padding: 12px 14px; }
+.resumen b { display: block; font-family: 'Oswald', sans-serif; font-size: 1.9rem; line-height: 1.1; color: var(--accent-color); }
+.resumen span { font-size: 0.76rem; color: var(--text-dim); line-height: 1.4; display: block; }
+
+/* Dibujo del escenario: trazo blanco sobre negro, micrófonos y canales en rojo */
+.plano { border: 1px solid var(--linea); border-radius: 8px; padding: 4px; background: #0d0d0d; }
+.plano svg, .leyenda svg { --fondo: #0d0d0d; --dib: #f2f2f2; --gris: #9a9a9a; --rojo: #e63946; --rotulo: #cfcfcf; }
+.plano svg { width: 100%; height: auto; display: block; }
+.dib { fill: none; stroke: var(--dib); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
+.dib .tapa { fill: var(--fondo); }
+.dib .fino { stroke-width: 1.3; opacity: 0.7; }
+.dib .banco { stroke: var(--gris); stroke-width: 1.8; }
+.dib .mic { stroke: var(--rojo); stroke-width: 1.6; }
+.dib .mic rect { fill: var(--fondo); }
+.dib .mic .rejilla { stroke-width: 1; }
+.plano text, .leyenda text { stroke: none; font-family: 'Roboto Mono', monospace; text-anchor: middle; }
+.dib .num { fill: var(--rojo); font-size: 12px; font-weight: 700; }
+.dib .letra { fill: var(--dib); font-size: 11px; font-weight: 700; }
+.plano .rotulo { fill: var(--rotulo); font-size: 13px; letter-spacing: 1px; }
+.plano .rotulo-mix { fill: #a0a0a0; font-size: 12px; letter-spacing: 1px; }
+.plano .borde-escenario { stroke: #555; stroke-width: 1.5; stroke-dasharray: 6 6; fill: none; }
+.plano .publico { fill: #777; font-size: 12px; letter-spacing: 4px; }
 .pieza { outline: none; cursor: pointer; }
-.pieza .cuerpo { fill: var(--inst); transition: fill 0.2s; }
-.pieza .detalle-inst { fill: none; stroke: var(--inst-detalle); stroke-width: 1.6; }
-.pieza .teclado { fill: #f4f1ea; stroke: var(--inst-detalle); stroke-width: 1.2; }
-.pieza .pata { fill: none; stroke: #2d2d2d; stroke-width: 2.2; }
-.pieza .silla rect { fill: var(--silla); }
-.pieza .silla path { fill: none; stroke: var(--silla); stroke-width: 3; }
-.pieza .mic rect { fill: #1d1d1d; stroke: #1d1d1d; transition: fill 0.2s, stroke 0.2s; }
-.pieza .mic path { fill: none; stroke: #1d1d1d; stroke-width: 2; }
-.pieza .canal-badge circle { fill: #fff; stroke: #1d1d1d; stroke-width: 1.4; }
-.pieza .canal-badge text { font: bold 11px 'Roboto Mono', monospace; fill: #1d1d1d; text-anchor: middle; dominant-baseline: central; }
-.pieza .lado { font: bold 11px 'Roboto Mono', monospace; fill: #1d1d1d; text-anchor: middle; dominant-baseline: central; }
-.pieza .rotulo { font-family: 'Oswald', sans-serif; font-size: 19px; letter-spacing: 0.04em; fill: var(--rotulo); text-anchor: middle; }
-.monitor .caja { fill: var(--monitor); stroke: var(--monitor-borde); stroke-width: 1.5; transition: fill 0.2s, stroke 0.2s; }
-.monitor .parlante { fill: none; stroke: #777; stroke-width: 1.5; }
-.monitor .rotulo-mix { font-family: 'Oswald', sans-serif; font-size: 17px; letter-spacing: 0.04em; fill: var(--rotulo); text-anchor: middle; }
-.pieza:hover .cuerpo, .pieza:focus-visible .cuerpo { fill: #8a6a5a; }
-.monitor:hover .caja, .monitor:focus-visible .caja { stroke: var(--accent-color); stroke-width: 2.5; }
+.pieza:hover .dib, .pieza:focus-visible .dib { stroke: var(--accent-color); }
 .pieza:focus-visible .rotulo, .pieza:focus-visible .rotulo-mix { text-decoration: underline; }
 
-/* Al tocar algo: se resalta en rojo y lo que no tiene relación queda atenuado */
-.plano[data-sel] .pieza { opacity: 0.32; transition: opacity 0.2s; }
+/* Al tocar algo: se marca en rojo y lo que no tiene relación queda atenuado */
+.plano[data-sel] .pieza { opacity: 0.28; transition: opacity 0.2s; }
 .plano[data-sel] .pieza.rel { opacity: 1; }
-.pieza.rel .cuerpo { fill: var(--accent-color); }
-.pieza.rel .mic rect { fill: var(--accent-color); stroke: var(--accent-color); }
-.pieza.rel .mic path { stroke: var(--accent-color); }
-.pieza.rel .canal-badge circle { stroke: var(--accent-color); stroke-width: 2.4; }
-.monitor.rel .caja { fill: var(--accent-color); stroke: #7a1018; }
-.pieza.rel .rotulo, .monitor.rel .rotulo-mix { fill: #b3202c; font-weight: 700; }
+.pieza.rel .dib { stroke: var(--accent-color); }
+.pieza.rel .dib .banco { stroke: var(--accent-color); }
+.pieza.rel .dib .letra { fill: var(--accent-color); }
+.pieza.rel .rotulo, .pieza.rel .rotulo-mix { fill: #fff; font-weight: 700; }
 
 /* Armado del escenario, instrumento por instrumento */
 .armando .pieza { opacity: 0; transform: translateY(6px); transition: opacity 0.35s var(--ease), transform 0.35s var(--ease); }
@@ -308,14 +312,6 @@ html:not(.js) .solo-js { display: none !important; }
 .leyenda { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 10px; font-size: 0.74rem; color: var(--text-dim); }
 .leyenda > span { display: inline-flex; align-items: center; gap: 6px; }
 .leyenda svg { overflow: visible; }
-.leyenda .mic rect { fill: #ddd; stroke: #ddd; }
-.leyenda .mic path { fill: none; stroke: #ddd; stroke-width: 2; }
-.leyenda .canal-badge circle { fill: #fff; stroke: #1d1d1d; }
-.leyenda .canal-badge text { font: bold 11px 'Roboto Mono', monospace; fill: #1d1d1d; text-anchor: middle; dominant-baseline: central; }
-.leyenda .caja { fill: #2b2b2b; stroke: #aaa; stroke-width: 1.5; }
-.leyenda .parlante { fill: none; stroke: #777; stroke-width: 1.5; }
-.leyenda .silla rect { fill: #bbb; }
-.leyenda .silla path { fill: none; stroke: #bbb; stroke-width: 2; }
 
 .detalle { background: var(--bg-2); border: 1px solid var(--linea); padding: 18px; position: sticky; top: calc(var(--barra-h) + 12px); min-height: 200px; }
 .detalle h3 { margin: 0 0 4px; font-size: 1.35rem; }
@@ -380,6 +376,8 @@ html:not(.js) .solo-js { display: none !important; }
     .integrantes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
     .integrante .nombre { font-size: 0.98rem; }
     .titulo-pieza .tp-sub { font-size: 0.9rem; }
+    .resumen { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .resumen b { font-size: 1.5rem; }
 }
 @media (max-width: 420px) {
     .barra-fila { gap: 6px; padding: 8px 3%; }
@@ -420,18 +418,21 @@ html:not(.js) .solo-js { display: none !important; }
     .p-rider .titulo-pieza .tp-nombre { font-size: 26pt; }
     .p-rider .titulo-pieza .tp-sub { font-size: 11pt; color: #333; }
     .p-rider .escenario { display: block; }
-    .p-rider .plano { max-width: 255mm; margin: 0 auto; border: 1px solid #999; background: #fff; }
+    .p-rider .plano { max-width: 212mm; margin: 0 auto; border: 1px solid #999; background: #fff; }
+    .p-rider .plano svg, .p-rider .leyenda svg { --fondo: #fff; --dib: #000; --gris: #555; --rojo: #c1121f; --rotulo: #000; }
+    .p-rider .plano .rotulo-mix { fill: #333; }
+    .p-rider .plano .borde-escenario { stroke: #999; }
+    .p-rider .plano .publico { fill: #555; }
     .p-rider .armando .pieza, .p-rider .plano[data-sel] .pieza { opacity: 1 !important; transform: none !important; }
-    .p-rider .pieza.rel .cuerpo { fill: var(--inst); }
-    .p-rider .pieza.rel .mic rect { fill: #1d1d1d; stroke: #1d1d1d; }
-    .p-rider .pieza.rel .mic path { stroke: #1d1d1d; }
-    .p-rider .monitor.rel .caja { fill: var(--monitor); stroke: var(--monitor-borde); }
-    .p-rider .pieza.rel .rotulo, .p-rider .monitor.rel .rotulo-mix { fill: var(--rotulo); font-weight: 400; }
-    .p-rider .leyenda { color: #333; margin-top: 4px; }
-    .p-rider .leyenda .mic rect { fill: #1d1d1d; stroke: #1d1d1d; }
-    .p-rider .leyenda .mic path { stroke: #1d1d1d; }
-    .p-rider .leyenda .silla rect { fill: #555; }
-    .p-rider .leyenda .silla path { stroke: #555; }
+    .p-rider .pieza.rel .dib { stroke: var(--dib); }
+    .p-rider .pieza.rel .dib .banco { stroke: var(--gris); }
+    .p-rider .pieza.rel .dib .letra { fill: var(--dib); }
+    .p-rider .pieza.rel .rotulo, .p-rider .pieza.rel .rotulo-mix { fill: var(--rotulo); font-weight: 400; }
+    .p-rider .leyenda { color: #333; margin-top: 3mm; }
+    .p-rider .resumen { grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-bottom: 4mm; }
+    .p-rider .resumen li { background: #fff; border-color: #999; padding: 2mm 3mm; }
+    .p-rider .resumen b { color: #000; font-size: 15pt; }
+    .p-rider .resumen span { color: #333; font-size: 8.5pt; }
     .p-rider #h-canales { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
     .p-rider .canales-req { grid-template-columns: 1.75fr 1fr; gap: 8mm; }
     .p-rider .tabla-canales, .p-rider .tabla-req { font-family: Arial, Helvetica, sans-serif; font-size: 9.5pt; min-width: 0; }
