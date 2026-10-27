@@ -273,3 +273,44 @@ Qué se hizo y qué hay que respetar:
 - **Google Analytics** sigue cargándose 1,5 s después de que termina la página (se probó cargarlo recién con el primer toque o a los 6 s, pero se decidió dejarlo así el 22/10/2026 para no perder visitas que se van rápido).
 - **Miniaturas de los videos** de "En vivo": `Fotos/videos/<id-de-YouTube>.webp` (antes se bajaban de YouTube). Si se agrega un video,
   guardar su miniatura ahí (`https://i.ytimg.com/vi_webp/<id>/sddefault.webp`).
+
+## Dossier y rider técnico interactivos (26/10/2026, en revisión)
+
+Dos páginas para mandar por link a festivales, milongas y Secretarías de Cultura, una por idioma (no hay traducción
+con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.html`, `en/rider.html`,
+`de/dossier.html`, `de/rider.html`. Se llega a ellas desde la página **Descargas** (`descargas.html`, `en/descargas.html`, `de/descargas.html`), a la que lleva el botón «Material de descarga» de la portada y el botón de EPK de `links.html`.
+
+- **Archivos:** `piezas.css` (estilos de las dos piezas, no usan `style.css`), `piezas.js` (menú, entrada de secciones,
+  galería ampliada, videos, copiar mail y teléfono, imprimir) y `rider.js` (plano del escenario). Sin librerías.
+- **Datos:** salen de los PDF de `press-kit/` (dossier y rider). Las notas de prensa, los integrantes y los videos son los
+  mismos de la portada. Fotos nuevas de la sesión de Cari Aimé en `Fotos/sesion-2026/` (cada una en 1600 px y en 640 px).
+- **Se editan a mano**, en los 3 idiomas: son HTML común. Para cambiar un dato del rider hay que tocar la tabla
+  (`.tabla-canales`), el instrumento o el monitor del dibujo (`<g class="inst">` / `<g class="monitor">`) y su ficha
+  (`<template id="ficha-...">` / `ficha-mix-...`).
+- **El dibujo del escenario del rider copia el de la hoja 1 del PDF original** (visto desde el público): mismo lugar
+  para cada instrumento y cada monitor. Mix 3 entre violín 1 y 2, Mix 4 entre violín 3 y viola, Mix 6 entre
+  bandoneón 1 y 2, Mix 7 entre bandoneón 2 y 3. Micrófonos de bandoneón: D/I = mano derecha/izquierda del
+  bandoneonista (mirando desde el público, el D queda a la izquierda). Piano: I = graves, D = agudos (decisión de
+  Mariano, 26/10/2026). No hay filtros: se toca un instrumento o un monitor.
+- **Impresión del rider:** A4 apaisada, hoja 1 el escenario y hoja 2 canales + requerimientos, como el PDF.
+- **Secciones ocultas a propósito (atributo `hidden`):** «Próximas fechas» del dossier (`#fechas`, con su ítem del menú)
+  y «Día del show» del rider (`#dia`, con su ítem del menú). Se activan sacando `hidden` cuando haya datos: el rider
+  actual no trae horarios, y no se publican fechas de gira sin consultar a Mariano.
+- **Sin JavaScript** todo se lee igual (los integrantes vienen abiertos y el JS los cierra). Con «reducir movimiento»
+  activado en el sistema, todo se muestra directo, sin animación.
+- **Impresión:** el botón «Imprimir o guardar como PDF» del rider usa `window.print()`; la versión de impresión
+  (blanco y negro, sin animaciones) está en el bloque `@media print` de `piezas.css`.
+- El PDF del rider (`press-kit/orquesta-invisible-rider-es.pdf`) no se puede borrar ni renombrar (ya circula por mail).
+- Todavía NO están en `sitemap.xml` (decidir con Mariano si se indexan o quedan sólo para mandar por link).
+
+## Página Descargas y PDF (27/10/2026)
+
+- El botón de la portada («DESCARGAR PRESS KIT») y el de EPK de `links.html` ya NO van directo al Drive: llevan a `descargas.html`
+  (3 idiomas), con tarjetas: dossier interactivo (+ PDF), rider técnico interactivo (+ PDF), EPK completo (carpeta de Drive
+  `1eDjVFRswdNZ6ez87K1CxPouJIu_JEmYg`) y **Partituras** (tarjeta armada pero oculta con `hidden`: para activarla, sacar `hidden`,
+  completar el texto y poner el enlace, en los 3 idiomas).
+- PDF en `press-kit/` (los nombres no se cambian, circulan por mail): `orquesta-invisible-dossier-{es,en,de}.pdf` (13 hojas, hoja blanca) y
+  `orquesta-invisible-rider-{es,en,de}.pdf` (2 hojas A4 apaisadas, impresas desde `rider.html`). Se descargan desde las tarjetas y desde el
+  botón «PDF» de cada pieza.
+- Fuente editable del dossier en PDF: carpeta `EPK actualizado (octubre 2026)_editable (no subir a Drive)dossier-nuevo` (HTML por idioma).
+- El Drive del EPK tiene ahora `Español`, `English` y `Deutsch` con el dossier y el rider nuevos; lo anterior está en `Anterior (octubre 2026)`.

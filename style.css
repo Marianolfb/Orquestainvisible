@@ -2833,3 +2833,21 @@ body.bio-abierta {
 .reopen-btn:hover {
     box-shadow: 0 0 14px rgba(29, 185, 84, 0.6);
 }
+
+/* ---------- Material de descarga: enlaces al dossier y al rider interactivos (26/10/2026) ---------- */
+.descargas-section .descargas-piezas {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.descargas-section .descargas-piezas a {
+    color: var(--text-main);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.descargas-section .descargas-piezas a:hover {
+    color: var(--accent-color);
+}
