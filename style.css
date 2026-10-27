@@ -2720,12 +2720,12 @@ body.bio-abierta {
 
 /* ---------- Portada: la primera foto (celular = versión chica) ---------- */
 .hero-primera {
-    background-image: url('foto1.webp');
+    background-image: url('orquesta-invisible-portada-en-vivo-escenario.webp');
 }
 
 @media (max-width: 800px) {
     .hero-primera {
-        background-image: url('foto1-m.webp');
+        background-image: url('orquesta-invisible-portada-en-vivo-escenario-m.webp');
     }
 }
 

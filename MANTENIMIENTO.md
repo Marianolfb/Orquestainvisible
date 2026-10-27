@@ -113,11 +113,11 @@ igual en los 3 `index.html`.
 
 ## Disco e integrantes
 
-- **«Huella»** (`<section id="huella">`): tapa en `Fotos/huella-tapa.webp`,
+- **«Huella»** (`<section id="huella">`): tapa en `Fotos/huella-orquesta-invisible-tapa-del-disco-2026.webp`,
   año y los 11 temas en orden de Spotify, con botón al álbum. Si sale otro disco, se agrega una
   sección igual en los 3 `index.html` (y en el JSON-LD `album` del grupo).
 - **Integrantes** (`<section id="integrantes">`): foto, nombre e instrumento en los 3 idiomas.
-  Retratos 4:5 en `Fotos/integrantes/retratos/<nombre-apellido>.webp` (480×600), con el crédito
+  Retratos 4:5 en `Fotos/integrantes/retratos/orquesta-invisible-retrato-<nombre-apellido>-<instrumento>.webp` (480×600), con el crédito
   debajo de la grilla. **Al tocar la foto se abre la biografía**: el texto de cada uno está en un
   `<template id="bio-<nombre-apellido>">` dentro de la misma página (así Google lee las biografías). Las biografías salen del documento de la orquesta (Google Docs). Si cambia la
   formación, actualizar la grilla y las biografías en los 3 `index.html` y la lista `member` del
@@ -251,10 +251,10 @@ Medido en celular con conexión lenta (1,6 Mbps) y caché vacía: antes la pági
 antes de poder mostrarse (la portada tardaba ~11 s); ahora baja ~0,5 MB de imágenes y la portada aparece en ~3 s.
 Qué se hizo y qué hay que respetar:
 
-- **Fotos de la galería:** llevan `data-src="Fotos/N.webp"` (no `src`) y `script.js` las baja cuando se acercan
+- **Fotos de la galería:** llevan `data-src="Fotos/<nombre-descriptivo>.webp"` (no `src`) y `script.js` las baja cuando se acercan
   a la pantalla. Para sumar una foto, copiá una línea de `<div class="swiper-slide">` y respetá `data-src`,
   `width` y `height`; no uses `loading="lazy"` en esa galería.
-- **Portada:** cada foto tiene dos tamaños, `fotoN.webp` (compu, 1920 px) y `fotoN-m.webp` (celular, 960 px).
+- **Portada:** cada foto tiene dos tamaños, `orquesta-invisible-portada-<tema>.webp` (compu, 1920 px) y `…-m.webp` (celular, 960 px).
   Si cambiás una foto de la portada, generá las dos. La primera está en el CSS (`.hero-primera`) y precargada
   en el `<head>`; las otras salen de `data-bg` / `data-bg-m`.
 - **Swiper** está en `vendor/swiper/` (versión 11.2.10), ya no se baja de un CDN.
@@ -271,7 +271,7 @@ Qué se hizo y qué hay que respetar:
 - **Swiper se baja sólo cuando hace falta** (al acercarse a un carrusel o 2,5 s después de cargar). Lo pide `script.js`; ya no hay
   `<script>` de Swiper en el HTML.
 - **Google Analytics** sigue cargándose 1,5 s después de que termina la página (se probó cargarlo recién con el primer toque o a los 6 s, pero se decidió dejarlo así el 22/10/2026 para no perder visitas que se van rápido).
-- **Miniaturas de los videos** de "En vivo": `Fotos/videos/<id-de-YouTube>.webp` (antes se bajaban de YouTube). Si se agrega un video,
+- **Miniaturas de los videos** de "En vivo": `Fotos/videos/video-<tema>-orquesta-invisible-en-vivo-galpon-b.webp` (antes se bajaban de YouTube). Si se agrega un video,
   guardar su miniatura ahí (`https://i.ytimg.com/vi_webp/<id>/sddefault.webp`).
 
 ## Dossier y rider técnico interactivos (26/10/2026, en revisión)
@@ -314,3 +314,15 @@ con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.ht
   botón «PDF» de cada pieza.
 - Fuente editable del dossier en PDF: carpeta `EPK actualizado (octubre 2026)_editable (no subir a Drive)dossier-nuevo` (HTML por idioma).
 - El Drive del EPK tiene ahora `Español`, `English` y `Deutsch` con el dossier y el rider nuevos; lo anterior está en `Anterior (octubre 2026)`.
+
+## Nombres y descripciones de las fotos (27/10/2026)
+
+- **Todas las fotos se llaman por lo que muestran**, en minúsculas, sin acentos ni espacios, con guiones: persona + instrumento + lugar
+  (ej. `dolores-velasco-violonchelo-galpon-b.webp`, `orquesta-invisible-festival-de-tango-de-buenos-aires.webp`). Los nombres salen de los que
+  puso Mariano en `EPK actualizado (octubre 2026)Fotos HD` (LTI = La Tierra Invisible, Galpón B = el galpón de los videos). Las notas de
+  prensa: `prensa-<medio>-<tema>-<año>.webp`. Siguen igual los íconos (`favicon*`, `apple-touch-icon.png`).
+- **Cada foto lleva texto alternativo en los 3 idiomas** con nombres reales (no «un bandoneonista»), también en el `sitemap.xml` (captions de
+  las imágenes de la portada). Para una foto nueva: nombre descriptivo + alt en es/en/de + línea en el sitemap.
+- Las URL viejas de imágenes (`Fotos/12.webp`, `foto1.webp`, `og-image.jpg`…) ya no existen. Los generadores que usé para armar el dossier y el rider
+  (que no están en el repositorio) tienen los nombres viejos: no volver a correrlos, se edita el HTML a mano.
+- El Drive del EPK (`Fotos web`) sigue numerado (1 a 26): equivale a las fotos de la galería en el orden en que estaban.
