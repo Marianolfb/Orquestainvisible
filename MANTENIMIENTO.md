@@ -301,7 +301,7 @@ con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.ht
 - **Impresión:** el botón «Imprimir o guardar como PDF» del rider usa `window.print()`; la versión de impresión
   (blanco y negro, sin animaciones) está en el bloque `@media print` de `piezas.css`.
 - El PDF del rider (`press-kit/orquesta-invisible-rider-es.pdf`) no se puede borrar ni renombrar (ya circula por mail).
-- Todavía NO están en `sitemap.xml` (decidir con Mariano si se indexan o quedan sólo para mandar por link).
+- Dossier, rider, Descargas y Links llevan `<meta name="robots" content="noindex, follow">` (decisión de Mariano 27/10/2026: no aportan al posicionamiento, repiten la portada o son sólo botones) y NO van en `sitemap.xml`. Se usan por link. Toda página nueva de este tipo (utilitaria, sin contenido propio) nace con noindex y fuera del sitemap; sólo se indexa lo que tiene contenido propio (portadas, relatos). No pedir indexación en Search Console de páginas utilitarias.
 
 ## Página Descargas y PDF (27/10/2026)
 
