@@ -273,3 +273,27 @@ Qué se hizo y qué hay que respetar:
 - **Google Analytics** sigue cargándose 1,5 s después de que termina la página (se probó cargarlo recién con el primer toque o a los 6 s, pero se decidió dejarlo así el 22/10/2026 para no perder visitas que se van rápido).
 - **Miniaturas de los videos** de "En vivo": `Fotos/videos/<id-de-YouTube>.webp` (antes se bajaban de YouTube). Si se agrega un video,
   guardar su miniatura ahí (`https://i.ytimg.com/vi_webp/<id>/sddefault.webp`).
+
+## Dossier y rider técnico interactivos (26/10/2026, en revisión)
+
+Dos páginas para mandar por link a festivales, milongas y Secretarías de Cultura, una por idioma (no hay traducción
+con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.html`, `en/rider.html`,
+`de/dossier.html`, `de/rider.html`. Se enlazan desde «Material de descarga» de los 3 `index.html`.
+
+- **Archivos:** `piezas.css` (estilos de las dos piezas, no usan `style.css`), `piezas.js` (menú, entrada de secciones,
+  galería ampliada, videos, copiar mail y teléfono, imprimir) y `rider.js` (plano del escenario). Sin librerías.
+- **Datos:** salen de los PDF de `press-kit/` (dossier y rider). Las notas de prensa, los integrantes y los videos son los
+  mismos de la portada. Fotos nuevas de la sesión de Cari Aimé en `Fotos/sesion-2026/` (cada una en 1600 px y en 640 px).
+- **Se editan a mano**, en los 3 idiomas: son HTML común. Para cambiar un dato del rider hay que tocar la tabla
+  (`.tabla-canales`), la fila del plano (`<g class="nodo">`, hay dos esquemas: ancho y angosto) y la ficha
+  (`<template id="ficha-...">`) del instrumento.
+- **Secciones ocultas a propósito (atributo `hidden`):** «Próximas fechas» del dossier (`#fechas`, con su ítem del menú)
+  y «Día del show» del rider (`#dia`, con su ítem del menú) y los filtros «Luz» y «Logística». Se activan sacando
+  `hidden` cuando haya datos: el rider actual no trae horarios, luz ni logística, y no se publican fechas de gira sin
+  consultar a Mariano.
+- **Sin JavaScript** todo se lee igual (los integrantes vienen abiertos y el JS los cierra). Con «reducir movimiento»
+  activado en el sistema, todo se muestra directo, sin animación.
+- **Impresión:** el botón «Imprimir o guardar como PDF» del rider usa `window.print()`; la versión de impresión
+  (blanco y negro, sin animaciones) está en el bloque `@media print` de `piezas.css`.
+- El PDF del rider (`press-kit/orquesta-invisible-rider-es.pdf`) no se puede borrar ni renombrar (ya circula por mail).
+- Todavía NO están en `sitemap.xml` (decidir con Mariano si se indexan o quedan sólo para mandar por link).
