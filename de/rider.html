@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="de" href="https://www.orquestainvisible.musica.ar/de/rider.html">
     <link rel="alternate" hreflang="x-default" href="https://www.orquestainvisible.musica.ar/rider.html">
     <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.documentElement.classList.contains('js-ok'))document.documentElement.classList.remove('js')},3000);</script>
-    <link rel="stylesheet" href="../piezas.css?v=1">
+    <link rel="stylesheet" href="../piezas.css?v=2">
     <link rel="preload" href="/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/robotomono-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>@font-face{font-family:'Oswald';font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/oswald-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto Mono';font-style:normal;font-weight:100 700;font-display:swap;src:url(/fonts/robotomono-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
@@ -36,10 +36,10 @@
       gtag('config', 'G-Q8YC67F30R');
     </script>
     <script src="../medicion.js?v=1" defer></script>
-    <script src="../piezas.js?v=1" defer></script>
-    <script src="../rider.js?v=1" defer></script>
+    <script src="../piezas.js?v=2" defer></script>
+    <script src="../rider.js?v=2" defer></script>
 </head>
-<body>
+<body class="p-rider">
 <a class="saltar" href="#contenido">Zum Inhalt springen</a>
 <header class="barra" id="barra">
     <div class="barra-fila">
@@ -52,8 +52,7 @@
     <nav class="secciones" aria-label="Abschnitte des Riders">
         <ul>
             <li><a href="#escenario">Bühne</a></li>
-            <li><a href="#canales">Kanäle</a></li>
-            <li><a href="#requisitos">Anforderungen</a></li>
+            <li><a href="#canales">Kanäle und Anforderungen</a></li>
             <li hidden><a href="#dia">Showtag</a></li>
             <li><a href="#contacto">Kontakt</a></li>
         </ul>
@@ -62,251 +61,161 @@
 
 <main id="contenido">
 
-    <!-- Cabecera que sólo aparece al imprimir -->
-    <div class="solo-impresion cabecera"><strong>ORQUESTA INVISIBLE</strong><span>Technical Rider · Orchester für zeitgenössischen Tango | Buenos Aires</span></div>
-
-    <section class="seccion reveal" id="escenario" aria-labelledby="h-escenario" style="padding-top:44px">
-        <p class="sup" style="color:var(--text-dim);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase">Orchester für zeitgenössischen Tango | Buenos Aires</p>
-        <h1 style="font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,7vw,4rem);line-height:1.1;margin:4px 0 26px">Technical Rider</h1>
-        <ul class="resumen">
-            <li><b>15</b><span>Kanäle</span></li>
-            <li><b>8</b><span>unabhängige Monitormischungen</span></li>
-            <li><b>8</b><span>Bodenmonitore</span></li>
-            <li><b>4 + 1</b><span>Stühle ohne Armlehnen + Klavierhocker</span></li>
-        </ul>
-
+    <!-- ===================== HOJA 1: ESCENARIO (como la hoja 1 del PDF) ===================== -->
+    <section class="seccion reveal hoja" id="escenario" aria-labelledby="h-escenario">
+        <h1 class="titulo-pieza"><span class="tp-nombre">ORQUESTA INVISIBLE</span> <span class="tp-sub">Technical Rider</span></h1>
         <p class="imprimir-cuerpo solo-js"><button type="button" class="btn btn-rojo" data-imprimir>Drucken oder als PDF speichern</button></p>
-
-        <h2 id="h-escenario">Bühne</h2>
-        <div id="escenario-interactivo">
-            <div class="herramientas solo-js">
-                <span class="filtros-etiqueta" id="filtros-etiqueta">Hervorheben</span>
-                <div class="filtros" role="group" aria-labelledby="filtros-etiqueta">
-                <button type="button" data-filtro="todo" aria-pressed="true">Alles</button>
-                <button type="button" data-filtro="sonido" aria-pressed="false">Ton</button>
-                <button type="button" data-filtro="escenario" aria-pressed="false">Bühne</button>
-                <!-- Luz y logística: el rider actual no trae esos datos. Cuando estén, sacar hidden y marcar lo que corresponda con data-cat="luz" / "logistica". -->
-                <button type="button" data-filtro="luz" aria-pressed="false" hidden>Licht</button>
-                <button type="button" data-filtro="logistica" aria-pressed="false" hidden>Logistik</button>
+        <h2 id="h-escenario" class="sr-only">Bühne</h2>
+        <div class="escenario">
+            <div class="plano-col">
+                <div class="plano">
+                    <svg id="plano-svg" viewBox="120 135 920 525" role="group" aria-label="Bühnenskizze">
+            <g class="inst pieza" data-nodo="piano" data-mix="1" data-orden="1" data-resumen="Klavier · Kanäle 1, 2" tabindex="0" role="button" aria-pressed="false" aria-label="Klavier: Anforderungen ansehen">
+                <g class="silla"><rect x="185" y="508" width="52" height="20" rx="3"/></g><g class="cuerpo"><path d="M160 495V368q0-18 22-18c50 0 86 19 117 50c25 25 41 54 41 79v16z"/></g><rect class="teclado" x="160" y="482" width="180" height="13"/><path class="detalle-inst" d="M171 482v8M182 482v8M193 482v8M204 482v8M215 482v8M226 482v8M237 482v8M248 482v8M259 482v8M270 482v8M281 482v8M292 482v8M303 482v8M314 482v8M325 482v8M336 482v8"/>
+                <g class="mic"><rect x="204" y="403" width="8" height="14" rx="4"/><path d="M208 417v6"/></g><g class="canal-badge"><circle cx="208" cy="387" r="10"/><text x="208" y="387">1</text></g><text class="lado" x="208" y="434">L</text><g class="mic"><rect x="284" y="439" width="8" height="14" rx="4"/><path d="M288 453v6"/></g><g class="canal-badge"><circle cx="288" cy="423" r="10"/><text x="288" y="423">2</text></g><text class="lado" x="288" y="470">R</text>
+                <text class="rotulo" x="205" y="336">KLAVIER</text>
+            </g>
+            <g class="inst pieza" data-nodo="contrabajo" data-mix="2" data-orden="3" data-resumen="Kontrabass · Kanal 3" tabindex="0" role="button" aria-pressed="false" aria-label="Kontrabass: Anforderungen ansehen">
+                <g class="cuerpo"><circle cx="360" cy="206.5" r="6.6"/><rect x="356.6" y="209.3" width="6.8" height="56.4"/><ellipse cx="360" cy="278.8" rx="28.2" ry="18.8"/><rect x="340.3" y="278.8" width="39.5" height="43.2"/><ellipse cx="360" cy="322.1" rx="37.6" ry="24.4"/></g><path class="detalle-inst" d="M360 254.4V310.8M350.6 314.6h18.8"/><path class="pata" d="M360 346.5V388M360 359.7l-16.9 28.2M360 359.7l16.9 28.2"/>
+                <g class="mic"><rect x="388" y="298" width="8" height="14" rx="4"/><path d="M392 312v6"/></g><g class="canal-badge"><circle cx="407" cy="296" r="10"/><text x="407" y="296">3</text></g>
+                <text class="rotulo" x="360" y="184">KONTRABASS</text>
+            </g>
+            <g class="inst pieza" data-nodo="violin1" data-mix="3" data-orden="4" data-resumen="Violine 1 · Kanal 4" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 1: Anforderungen ansehen">
+                <g class="cuerpo"><circle cx="490" cy="201.3" r="4.9"/><rect x="487.5" y="203.4" width="5" height="42"/><ellipse cx="490" cy="255.2" rx="19.6" ry="14"/><rect x="476.3" y="255.2" width="27.4" height="32.2"/><ellipse cx="490" cy="287.4" rx="25.2" ry="18.2"/></g><path class="detalle-inst" d="M490 237V279M483 281.8h14"/><path class="pata" d="M490 305.6V337M490 315.4l-12.6 21M490 315.4l12.6 21"/>
+                <g class="mic"><rect x="507.4" y="267.2" width="8" height="14" rx="4"/><path d="M511.4 281.2v6"/></g><g class="canal-badge"><circle cx="526.4" cy="265.2" r="10"/><text x="526.4" y="265.2">4</text></g>
+                <text class="rotulo" x="490" y="181">VIOLINE 1</text>
+            </g>
+            <g class="inst pieza" data-nodo="violin2" data-mix="3" data-orden="5" data-resumen="Violine 2 · Kanal 5" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 2: Anforderungen ansehen">
+                <g class="cuerpo"><circle cx="615" cy="191.3" r="4.9"/><rect x="612.5" y="193.4" width="5" height="42"/><ellipse cx="615" cy="245.2" rx="19.6" ry="14"/><rect x="601.3" y="245.2" width="27.4" height="32.2"/><ellipse cx="615" cy="277.4" rx="25.2" ry="18.2"/></g><path class="detalle-inst" d="M615 227V269M608 271.8h14"/><path class="pata" d="M615 295.6V327M615 305.4l-12.6 21M615 305.4l12.6 21"/>
+                <g class="mic"><rect x="632.4" y="257.2" width="8" height="14" rx="4"/><path d="M636.4 271.2v6"/></g><g class="canal-badge"><circle cx="651.4" cy="255.2" r="10"/><text x="651.4" y="255.2">5</text></g>
+                <text class="rotulo" x="615" y="171">VIOLINE 2</text>
+            </g>
+            <g class="inst pieza" data-nodo="violin3" data-mix="4" data-orden="6" data-resumen="Violine 3 · Kanal 6" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 3: Anforderungen ansehen">
+                <g class="cuerpo"><circle cx="742" cy="201.3" r="4.9"/><rect x="739.5" y="203.4" width="5" height="42"/><ellipse cx="742" cy="255.2" rx="19.6" ry="14"/><rect x="728.3" y="255.2" width="27.4" height="32.2"/><ellipse cx="742" cy="287.4" rx="25.2" ry="18.2"/></g><path class="detalle-inst" d="M742 237V279M735 281.8h14"/><path class="pata" d="M742 305.6V337M742 315.4l-12.6 21M742 315.4l12.6 21"/>
+                <g class="mic"><rect x="759.4" y="267.2" width="8" height="14" rx="4"/><path d="M763.4 281.2v6"/></g><g class="canal-badge"><circle cx="778.4" cy="265.2" r="10"/><text x="778.4" y="265.2">6</text></g>
+                <text class="rotulo" x="742" y="181">VIOLINE 3</text>
+            </g>
+            <g class="inst pieza" data-nodo="viola" data-mix="4" data-orden="7" data-resumen="Viola · Kanal 7" tabindex="0" role="button" aria-pressed="false" aria-label="Viola: Anforderungen ansehen">
+                <g class="cuerpo"><circle cx="862" cy="218.8" r="5.3"/><rect x="859.3" y="221.1" width="5.5" height="45.6"/><ellipse cx="862" cy="277.4" rx="21.3" ry="15.2"/><rect x="847.1" y="277.4" width="29.8" height="35"/><ellipse cx="862" cy="312.3" rx="27.4" ry="19.8"/></g><path class="detalle-inst" d="M862 257.6V303.2M854.4 306.2h15.2"/><path class="pata" d="M862 332.1V366M862 342.7l-13.7 22.8M862 342.7l13.7 22.8"/>
+                <g class="mic"><rect x="881.3" y="291.2" width="8" height="14" rx="4"/><path d="M885.3 305.2v6"/></g><g class="canal-badge"><circle cx="900.3" cy="289.2" r="10"/><text x="900.3" y="289.2">7</text></g>
+                <text class="rotulo" x="862" y="198">VIOLA</text>
+            </g>
+            <g class="inst pieza" data-nodo="cello" data-mix="5" data-orden="8" data-resumen="Cello · Kanal 8" tabindex="0" role="button" aria-pressed="false" aria-label="Cello: Anforderungen ansehen">
+                <g class="silla"><rect x="929" y="434.8" width="72" height="7" rx="2"/><path d="M934 441.8l-3 44.8M996 441.8l3 44.8"/></g><g class="cuerpo"><circle cx="965" cy="319.5" r="5.8"/><rect x="962" y="322" width="6" height="49.8"/><ellipse cx="965" cy="383.4" rx="23.2" ry="16.6"/><rect x="948.7" y="383.4" width="32.5" height="38.2"/><ellipse cx="965" cy="421.6" rx="31.5" ry="21.6"/></g><path class="detalle-inst" d="M965 361.8V411.6M956.7 414.9h16.6"/><path class="pata" d="M965 443.1V480M965 454.8l-14.9 24.9M965 454.8l14.9 24.9"/>
+                <g class="mic"><rect x="987.8" y="399.3" width="8" height="14" rx="4"/><path d="M991.8 413.3v6"/></g><g class="canal-badge"><circle cx="1006.8" cy="397.3" r="10"/><text x="1006.8" y="397.3">8</text></g>
+                <text class="rotulo" x="965" y="298">CELLO</text>
+            </g>
+            <g class="inst pieza" data-nodo="bandoneon1" data-mix="6" data-orden="9" data-resumen="Bandoneon 1 · Kanäle 9, 10" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 1: Anforderungen ansehen">
+                <g class="silla"><rect x="425" y="482" width="100" height="7" rx="2"/><path d="M431 489l-2 34M519 489l2 34M445 489l-1 27M505 489l1 27"/></g><g class="cuerpo"><rect x="430" y="422" width="90" height="58" rx="7"/></g><path class="detalle-inst" d="M451 429v44M459 429v44M467 429v44M475 429v44M483 429v44M491 429v44M499 429v44M441 422v58M509 422v58"/>
+                <g class="mic"><rect x="411" y="439" width="8" height="14" rx="4"/><path d="M415 453v6"/></g><g class="canal-badge"><circle cx="415" cy="423" r="10"/><text x="415" y="423">9</text></g><text class="lado" x="415" y="470">R</text><g class="mic"><rect x="531" y="439" width="8" height="14" rx="4"/><path d="M535 453v6"/></g><g class="canal-badge"><circle cx="535" cy="423" r="10"/><text x="535" y="423">10</text></g><text class="lado" x="535" y="470">L</text>
+                <text class="rotulo" x="475" y="562">BANDONEON 1</text>
+            </g>
+            <g class="inst pieza" data-nodo="bandoneon2" data-mix="6 7" data-orden="11" data-resumen="Bandoneon 2 · Kanäle 11, 12" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 2: Anforderungen ansehen">
+                <g class="silla"><rect x="580" y="482" width="100" height="7" rx="2"/><path d="M586 489l-2 34M674 489l2 34M600 489l-1 27M660 489l1 27"/></g><g class="cuerpo"><rect x="585" y="422" width="90" height="58" rx="7"/></g><path class="detalle-inst" d="M606 429v44M614 429v44M622 429v44M630 429v44M638 429v44M646 429v44M654 429v44M596 422v58M664 422v58"/>
+                <g class="mic"><rect x="566" y="439" width="8" height="14" rx="4"/><path d="M570 453v6"/></g><g class="canal-badge"><circle cx="570" cy="423" r="10"/><text x="570" y="423">11</text></g><text class="lado" x="570" y="470">R</text><g class="mic"><rect x="686" y="439" width="8" height="14" rx="4"/><path d="M690 453v6"/></g><g class="canal-badge"><circle cx="690" cy="423" r="10"/><text x="690" y="423">12</text></g><text class="lado" x="690" y="470">L</text>
+                <text class="rotulo" x="630" y="562">BANDONEON 2</text>
+            </g>
+            <g class="inst pieza" data-nodo="bandoneon3" data-mix="7" data-orden="13" data-resumen="Bandoneon 3 · Kanäle 13, 14" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 3: Anforderungen ansehen">
+                <g class="silla"><rect x="735" y="482" width="100" height="7" rx="2"/><path d="M741 489l-2 34M829 489l2 34M755 489l-1 27M815 489l1 27"/></g><g class="cuerpo"><rect x="740" y="422" width="90" height="58" rx="7"/></g><path class="detalle-inst" d="M761 429v44M769 429v44M777 429v44M785 429v44M793 429v44M801 429v44M809 429v44M751 422v58M819 422v58"/>
+                <g class="mic"><rect x="721" y="439" width="8" height="14" rx="4"/><path d="M725 453v6"/></g><g class="canal-badge"><circle cx="725" cy="423" r="10"/><text x="725" y="423">13</text></g><text class="lado" x="725" y="470">R</text><g class="mic"><rect x="841" y="439" width="8" height="14" rx="4"/><path d="M845 453v6"/></g><g class="canal-badge"><circle cx="845" cy="423" r="10"/><text x="845" y="423">14</text></g><text class="lado" x="845" y="470">L</text>
+                <text class="rotulo" x="785" y="562">BANDONEON 3</text>
+            </g>
+            <g class="inst pieza" data-nodo="voz" data-mix="8" data-orden="15" data-resumen="Gesang · Kanal 15" tabindex="0" role="button" aria-pressed="false" aria-label="Gesang: Anforderungen ansehen">
+                <path class="pata" d="M383 452V606M383 606l-21 16M383 606l21 16M383 606v18"/>
+                <g class="mic voz-mic"><rect x="377" y="424" width="12" height="28" rx="6"/></g><g class="canal-badge"><circle cx="362" cy="432" r="10"/><text x="362" y="432">15</text></g>
+                <text class="rotulo" x="383" y="646">GESANG</text>
+            </g>
+            <g class="monitor pieza" data-mix="1" data-orden="101" data-resumen="Mix 1" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 1: wer ihn hört">
+                <path class="caja" d="M288 544H332L327 520H293Z"/><circle class="parlante" cx="307" cy="532" r="6"/>
+                <text class="rotulo-mix" x="310" y="562">MIX 1</text>
+            </g>
+            <g class="monitor pieza" data-mix="2" data-orden="102" data-resumen="Mix 2" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 2: wer ihn hört">
+                <path class="caja" d="M436 382H480L475 358H441Z"/><circle class="parlante" cx="455" cy="370" r="6"/>
+                <text class="rotulo-mix" x="458" y="400">MIX 2</text>
+            </g>
+            <g class="monitor pieza" data-mix="3" data-orden="103" data-resumen="Mix 3" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 3: wer ihn hört">
+                <path class="caja" d="M531 347H575L570 323H536Z"/><circle class="parlante" cx="550" cy="335" r="6"/>
+                <text class="rotulo-mix" x="553" y="365">MIX 3</text>
+            </g>
+            <g class="monitor pieza" data-mix="4" data-orden="104" data-resumen="Mix 4" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 4: wer ihn hört">
+                <path class="caja" d="M780 354H824L819 330H785Z"/><circle class="parlante" cx="799" cy="342" r="6"/>
+                <text class="rotulo-mix" x="802" y="372">MIX 4</text>
+            </g>
+            <g class="monitor pieza" data-mix="5" data-orden="105" data-resumen="Mix 5" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 5: wer ihn hört">
+                <path class="caja" d="M883 512H927L922 488H888Z"/><circle class="parlante" cx="902" cy="500" r="6"/>
+                <text class="rotulo-mix" x="905" y="530">MIX 5</text>
+            </g>
+            <g class="monitor pieza" data-mix="6" data-orden="106" data-resumen="Mix 6" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 6: wer ihn hört">
+                <path class="caja" d="M530 524H574L569 500H535Z"/><circle class="parlante" cx="549" cy="512" r="6"/>
+                <text class="rotulo-mix" x="552" y="590">MIX 6</text>
+            </g>
+            <g class="monitor pieza" data-mix="7" data-orden="107" data-resumen="Mix 7" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 7: wer ihn hört">
+                <path class="caja" d="M685 524H729L724 500H690Z"/><circle class="parlante" cx="704" cy="512" r="6"/>
+                <text class="rotulo-mix" x="707" y="590">MIX 7</text>
+            </g>
+            <g class="monitor pieza" data-mix="8" data-orden="108" data-resumen="Mix 8" tabindex="0" role="button" aria-pressed="false" aria-label="Mix 8: wer ihn hört">
+                <path class="caja" d="M296 616H340L335 592H301Z"/><circle class="parlante" cx="315" cy="604" r="6"/>
+                <text class="rotulo-mix" x="318" y="634">MIX 8</text>
+            </g>
+                    </svg>
                 </div>
-            </div>
-            <div class="escenario">
-                <div>
-                    <div class="plano">
-                        <svg id="plano-svg" class="plano-ancho" viewBox="0 0 800 510" role="group" aria-label="Bühnenskizze" focusable="false">
-                            <rect class="escena" x="14" y="14" width="772" height="448" rx="10"/>
-            <g class="nodo tiene-escenario" data-nodo="piano" data-orden="1" data-resumen="Klavier · Kanäle 1, 2" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Klavier: Anforderungen ansehen">
-                <rect class="forma" x="68" y="60" width="104" height="60" rx="6"/><path class="forma" d="M80 82h80M100 82v14M120 82v14M140 82v14" fill="none" style="stroke-width:1.2"/>
-                <text class="canal" x="120" y="72">1·2</text>
-                <g class="p-escenario"><circle class="taburete" cx="120" cy="134" r="9"/></g><g class="p-sonido"><g class="mic" transform="translate(62,54)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="120" y="154">Klavier</text>
-                <g class="mix p-sonido"><rect x="98" y="161" width="44" height="17" rx="8.5"/><text x="120" y="169.5">Mix 1</text></g>
-            </g>
-            <g class="nodo" data-nodo="contrabajo" data-orden="3" data-resumen="Kontrabass · Kanal 3" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Kontrabass: Anforderungen ansehen">
-                <circle class="forma" cx="300" cy="90" r="30"/>
-                <text class="canal" x="300" y="90">3</text>
-                <g class="p-sonido"><g class="mic" transform="translate(264,54)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="300" y="140">Kontrabass</text>
-                <g class="mix p-sonido"><rect x="278" y="147" width="44" height="17" rx="8.5"/><text x="300" y="155.5">Mix 2</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin1" data-orden="4" data-resumen="Violine 1 · Kanal 4" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 1: Anforderungen ansehen">
-                <circle class="forma" cx="200" cy="225" r="30"/>
-                <text class="canal" x="200" y="225">4</text>
-                <g class="p-sonido"><g class="mic" transform="translate(164,189)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="200" y="275">Violine 1</text>
-                <g class="mix p-sonido"><rect x="178" y="282" width="44" height="17" rx="8.5"/><text x="200" y="290.5">Mix 3</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin2" data-orden="5" data-resumen="Violine 2 · Kanal 5" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 2: Anforderungen ansehen">
-                <circle class="forma" cx="345" cy="225" r="30"/>
-                <text class="canal" x="345" y="225">5</text>
-                <g class="p-sonido"><g class="mic" transform="translate(309,189)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="345" y="275">Violine 2</text>
-                <g class="mix p-sonido"><rect x="323" y="282" width="44" height="17" rx="8.5"/><text x="345" y="290.5">Mix 3</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin3" data-orden="6" data-resumen="Violine 3 · Kanal 6" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 3: Anforderungen ansehen">
-                <circle class="forma" cx="490" cy="225" r="30"/>
-                <text class="canal" x="490" y="225">6</text>
-                <g class="p-sonido"><g class="mic" transform="translate(454,189)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="490" y="275">Violine 3</text>
-                <g class="mix p-sonido"><rect x="468" y="282" width="44" height="17" rx="8.5"/><text x="490" y="290.5">Mix 4</text></g>
-            </g>
-            <g class="nodo" data-nodo="viola" data-orden="7" data-resumen="Viola · Kanal 7" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Viola: Anforderungen ansehen">
-                <circle class="forma" cx="640" cy="90" r="30"/>
-                <text class="canal" x="640" y="90">7</text>
-                <g class="p-sonido"><g class="mic" transform="translate(604,54)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="640" y="140">Viola</text>
-                <g class="mix p-sonido"><rect x="618" y="147" width="44" height="17" rx="8.5"/><text x="640" y="155.5">Mix 4</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="cello" data-orden="8" data-resumen="Cello · Kanal 8" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Cello: Anforderungen ansehen">
-                <circle class="forma" cx="465" cy="90" r="30"/>
-                <text class="canal" x="465" y="90">8</text>
-                <g class="p-escenario"><rect class="mueble" x="451" y="124" width="28" height="14" rx="3"/><path class="mueble" d="M451 124v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(429,54)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="465" y="154">Cello</text>
-                <g class="mix p-sonido"><rect x="443" y="161" width="44" height="17" rx="8.5"/><text x="465" y="169.5">Mix 5</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon1" data-orden="9" data-resumen="Bandoneon 1 · Kanäle 9, 10" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 1: Anforderungen ansehen">
-                <circle class="forma" cx="175" cy="355" r="30"/>
-                <text class="canal" x="175" y="355">9·10</text>
-                <g class="p-escenario"><rect class="mueble" x="161" y="389" width="28" height="14" rx="3"/><path class="mueble" d="M161 389v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(139,319)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="175" y="419">Bandoneon 1</text>
-                <g class="mix p-sonido"><rect x="153" y="426" width="44" height="17" rx="8.5"/><text x="175" y="434.5">Mix 6</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon2" data-orden="11" data-resumen="Bandoneon 2 · Kanäle 11, 12" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 2: Anforderungen ansehen">
-                <circle class="forma" cx="320" cy="355" r="30"/>
-                <text class="canal" x="320" y="355">11·12</text>
-                <g class="p-escenario"><rect class="mueble" x="306" y="389" width="28" height="14" rx="3"/><path class="mueble" d="M306 389v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(284,319)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="320" y="419">Bandoneon 2</text>
-                <g class="mix p-sonido"><rect x="278.8" y="426" width="82.4" height="17" rx="8.5"/><text x="320" y="434.5">Mix 6 und 7</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon3" data-orden="13" data-resumen="Bandoneon 3 · Kanäle 13, 14" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 3: Anforderungen ansehen">
-                <circle class="forma" cx="465" cy="355" r="30"/>
-                <text class="canal" x="465" y="355">13·14</text>
-                <g class="p-escenario"><rect class="mueble" x="451" y="389" width="28" height="14" rx="3"/><path class="mueble" d="M451 389v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(429,319)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="465" y="419">Bandoneon 3</text>
-                <g class="mix p-sonido"><rect x="443" y="426" width="44" height="17" rx="8.5"/><text x="465" y="434.5">Mix 7</text></g>
-            </g>
-            <g class="nodo" data-nodo="voz" data-orden="15" data-resumen="Gesang · Kanal 15" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Gesang: Anforderungen ansehen">
-                <circle class="forma" cx="650" cy="355" r="30"/>
-                <text class="canal" x="650" y="355">15</text>
-                <g class="p-sonido"><g class="mic" transform="translate(614,319)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="650" y="405">Gesang</text>
-                <g class="mix p-sonido"><rect x="628" y="412" width="44" height="17" rx="8.5"/><text x="650" y="420.5">Mix 8</text></g>
-            </g>
-                            <path class="flecha" d="M400 472v12m-6-6 6 7 6-7"/>
-                            <text class="publico" x="400" y="504">PUBLIKUM</text>
-                        </svg>
-                        <!-- Mismo esquema, en vertical, para pantallas angostas (se ve uno u otro según el ancho) -->
-                        <svg class="plano-angosto" viewBox="0 0 400 750" role="group" aria-label="Bühnenskizze" focusable="false">
-                            <rect class="escena" x="10" y="10" width="380" height="700" rx="10"/>
-            <g class="nodo tiene-escenario" data-nodo="piano" data-orden="1" data-resumen="Klavier · Kanäle 1, 2" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Klavier: Anforderungen ansehen">
-                <rect class="forma" x="38" y="40" width="104" height="60" rx="6"/><path class="forma" d="M50 62h80M70 62v14M90 62v14M110 62v14" fill="none" style="stroke-width:1.2"/>
-                <text class="canal" x="90" y="52">1·2</text>
-                <g class="p-escenario"><circle class="taburete" cx="90" cy="114" r="9"/></g><g class="p-sonido"><g class="mic" transform="translate(32,34)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="90" y="134">Klavier</text>
-                <g class="mix p-sonido"><rect x="68" y="141" width="44" height="17" rx="8.5"/><text x="90" y="149.5">Mix 1</text></g>
-            </g>
-            <g class="nodo" data-nodo="contrabajo" data-orden="3" data-resumen="Kontrabass · Kanal 3" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Kontrabass: Anforderungen ansehen">
-                <circle class="forma" cx="260" cy="70" r="30"/>
-                <text class="canal" x="260" y="70">3</text>
-                <g class="p-sonido"><g class="mic" transform="translate(224,34)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="260" y="120">Kontrabass</text>
-                <g class="mix p-sonido"><rect x="238" y="127" width="44" height="17" rx="8.5"/><text x="260" y="135.5">Mix 2</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin1" data-orden="4" data-resumen="Violine 1 · Kanal 4" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 1: Anforderungen ansehen">
-                <circle class="forma" cx="70" cy="330" r="30"/>
-                <text class="canal" x="70" y="330">4</text>
-                <g class="p-sonido"><g class="mic" transform="translate(34,294)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="70" y="380">Violine 1</text>
-                <g class="mix p-sonido"><rect x="48" y="387" width="44" height="17" rx="8.5"/><text x="70" y="395.5">Mix 3</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin2" data-orden="5" data-resumen="Violine 2 · Kanal 5" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 2: Anforderungen ansehen">
-                <circle class="forma" cx="200" cy="330" r="30"/>
-                <text class="canal" x="200" y="330">5</text>
-                <g class="p-sonido"><g class="mic" transform="translate(164,294)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="200" y="380">Violine 2</text>
-                <g class="mix p-sonido"><rect x="178" y="387" width="44" height="17" rx="8.5"/><text x="200" y="395.5">Mix 3</text></g>
-            </g>
-            <g class="nodo" data-nodo="violin3" data-orden="6" data-resumen="Violine 3 · Kanal 6" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Violine 3: Anforderungen ansehen">
-                <circle class="forma" cx="330" cy="330" r="30"/>
-                <text class="canal" x="330" y="330">6</text>
-                <g class="p-sonido"><g class="mic" transform="translate(294,294)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="330" y="380">Violine 3</text>
-                <g class="mix p-sonido"><rect x="308" y="387" width="44" height="17" rx="8.5"/><text x="330" y="395.5">Mix 4</text></g>
-            </g>
-            <g class="nodo" data-nodo="viola" data-orden="7" data-resumen="Viola · Kanal 7" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Viola: Anforderungen ansehen">
-                <circle class="forma" cx="200" cy="200" r="30"/>
-                <text class="canal" x="200" y="200">7</text>
-                <g class="p-sonido"><g class="mic" transform="translate(164,164)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="200" y="250">Viola</text>
-                <g class="mix p-sonido"><rect x="178" y="257" width="44" height="17" rx="8.5"/><text x="200" y="265.5">Mix 4</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="cello" data-orden="8" data-resumen="Cello · Kanal 8" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Cello: Anforderungen ansehen">
-                <circle class="forma" cx="70" cy="200" r="30"/>
-                <text class="canal" x="70" y="200">8</text>
-                <g class="p-escenario"><rect class="mueble" x="56" y="234" width="28" height="14" rx="3"/><path class="mueble" d="M56 234v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(34,164)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="70" y="264">Cello</text>
-                <g class="mix p-sonido"><rect x="48" y="271" width="44" height="17" rx="8.5"/><text x="70" y="279.5">Mix 5</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon1" data-orden="9" data-resumen="Bandoneon 1 · Kanäle 9, 10" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 1: Anforderungen ansehen">
-                <circle class="forma" cx="70" cy="460" r="30"/>
-                <text class="canal" x="70" y="460">9·10</text>
-                <g class="p-escenario"><rect class="mueble" x="56" y="494" width="28" height="14" rx="3"/><path class="mueble" d="M56 494v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(34,424)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="70" y="524">Bandoneon 1</text>
-                <g class="mix p-sonido"><rect x="48" y="531" width="44" height="17" rx="8.5"/><text x="70" y="539.5">Mix 6</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon2" data-orden="11" data-resumen="Bandoneon 2 · Kanäle 11, 12" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 2: Anforderungen ansehen">
-                <circle class="forma" cx="200" cy="460" r="30"/>
-                <text class="canal" x="200" y="460">11·12</text>
-                <g class="p-escenario"><rect class="mueble" x="186" y="494" width="28" height="14" rx="3"/><path class="mueble" d="M186 494v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(164,424)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="200" y="524">Bandoneon 2</text>
-                <g class="mix p-sonido"><rect x="158.8" y="531" width="82.4" height="17" rx="8.5"/><text x="200" y="539.5">Mix 6 und 7</text></g>
-            </g>
-            <g class="nodo tiene-escenario" data-nodo="bandoneon3" data-orden="13" data-resumen="Bandoneon 3 · Kanäle 13, 14" data-cats="sonido escenario" tabindex="0" role="button" aria-pressed="false" aria-label="Bandoneon 3: Anforderungen ansehen">
-                <circle class="forma" cx="330" cy="460" r="30"/>
-                <text class="canal" x="330" y="460">13·14</text>
-                <g class="p-escenario"><rect class="mueble" x="316" y="494" width="28" height="14" rx="3"/><path class="mueble" d="M316 494v-6h28v6"/></g><g class="p-sonido"><g class="mic" transform="translate(294,424)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="330" y="524">Bandoneon 3</text>
-                <g class="mix p-sonido"><rect x="308" y="531" width="44" height="17" rx="8.5"/><text x="330" y="539.5">Mix 7</text></g>
-            </g>
-            <g class="nodo" data-nodo="voz" data-orden="15" data-resumen="Gesang · Kanal 15" data-cats="sonido" tabindex="0" role="button" aria-pressed="false" aria-label="Gesang: Anforderungen ansehen">
-                <circle class="forma" cx="200" cy="590" r="30"/>
-                <text class="canal" x="200" y="590">15</text>
-                <g class="p-sonido"><g class="mic" transform="translate(164,554)"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></g></g>
-                <text class="nombre" x="200" y="640">Gesang</text>
-                <g class="mix p-sonido"><rect x="178" y="647" width="44" height="17" rx="8.5"/><text x="200" y="655.5">Mix 8</text></g>
-            </g>
-                            <path class="flecha" d="M200 718v12m-6-6 6 7 6-7"/>
-                            <text class="publico" x="200" y="746">PUBLIKUM</text>
-                        </svg>
-                    </div>
-                    <div class="armado-barra solo-js">
-                        <button type="button" class="btn-peq" id="armar-btn">&#8635; Neu aufbauen</button>
-                        <button type="button" class="btn-peq" id="mostrar-todo-btn">Komplett anzeigen</button>
-                        <span class="armado-estado" id="armado-estado" data-fin="Bühne komplett: 15 Kanäle."></span>
-                    </div>
-                    <div class="leyenda"><span><svg width="14" height="18" viewBox="-3 -1 14 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="0" y="0" width="7" height="12" rx="3.5"/><path d="M-2 8a5.5 5.5 0 0 0 11 0M3.5 14v4"/></svg>Mikrofon</span><span><svg width="26" height="14" viewBox="0 0 26 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="24" height="12" rx="6"/></svg>Monitormischung</span><span><svg width="20" height="16" viewBox="0 0 20 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="8" width="16" height="7" rx="2"/><path d="M2 8V3h16v5"/></svg>Stuhl / Hocker</span></div>
-                    <p class="nota-chica"><span class="solo-pantalla">Auf ein Instrument tippen, um seine Anforderungen zu sehen. </span>Richtwert-Skizze, nicht maßstabsgetreu: Der Rider gibt nicht an, wo die einzelnen Musiker auf der Bühne stehen.</p>
+                <div class="leyenda">
+                    <span><svg width="30" height="18" viewBox="-6 -20 34 30" aria-hidden="true"><g class="mic"><rect x="-4" y="-9" width="8" height="14" rx="4"/><path d="M0 5v6"/></g><g class="canal-badge"><circle cx="15" cy="-11" r="10"/><text x="15" y="-11">9</text></g></svg>Mikrofon mit Kanal</span>
+                    <span><svg width="30" height="18" viewBox="-24 -14 48 28" aria-hidden="true"><path class="caja" d="M-22 12H22L17 -12H-17Z"/><circle class="parlante" cx="-3" cy="0" r="6"/></svg>Bodenmonitor</span>
+                    <span><svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><g class="silla"><rect x="2" y="6" width="22" height="5" rx="2"/><path d="M4 11l-1 6M22 11l1 6"/></g></svg>Stuhl / Hocker</span>
+                    <span>R / L: rechte / linke Hand des Musikers</span>
                 </div>
-                <aside class="detalle solo-js" id="detalle" aria-live="polite" aria-label="Bühne"><button type="button" class="detalle-cerrar" aria-label="Schließen">&times;</button><div id="detalle-panel"><p class="vacio">Wählen Sie ein Instrument in der Skizze oder eine Tabellenzeile, um Mikrofon, Stativ, Monitoring und Möblierung zu sehen.</p></div></aside>
+                <div class="armado-barra solo-js">
+                    <button type="button" class="btn-peq" id="armar-btn">&#8635; Neu aufbauen</button>
+                    <button type="button" class="btn-peq" id="mostrar-todo-btn">Komplett anzeigen</button>
+                    <span class="armado-estado" id="armado-estado" data-fin="Bühne komplett: 15 Kanäle und 8 Monitore."></span>
+                </div>
+                <p class="nota-chica solo-pantalla solo-js">Auf ein Instrument oder einen Monitor in der Skizze tippen (oder auf eine Tabellenzeile).</p>
             </div>
+            <aside class="detalle solo-js" id="detalle" aria-live="polite" aria-label="Bühne"><button type="button" class="detalle-cerrar" aria-label="Schließen">&times;</button><div id="detalle-panel"><p class="vacio">Auf ein Instrument tippen, um Mikrofone, Stativ, Monitor und Stuhl zu sehen, oder auf einen Monitor, um zu sehen, wer ihn hört.</p></div></aside>
         </div>
     </section>
 
-    <section class="seccion reveal" id="canales" aria-labelledby="h-canales">
-        <h2 id="h-canales">Kanäle</h2>
-        <div class="tabla-caja">
-            <table class="tabla-canales">
-                <caption>Kanalliste: Mikrofon, Stativ und Monitoring je Instrument.</caption>
-                <thead><tr><th scope="col">Kanal</th><th scope="col">Instrument</th><th scope="col" class="c-sonido">Mikrofon</th><th scope="col" class="c-sonido">Stativ</th><th scope="col" class="c-sonido">Monitoring</th></tr></thead>
-                <tbody>
-                <tr data-nodo="piano"><td class="num">1</td><th scope="row">Klavier links</th><td class="c-sonido">SM 81 / AKG 414</td><td class="c-sonido">Langer Galgen</td><td class="mix c-sonido" rowspan="2">Mix 1</td></tr>
-                <tr data-nodo="piano"><td class="num">2</td><th scope="row">Klavier rechts</th><td class="c-sonido">SM 81 / AKG 414</td><td class="c-sonido">Langer Galgen</td></tr>
-                <tr data-nodo="contrabajo"><td class="num">3</td><th scope="row">Kontrabass</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td><td class="mix c-sonido" rowspan="1">Mix 2</td></tr>
-                <tr data-nodo="violin1"><td class="num">4</td><th scope="row">Violine 1</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td><td class="mix c-sonido" rowspan="2">Mix 3</td></tr>
-                <tr data-nodo="violin2"><td class="num">5</td><th scope="row">Violine 2</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td></tr>
-                <tr data-nodo="violin3"><td class="num">6</td><th scope="row">Violine 3</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td><td class="mix c-sonido" rowspan="2">Mix 4</td></tr>
-                <tr data-nodo="viola"><td class="num">7</td><th scope="row">Viola</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td></tr>
-                <tr data-nodo="cello"><td class="num">8</td><th scope="row">Cello</th><td class="c-sonido">ATM 350 oder ähnlich</td><td class="c-sonido">Clip</td><td class="mix c-sonido" rowspan="1">Mix 5</td></tr>
-                <tr data-nodo="bandoneon1"><td class="num">9</td><th scope="row">Bandoneon 1 rechts</th><td class="c-sonido">ATM 350 oder SM 58</td><td class="c-sonido">Clip / Kurzer Galgen</td><td class="mix c-sonido" rowspan="2">Mix 6</td></tr>
-                <tr data-nodo="bandoneon1"><td class="num">10</td><th scope="row">Bandoneon 1 links</th><td class="c-sonido">ATM 350 oder SM 57</td><td class="c-sonido">Clip / Kurzer Galgen</td></tr>
-                <tr data-nodo="bandoneon2"><td class="num">11</td><th scope="row">Bandoneon 2 rechts</th><td class="c-sonido">ATM 350 oder SM 58</td><td class="c-sonido">Clip / Kurzer Galgen</td><td class="mix c-sonido" rowspan="2">Mix 6 und 7</td></tr>
-                <tr data-nodo="bandoneon2"><td class="num">12</td><th scope="row">Bandoneon 2 links</th><td class="c-sonido">ATM 350 oder SM 57</td><td class="c-sonido">Clip / Kurzer Galgen</td></tr>
-                <tr data-nodo="bandoneon3"><td class="num">13</td><th scope="row">Bandoneon 3 rechts</th><td class="c-sonido">ATM 350 oder SM 58</td><td class="c-sonido">Clip / Kurzer Galgen</td><td class="mix c-sonido" rowspan="2">Mix 7</td></tr>
-                <tr data-nodo="bandoneon3"><td class="num">14</td><th scope="row">Bandoneon 3 links</th><td class="c-sonido">ATM 350 oder SM 57</td><td class="c-sonido">Clip / Kurzer Galgen</td></tr>
-                <tr data-nodo="voz"><td class="num">15</td><th scope="row">Gesang</th><td class="c-sonido">SM 58</td><td class="c-sonido">Langer Galgen</td><td class="mix c-sonido" rowspan="1">Mix 8</td></tr>
-                </tbody>
-            </table>
+    <!-- ===================== HOJA 2: CANALES Y REQUERIMIENTOS (como la hoja 2 del PDF) ===================== -->
+    <section class="seccion reveal hoja" id="canales" aria-labelledby="h-canales">
+        <div class="solo-impresion"><p class="titulo-pieza"><span class="tp-nombre">ORQUESTA INVISIBLE</span> <span class="tp-sub">Technical Rider</span></p></div>
+        <h2 id="h-canales">Kanäle und Anforderungen</h2>
+        <div class="canales-req">
+            <div class="tabla-caja">
+                <table class="tabla-canales">
+                    <thead><tr><th scope="col">Kanal</th><th scope="col">Instrument</th><th scope="col">Mikrofon</th><th scope="col">Stativ</th><th scope="col">Monitoring</th></tr></thead>
+                    <tbody>
+                <tr data-nodo="piano"><td class="num">1</td><th scope="row">Klavier links</th><td>SM 81 / AKG 414</td><td>Langer Galgen</td><td class="mix" rowspan="2">Mix 1</td></tr>
+                <tr data-nodo="piano"><td class="num">2</td><th scope="row">Klavier rechts</th><td>SM 81 / AKG 414</td><td>Langer Galgen</td></tr>
+                <tr data-nodo="contrabajo"><td class="num">3</td><th scope="row">Kontrabass</th><td>ATM 350 oder ähnlich</td><td>Clip</td><td class="mix" rowspan="1">Mix 2</td></tr>
+                <tr data-nodo="violin1"><td class="num">4</td><th scope="row">Violine 1</th><td>ATM 350 oder ähnlich</td><td>Clip</td><td class="mix" rowspan="2">Mix 3</td></tr>
+                <tr data-nodo="violin2"><td class="num">5</td><th scope="row">Violine 2</th><td>ATM 350 oder ähnlich</td><td>Clip</td></tr>
+                <tr data-nodo="violin3"><td class="num">6</td><th scope="row">Violine 3</th><td>ATM 350 oder ähnlich</td><td>Clip</td><td class="mix" rowspan="2">Mix 4</td></tr>
+                <tr data-nodo="viola"><td class="num">7</td><th scope="row">Viola</th><td>ATM 350 oder ähnlich</td><td>Clip</td></tr>
+                <tr data-nodo="cello"><td class="num">8</td><th scope="row">Cello</th><td>ATM 350 oder ähnlich</td><td>Clip</td><td class="mix" rowspan="1">Mix 5</td></tr>
+                <tr data-nodo="bandoneon1"><td class="num">9</td><th scope="row">Bandoneon 1 rechts</th><td>ATM 350 oder SM 58</td><td>Clip / Kurzer Galgen</td><td class="mix" rowspan="2">Mix 6</td></tr>
+                <tr data-nodo="bandoneon1"><td class="num">10</td><th scope="row">Bandoneon 1 links</th><td>ATM 350 oder SM 57</td><td>Clip / Kurzer Galgen</td></tr>
+                <tr data-nodo="bandoneon2"><td class="num">11</td><th scope="row">Bandoneon 2 rechts</th><td>ATM 350 oder SM 58</td><td>Clip / Kurzer Galgen</td><td class="mix" rowspan="2">Mix 6 und 7</td></tr>
+                <tr data-nodo="bandoneon2"><td class="num">12</td><th scope="row">Bandoneon 2 links</th><td>ATM 350 oder SM 57</td><td>Clip / Kurzer Galgen</td></tr>
+                <tr data-nodo="bandoneon3"><td class="num">13</td><th scope="row">Bandoneon 3 rechts</th><td>ATM 350 oder SM 58</td><td>Clip / Kurzer Galgen</td><td class="mix" rowspan="2">Mix 7</td></tr>
+                <tr data-nodo="bandoneon3"><td class="num">14</td><th scope="row">Bandoneon 3 links</th><td>ATM 350 oder SM 57</td><td>Clip / Kurzer Galgen</td></tr>
+                <tr data-nodo="voz"><td class="num">15</td><th scope="row">Gesang</th><td>SM 58</td><td>Langer Galgen</td><td class="mix" rowspan="1">Mix 8</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tabla-caja">
+                <table class="tabla-req">
+                    <thead><tr><th scope="col">Anforderung</th><th scope="col">Detail</th></tr></thead>
+                    <tbody>
+                <tr><th scope="row">Monitoring</th><td>8 unabhängige Mischungen</td></tr>
+                <tr><th scope="row">Monitore</th><td>8 Bodenmonitore</td></tr>
+                <tr><th scope="row">Möblierung</th><td>4 Stühle ohne Armlehnen (3 für Bandoneons, 1 für Cello) und 1 Klavierhocker</td></tr>
+                <tr><th scope="row">Klavier</th><td>Akustisches Klavier</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </section>
-
-    <section class="seccion reveal" id="requisitos" aria-labelledby="h-requisitos">
-        <h2 id="h-requisitos">Anforderungen</h2>
-        <div class="requisitos">
-            <div class="requisito reveal" data-cat="sonido"><span class="cat">Ton</span><h3>Monitoring</h3><p>8 unabhängige Mischungen</p></div>
-            <div class="requisito reveal" data-cat="sonido"><span class="cat">Ton</span><h3>Monitore</h3><p>8 Bodenmonitore</p></div>
-            <div class="requisito reveal" data-cat="escenario"><span class="cat">Bühne</span><h3>Möblierung</h3><p>4 Stühle ohne Armlehnen (3 für Bandoneons, 1 für Cello) und 1 Klavierhocker</p></div>
-            <div class="requisito reveal" data-cat="escenario"><span class="cat">Bühne</span><h3>Klavier</h3><p>Akustisches Klavier</p></div>
-        </div>
+        <div class="solo-impresion contacto-impreso">Booking: +54 9 11 2253-6111 (WhatsApp von La Tierra Invisible (Julio Coviello)) · orquestatipicainvisible@gmail.com · www.orquestainvisible.musica.ar</div>
     </section>
 
     <!-- ===================== DÍA DEL SHOW =====================
@@ -323,7 +232,7 @@
         </ol>
     </section>
 
-    <section class="seccion reveal" id="contacto" aria-labelledby="h-contacto">
+    <section class="seccion reveal sin-imprimir" id="contacto" aria-labelledby="h-contacto">
         <h2 id="h-contacto">Kontakt</h2>
         <ul class="contacto-lista">
             <li><span class="etiqueta">E-Mail</span><a class="valor" href="mailto:orquestatipicainvisible@gmail.com">orquestatipicainvisible@gmail.com</a></li>
@@ -331,7 +240,7 @@
         </ul>
     </section>
 
-    <div class="solo-impresion contacto-impreso">Booking: +54 9 11 2253-6111 (WhatsApp von La Tierra Invisible (Julio Coviello)) · orquestatipicainvisible@gmail.com · www.orquestainvisible.musica.ar</div>
+    <div class="logo-cierre"><a href="index.html"><img src="../Fotos/logo-texto.webp" alt="Orquesta Invisible" width="240" height="249" loading="lazy" decoding="async"></a></div>
 
 </main>
 
@@ -340,18 +249,26 @@
     <p class="sin-imprimir"><a href="index.html">Zur Webseite des Orchesters</a> · <a href="dossier.html">Interaktives Dossier</a></p>
 </footer>
 
-<!-- Fichas de cada instrumento (las usa rider.js al tocar un instrumento; los mismos datos están en la tabla) -->
-    <template id="ficha-piano"><div class="ficha"><h3>Klavier</h3><p class="sub">Kanäle 1 · 2</p><div class="canal-bloque"><h4>Kanal 1 · Klavier links</h4><dl><dt>Mikrofon</dt><dd>SM 81 / AKG 414</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 2 · Klavier rechts</h4><dl><dt>Mikrofon</dt><dd>SM 81 / AKG 414</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 1</p><p class="fila-cat"><span class="cat">Bühne</span><strong>Möblierung:</strong> Klavierhocker · Akustisches Klavier</p></div></template>
-    <template id="ficha-contrabajo"><div class="ficha"><h3>Kontrabass</h3><p class="sub">Kanal 3</p><div class="canal-bloque"><h4>Kanal 3 · Kontrabass</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 2</p></div></template>
-    <template id="ficha-cello"><div class="ficha"><h3>Cello</h3><p class="sub">Kanal 8</p><div class="canal-bloque"><h4>Kanal 8 · Cello</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 5</p><p class="fila-cat"><span class="cat">Bühne</span><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
-    <template id="ficha-viola"><div class="ficha"><h3>Viola</h3><p class="sub">Kanal 7</p><div class="canal-bloque"><h4>Kanal 7 · Viola</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 4</p></div></template>
-    <template id="ficha-violin1"><div class="ficha"><h3>Violine 1</h3><p class="sub">Kanal 4</p><div class="canal-bloque"><h4>Kanal 4 · Violine 1</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 3</p></div></template>
-    <template id="ficha-violin2"><div class="ficha"><h3>Violine 2</h3><p class="sub">Kanal 5</p><div class="canal-bloque"><h4>Kanal 5 · Violine 2</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 3</p></div></template>
-    <template id="ficha-violin3"><div class="ficha"><h3>Violine 3</h3><p class="sub">Kanal 6</p><div class="canal-bloque"><h4>Kanal 6 · Violine 3</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 4</p></div></template>
-    <template id="ficha-bandoneon1"><div class="ficha"><h3>Bandoneon 1</h3><p class="sub">Kanäle 9 · 10</p><div class="canal-bloque"><h4>Kanal 9 · Bandoneon 1 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 10 · Bandoneon 1 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 6</p><p class="fila-cat"><span class="cat">Bühne</span><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
-    <template id="ficha-bandoneon2"><div class="ficha"><h3>Bandoneon 2</h3><p class="sub">Kanäle 11 · 12</p><div class="canal-bloque"><h4>Kanal 11 · Bandoneon 2 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 12 · Bandoneon 2 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 6 und 7</p><p class="fila-cat"><span class="cat">Bühne</span><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
-    <template id="ficha-bandoneon3"><div class="ficha"><h3>Bandoneon 3</h3><p class="sub">Kanäle 13 · 14</p><div class="canal-bloque"><h4>Kanal 13 · Bandoneon 3 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 14 · Bandoneon 3 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 7</p><p class="fila-cat"><span class="cat">Bühne</span><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
-    <template id="ficha-voz"><div class="ficha"><h3>Gesang</h3><p class="sub">Kanal 15</p><div class="canal-bloque"><h4>Kanal 15 · Gesang</h4><dl><dt>Mikrofon</dt><dd>SM 58</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><p class="fila-cat"><span class="cat">Ton</span><strong>Monitoring:</strong> Mix 8</p></div></template>
+<!-- Fichas de cada instrumento y de cada monitor (las usa rider.js; los mismos datos están en la tabla) -->
+    <template id="ficha-contrabajo"><div class="ficha"><h3>Kontrabass</h3><p class="sub">Kanal 3</p><div class="canal-bloque"><h4>Kanal 3 · Kontrabass</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 2</p></div></template>
+    <template id="ficha-violin1"><div class="ficha"><h3>Violine 1</h3><p class="sub">Kanal 4</p><div class="canal-bloque"><h4>Kanal 4 · Violine 1</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 3</p></div></template>
+    <template id="ficha-violin2"><div class="ficha"><h3>Violine 2</h3><p class="sub">Kanal 5</p><div class="canal-bloque"><h4>Kanal 5 · Violine 2</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 3</p></div></template>
+    <template id="ficha-violin3"><div class="ficha"><h3>Violine 3</h3><p class="sub">Kanal 6</p><div class="canal-bloque"><h4>Kanal 6 · Violine 3</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 4</p></div></template>
+    <template id="ficha-viola"><div class="ficha"><h3>Viola</h3><p class="sub">Kanal 7</p><div class="canal-bloque"><h4>Kanal 7 · Viola</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 4</p></div></template>
+    <template id="ficha-cello"><div class="ficha"><h3>Cello</h3><p class="sub">Kanal 8</p><div class="canal-bloque"><h4>Kanal 8 · Cello</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder ähnlich</dd><dt>Stativ</dt><dd>Clip</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 5</p><p class="fila-cat"><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
+    <template id="ficha-piano"><div class="ficha"><h3>Klavier</h3><p class="sub">Kanäle 1 · 2</p><div class="canal-bloque"><h4>Kanal 1 · Klavier links</h4><dl><dt>Mikrofon</dt><dd>SM 81 / AKG 414</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 2 · Klavier rechts</h4><dl><dt>Mikrofon</dt><dd>SM 81 / AKG 414</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 1</p><p class="fila-cat"><strong>Möblierung:</strong> Klavierhocker · Akustisches Klavier</p></div></template>
+    <template id="ficha-voz"><div class="ficha"><h3>Gesang</h3><p class="sub">Kanal 15</p><div class="canal-bloque"><h4>Kanal 15 · Gesang</h4><dl><dt>Mikrofon</dt><dd>SM 58</dd><dt>Stativ</dt><dd>Langer Galgen</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 8</p></div></template>
+    <template id="ficha-bandoneon1"><div class="ficha"><h3>Bandoneon 1</h3><p class="sub">Kanäle 9 · 10</p><div class="canal-bloque"><h4>Kanal 9 · Bandoneon 1 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 10 · Bandoneon 1 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 6</p><p class="fila-cat"><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
+    <template id="ficha-bandoneon2"><div class="ficha"><h3>Bandoneon 2</h3><p class="sub">Kanäle 11 · 12</p><div class="canal-bloque"><h4>Kanal 11 · Bandoneon 2 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 12 · Bandoneon 2 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 6 und 7</p><p class="fila-cat"><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
+    <template id="ficha-bandoneon3"><div class="ficha"><h3>Bandoneon 3</h3><p class="sub">Kanäle 13 · 14</p><div class="canal-bloque"><h4>Kanal 13 · Bandoneon 3 rechts</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 58</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><div class="canal-bloque"><h4>Kanal 14 · Bandoneon 3 links</h4><dl><dt>Mikrofon</dt><dd>ATM 350 oder SM 57</dd><dt>Stativ</dt><dd>Clip / Kurzer Galgen</dd></dl></div><p class="fila-cat"><strong>Monitoring:</strong> Mix 7</p><p class="fila-cat"><strong>Möblierung:</strong> Stuhl ohne Armlehnen</p></div></template>
+    <template id="ficha-mix-1"><div class="ficha"><h3>Mix 1</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Klavier</p></div></template>
+    <template id="ficha-mix-2"><div class="ficha"><h3>Mix 2</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Kontrabass</p></div></template>
+    <template id="ficha-mix-3"><div class="ficha"><h3>Mix 3</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Violine 1, Violine 2</p></div></template>
+    <template id="ficha-mix-4"><div class="ficha"><h3>Mix 4</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Violine 3, Viola</p></div></template>
+    <template id="ficha-mix-5"><div class="ficha"><h3>Mix 5</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Cello</p></div></template>
+    <template id="ficha-mix-6"><div class="ficha"><h3>Mix 6</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Bandoneon 1, Bandoneon 2</p></div></template>
+    <template id="ficha-mix-7"><div class="ficha"><h3>Mix 7</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Bandoneon 2, Bandoneon 3</p></div></template>
+    <template id="ficha-mix-8"><div class="ficha"><h3>Mix 8</h3><p class="sub">Bodenmonitor</p><p class="fila-cat"><strong>Gehört von:</strong> Gesang</p></div></template>
 
 </body>
 </html>
