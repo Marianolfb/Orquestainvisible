@@ -285,12 +285,17 @@ con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.ht
 - **Datos:** salen de los PDF de `press-kit/` (dossier y rider). Las notas de prensa, los integrantes y los videos son los
   mismos de la portada. Fotos nuevas de la sesión de Cari Aimé en `Fotos/sesion-2026/` (cada una en 1600 px y en 640 px).
 - **Se editan a mano**, en los 3 idiomas: son HTML común. Para cambiar un dato del rider hay que tocar la tabla
-  (`.tabla-canales`), la fila del plano (`<g class="nodo">`, hay dos esquemas: ancho y angosto) y la ficha
-  (`<template id="ficha-...">`) del instrumento.
+  (`.tabla-canales`), el instrumento o el monitor del dibujo (`<g class="inst">` / `<g class="monitor">`) y su ficha
+  (`<template id="ficha-...">` / `ficha-mix-...`).
+- **El dibujo del escenario del rider copia el de la hoja 1 del PDF original** (visto desde el público): mismo lugar
+  para cada instrumento y cada monitor. Mix 3 entre violín 1 y 2, Mix 4 entre violín 3 y viola, Mix 6 entre
+  bandoneón 1 y 2, Mix 7 entre bandoneón 2 y 3. Micrófonos de bandoneón: D/I = mano derecha/izquierda del
+  bandoneonista (mirando desde el público, el D queda a la izquierda). Piano: I = graves, D = agudos (decisión de
+  Mariano, 26/10/2026). No hay filtros: se toca un instrumento o un monitor.
+- **Impresión del rider:** A4 apaisada, hoja 1 el escenario y hoja 2 canales + requerimientos, como el PDF.
 - **Secciones ocultas a propósito (atributo `hidden`):** «Próximas fechas» del dossier (`#fechas`, con su ítem del menú)
-  y «Día del show» del rider (`#dia`, con su ítem del menú) y los filtros «Luz» y «Logística». Se activan sacando
-  `hidden` cuando haya datos: el rider actual no trae horarios, luz ni logística, y no se publican fechas de gira sin
-  consultar a Mariano.
+  y «Día del show» del rider (`#dia`, con su ítem del menú). Se activan sacando `hidden` cuando haya datos: el rider
+  actual no trae horarios, y no se publican fechas de gira sin consultar a Mariano.
 - **Sin JavaScript** todo se lee igual (los integrantes vienen abiertos y el JS los cierra). Con «reducir movimiento»
   activado en el sistema, todo se muestra directo, sin animación.
 - **Impresión:** el botón «Imprimir o guardar como PDF» del rider usa `window.print()`; la versión de impresión
