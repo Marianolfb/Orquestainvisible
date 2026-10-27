@@ -453,3 +453,13 @@ html:not(.js) .solo-js { display: none !important; }
 @media print {
     .p-dossier .portada { display: none; }
 }
+
+/* ---------- Página Descargas ---------- */
+.intro-desc { color: var(--text-dim); max-width: 60ch; margin: -6px 0 34px; }
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+.tarjeta { background: var(--bg-2); border: 1px solid var(--linea); border-top: 4px solid var(--accent-color); padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; }
+.tarjeta h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; text-transform: uppercase; line-height: 1.15; border: 0; padding: 0; margin: 0; }
+.tarjeta p { color: #cfcfcf; font-size: 0.9rem; flex: 1; }
+.tarjeta-botones { display: flex; flex-wrap: wrap; gap: 10px; }
+.tarjeta-botones .btn { font-size: 0.76rem; padding: 9px 16px; }
+.tarjeta[hidden] { display: none; }

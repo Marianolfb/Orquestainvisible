@@ -278,7 +278,7 @@ Qué se hizo y qué hay que respetar:
 
 Dos páginas para mandar por link a festivales, milongas y Secretarías de Cultura, una por idioma (no hay traducción
 con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.html`, `en/rider.html`,
-`de/dossier.html`, `de/rider.html`. Se enlazan desde «Material de descarga» de los 3 `index.html`.
+`de/dossier.html`, `de/rider.html`. Se llega a ellas desde la página **Descargas** (`descargas.html`, `en/descargas.html`, `de/descargas.html`), a la que lleva el botón «Material de descarga» de la portada y el botón de EPK de `links.html`.
 
 - **Archivos:** `piezas.css` (estilos de las dos piezas, no usan `style.css`), `piezas.js` (menú, entrada de secciones,
   galería ampliada, videos, copiar mail y teléfono, imprimir) y `rider.js` (plano del escenario). Sin librerías.
@@ -302,3 +302,15 @@ con JS): `dossier.html` y `rider.html` (castellano, en la raíz), `en/dossier.ht
   (blanco y negro, sin animaciones) está en el bloque `@media print` de `piezas.css`.
 - El PDF del rider (`press-kit/orquesta-invisible-rider-es.pdf`) no se puede borrar ni renombrar (ya circula por mail).
 - Todavía NO están en `sitemap.xml` (decidir con Mariano si se indexan o quedan sólo para mandar por link).
+
+## Página Descargas y PDF (27/10/2026)
+
+- El botón de la portada («DESCARGAR PRESS KIT») y el de EPK de `links.html` ya NO van directo al Drive: llevan a `descargas.html`
+  (3 idiomas), con tarjetas: dossier interactivo (+ PDF), rider técnico interactivo (+ PDF), EPK completo (carpeta de Drive
+  `1eDjVFRswdNZ6ez87K1CxPouJIu_JEmYg`) y **Partituras** (tarjeta armada pero oculta con `hidden`: para activarla, sacar `hidden`,
+  completar el texto y poner el enlace, en los 3 idiomas).
+- PDF en `press-kit/` (los nombres no se cambian, circulan por mail): `orquesta-invisible-dossier-{es,en,de}.pdf` (13 hojas, hoja blanca) y
+  `orquesta-invisible-rider-{es,en,de}.pdf` (2 hojas A4 apaisadas, impresas desde `rider.html`). Se descargan desde las tarjetas y desde el
+  botón «PDF» de cada pieza.
+- Fuente editable del dossier en PDF: carpeta `EPK actualizado (octubre 2026)_editable (no subir a Drive)dossier-nuevo` (HTML por idioma).
+- El Drive del EPK tiene ahora `Español`, `English` y `Deutsch` con el dossier y el rider nuevos; lo anterior está en `Anterior (octubre 2026)`.
