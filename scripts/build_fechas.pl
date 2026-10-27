@@ -254,7 +254,7 @@ sub schema_events {
             eventStatus => 'https://schema.org/EventScheduled',
             eventAttendanceMode => 'https://schema.org/OfflineEventAttendanceMode',
             url => $url,
-            image => "$BASE/og-image.jpg",
+            image => "$BASE/orquesta-invisible-tango-contemporaneo-buenos-aires.jpg",
             location => { '@type' => 'Place', name => $e->{lugar}, address => \%addr },
             performer => { '@type' => 'MusicGroup', name => 'Orquesta Invisible', url => "$BASE/" },
         );
