@@ -327,20 +327,20 @@ html:not(.js) .solo-js { display: none !important; }
 .detalle-cerrar { display: none; }
 
 /* Hoja 2: tabla de canales y requerimientos lado a lado, como en el PDF */
-.canales-req { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 28px; align-items: start; }
-.tabla-caja { overflow-x: auto; }
-.tabla-canales, .tabla-req { width: 100%; border-collapse: collapse; font-size: 0.84rem; background: #fff; color: #1d1d1d; }
+.canales-req { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.tabla-caja { overflow-x: auto; border: 1px solid var(--linea); }
+.tabla-canales, .tabla-req { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
 .tabla-canales { min-width: 560px; }
-.tabla-canales th, .tabla-canales td, .tabla-req th, .tabla-req td { padding: 8px 12px; text-align: left; border-top: 1px solid #c9c9c9; vertical-align: middle; }
-.tabla-canales thead th, .tabla-req thead th { background: #000; color: #fff; font-weight: bold; border-top: 0; }
+.tabla-canales th, .tabla-canales td, .tabla-req th, .tabla-req td { padding: 9px 12px; text-align: left; border-top: 1px solid var(--linea); vertical-align: middle; }
+.tabla-canales thead th, .tabla-req thead th { background: var(--bg-2); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); border-top: 0; font-weight: normal; }
 .tabla-canales tbody th { font-weight: normal; }
-.tabla-canales td.num { font-weight: bold; text-align: right; width: 52px; }
-.tabla-canales td.mix { text-align: center; border-left: 1px solid #c9c9c9; }
+.tabla-canales th, .tabla-canales td { white-space: nowrap; }
+.tabla-canales td.num { color: var(--accent-color); font-weight: bold; width: 64px; }
+.tabla-canales td.mix { background: rgba(255, 255, 255, 0.03); border-left: 1px solid var(--linea); text-align: center; }
 .tabla-req tbody th { font-weight: bold; width: 38%; }
-.tabla-req td { font-size: 0.9rem; }
 .js .tabla-canales tbody tr[data-nodo] { cursor: pointer; }
-.tabla-canales tbody tr[data-nodo]:hover th, .tabla-canales tbody tr[data-nodo]:hover td.num { color: var(--accent-color); }
-.tabla-canales tbody tr.activa th, .tabla-canales tbody tr.activa td:not(.mix) { background: #fbe3e5; }
+.tabla-canales tbody tr[data-nodo]:hover th { color: var(--accent-color); }
+.tabla-canales tbody tr.activa th, .tabla-canales tbody tr.activa td:not(.mix) { background: rgba(230, 57, 70, 0.16); }
 
 /* Línea de tiempo del día del show (oculta hasta tener los tiempos) */
 .linea-tiempo { position: relative; padding-left: 34px; max-width: 640px; }
@@ -441,6 +441,9 @@ html:not(.js) .solo-js { display: none !important; }
     .p-rider .tabla-canales thead th, .p-rider .tabla-req thead th { background: #000 !important; color: #fff !important; }
     .p-rider .tabla-canales tr.activa th, .p-rider .tabla-canales tr.activa td { background: #fff !important; }
     .p-rider .tabla-caja { overflow: visible; border: 1px solid #999; }
+    .p-rider .tabla-canales td.num { color: #000; }
+    .p-rider .tabla-canales td.mix { background: #f3f3f3 !important; border-left-color: #999; }
+    .p-rider .tabla-canales thead th, .p-rider .tabla-req thead th { font-size: 8.5pt; letter-spacing: 0.04em; }
     .p-rider .contacto-impreso { margin-top: 8mm; padding-top: 3mm; border-top: 1px solid #999; font-size: 9.5pt; }
     .p-rider .pie-pagina { display: none; }
     .p-rider .plano, .p-rider .plano *, .p-rider thead th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
