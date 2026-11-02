@@ -2699,7 +2699,7 @@ body.bio-abierta {
     gap: 12px;
 }
 
-.logo img {
+.logo img, .logo svg {
     display: block;
     width: 36px;
     height: 36px;
@@ -2712,7 +2712,7 @@ body.bio-abierta {
         letter-spacing: 1px;
     }
 
-    .logo img {
+    .logo img, .logo svg {
         width: 30px;
         height: 30px;
     }

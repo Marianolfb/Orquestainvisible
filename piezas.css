@@ -69,7 +69,7 @@ html:not(.js) .solo-js { display: none !important; }
     display: flex; align-items: center; gap: 10px; text-decoration: none;
     font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 0.04em; font-size: 1.05rem;
 }
-.marca img { width: 32px; height: 32px; }
+.marca img, .marca svg { width: 32px; height: 32px; }
 .barra-acciones { display: flex; align-items: center; gap: 10px; }
 
 .idiomas { display: flex; border: 1px solid var(--linea); border-radius: 4px; overflow: hidden; }
@@ -382,7 +382,7 @@ html:not(.js) .solo-js { display: none !important; }
 @media (max-width: 420px) {
     .barra-fila { gap: 6px; padding: 8px 3%; }
     .marca { font-size: 0.86rem; gap: 6px; }
-    .marca img { width: 26px; height: 26px; }
+    .marca img, .marca svg { width: 26px; height: 26px; }
     .barra-acciones { gap: 6px; }
     .idiomas a { padding: 4px 6px; }
     .btn-peq { padding: 4px 8px; }

@@ -239,11 +239,18 @@ el texto en la carpeta `de/`.
 
 - **Favicon:** terracota (`#c65d3e`), el anillo con la "I" y tres ondas, sin texto. Archivos en la raíz:
   `favicon.svg`, `favicon.ico` (16/32/48), `favicon.png` (64) y `apple-touch-icon.png` (180, fondo negro).
-  Están enlazados en el `<head>` de todas las páginas con `?v=2` (si se cambia el dibujo, subir ese número).
+  Están enlazados en el `<head>` de todas las páginas con `?v=3` (si se cambia el dibujo, subir ese número).
+  Desde el 1/11/2026 también hay `favicon-48.png`, `favicon-96.png` y `favicon-192.png` (múltiplos de 48, como pide Google) y
+  los `<link>` usan rutas desde la raíz (`/favicon.ico`).
   El logo grande con texto (PNG y SVG, también sin texto) está en `Desktop\Orquesta Invisible\Logo`.
 - **Barra fija de arriba:** en `index.html`, `en/` y `de/`, al bajar más de 50 px la barra se pone negra y
-  aparece el logo (la marca `favicon.svg` + "ORQUESTA INVISIBLE"). Lo hace `script.js` (agrega la clase
+  aparece el logo (el dibujo del favicon como **SVG en línea**, no como `<img>`, + "ORQUESTA INVISIBLE"). Lo hace `script.js` (agrega la clase
   `scrolled`) y el estilo está al final de `style.css`.
+
+- **Imagen que Google muestra en los resultados (1/11/2026):** Google estaba tomando el logo chico como miniatura porque era la primera
+  `<img>` de la página. Por eso el logo del header va como SVG en línea (no usar `<img src="favicon...">` en el cuerpo de las páginas)
+  y la foto de la orquesta va en `og:image`, `twitter:image` y en el JSON-LD (portadas: lista con recortes 16:9, 4:3 y 1:1 de la
+  misma foto, `orquesta-invisible-tango-contemporaneo-buenos-aires-{16x9,4x3,1x1}.jpg`). Google tarda días o semanas en cambiarlo y no se puede forzar.
 
 ## Velocidad (21/10/2026)
 
