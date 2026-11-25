@@ -29,6 +29,10 @@ my %CABA   = (es=>'CABA', en=>'Buenos Aires', it=>'Buenos Aires', fr=>'Buenos Ai
               ja=>'ブエノスアイレス', pt=>'Buenos Aires');
 my %BOOK   = (es=>'RESERVAR', en=>'BOOK NOW', it=>'PRENOTA', fr=>'RÉSERVER', de=>'RESERVIEREN',
               ja=>'予約する', pt=>'RESERVAR');
+# Textos del botón "ver todas las fechas". Viven acá (no se leen de la página) porque el botón
+# desaparece cuando hay pocas fechas y el script tiene que poder volver a ponerlo.
+my %MORE   = (es=>'VER TODAS LAS FECHAS', en=>'VIEW ALL DATES', de=>'ALLE TERMINE ANZEIGEN');
+my %LESS   = (es=>'VER MENOS', en=>'SHOW LESS', de=>'WENIGER ANZEIGEN');
 my %EMPTY  = (es=>'Próximamente, nuevas fechas.', en=>'New dates coming soon.', it=>'Nuove date in arrivo.',
               fr=>'De nouvelles dates bientôt.', de=>'Neue Termine folgen in Kürze.',
               ja=>'新しい公演日は近日発表予定です。', pt=>'Novas datas em breve.');
@@ -297,10 +301,9 @@ for my $lang (@LANGS) {
     # 1) filas
     $html =~ m{<section id="conciertos"[^>]*>\s*<h2[^>]*>.*?</h2>(.*?)</section>}s or fail("no encontré la sección #conciertos en $f");
     my $mid = $1;
-    my ($more) = $mid =~ /data-more="([^"]*)"/;
-    my ($less) = $mid =~ /data-less="([^"]*)"/;
-    my ($btn)  = $mid =~ m{<button[^>]*>\s*(.*?)\s*</button>}s;
-    fail("no encontré el botón 'ver todas las fechas' en $f") unless defined $more && defined $less && defined $btn;
+    my ($more, $less) = ($MORE{$lang}, $LESS{$lang});
+    fail("faltan los textos del botón 'ver todas las fechas' para el idioma $lang") unless defined $more && defined $less;
+    my $btn = $more;
     my $gen = "\n\n        <!-- FECHAS:INICIO (generado desde la planilla de fechas; no editar a mano) -->\n";
     if (!@events) {
         $gen .= "        <p class=\"show-empty\" style=\"text-align:center; opacity:.7;\">" . he($EMPTY{$lang}) . "</p>\n";
