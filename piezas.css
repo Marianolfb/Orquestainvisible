@@ -463,3 +463,9 @@ html:not(.js) .solo-js { display: none !important; }
 .tarjeta-botones { display: flex; flex-wrap: wrap; gap: 10px; }
 .tarjeta-botones .btn { font-size: 0.76rem; padding: 9px 16px; }
 .tarjeta[hidden] { display: none; }
+
+/* Pie: subrayado leve de "Mundano" al pasar por arriba */
+a.mundano { color: inherit; text-decoration: none; padding-bottom: 2px; background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat; transition: background-size .35s ease; }
+a.mundano:hover, a.mundano:focus-visible { background-size: 100% 1px; }
+@media (hover: none) { a.mundano { background-size: 100% 1px; } } /* sin mouse: queda subrayado */
+@media (prefers-reduced-motion: reduce) { a.mundano { transition: none; } }

@@ -2851,3 +2851,10 @@ body.bio-abierta {
 .descargas-section .descargas-piezas a:hover {
     color: var(--accent-color);
 }
+
+/* Pie: subrayado leve de "Mundano" al pasar por arriba */
+a.mundano { color: inherit; text-decoration: none; padding-bottom: 2px; background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat; transition: background-size .35s ease; }
+a.mundano:hover, a.mundano:focus-visible { background-size: 100% 1px; }
+@media (hover: none) { a.mundano { background-size: 100% 1px; } } /* sin mouse: queda subrayado */
+@media (prefers-reduced-motion: reduce) { a.mundano { transition: none; } }
+@media (max-width: 600px) { .footer-social { padding-bottom: 90px; } } /* que el botón flotante de Spotify no tape el crédito */
